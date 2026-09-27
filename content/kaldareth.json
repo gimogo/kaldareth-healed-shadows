@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "items": {
+    "act1_whisper_ash": {
+      "id": "act1_whisper_ash",
+      "name": "Ash of the Whisper",
+      "rarity": "rare",
+      "stat": "vit",
+      "bonus": 3,
+      "flavour": "It was never a body. What burned was the shape it had borrowed."
+    },
+    "act1_emissary_seal": {
+      "id": "act1_emissary_seal",
+      "name": "Shepherd's Broken Seal",
+      "rarity": "rare",
+      "stat": "def",
+      "bonus": 4,
+      "flavour": "A fragment of the sigil under Harrow's Reach. Warm, which is the wrong temperature."
+    },
+    "act1_thessaly_cane": {
+      "id": "act1_thessaly_cane",
+      "name": "Thessaly's Fractured Cane",
+      "rarity": "epic",
+      "stat": "int",
+      "bonus": 7,
+      "flavour": "Split down the middle by the spell that ended her. Both halves still work."
+    },
+    "act1_sentinel_core": {
+      "id": "act1_sentinel_core",
+      "name": "Sundering Sentinel Core",
+      "rarity": "rare",
+      "stat": "str",
+      "bonus": 6,
+      "flavour": "The heart of a construct built to guard a ritual nobody remembers."
+    },
+    "act1_choir_sigil": {
+      "id": "act1_choir_sigil",
+      "name": "Choir Sigil Fragment",
+      "rarity": "rare",
+      "stat": "agi",
+      "bonus": 5,
+      "flavour": "Bears no crest. It was never meant to be identified."
+    },
+    "act1_watchtower_charm": {
+      "id": "act1_watchtower_charm",
+      "name": "Old Watchtower Charm",
+      "rarity": "rare",
+      "stat": "critChance",
+      "bonus": 0.04,
+      "flavour": "Carried by someone who expected to need luck and did not."
+    }
+  },
+  "statLabels": {
+    "courage": [
+      { "min": 0, "label": "careful" },
+      { "min": 3, "label": "steady" },
+      { "min": 6, "label": "bold" },
+      { "min": 10, "label": "unshakeable" }
+    ],
+    "reputation": [
+      { "min": 0, "label": "unknown" },
+      { "min": 2, "label": "noticed" },
+      { "min": 5, "label": "trusted" },
+      { "min": 9, "label": "relied upon" }
+    ],
+    "royal_loyalty": [
+      { "min": 0, "label": "unsworn" },
+      { "min": 2, "label": "courted" },
+      { "min": 5, "label": "acknowledged" },
+      { "min": 9, "label": "bound" }
+    ]
+  },
+  "rarityLabels": {
+    "common": { "glyph": "·", "word": "Common" },
+    "uncommon": { "glyph": "+", "word": "Uncommon" },
+    "rare": { "glyph": "◆", "word": "Rare" },
+    "epic": { "glyph": "✦", "word": "Epic" },
+    "legendary": { "glyph": "★", "word": "Legendary" }
+  }
+}

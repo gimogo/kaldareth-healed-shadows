@@ -1,0 +1,75 @@
+/*
+ * Layout for the trusted host document.
+ *
+ * The host owns three things: the frame's size, the identity chrome around it,
+ * and the confirmations. Game styles must not reach in here, so this file sets
+ * page furniture and the two variables the SDK frame reads — nothing else.
+ *
+ * The three colour and font values below deliberately repeat `src/index.css`
+ * rather than importing it. Sharing them would mean loading the game stylesheet
+ * into the trusted document, and the game stylesheet is community code: it
+ * belongs inside the sandbox with the rest of the game. Three duplicated values
+ * are a smaller problem than game CSS in the wallet's document.
+ *
+ * The frame takes its height from `--rf-game-aspect-ratio`, so a wide value on a
+ * short window overflows the page and pushes the bottom controls out of reach. The
+ * variable below solves that with one `min()`: the width is capped at a maximum,
+ * and also at the width the given ratio can have in the remaining height.
+ *
+ * Two ratios, because the two shapes of window want opposite things.
+ *
+ * A phone is narrow, so the frame is width-limited rather than height-limited:
+ * at 360px wide the ratio is the only thing that decides the height. 3/4 gave a
+ * 358x478 frame whose non-prose chrome measured 468px — the frame had room for
+ * everything except the story. 9/16 makes the same width 636px tall, which is 158px
+ * of reading space for free, with no width lost.
+ *
+ * A desktop window is the opposite: it has width to spare and height it does not.
+ * A 960x640 landscape frame gives a text column far more room than 480x640,
+ * because extra width turns wrapped lines into fewer lines instead of merely
+ * widening a measure that is already at its 68ch limit. This is also the SDK's own
+ * reference frame size, so matching it means the frame is a viewing window for
+ * prose rather than a portrait box the prose has to fight. Measured: the play
+ * screen overflowed a 480x640 portrait frame by up to 601px, and the ending by
+ * 1659px.
+ */
+
+:root {
+  --rf-game-aspect-ratio: 9 / 16;
+  --rf-game-max-width: min(480px, calc((100dvh - 4rem) * 9 / 16));
+  /* Mirrors of the game's surfaces. */
+  --bg: #0b0d10;
+  --ink: #ddd8cd;
+  --font: ui-monospace, 'SFMono-Regular', 'Cascadia Mono', 'Consolas', 'Liberation Mono',
+    'Menlo', 'DejaVu Sans Mono', monospace;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+}
+
+#root {
+  margin: 0 auto;
+  max-width: var(--rf-game-max-width);
+  padding: 1rem 0 2rem;
+}
+
+@media (min-width: 48rem) {
+  /*
+   * Landscape from here up, which is also the SDK's own default
+   * (`--rf-game-max-width: 960px`, `3 / 2`). The block above is the deviation,
+   * not this one, so the wide case can simply be the SDK's default.
+   */
+  :root {
+    --rf-game-aspect-ratio: 3 / 2;
+    --rf-game-max-width: min(960px, calc((100dvh - 4rem) * 3 / 2));
+  }
+
+  #root {
+    padding: 0.75rem 0 1.5rem;
+  }
+}

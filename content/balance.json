@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "combat": {
+    "varianceFraction": 0.1,
+    "critMultiplier": 1.75,
+    "critPerAgi": 0.001,
+    "dodgePerAgi": 0.0035,
+    "dodgeCap": 0.25,
+    "mitigationConstant": 100,
+    "executeThreshold": 0.3,
+    "executeBonus": 1,
+    "enemyHeavyChance": 0.22,
+    "enemyHeavyPower": 1.35,
+    "regen": { "warrior": 0, "archer": 4, "mage": 3 },
+    "rageOnAttack": 8,
+    "rageOnHurt": 0.03
+  },
+  "exp": {
+    "actLevels": [10, 20, 30, 40],
+    "restExp": 40
+  },
+  "economy": {
+    "currency": "TOKEN",
+    "startingBalance": 3000,
+    "entryFee": 500,
+    "split": { "prizePool": 250, "circulation": 150, "burn": 100 },
+    "dailyQuotaByGeneration": {
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 5,
+      "5": 7,
+      "6": 10
+    },
+    "quotaReset": "utc-midnight",
+    "prizePool": {
+      "winners": 10,
+      "resetDay": "Monday",
+      "cap": 150000
+    },
+    "ghostBoard": { "size": 8, "seed": 20260930 }
+  }
+}

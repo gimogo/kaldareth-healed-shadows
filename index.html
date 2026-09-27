@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Kaldareth — a text-driven web3 RPG. Your Rare Friends NFT is the access ticket; every run writes a new character."
+    />
+    <title>Kaldareth: The Healed Shadows</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Kaldareth requires JavaScript to render its narrative engine.</noscript>
+    <!--
+      This is the trusted host document. It owns wallet connection, owned-Friend
+      discovery, the fresh ownership check and the confirmations, and it mounts
+      the game — a separate document, frame.html — inside a sandboxed iframe.
+    -->
+    <script type="module" src="/src/host/main.tsx"></script>
+  </body>
+</html>

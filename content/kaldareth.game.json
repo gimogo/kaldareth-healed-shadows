@@ -1,0 +1,28 @@
+{
+  "$note": "UNUSED REFERENCE TERMS. The FriendSDK runtime requires a chance-game definition even when a game has no economy actions. Kaldareth never calls buy/play/settle/redeem: its entry fee, split and weekly prize pool are simulated in src/economy/ledger.ts from content/balance.json. This file exists only to satisfy the runtime shape, and no value here is a real payout, an RF price, or a redemption promise. RF amounts are decimal strings in 18-decimal base units. The price and the maximum prize mirror the simulated 500 entry fee and its 250 prize-pool share; the remaining 250 (150 circulation + 100 burn) is never paid out. scripts/check-sdk-boundary.mjs asserts both mirrors and that the game layer never calls the consumable actions.",
+  "name": "Kaldareth: The Healed Shadows",
+  "consumable": "Reference only — no consumable is sold",
+  "price": "500000000000000000000",
+  "outcomes": [
+    {
+      "name": "Nothing kept (reference only)",
+      "chanceBps": 5500,
+      "reward": "0"
+    },
+    {
+      "name": "Small keep (reference only)",
+      "chanceBps": 3000,
+      "reward": "50000000000000000000"
+    },
+    {
+      "name": "Chapter keep (reference only)",
+      "chanceBps": 1200,
+      "reward": "150000000000000000000"
+    },
+    {
+      "name": "Act keep (reference only)",
+      "chanceBps": 300,
+      "reward": "250000000000000000000"
+    }
+  ]
+}

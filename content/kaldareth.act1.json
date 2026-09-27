@@ -1,0 +1,864 @@
+{
+  "version": 1,
+  "meta": {
+    "title": "Kaldareth: The Healed Shadows — Act 1",
+    "start": "ch1_open",
+    "classes": [
+      "warrior",
+      "archer",
+      "mage"
+    ]
+  },
+  "nodes": {
+    "ch1_open": {
+      "id": "ch1_open",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "GDD Ch1: Commander Veyra assigns the Emberfall mission; senior recruiter Dagen accompanies. Dagen never speaks. This node establishes the Litany of Hollowing and Veyra's standing.",
+      "text": [
+        "Greyhold's hall is cold enough to see your breath. Commander Veyra sets a folded report on the table between you and does not open it.",
+        "Emberfall stopped sending word three days ago. Dagen stands at the door with his mouth shut, as he has for three years. The Litany is still sung at dusk."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 50
+        }
+      ],
+      "choices": [
+        {
+          "id": "accept",
+          "label": "Take the mission as given",
+          "verbs": [
+            "accept",
+            "take",
+            "agree",
+            "yes",
+            "go"
+          ],
+          "next": "ch1_road",
+          "effects": [
+            {
+              "op": "add",
+              "trait": "reputation",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "press",
+          "label": "Ask what the Litany says",
+          "verbs": [
+            "ask",
+            "press",
+            "question",
+            "litany",
+            "hollowing"
+          ],
+          "next": "ch1_road",
+          "effects": [
+            {
+              "op": "add",
+              "trait": "courage",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    "ch1_road": {
+      "id": "ch1_road",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Travel beat. Sets the three days of quiet and the feeling that something upstream is wrong.",
+      "text": [
+        "The road to Emberfall runs downhill through wet ash. Three days, and Dagen has not said one word that was not necessary.",
+        "No smoke. No bodies. No Hollowed in the fields, which is the part that should comfort you and does not."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 40
+        }
+      ],
+      "choices": [
+        {
+          "id": "press_on",
+          "label": "Press on to Emberfall",
+          "verbs": [
+            "go",
+            "move",
+            "onward",
+            "press",
+            "walk",
+            "travel"
+          ],
+          "next": "ch1_bridge"
+        },
+        {
+          "id": "study_ground",
+          "label": "Read the ground",
+          "verbs": [
+            "read",
+            "study",
+            "examine",
+            "look",
+            "track",
+            "search"
+          ],
+          "next": "ch1_bridge",
+          "effects": [
+            {
+              "op": "add",
+              "trait": "courage",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    "ch1_bridge": {
+      "id": "ch1_bridge",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "CLASS GATE 1 of 3 in Act 1. The collapsed bridge. Each class has its own solution; two of three choices are disabled for any given run. The disabled ones stay visible on purpose.",
+      "text": [
+        "The creek has taken the bridge apart. Half of it lies in the water, and the rest holds the far bank up by stubbornness.",
+        "Only one way across, and it depends on what you are. Dagen watches to see which way you reach for it."
+      ],
+      "choices": [
+        {
+          "id": "cross_warrior",
+          "label": "Smash the beams into a ramp",
+          "verbs": [
+            "smash",
+            "break",
+            "force",
+            "ramp",
+            "lift"
+          ],
+          "next": "ch1_bridge_warrior",
+          "requires": [
+            {
+              "kind": "class",
+              "classId": "warrior"
+            }
+          ]
+        },
+        {
+          "id": "cross_archer",
+          "label": "Take the old wheel ford",
+          "verbs": [
+            "track",
+            "ford",
+            "follow",
+            "tracks",
+            "cross"
+          ],
+          "next": "ch1_bridge_archer",
+          "requires": [
+            {
+              "kind": "class",
+              "classId": "archer"
+            }
+          ]
+        },
+        {
+          "id": "cross_mage",
+          "label": "Read the holding runes",
+          "verbs": [
+            "runes",
+            "rune",
+            "read",
+            "seal",
+            "sealing",
+            "cast"
+          ],
+          "next": "ch1_bridge_mage",
+          "requires": [
+            {
+              "kind": "class",
+              "classId": "mage"
+            }
+          ]
+        }
+      ]
+    },
+    "ch1_bridge_warrior": {
+      "id": "ch1_bridge_warrior",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Warrior route. Loud, slow, and it announces you to anything listening.",
+      "text": [
+        "You put your shoulder under the beam and lift until the water runs brown. What was a wall becomes a ramp, and a ramp becomes a road.",
+        "It costs you. Everything on this road is going to cost you something, and the Hollowing does not accept receipts."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 30
+        },
+        {
+          "op": "add",
+          "trait": "courage",
+          "amount": 1
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Cross and keep moving",
+          "verbs": [
+            "continue",
+            "cross",
+            "go",
+            "onward"
+          ],
+          "next": "ch1_regroup"
+        }
+      ]
+    },
+    "ch1_bridge_archer": {
+      "id": "ch1_bridge_archer",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Archer route. Quiet, and it costs time — the ford is longer.",
+      "text": [
+        "The cart ruts go right where the water looks deepest, which is where the old ford ran before the bank gave. You follow them and keep dry.",
+        "Dagen says nothing, but he stops at the water edge to watch you find it, and that is as close as he comes to praise."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 30
+        },
+        {
+          "op": "add",
+          "trait": "reputation",
+          "amount": 1
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Take the long way round",
+          "verbs": [
+            "continue",
+            "cross",
+            "go",
+            "onward",
+            "ford"
+          ],
+          "next": "ch1_regroup"
+        }
+      ]
+    },
+    "ch1_bridge_mage": {
+      "id": "ch1_bridge_mage",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Mage route. The runes still hold. Releasing them properly is quiet and precise.",
+      "text": [
+        "The stones are still standing because of the runes on them, not in spite of them. You read the sealing, and the sealing lets you pass.",
+        "Aether is cheaper than strength and dearer than either. You pay the small price and step over the creek on nothing at all."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 30
+        },
+        {
+          "op": "add",
+          "trait": "royal_loyalty",
+          "amount": 1
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk the stones and cross",
+          "verbs": [
+            "continue",
+            "cross",
+            "go",
+            "onward",
+            "walk"
+          ],
+          "next": "ch1_regroup"
+        }
+      ]
+    },
+    "ch1_regroup": {
+      "id": "ch1_regroup",
+      "stage": 1,
+      "type": "narrative",
+      "rest": true,
+      "notes": "Camp before the village. A rest node: pays restExp from balance.json and tops the class pool.",
+      "text": [
+        "You make camp a half mile short of Emberfall, where the palisade is still a shape against the dark.",
+        "No lanterns in the village. No dogs. Whatever happened here happened inside, and it happened fast."
+      ],
+      "choices": [
+        {
+          "id": "approach",
+          "label": "Approach Emberfall",
+          "verbs": [
+            "approach",
+            "go",
+            "enter",
+            "advance"
+          ],
+          "next": "ch1_gates"
+        }
+      ]
+    },
+    "ch1_gates": {
+      "id": "ch1_gates",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "CLASS GATE 2 of 3. The village gates are locked from the inside. Nothing in Emberfall has opened them in days.",
+      "text": [
+        "Emberfall's gates are shut, and the bolt is on the inside. Somebody did that on purpose, with their own hands, a long time ago.",
+        "You could go over. Dagen would not stop you. But a village that locked itself away has a reason, and the reason is in the hall."
+      ],
+      "choices": [
+        {
+          "id": "enter_warrior",
+          "label": "Break the gate's hinges",
+          "verbs": [
+            "break",
+            "smash",
+            "force",
+            "gates",
+            "hinges"
+          ],
+          "next": "ch1_gates_warrior",
+          "requires": [
+            {
+              "kind": "class",
+              "classId": "warrior"
+            }
+          ]
+        },
+        {
+          "id": "enter_archer",
+          "label": "Use the villagers' back wall",
+          "verbs": [
+            "climb",
+            "wall",
+            "over",
+            "scale",
+            "find"
+          ],
+          "next": "ch1_gates_archer",
+          "requires": [
+            {
+              "kind": "class",
+              "classId": "archer"
+            }
+          ]
+        },
+        {
+          "id": "enter_mage",
+          "label": "Open the lock untouched",
+          "verbs": [
+            "open",
+            "unlock",
+            "lock",
+            "unbolt",
+            "cast"
+          ],
+          "next": "ch1_gates_mage",
+          "requires": [
+            {
+              "kind": "class",
+              "classId": "mage"
+            }
+          ]
+        }
+      ]
+    },
+    "ch1_gates_warrior": {
+      "id": "ch1_gates_warrior",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Warrior route. The village hears you arrive. That is a cost, not a free move.",
+      "text": [
+        "The gate comes off its hinges with a sound like a dropped cart. You walk in through the hole you made, and the dark on the other side does not move.",
+        "Dagen enters behind you and says, at last, one word. It is not a compliment. It is the word people use for a door."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 30
+        }
+      ],
+      "choices": [
+        {
+          "id": "inside",
+          "label": "Step into the village",
+          "verbs": [
+            "inside",
+            "enter",
+            "step",
+            "go"
+          ],
+          "next": "ch1_village"
+        }
+      ]
+    },
+    "ch1_gates_archer": {
+      "id": "ch1_gates_archer",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Archer route. Quiet entry over the wall. You see the village before it sees you.",
+      "text": [
+        "The villagers never used the gate. A yard wall at the back is low, mossy, and worn smooth in the middle where a hundred shoulders went.",
+        "You come down it quiet and stop with a hand up. Ahead, a light under a door, and someone breathing too fast."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 30
+        },
+        {
+          "op": "add",
+          "trait": "courage",
+          "amount": 1
+        }
+      ],
+      "choices": [
+        {
+          "id": "inside",
+          "label": "Drop into the village",
+          "verbs": [
+            "inside",
+            "enter",
+            "drop",
+            "go"
+          ],
+          "next": "ch1_village"
+        }
+      ]
+    },
+    "ch1_gates_mage": {
+      "id": "ch1_gates_mage",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Mage route. The lock opens cleanly. Nobody hears it, which is its own kind of problem.",
+      "text": [
+        "The lock answers to aether the way a knot answers to a finger. You open it without touching the iron, and the gate swings like it was never barred.",
+        "A whisper of aether carries you over the threshold, and the air inside tastes of old smoke and older fear."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 30
+        },
+        {
+          "op": "add",
+          "trait": "royal_loyalty",
+          "amount": 1
+        }
+      ],
+      "choices": [
+        {
+          "id": "inside",
+          "label": "Step through the gate",
+          "verbs": [
+            "inside",
+            "enter",
+            "walk",
+            "go"
+          ],
+          "next": "ch1_village"
+        }
+      ]
+    },
+    "ch1_village": {
+      "id": "ch1_village",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Inside Emberfall. The village is intact and nobody is working. Nobody is outside at all.",
+      "text": [
+        "Emberfall is a village holding its breath. Doors barred, ash in the hearths, every shutter closed against a dark that came from under the ground.",
+        "One light is still burning, in the hall, where the meeting house would be. Whoever is in there has been waiting for a knock."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 40
+        }
+      ],
+      "choices": [
+        {
+          "id": "find_people",
+          "label": "Find whoever is still here",
+          "verbs": [
+            "find",
+            "search",
+            "look",
+            "people",
+            "villagers"
+          ],
+          "next": "ch1_senna"
+        },
+        {
+          "id": "check_hall",
+          "label": "Check the village hall first",
+          "verbs": [
+            "check",
+            "hall",
+            "first",
+            "village"
+          ],
+          "next": "ch1_senna",
+          "effects": [
+            {
+              "op": "add",
+              "trait": "courage",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    "ch1_senna": {
+      "id": "ch1_senna",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Mother Senna. The GDD's only named civilian in Act 1's opening. She has been hiding since the third day of silence.",
+      "text": [
+        "Mother Senna is on the floor by the hearth with a poker held like a knife. She has the look of someone who has been alone long enough to talk to furniture.",
+        "The reports stopped because Elder Oswin told them to stop. She has heard chanting under the floor since Michaelmas, and it has a word in it: her granddaughter's name."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 40
+        }
+      ],
+      "choices": [
+        {
+          "id": "ask_reports",
+          "label": "Ask why the reports stopped",
+          "verbs": [
+            "ask",
+            "reports",
+            "why",
+            "stopped",
+            "report"
+          ],
+          "next": "ch1_descent",
+          "effects": [
+            {
+              "op": "add",
+              "trait": "reputation",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "ask_oswin",
+          "label": "Ask where Elder Oswin is",
+          "verbs": [
+            "ask",
+            "oswin",
+            "elder",
+            "where"
+          ],
+          "next": "ch1_descent",
+          "effects": [
+            {
+              "op": "add",
+              "trait": "courage",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    "ch1_descent": {
+      "id": "ch1_descent",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Senna leads you to the cellar stairs under the village hall. The air changes here.",
+      "text": [
+        "Under the hall there are stairs nobody put on the village plan. The air comes up them warm, and it carries a sound that is almost, but not quite, singing.",
+        "Dagen stops at the top. He has gone grey. Whatever is down there, he has heard it before."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 40
+        }
+      ],
+      "choices": [
+        {
+          "id": "descend",
+          "label": "Go down",
+          "verbs": [
+            "down",
+            "descend",
+            "go",
+            "stairs"
+          ],
+          "next": "ch1_oswin"
+        }
+      ]
+    },
+    "ch1_oswin": {
+      "id": "ch1_oswin",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Elder Oswin, half-turned into a Choir Vessel, and connected to Elin. This node must not resolve anything — it sets up the dilemma.",
+      "text": [
+        "Elder Oswin is on his knees in a circle cut into the floor, and the change in him has gone most of the way. His mouth keeps moving on a word that is not his.",
+        "From his chest, threads of dark run out to the centre of the rune, and from the centre to a girl asleep in the middle of it. Pale. Breathing. Thirteen, at a guess."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 50
+        }
+      ],
+      "choices": [
+        {
+          "id": "face_it",
+          "label": "Face what is in the cellar",
+          "verbs": [
+            "face",
+            "approach",
+            "look",
+            "stand"
+          ],
+          "next": "ch1_dilemma"
+        }
+      ]
+    },
+    "ch1_dilemma": {
+      "id": "ch1_dilemma",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "THE CHAPTER 1 DILEMMA. GDD DETERMINED outcome is Option B: the Vigil's emergency binding ritual. Option A is undefined in the GDD and must be written without contradicting later acts. Both branches must converge on ch1_elin, where Elin's fate is decided — that keeps the structure shared while the prose diverges.",
+      "text": [
+        "It is not a monster. That is the part you cannot put down. It is a man on his knees with something growing in him, and the threads go both ways.",
+        "Cut the seed and the singing stops here, and so does Oswin. Keep him bound and something in him keeps growing, slowly, where nobody is counting."
+      ],
+      "choices": [
+        {
+          "id": "destroy",
+          "label": "Destroy the seed completely",
+          "verbs": [
+            "destroy",
+            "end",
+            "kill",
+            "sever"
+          ],
+          "next": "ch1_outcome_destroy",
+          "effects": [
+            {
+              "op": "add",
+              "trait": "courage",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "rescue",
+          "label": "Use the binding ritual",
+          "verbs": [
+            "rescue",
+            "save",
+            "bind",
+            "ritual",
+            "attempt",
+            "try"
+          ],
+          "next": "ch1_outcome_rescue",
+          "effects": [
+            {
+              "op": "add",
+              "trait": "reputation",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    "ch1_outcome_destroy": {
+      "id": "ch1_outcome_destroy",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Option A. Undefined in the GDD. Reward shape should mirror Option B's per the reward table: main-branch choices move a big reputation swing plus small courage. Villager survival differs by design.",
+      "text": [
+        "You end it, and it ends quickly, the way a held breath ends. The threads go out of Elin and the girl comes up out of the circle shaking and alive.",
+        "Oswin does not come up at all. Dagen will not meet your eye, and the villagers are grateful in the way of people who are afraid of what you might do next."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 60
+        }
+      ],
+      "choices": [
+        {
+          "id": "after",
+          "label": "See what is left",
+          "verbs": [
+            "after",
+            "see",
+            "leave",
+            "continue"
+          ],
+          "next": "ch1_elin"
+        }
+      ]
+    },
+    "ch1_outcome_rescue": {
+      "id": "ch1_outcome_rescue",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Option B — DETERMINED by the GDD. The Vigil's emergency binding ritual works: Oswin survives but is weakened, Elin is safe, the villagers are grateful, and a small seed of Hollowing survives in Oswin. This node also flags the continuation so later chapters can check it.",
+      "text": [
+        "The Vigil's binding ritual is four words and a knife held wrong on purpose. You say them. The threads go slack, and Oswin breathes like a man again.",
+        "He lives. He is not all there, and everyone in the cellar can see the part that is not. But Elin is safe, and the hall is full of people saying so."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 60
+        },
+        {
+          "op": "flag",
+          "key": "ch1_rescue_attempted"
+        }
+      ],
+      "choices": [
+        {
+          "id": "after",
+          "label": "See what is left",
+          "verbs": [
+            "after",
+            "see",
+            "leave",
+            "continue"
+          ],
+          "next": "ch1_elin"
+        }
+      ]
+    },
+    "ch1_elin": {
+      "id": "ch1_elin",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Elin, the person Oswin was connected to. In the DETERMINED branch Elin is safe. Under Option A the GDD does not say, and this node is where you decide what happens to her.",
+      "text": [
+        "Elin wakes with no memory of the circle and a burn on her palm in the shape of the rune. She asks where her grandfather is. You tell her he is alive.",
+        "It is true, and it is not the whole of it, and she is thirteen, and there is no version of tonight that lets you say it all."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 50
+        }
+      ],
+      "choices": [
+        {
+          "id": "aftermath",
+          "label": "Carry it back to the surface",
+          "verbs": [
+            "surface",
+            "up",
+            "leave",
+            "aftermath",
+            "carry"
+          ],
+          "next": "ch1_aftermath"
+        }
+      ]
+    },
+    "ch1_aftermath": {
+      "id": "ch1_aftermath",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "The village is grateful, and the incident is not an accident: the Choir is operating somewhere with access. Closes the chapter's evidence beat.",
+      "text": [
+        "By morning the villagers have decided you are the reason Emberfall is still a village. They are warm about it, and loud, and nobody mentions the cellar.",
+        "Dagen finally speaks a whole sentence. It is: this was not random, and we have been sent here before."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 50
+        }
+      ],
+      "choices": [
+        {
+          "id": "litany",
+          "label": "Hear the Litany",
+          "verbs": [
+            "listen",
+            "litany",
+            "say",
+            "out",
+            "continue"
+          ],
+          "next": "ch1_litany"
+        }
+      ]
+    },
+    "ch1_litany": {
+      "id": "ch1_litany",
+      "stage": 1,
+      "type": "narrative",
+      "notes": "Chapter close. The Litany mentions the Shepherd arriving when 'the fields are ready for harvest'. This is the hook into Chapter 2's Harrow's Reach objective.",
+      "text": [
+        "The Litany was under Senna's floor, in her hand, in a language she cannot read. It names a place, Harrow's Reach. It names a season.",
+        "And then the line you will not forget, sung over and over, patient as a harvest: the fields are ready."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 60
+        },
+        {
+          "op": "token",
+          "amount": 150
+        }
+      ],
+      "choices": [
+        {
+          "id": "end",
+          "label": "Take it back to Greyhold",
+          "verbs": [
+            "end",
+            "greyhold",
+            "return",
+            "carry",
+            "finish"
+          ],
+          "next": "ch1_ending"
+        }
+      ]
+    },
+    "ch1_ending": {
+      "id": "ch1_ending",
+      "stage": 1,
+      "type": "ending",
+      "notes": "Act 1 slice ending. reward_modifier scales the simulated token payout; leaderboard_tag buckets the run. When Chapters 2-3 land this node is replaced by the real Act 1 ending.",
+      "text": [
+        "Emberfall keeps its gates open that night, for the first time in three days, and Dagen walks out through them without looking back at the hall.",
+        "You carry the Litany, a burn mark on a girl's palm, and a piece of something growing in a man you left breathing. Greyhold is a long walk, and the walk is the last quiet you will get."
+      ],
+      "onEnter": [
+        {
+          "op": "exp",
+          "amount": 100
+        }
+      ],
+      "reward_modifier": 1,
+      "leaderboard_tag": "act1_slice_emberfall"
+    }
+  }
+}
