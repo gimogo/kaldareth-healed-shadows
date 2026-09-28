@@ -477,11 +477,26 @@ body {
 
 /* ── Combat log ───────────────────────────────────────────────────────── */
 
+/*
+ * The fight panel shares the scene's leftover height with the prose pane, and
+ * two health bars plus eight log lines plus the skill list can exceed what is
+ * left — measured 239px of content in a 212px box on the desktop frame. Without
+ * its own scroll the skill list spilled past the panel's bottom edge, the last
+ * buttons landed beneath the status panel, and the fight became unclickable
+ * mid-encounter. The panel therefore scrolls internally, like the prose pane
+ * and the standings list; the frame itself still never scrolls.
+ */
 .kald-combat {
   background: var(--bg-sunken);
   border-left: 2px solid var(--blood-dim);
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
   font-size: 0.92rem;
   margin: var(--gap) 0;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 0.6rem 0.8rem;
 }
 
@@ -782,11 +797,24 @@ body {
   color: var(--ink-dim);
 }
 
+/*
+ * The log needs an envelope of its own. The fight renders inside `.kald-scene`
+ * under a prose pane with the same `flex: 1 1 auto`, so an unbounded log and an
+ * unbounded prose competed for the leftover height and the log won by growing:
+ * the skill buttons slid under the status panel, which overlays them, and on a
+ * phone the fight became unplayable mid-encounter. A capped, internally
+ * scrolling log is the same allowance the prose pane already has — the frame
+ * itself still never scrolls.
+ */
 .kald-combat-log {
   border-left: 2px solid var(--rule);
+  flex: 0 1 auto;
   list-style: none;
   margin: 0 0 0.8rem;
   max-width: var(--measure);
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 0 0 0 0.8rem;
 }
 

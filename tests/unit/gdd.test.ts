@@ -214,4 +214,32 @@ describe('determinism', () => {
     expect(first.enemy.hp).toBe(second.enemy.hp)
     expect(first.log.length).toBe(second.log.length)
   })
+
+  it('deals damage from the attack stat, not just the weapon', () => {
+    // Regression guard for effectiveStat: the buff accumulator must seed with
+    // the base stat, not zero. When it seeded with zero, an unbuffed stat read
+    // as 0, every strike fell back to weaponAtk alone, and fights silently ran
+    // on single-digit damage. It stayed invisible until content shipped with
+    // real combat nodes, because nothing pinned magnitude - only determinism.
+    const run = createRun('warrior', { content: STORY, catalog: DATA.items as never }, 'MAG')
+    const enemy = {
+      id: 'training_dummy',
+      name: 'Training Dummy',
+      stats: { ...run.stats, hp: 400, def: 0, agi: 0 },
+      weaponAtk: 0,
+      exp: 0,
+      tier: 'miniboss' as const,
+    }
+
+    const rng = createRng(1)
+    let state = startCombat(run, enemy, COMBAT_BALANCE)
+    state = playerAct(state, 'slash', 1, COMBAT_BALANCE, rng).state
+
+    const strike = state.log.find((line) => line.kind === 'attack' && line.actor === 'You')
+    expect(strike).toBeDefined()
+    if (!strike || strike.kind !== 'attack') throw new Error('expected a player attack line')
+    // A level-1 Warrior is str 15 with a 1.4x skill: raw ~21, +-10% variance.
+    // Anything under half the attack stat means the stat was not applied.
+    expect(strike.damage).toBeGreaterThan(10)
+  })
 })

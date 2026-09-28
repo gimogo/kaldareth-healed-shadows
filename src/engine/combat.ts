@@ -108,12 +108,21 @@ function cloneCombatant(c: Combatant): Combatant {
   }
 }
 
-/** Effective stat after percentage buffs. Defensive stats never drop below 1. */
+/**
+ * Effective stat after percentage buffs. Defensive stats never drop below 1.
+ *
+ * The reduce seeds with `base`, not zero: each buff contributes `base * amount`
+ * on top of the untouched stat, so no buffs means the stat itself. Seeding with
+ * zero made an unbuffed stat read as 0, every strike fell back to weaponAtk
+ * alone, and the whole combat economy quietly ran on single-digit damage. It
+ * stayed invisible until the first content with combat nodes shipped, because
+ * every existing test pinned determinism, never magnitude.
+ */
 function effectiveStat(c: Combatant, key: Buff['stat']): number {
   const base = c[key]
   const buffed = c.buffs
     .filter((b) => b.stat === key)
-    .reduce((sum, b) => sum + base * b.amount, 0)
+    .reduce((sum, b) => sum + base * b.amount, base)
   if (key === 'def' || key === 'hp' || key === 'resourceMax') {
     return Math.max(1, Math.round(buffed))
   }

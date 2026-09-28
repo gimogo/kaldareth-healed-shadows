@@ -48,6 +48,102 @@
       "stat": "critChance",
       "bonus": 0.04,
       "flavour": "Carried by someone who expected to need luck and did not."
+    },
+    "act2_sanctum_tally": {
+      "id": "act2_sanctum_tally",
+      "name": "Choir Tally Rod",
+      "rarity": "epic",
+      "stat": "int",
+      "bonus": 9,
+      "flavour": "Counts hunters the way a shepherd counts sheep. One mark is fresher than the rest."
+    },
+    "act2_mire_pearl": {
+      "id": "act2_mire_pearl",
+      "name": "Mire Sentinel Pearl",
+      "rarity": "rare",
+      "stat": "vit",
+      "bonus": 7,
+      "flavour": "Swamp-light in a sphere. It remembers being worshipped, briefly, wrongly."
+    },
+    "act2_brine_scale": {
+      "id": "act2_brine_scale",
+      "name": "Brine Sentinel Scale",
+      "rarity": "rare",
+      "stat": "def",
+      "bonus": 8,
+      "flavour": "Cut away to reach the rot beneath. Clean whalebone where the sea wore through."
+    },
+    "act2_mine_tally": {
+      "id": "act2_mine_tally",
+      "name": "Deepvein Slate",
+      "rarity": "rare",
+      "stat": "str",
+      "bonus": 9,
+      "flavour": "A miner's tally of every shift survived underground. The last column is unfinished."
+    },
+    "act2_enforcer_gauntlet": {
+      "id": "act2_enforcer_gauntlet",
+      "name": "Enforcer's Gauntlet",
+      "rarity": "epic",
+      "stat": "agi",
+      "bonus": 9,
+      "flavour": "Grey and silver to match its mistress. It opens, empty, the way a threat does."
+    },
+    "act3_canopy_seed": {
+      "id": "act3_canopy_seed",
+      "name": "Canopy Guardian Seed",
+      "rarity": "epic",
+      "stat": "vit",
+      "bonus": 11,
+      "flavour": "Given, not taken. It is warm in the palm the way a promise is warm."
+    },
+    "act3_ashen_scout": {
+      "id": "act3_ashen_scout",
+      "name": "Ashen Cloak Clasp",
+      "rarity": "rare",
+      "stat": "critChance",
+      "bonus": 0.05,
+      "flavour": "Ilsevet's scouts wear no crest either. The clasp is the only part that kept its shape."
+    },
+    "act3_warden_plate": {
+      "id": "act3_warden_plate",
+      "name": "Mist Warden Pauldron",
+      "rarity": "rare",
+      "stat": "def",
+      "bonus": 10,
+      "flavour": "Cut from a warden that stood between Ilsevet and the fragment for exactly as long as it could."
+    },
+    "act3_vessel_tear": {
+      "id": "act3_vessel_tear",
+      "name": "Vessel's Shed Tear",
+      "rarity": "epic",
+      "stat": "int",
+      "bonus": 12,
+      "flavour": "It wept while it fought. The tear stayed behind when the Hollowing let go."
+    },
+    "act4_tide_ash": {
+      "id": "act4_tide_ash",
+      "name": "Ash of the Hollow Tide",
+      "rarity": "rare",
+      "stat": "agi",
+      "bonus": 10,
+      "flavour": "What the shockwave left when the line refused to break. It settles, finally, like snow."
+    },
+    "act4_anchor_pearl": {
+      "id": "act4_anchor_pearl",
+      "name": "Blood Anchor Pearl",
+      "rarity": "epic",
+      "stat": "vit",
+      "bonus": 13,
+      "flavour": "Formed where Veyra's oath met Kaelen's. Two heartbeats, one stone."
+    },
+    "act4_crown_cinder": {
+      "id": "act4_crown_cinder",
+      "name": "Ilsevet's Cinder Crown",
+      "rarity": "legendary",
+      "stat": "int",
+      "bonus": 14,
+      "flavour": "It was never regalia. It was armour against being overlooked. It fits no one, now."
     }
   },
   "statLabels": {

@@ -38,24 +38,38 @@ const EXPECTED_L40 = {
   mage: { hp: 1640, str: 37, agi: 46, int: 142, vit: 63, def: 44, critChance: 0.392 },
 }
 
-function nearest(values, target) {
-  return values.reduce((best, v) => (Math.abs(v - target) < Math.abs(best - target) ? v : best), values[0])
-}
-
 function levelFromExp(exp) {
   return applyExp(initialProgression(), exp).state.level
 }
 
-function expBeforeNode(content, targetId) {
-  // Cumulative minimum EXP on any path that reaches this node.
-  const low = new Map()
-  low.set(content.meta.start, 0)
+/**
+ * Arrival level at every node, for a player who has won every mandatory fight
+ * so far. Two maps, because the fight's own `enemy.exp` pays out only on
+ * victory:
+ *
+ *   - `arrive`: cumulative EXP when ENTERING each node. A fight node's arrival
+ *     level excludes its own payout — this is the level the encounter must be
+ *     beatable at, and it is the one a losing path keeps (you never collect
+ *     EXP for a fight you lost, you just walk the recovery road).
+ *   - `clear`: cumulative EXP after WINNING each node's fight. Feeds the next
+ *     node's arrival.
+ *
+ * The earlier one-map model (plus relaxation toward a minimum) folded each
+ * fight's payout into its own arrival level and simulated every encounter one
+ * level too high. The greedy policy won on paper while a real Archer or Mage —
+ * arriving a level lower with a third of a Warrior's effective HP — lost from
+ * Act 2 onward. The full-class campaign walkers caught what per-node
+ * simulation could not see.
+ */
+function arrivalLevels(content, restExp) {
+  const arrive = new Map([[content.meta.start, 0]])
+  const clear = new Map([[content.meta.start, 0]])
   let changed = true
   let guard = 0
   while (changed && guard < 500) {
     changed = false
     guard += 1
-    for (const [id, value] of [...low]) {
+    for (const [id, value] of [...arrive]) {
       const node = content.nodes[id]
       if (!node) continue
       const nexts =
@@ -65,19 +79,29 @@ function expBeforeNode(content, targetId) {
             ? [node.onWin.next, node.onLose.next]
             : []
       for (const next of nexts) {
-        const gain = (content.nodes[next]?.onEnter ?? []).reduce(
-          (sum, e) => sum + (e.op === 'exp' ? e.amount : 0),
-          0,
-        )
-        const candidate = value + gain
-        if (!low.has(next) || candidate < low.get(next)) {
-          low.set(next, candidate)
+        const nextNode = content.nodes[next]
+        // onEnter effects fire on entry, so they are part of the arrival state.
+        // A lost mandatory fight keeps the arrival EXP (the recovery road pays
+        // a smaller onEnter, already accounted per node); a won fight adds the
+        // payout via `clear`.
+        const base = node.type === 'combat' ? (clear.get(id) ?? value) : value
+        let gain = (nextNode?.onEnter ?? []).reduce((sum, e) => sum + (e.op === 'exp' ? e.amount : 0), 0)
+        if (nextNode?.rest === true) gain += restExp
+        const arriveCandidate = base + gain
+        const clearCandidate = arriveCandidate + (nextNode?.type === 'combat' ? nextNode.enemy.exp : 0)
+        if (!arrive.has(next) || arriveCandidate < arrive.get(next)) {
+          arrive.set(next, arriveCandidate)
+          clear.set(next, clearCandidate)
           changed = true
         }
       }
     }
   }
-  return low.get(targetId) ?? 0
+  return arrive
+}
+
+function expBeforeNode(content, targetId, restExp) {
+  return arrivalLevels(content, restExp).get(targetId) ?? 0
 }
 
 /** Greedy policy: the strongest skill the resource pool currently allows. */
@@ -161,7 +185,7 @@ function main() {
   }
 
   for (const node of combats) {
-    const expBefore = expBeforeNode(content, node.id)
+    const expBefore = expBeforeNode(content, node.id, balance.exp.restExp)
     const level = Math.max(1, levelFromExp(expBefore))
     const classIds = content.meta.classes ?? ['warrior', 'archer', 'mage']
 
@@ -216,27 +240,31 @@ function main() {
 
   /* ── Boss / miniboss EXP ratios ───────────────────────────────────── */
 
-  report.section('EXP ratios (GDD: miniboss 2-3x, boss 5-8x a base mob)')
-  const exps = combats.map((n) => n.enemy.exp)
-  if (exps.length >= 2) {
-    const miniboss = combats.filter((n) => n.enemy.tier === 'miniboss').map((n) => n.enemy.exp)
-    const boss = combats.filter((n) => n.enemy.tier === 'boss').map((n) => n.enemy.exp)
-    if (miniboss.length > 0) {
-      report.note(`  miniboss EXP: ${[...new Set(miniboss)].sort((a, b) => a - b).join(', ')}`)
-    }
-    if (boss.length > 0) {
-      report.note(`  boss EXP:    ${[...new Set(boss)].sort((a, b) => a - b).join(', ')}`)
-      const baseMiniboss = nearest(miniboss.length > 0 ? miniboss : exps, Math.min(...exps))
-      for (const value of boss) {
-        const ratio = value / baseMiniboss
-        if (ratio < 5 || ratio > 8) {
-          report.warn(`boss EXP ${value} is ${ratio.toFixed(1)}x the ${baseMiniboss} baseline, outside the 5-8x band`)
-        }
-      }
-    }
-  } else {
-    report.note('  not enough combat nodes to check ratios yet')
+  /*
+   * The GDD's "boss 5-8x a base mob" band assumes a base mob exists to compare
+   * against; this game has no trash fights, so the honest level-aware check is
+   * how much of a level a fight pays at the level the player plausibly arrives
+   * with. Mandatory fights are deliberately tuned to pay roughly one level
+   * each: win the fight, wear the level. The band warns only when an encounter
+   * pays under a third of a level (feels unrewarded) or over two (dead air
+   * where nothing else levels the player).
+   */
+  report.section('EXP weight (fraction of one level, at arrival level)')
+  if (combats.length === 0) {
+    report.note('  no combat nodes yet')
   }
+  for (const node of combats) {
+    const expBefore = expBeforeNode(content, node.id, balance.exp.restExp)
+    const level = Math.max(1, levelFromExp(expBefore))
+    const expToNext = totalExpForLevel(level + 1) - totalExpForLevel(level)
+    const fraction = node.enemy.exp / expToNext
+    if (fraction < 0.35 || fraction > 2) {
+      report.warn(
+        `${node.id}: "${node.enemy.name}" pays ${node.enemy.exp} EXP = ${(fraction * 100).toFixed(0)}% of a level at L${level}, outside the 35-200% design band`,
+      )
+    }
+  }
+  report.note(`  ${combats.length} encounter(s) checked against level-aware bands`)
 
   /* ── Level cap reachability ───────────────────────────────────────── */
 

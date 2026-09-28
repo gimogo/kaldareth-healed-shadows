@@ -1,0 +1,2604 @@
+
+===== step 0 | ch1_open | L1 HP 120/120 =====
+Greyhold's hall is cold enough to see your breath. Commander Veyra sets a folded report on the table between you and does not open it.
+Emberfall stopped sending word three days ago. Dagen stands at the door with his mouth shut, as he has for three years. The Litany is still sung at dusk.
+  choice: Take the mission as given -> ch1_road
+  choice: Ask what the Litany says -> ch1_road
+
+===== step 1 | ch1_road | L1 HP 120/120 =====
+The road to Emberfall runs downhill through wet ash. Three days, and Dagen has not said one word that was not necessary.
+No smoke. No bodies. No Hollowed in the fields, which is the part that should comfort you and does not.
+  choice: Press on to Emberfall -> ch1_bridge
+  choice: Read the ground -> ch1_bridge
+
+===== step 2 | ch1_bridge | L1 HP 120/120 =====
+The creek has taken the bridge apart. Half of it lies in the water, and the rest holds the far bank up by stubbornness.
+Only one way across, and it depends on what you are. Dagen watches to see which way you reach for it.
+  choice: Smash the beams into a ramp -> ch1_bridge_warrior
+  choice: Take the old wheel ford [locked: archer only] -> ch1_bridge_archer
+  choice: Read the holding runes [locked: mage only] -> ch1_bridge_mage
+
+===== step 3 | ch1_bridge_warrior | L1 HP 120/120 =====
+You put your shoulder under the beam and lift until the water runs brown. What was a wall becomes a ramp, and a ramp becomes a road.
+It costs you. Everything on this road is going to cost you something, and the Hollowing does not accept receipts.
+  choice: Cross and keep moving -> ch1_regroup
+
+===== step 4 | ch1_regroup | L2 HP 185/185 =====
+You make camp a half mile short of Emberfall, where the palisade is still a shape against the dark.
+No lanterns in the village. No dogs. Whatever happened here happened inside, and it happened fast.
+  choice: Approach Emberfall -> ch1_gates
+
+===== step 5 | ch1_gates | L2 HP 185/185 =====
+Emberfall's gates are shut, and the bolt is on the inside. Somebody did that on purpose, with their own hands, a long time ago.
+You could go over. Dagen would not stop you. But a village that locked itself away has a reason, and the reason is in the hall.
+  choice: Break the gate's hinges -> ch1_gates_warrior
+  choice: Use the villagers' back wall [locked: archer only] -> ch1_gates_archer
+  choice: Open the lock untouched [locked: mage only] -> ch1_gates_mage
+
+===== step 6 | ch1_gates_warrior | L2 HP 185/185 =====
+The gate comes off its hinges with a sound like a dropped cart. You walk in through the hole you made, and the dark on the other side does not move.
+Dagen enters behind you and says, at last, one word. It is not a compliment. It is the word people use for a door.
+  choice: Step into the village -> ch1_village
+
+===== step 7 | ch1_village | L2 HP 185/185 =====
+Emberfall is a village holding its breath. Doors barred, ash in the hearths, every shutter closed against a dark that came from under the ground.
+One light is still burning, in the hall, where the meeting house would be. Whoever is in there has been waiting for a knock.
+  choice: Find whoever is still here -> ch1_senna
+  choice: Check the village hall first -> ch1_senna
+
+===== step 8 | ch1_senna | L2 HP 185/185 =====
+Mother Senna is on the floor by the hearth with a poker held like a knife. She has the look of someone who has been alone long enough to talk to furniture.
+The reports stopped because Elder Oswin told them to stop. She has heard chanting under the floor since Michaelmas, and it has a word in it: her granddaughter's name.
+  choice: Ask why the reports stopped -> ch1_descent
+  choice: Ask where Elder Oswin is -> ch1_descent
+
+===== step 9 | ch1_descent | L2 HP 185/185 =====
+Under the hall there are stairs nobody put on the village plan. The air comes up them warm, and it carries a sound that is almost, but not quite, singing.
+Dagen stops at the top. He has gone grey. Whatever is down there, he has heard it before.
+  choice: Go down -> ch1_oswin
+
+===== step 10 | ch1_oswin | L3 HP 250/250 =====
+Elder Oswin is on his knees in a circle cut into the floor, and the change in him has gone most of the way. His mouth keeps moving on a word that is not his.
+From his chest, threads of dark run out to the centre of the rune, and from the centre to a girl asleep in the middle of it. Pale. Breathing. Thirteen, at a guess.
+  choice: Face what is in the cellar -> ch1_dilemma
+
+===== step 11 | ch1_dilemma | L3 HP 250/250 =====
+It is not a monster. That is the part you cannot put down. It is a man on his knees with something growing in him, and the threads go both ways.
+Cut the seed and the singing stops here, and so does Oswin. Keep him bound and something in him keeps growing, slowly, where nobody is counting.
+  choice: Destroy the seed completely -> ch1_outcome_destroy
+  choice: Use the binding ritual -> ch1_outcome_rescue
+
+===== step 12 | ch1_outcome_destroy | L3 HP 250/250 =====
+You end it, and it ends quickly, like a held breath let out. The threads go out of Elin and the girl comes up out of the circle shaking and alive.
+Oswin does not come up at all. Dagen will not meet your eye, and the villagers are grateful in the way of people who are afraid of what you might do next.
+  choice: See what is left -> ch1_elin
+
+===== step 13 | ch1_elin | L3 HP 250/250 =====
+Elin wakes with no memory of the circle and a burn on her palm in the shape of the rune. She asks where her grandfather is. You tell her he is alive.
+It is true, and it is not the whole of it, and she is thirteen, and there is no version of tonight that lets you say it all.
+  choice: Carry it back to the surface -> ch1_aftermath
+
+===== step 14 | ch1_aftermath | L3 HP 250/250 =====
+By morning the villagers have decided you are the reason Emberfall is still a village. They are warm about it, and loud, and nobody mentions the cellar.
+Dagen finally speaks a whole sentence. It is: this was not random, and we have been sent here before.
+  choice: Hear the Litany -> ch1_litany
+
+===== step 15 | ch1_litany | L3 HP 250/250 =====
+The Litany was under Senna's floor, in her hand, in a language she cannot read. It names a place, Harrow's Reach. It names a season.
+And then the line you will not forget, sung over and over, patient as a harvest: the fields are ready.
+  choice: Take it back to Greyhold -> ch1_ending
+
+===== step 16 | ch1_ending | L4 HP 315/315 =====
+Emberfall keeps its gates open that night, for the first time in three days, and Dagen walks out through them without looking back at the hall.
+The road home is uneventful, which is its own kind of news. You sleep in shifts, and the seed of Hollowing you left breathing in an old man keeps its own counsel.
+  choice: Report at Greyhold -> ch2_open
+
+===== step 17 | ch2_open | L4 HP 315/315 =====
+Greyhold's healing hall smells of wax and ash. Oswin has been given a cot by the wall, and every night at midnight the candles nearest him go out.
+Not blown. Not burned down. Out. Three nights running, and tonight you are awake to see it, and so is Veyra.
+  choice: Watch with the Commander -> ch2_delirium
+  choice: Ask Veyra the hard question -> ch2_delirium
+
+===== step 18 | ch2_delirium | L4 HP 315/315 =====
+Veyra does not dress it up. Bringing Oswin back was a choice, and the choices you carry come home to roost in her hall, not yours.
+Then she says the part that matters: you made the call a Vigil soldier is supposed to make, and she will stand in front of the council and say so.
+  choice: Stay by Oswin's cot -> ch2_whisper
+
+===== step 19 | ch2_whisper | L4 HP 315/315 =====
+Midnight comes. The candles die in a row, and Oswin's shadow stands up off the floor without him.
+It is smoke given a suggestion of bones, and it has his voice, or the Hollowing's idea of his voice. It wants to say something. Everything in the room wants you to let it.
+  [combat r1] Slash (you 315/315 vs a Whisper 180/180)
+
+===== step 20 | ch2_whisper | L4 HP 315/315 =====
+Midnight comes. The candles die in a row, and Oswin's shadow stands up off the floor without him.
+It is smoke given a suggestion of bones, and it has his voice, or the Hollowing's idea of his voice. It wants to say something. Everything in the room wants you to let it.
+  [combat r2] Slash (you 293/315 vs a Whisper 150/180)
+
+===== step 21 | ch2_whisper | L4 HP 315/315 =====
+Midnight comes. The candles die in a row, and Oswin's shadow stands up off the floor without him.
+It is smoke given a suggestion of bones, and it has his voice, or the Hollowing's idea of his voice. It wants to say something. Everything in the room wants you to let it.
+  [combat r3] Slash (you 261/315 vs a Whisper 117/180)
+
+===== step 22 | ch2_whisper | L4 HP 315/315 =====
+Midnight comes. The candles die in a row, and Oswin's shadow stands up off the floor without him.
+It is smoke given a suggestion of bones, and it has his voice, or the Hollowing's idea of his voice. It wants to say something. Everything in the room wants you to let it.
+  [combat r4] Slash (you 241/315 vs a Whisper 84/180)
+
+===== step 23 | ch2_whisper | L4 HP 315/315 =====
+Midnight comes. The candles die in a row, and Oswin's shadow stands up off the floor without him.
+It is smoke given a suggestion of bones, and it has his voice, or the Hollowing's idea of his voice. It wants to say something. Everything in the room wants you to let it.
+  [combat r5] Slash (you 222/315 vs a Whisper 51/180)
+
+===== step 24 | ch2_whisper | L4 HP 315/315 =====
+Midnight comes. The candles die in a row, and Oswin's shadow stands up off the floor without him.
+It is smoke given a suggestion of bones, and it has his voice, or the Hollowing's idea of his voice. It wants to say something. Everything in the room wants you to let it.
+  [combat r6] Slash (you 203/315 vs a Whisper 20/180)
+  [combat] WON in 6 rounds (203/315 HP banked = 64%)
+
+===== step 25 | ch2_message | L5 HP 268/380 =====
+The ash where it stood holds a shape for a moment, and the shape holds words, the way a bell holds a note after the strike.
+...the fields... Harrow's Reach... the harvest comes... Then nothing, and Oswin sleeps without the candles caring.
+  choice: Weigh what it left behind -> ch2_dilemma
+
+===== step 26 | ch2_dilemma | L5 HP 268/380 =====
+The healers can burn the stain out of the stones tonight. Oswin sleeps through it, and wakes cleared of it, or mostly - and the message dies with the last of the smoke.
+Or you keep what it was trying to say, sealed in a warded jar, and every week it sits there is a week something in it sits there too.
+  choice: Burn it out completely -> ch2_outcome_destroy
+  choice: Ward it and keep studying -> ch2_outcome_preserve
+
+===== step 27 | ch2_outcome_destroy | L5 HP 268/380 =====
+The healers light the pyre-pan and the stain fights it for the length of one held breath. Then it is ash, and Oswin is only an old man, weeping at nothing.
+You are left with a name - Harrow's Reach - and no idea when the harvest is. The not-knowing is the weapon. Somebody built it that way on purpose.
+  choice: Take the name to the council -> ch2_council
+
+===== step 28 | ch2_council | L5 HP 268/380 =====
+The council chamber is warmer than the hall and twice as cold. Harrow's Reach is wheat country, Iron Concordat soil, a day's ride past the last Vigil patrol.
+Veyra gives you the road because there is nobody else to give it to. Harvests do not wait for councils to finish arguing.
+  choice: Ride for Harrow's Reach -> ch3_open
+
+===== step 29 | ch3_open | L5 HP 268/380 =====
+Harrow's Reach is golden in a way that has nothing to do with health. The wheat is taller than a rider and the lanes are swept, and nothing anywhere is afraid.
+Dagen stops at the boundary stone and will not go past it. You are beginning to understand that his silences are a map, and this one says here.
+  choice: Walk the field edge first -> ch3_fields
+  choice: Go straight to the reeve -> ch3_fields
+
+===== step 30 | ch3_fields | L5 HP 268/380 =====
+From the lane the fields are furrows. From the mill mound they are something else: a pattern cut in the wheat, wide as the village, centred on the barn.
+It is not a symbol you know. It is the shape of one, the way a mask is the shape of a face.
+  choice: Take it to the reeve -> ch3_callen
+
+===== step 31 | ch3_callen | L5 HP 268/380 =====
+Reeve Callen meets you at his own gate with both hands out and a smile that never once reaches up. You are expected, he says. Everyone is expected.
+The Harvest Festival is tonight. There has never been less to celebrate in a place so certain there has never been more.
+  choice: Say you will attend -> ch3_watch
+  choice: Ask who else is expected -> ch3_watch
+
+===== step 32 | ch3_watch | L5 HP 268/380 =====
+The militia at the barn hold spears like props and look through you at nothing. They are guarding something, and none of them know what.
+Dagen finally speaks. He says the word the whole village is circling without saying: harvest. Then he checks his blade, once, the way other men pray.
+  choice: Wait for midnight -> ch3_midnight
+
+===== step 33 | ch3_midnight | L5 HP 268/380 =====
+Midnight, and the village walks in its sleep. Every door opens at once, and the chant comes up out of the ground rather than out of the people drifting to the barn.
+Callen stands in the middle of them, and something is starting to use his body the way a hand uses a glove. Kill the sigil's feed, or fight what it becomes.
+  choice: Break the sigil first -> ch3_gates
+
+===== step 34 | ch3_gates | L5 HP 268/380 =====
+The pattern holds because something in it anchors. At the barn's corner a waist-high stone drinks the moonlight and gives none of it back, and a rune-line runs from it up into the loft beams.
+Whatever you do to that pattern, you do in front of the whole chanting village.
+  choice: Shatter the anchor stone -> ch3_gates_warrior
+  choice: Sever the rune-line [locked: archer only] -> ch3_gates_archer
+  choice: Rewrite the pattern [locked: mage only] -> ch3_gates_mage
+
+===== step 35 | ch3_gates_warrior | L5 HP 268/380 =====
+You put your blade through the anchor stone the way a woodcutter takes a knot out of a plank. It takes four blows, and on the fourth the wheat goes flat in a ring a mile wide.
+The chant stops mid-word. Every sleeping face in the crowd frowns, as a sleeper frowns when a floorboard creaks.
+  choice: Turn to face the barn -> ch3_sigil
+
+===== step 36 | ch3_sigil | L5 HP 268/380 =====
+The village wakes as one sleeper wakes - confusion, then noise. And out of that noise Callen's body stands up wrong, unfolding into something built to carry a message.
+It wears his outline the way the mask wore the face. Behind you, people scream, run, live. Whatever it does next, it does to you.
+  choice: Break for the Emissary -> ch3_fight
+  choice: Clear the crowd first -> ch3_evac
+
+===== step 37 | ch3_fight | L5 HP 268/380 =====
+The Shepherd's Emissary comes off the barn wall like a shadow learning to walk. It does not hurry. It has never once needed to hurry.
+Behind it, the village is awake and screaming, and in front of it there is only you.
+  [combat r1] Slash (you 380/380 vs the Shepherd's Emissary 220/220)
+
+===== step 38 | ch3_fight | L5 HP 268/380 =====
+The Shepherd's Emissary comes off the barn wall like a shadow learning to walk. It does not hurry. It has never once needed to hurry.
+Behind it, the village is awake and screaming, and in front of it there is only you.
+  [combat r2] Slash (you 336/380 vs the Shepherd's Emissary 186/220)
+
+===== step 39 | ch3_fight | L5 HP 268/380 =====
+The Shepherd's Emissary comes off the barn wall like a shadow learning to walk. It does not hurry. It has never once needed to hurry.
+Behind it, the village is awake and screaming, and in front of it there is only you.
+  [combat r3] Slash (you 314/380 vs the Shepherd's Emissary 153/220)
+
+===== step 40 | ch3_fight | L5 HP 268/380 =====
+The Shepherd's Emissary comes off the barn wall like a shadow learning to walk. It does not hurry. It has never once needed to hurry.
+Behind it, the village is awake and screaming, and in front of it there is only you.
+  [combat r4] Slash (you 292/380 vs the Shepherd's Emissary 120/220)
+
+===== step 41 | ch3_fight | L5 HP 268/380 =====
+The Shepherd's Emissary comes off the barn wall like a shadow learning to walk. It does not hurry. It has never once needed to hurry.
+Behind it, the village is awake and screaming, and in front of it there is only you.
+  [combat r5] Slash (you 270/380 vs the Shepherd's Emissary 90/220)
+
+===== step 42 | ch3_fight | L5 HP 268/380 =====
+The Shepherd's Emissary comes off the barn wall like a shadow learning to walk. It does not hurry. It has never once needed to hurry.
+Behind it, the village is awake and screaming, and in front of it there is only you.
+  [combat r6] Slash (you 247/380 vs the Shepherd's Emissary 55/220)
+
+===== step 43 | ch3_fight | L5 HP 268/380 =====
+The Shepherd's Emissary comes off the barn wall like a shadow learning to walk. It does not hurry. It has never once needed to hurry.
+Behind it, the village is awake and screaming, and in front of it there is only you.
+  [combat r7] Slash (you 222/380 vs the Shepherd's Emissary 24/220)
+  [combat] WON in 7 rounds (222/380 HP banked = 58%)
+
+===== step 44 | ch3_after | L6 HP 287/445 =====
+By noon Callen is Callen again, hollow-eyed and sick with what his hands nearly did. The village counts itself and comes out even: every soul, not one lost.
+He keeps starting sentences and stopping. Something is trying to surface in him, and it is not a chant this time. It is memory.
+  choice: Take Callen to Greyhold -> ch4_open
+
+===== step 45 | ch4_open | L6 HP 287/445 =====
+Callen rides to Greyhold between Vigil soldiers, wrapped in a borrowed cloak, talking the whole way - to himself, to the road, to nobody.
+He does not remember doing any of it. He remembers wanting, very badly, to be part of something. The Choir does not recruit with knives. It recruits with belonging.
+  choice: Walk him into the council -> ch4_council
+
+===== step 46 | ch4_council | L6 HP 287/445 =====
+The three-faction council sits under Greyhold's oldest roof. Emberfall is disputed. Harrow's Reach is disputed. The Litany is produced, translated, and argued over line by line.
+Only one person in the room does not look at the Litany at all. Magus Thessaly, of Arcanum Tower, watches the witnesses instead - and counts them.
+  choice: Put Callen before them -> ch4_testimony
+
+===== step 47 | ch4_testimony | L6 HP 287/445 =====
+Under gentle questions Callen comes apart, and what falls out is not confession but geography. A ruin under grey water. A wash of ash. He recites the words like scripture he was made to learn.
+Ashenmere. Greywash. Two names, and the room goes quiet around them, because one of them is a place sealed for three hundred years.
+  choice: Say it in front of everyone -> ch4_accuse
+  choice: Watch Thessaly instead -> ch4_accuse
+
+===== step 48 | ch4_accuse | L7 HP 352/510 =====
+You say her name and the room turns, and Thessaly laughs - a real laugh, tired and relieved, the laugh of a scholar whose experiment finally reads.
+Knowledge, she says. Not power. Somebody has to study the fire while the rest of you argue about smoke. Then she opens the floor of the council chamber, and the Hollowing comes up through it.
+  choice: Meet her before the council -> ch4_fight
+
+===== step 49 | ch4_fight | L7 HP 352/510 =====
+Thessaly fights the way she confessed: precisely, and with notes. The Hollowing answers her like a colleague, and the council chambers burn cold.
+Three faction leaders are behind you. Fail here and the alliance dies before it is born.
+  [combat r1] Slash (you 510/510 vs Magus Thessaly 185/185)
+
+===== step 50 | ch4_fight | L7 HP 352/510 =====
+Thessaly fights the way she confessed: precisely, and with notes. The Hollowing answers her like a colleague, and the council chambers burn cold.
+Three faction leaders are behind you. Fail here and the alliance dies before it is born.
+  [combat r2] Slash (you 468/510 vs Magus Thessaly 142/185)
+
+===== step 51 | ch4_fight | L7 HP 352/510 =====
+Thessaly fights the way she confessed: precisely, and with notes. The Hollowing answers her like a colleague, and the council chambers burn cold.
+Three faction leaders are behind you. Fail here and the alliance dies before it is born.
+  [combat r3] Slash (you 429/510 vs Magus Thessaly 102/185)
+
+===== step 52 | ch4_fight | L7 HP 352/510 =====
+Thessaly fights the way she confessed: precisely, and with notes. The Hollowing answers her like a colleague, and the council chambers burn cold.
+Three faction leaders are behind you. Fail here and the alliance dies before it is born.
+  [combat r4] Slash (you 398/510 vs Magus Thessaly 25/185)
+  [combat] WON in 4 rounds (398/510 HP banked = 78%)
+
+===== step 53 | ch4_dilemma | L7 HP 398/510 =====
+Thessaly is down, breathing hard, one hand still shaping a sigil that no longer has anything behind it. The whole council is watching what you do next.
+She is a traitor who chose it with her eyes open, and she is also the only living map of everything the Choir owns inside Arcanum Tower.
+  choice: Take her alive -> ch4_captured
+  choice: End her before the spells do -> ch4_slain
+
+===== step 54 | ch4_captured | L7 HP 398/510 =====
+You take her wrists in Vigil irons, and she stops fighting, and looks almost grateful. Under interrogation she unfolds the whole network: names, safehouses, dead-drops, in exchange for books.
+She asks only for paper. Whatever the Hollowing promised her, what she wanted was to be the one who understood it.
+  choice: Follow the mapped network -> ch4_targets
+
+===== step 55 | ch4_targets | L7 HP 398/510 =====
+The council sits late and rises with two names on the order of march. Ashenmere first: the ruins where the Sundering happened, sealed three centuries, now singing again.
+Veyra says the other half of the lesson out loud on the stairs: the enemy we found was sitting inside our own council, and she was not possessed. She was hired.
+  choice: Ride for Ashenmere -> ch4_close
+
+===== step 56 | ch4_close | L7 HP 510/510 =====
+The road to Ashenmere climbs through country that never recovered. Grey water, grey grass, and stones that were once a city wall, three hundred years done with being anything.
+You camp within sight of the quarantine markers, and nobody suggests a fire.
+  choice: Enter the quarantine -> ch5_open
+
+===== step 57 | ch5_open | L8 HP 575/575 =====
+Ashenmere does not echo. Sound goes into it and does not come back, and your boots make less noise the deeper in you walk.
+The ruins are laid out in the same geometry as the sigil at Harrow's Reach, writ city-wide. Somebody designed all of this once, on purpose, at the same table.
+  choice: Bring her chains with you -> ch5_interrogation
+  choice: Enter without a witness [locked: requires "ch4_thessaly_slain"] -> ch5_patrol
+
+===== step 58 | ch5_interrogation | L8 HP 575/575 =====
+Thessaly, in irons, trades truth the way other people trade gossip. The Shepherd is not a priest. He is one of the seven - the youngest, whose ritual is still half-finished.
+He is not spreading the Hollowing. He is trying to complete something it interrupted. She will not say what, and is visibly afraid of the answer.
+  choice: Go deeper toward the node -> ch5_echo
+
+===== step 59 | ch5_echo | L8 HP 575/575 =====
+The central chamber keeps the ritual as a scar keeps its cut. Your lamp touches the dais, and it plays: seven figures in a ring. Six old. One young, and shaking.
+The young one speaks a name into the dark - Maren - and the dark does not give it back. Then the echo folds up, and the room goes back to waiting.
+  choice: Approach the ritual core -> ch5_core
+
+===== step 60 | ch5_core | L8 HP 575/575 =====
+The core is a heart of crystal the size of a horse, hanging above the dais and beating. Once a minute, and the whole ruin beats with it.
+Then it stops beating, and the room gets up. The guardian was not left here to keep people out. It was left to keep the ritual company.
+  choice: Stand against the Sentinel -> ch5_fight
+
+===== step 61 | ch5_fight | L8 HP 575/575 =====
+The Sundering Sentinel comes apart out of the walls - a body built around the core's rhythm, plate over crystal, older than every kingdom on the map.
+It does not announce itself. It simply arrives, like weather, and the room is suddenly too small for both of you.
+  [combat r1] Slash (you 575/575 vs the Sundering Sentinel 270/270)
+
+===== step 62 | ch5_fight | L8 HP 575/575 =====
+The Sundering Sentinel comes apart out of the walls - a body built around the core's rhythm, plate over crystal, older than every kingdom on the map.
+It does not announce itself. It simply arrives, like weather, and the room is suddenly too small for both of you.
+  [combat r2] Slash (you 575/575 vs the Sundering Sentinel 231/270)
+
+===== step 63 | ch5_fight | L8 HP 575/575 =====
+The Sundering Sentinel comes apart out of the walls - a body built around the core's rhythm, plate over crystal, older than every kingdom on the map.
+It does not announce itself. It simply arrives, like weather, and the room is suddenly too small for both of you.
+  [combat r3] Slash (you 551/575 vs the Sundering Sentinel 185/270)
+
+===== step 64 | ch5_fight | L8 HP 575/575 =====
+The Sundering Sentinel comes apart out of the walls - a body built around the core's rhythm, plate over crystal, older than every kingdom on the map.
+It does not announce itself. It simply arrives, like weather, and the room is suddenly too small for both of you.
+  [combat r4] Slash (you 526/575 vs the Sundering Sentinel 143/270)
+
+===== step 65 | ch5_fight | L8 HP 575/575 =====
+The Sundering Sentinel comes apart out of the walls - a body built around the core's rhythm, plate over crystal, older than every kingdom on the map.
+It does not announce itself. It simply arrives, like weather, and the room is suddenly too small for both of you.
+  [combat r5] Slash (you 495/575 vs the Sundering Sentinel 99/270)
+
+===== step 66 | ch5_fight | L8 HP 575/575 =====
+The Sundering Sentinel comes apart out of the walls - a body built around the core's rhythm, plate over crystal, older than every kingdom on the map.
+It does not announce itself. It simply arrives, like weather, and the room is suddenly too small for both of you.
+  [combat r6] Slash (you 469/575 vs the Sundering Sentinel 52/270)
+  [combat] WON in 6 rounds (469/575 HP banked = 82%)
+
+===== step 67 | ch5_dilemma | L8 HP 469/575 =====
+The Sentinel is down and the core is bare: a crystal heart, still beating, with a ritual three centuries old coiled around it like a half-tied knot.
+Break it and everything it knows dies with it. Seal it and the Vigil owns the only library of its kind left. And so does whoever comes for it next.
+  choice: Seal it for study -> ch5_sealed
+  choice: Break the heart -> ch5_broken
+
+===== step 68 | ch5_sealed | L9 HP 534/640 =====
+The Vigil's binding works and the Arcanum's warding works, and neither alone would. The core dims to a slow, banked glow, like a hearth at night.
+Veyra leaves a garrison and an order meant to outlive the room: nothing in, nothing out, checked at every moon. You have made Ashenmere a library. Libraries get visited.
+  choice: Carry the echo's name home -> ch5_after
+
+===== step 69 | ch5_after | L9 HP 534/640 =====
+The records you salvage from the chamber agree on two things. The youngest sorcerer was called Kaelen, and he did it for love, and it did not save her.
+And on the ring of six, there is a seventh presence the records will not name - an emblem of an order that is not in any of them. Extinct, or erased.
+  choice: Ride to Silverleaf -> ch6_open
+
+===== step 70 | ch6_open | L9 HP 534/640 =====
+Silverleaf does not admit strangers; it tolerates guests. The Wardens meet you at the treeline with bows not quite lowered, and escort you in by paths that refuse to be retraced.
+The Ashwardens' temple is not hidden. It is simply uninterested in being found, which is a stronger magic.
+  choice: Submit to the forest trials -> ch6_trials
+
+===== step 71 | ch6_trials | L9 HP 534/640 =====
+Three trials stand between you and the archive: the river that remembers, the dark that listens, and the grove that lies.
+Elder Ilyndra Duskwhisper watches from the far side of the water and does not volunteer so much as a syllable. The forest is the teacher here. You are the lesson.
+  choice: Cross the river as it is -> ch6_trial_warrior
+  choice: Walk the dark by its sounds [locked: archer only] -> ch6_trial_archer
+  choice: Question the grove directly [locked: mage only] -> ch6_trial_mage
+
+===== step 72 | ch6_trial_warrior | L9 HP 534/640 =====
+The river takes your weight and adds memory to it - every crossing, every drowning, every grief the water ever carried. You put your head down and carry all of it across.
+On the far bank Ilyndra looks at you the way a smith looks at iron that held its edge. The forest approved, or at least stopped objecting.
+  choice: Follow her into the archive -> ch6_ilyndra
+
+===== step 73 | ch6_ilyndra | L9 HP 534/640 =====
+Ilyndra tells it plainly. Kaelen was their youngest apprentice, brilliant, half in love with everything living. His sister Maren sickened, and the archive held answers it should never have held.
+Five of the six in that ring wanted power. One wanted his sister back. The Ashwardens have spent three centuries deciding which shames them more.
+  choice: Go down to the deep archive -> ch6_archive
+
+===== step 74 | ch6_archive | L9 HP 534/640 =====
+The deep archive is shelved in living wood, and its guardian is a echo of the first Archwarden, who asks what you are looking for and waits for the truth.
+You answer. The shelf turns, and behind it hangs a brooch on a thong: a family crest, three hundred years old, and you have seen it every morning on Commander Veyra's collar.
+  choice: Weigh what the shelf offers -> ch6_dilemma
+
+===== step 75 | ch6_dilemma | L9 HP 534/640 =====
+The shelf offers two things. The complete ritual record, original ashwarden binding, siphoning and unbinding both - everything a cure would need, and everything a massacre would need.
+Or a careful summary, truths kept and methods withheld, safe to carry and useless for saving anyone.
+  choice: Claim the full records -> ch6_claimed
+  choice: Carry only the summary -> ch6_summary
+
+===== step 76 | ch6_claimed | L9 HP 534/640 =====
+Ilyndra unbuckles the archive's chain herself. The records come out in a wrapped bundle heavier than its size, and the guardian echo reads your intent once more before the door closes.
+The Vigil now owns the only complete copy of what broke the world, and of what might mend it. Ilyndra says she will want to know which you use it for.
+  choice: Ask about the brooch -> ch6_brooch
+
+===== step 77 | ch6_brooch | L9 HP 534/640 =====
+The crest is Ashwarden, Ilyndra says. A family line, not an order rank - one of the households that sheltered the temple's survivors when the Sundering scattered them.
+The archive has not been touched by human hands in three centuries, and Commander Veyra wears that crest every day, not knowing what it is. You will be the one to tell her.
+  choice: Ride for Greyhold -> ch7_open
+
+===== step 78 | ch7_open | L9 HP 534/640 =====
+Veyra receives the news alone, which is the first strange thing. The second is that she already knew the crest was Ashwarden - she has known since she was six.
+She unlocks a door in her own quarters that the plans of Greyhold do not contain. The laboratory behind it is three hundred years of her family asking one question in the dark.
+  choice: Bring her the brooch -> ch7_heirloom
+  choice: Report the Ch6 records -> ch7_heirloom
+
+===== step 79 | ch7_heirloom | L9 HP 534/640 =====
+Maren, she says, when she sees it. The name her grandmother would not explain. The line that survived a sickness it should not have, and left, and never said why.
+Veyra is Maren's blood. Kaelen's sister lived, and her many-times-great-niece now commands the order hunting him. She sits down slowly, like someone correcting a map.
+  choice: Stay with her through it -> ch7_night
+
+===== step 80 | ch7_night | L9 HP 534/640 =====
+The warning arrives quietly, as such warnings do. Dagen, in the doorway at midnight, holding up the hand of a kitchen boy he has just hit hard enough to fold.
+The boy's sleeve is wrong, and under it the Choir's mark is burned in, and somewhere between the kitchens and this corridor he stopped being a boy at all.
+  choice: Meet the attacker here -> ch7_fight
+
+===== step 81 | ch7_fight | L9 HP 534/640 =====
+It comes up off the floor without a face, and the corridor is suddenly all edges. It does not care about you. It cares about the woman behind you, and it is very fast about caring.
+Veyra draws behind you. The corridor is four feet wide. Nobody is leaving it politely.
+  [combat r1] Slash (you 640/640 vs the Choir's agent 290/290)
+
+===== step 82 | ch7_fight | L9 HP 534/640 =====
+It comes up off the floor without a face, and the corridor is suddenly all edges. It does not care about you. It cares about the woman behind you, and it is very fast about caring.
+Veyra draws behind you. The corridor is four feet wide. Nobody is leaving it politely.
+  [combat r2] Slash (you 610/640 vs the Choir's agent 242/290)
+
+===== step 83 | ch7_fight | L9 HP 534/640 =====
+It comes up off the floor without a face, and the corridor is suddenly all edges. It does not care about you. It cares about the woman behind you, and it is very fast about caring.
+Veyra draws behind you. The corridor is four feet wide. Nobody is leaving it politely.
+  [combat r3] Slash (you 589/640 vs the Choir's agent 189/290)
+
+===== step 84 | ch7_fight | L9 HP 534/640 =====
+It comes up off the floor without a face, and the corridor is suddenly all edges. It does not care about you. It cares about the woman behind you, and it is very fast about caring.
+Veyra draws behind you. The corridor is four feet wide. Nobody is leaving it politely.
+  [combat r4] Slash (you 565/640 vs the Choir's agent 139/290)
+
+===== step 85 | ch7_fight | L9 HP 534/640 =====
+It comes up off the floor without a face, and the corridor is suddenly all edges. It does not care about you. It cares about the woman behind you, and it is very fast about caring.
+Veyra draws behind you. The corridor is four feet wide. Nobody is leaving it politely.
+  [combat r5] Slash (you 542/640 vs the Choir's agent 93/290)
+
+===== step 86 | ch7_fight | L9 HP 534/640 =====
+It comes up off the floor without a face, and the corridor is suddenly all edges. It does not care about you. It cares about the woman behind you, and it is very fast about caring.
+Veyra draws behind you. The corridor is four feet wide. Nobody is leaving it politely.
+  [combat r6] Slash (you 502/640 vs the Choir's agent 9/290)
+
+===== step 87 | ch7_fight | L9 HP 534/640 =====
+It comes up off the floor without a face, and the corridor is suddenly all edges. It does not care about you. It cares about the woman behind you, and it is very fast about caring.
+Veyra draws behind you. The corridor is four feet wide. Nobody is leaving it politely.
+  [combat r7] Slash (you 478/640 vs the Choir's agent 9/290)
+  [combat] WON in 7 rounds (478/640 HP banked = 75%)
+
+===== step 88 | ch7_dilemma | L10 HP 543/705 =====
+The agent is slipping its knots, slow and patient, the way its masters built it to. Behind the smoke, the laboratory fire is eating the shelves, and Veyra's voice is still in there.
+You cannot do both. Anyone who tells you otherwise has never been in a corridor with one door and two emergencies.
+  choice: Veyra first, let it run -> ch7_veyra
+  choice: Hold the agent -> ch7_agent_held
+
+===== step 89 | ch7_veyra | L10 HP 543/705 =====
+You leave the agent and take the door off its hinges instead. Veyra is where the smoke is thickest, arm burned, archives under one arm, alive - the whole of the report that matters.
+When you come back out, the corridor is empty. The agent is gone, carrying the only news the Choir wanted: Kaelen's bloodline has been found, and it is her.
+  choice: Take stock by lamplight -> ch7_outcome
+
+===== step 90 | ch7_outcome | L10 HP 705/705 =====
+The laboratory burns itself out by morning. The surviving records lie on her table, and Veyra, bandaged, reads them the way other people hold a vigil.
+He may never have known, she says, near dawn. That she lived. That the line kept going. And the first thing his people did was send a knife.
+  choice: Ride out at first light -> ch8_open
+
+===== step 91 | ch8_open | L10 HP 705/705 =====
+She dreams it standing up, in the middle of the third watch: her eyes open and looking at something a long way off and a long time old.
+Kaelen, she says, when she can speak again. He has her eyes, she has Maren's, and he is asking - not summoning, asking - to meet. Alone ground. Three days. The old watchtower on the mist line.
+  choice: Answer the summons -> ch8_road
+  choice: Tell the council first -> ch8_road
+
+===== step 92 | ch8_road | L10 HP 705/705 =====
+The mist line runs across the country like a scar that has learned patience. The Old Watchtower stands on it, half inside, three days' ride out of Greyhold.
+You camp short of the tower, on Vigil ground, with the mist far enough off to be a rumour and close enough to keep the horses awake.
+  choice: Ride through the mist line -> ch8_test
+
+===== step 93 | ch8_test | L10 HP 705/705 =====
+Halfway through the mist the road asks its question. The Sentinel of the Call steps out of it like a verdict: built like the Ashenmere guardian, marked like the Choir's rings, older than both.
+It reads what you carry as a customs officer reads manifests. What it finds next is up to you, and it is watching your hands, not your face.
+  choice: Break through it -> ch8_fight
+
+===== step 94 | ch8_fight | L10 HP 705/705 =====
+The Sentinel of the Call does not roar or announce. It simply closes the road, final as a closed question.
+Whatever you are about to be, be it now.
+  [combat r1] Slash (you 705/705 vs the Sentinel of the Call 330/330)
+
+===== step 95 | ch8_fight | L10 HP 705/705 =====
+The Sentinel of the Call does not roar or announce. It simply closes the road, final as a closed question.
+Whatever you are about to be, be it now.
+  [combat r2] Slash (you 681/705 vs the Sentinel of the Call 280/330)
+
+===== step 96 | ch8_fight | L10 HP 705/705 =====
+The Sentinel of the Call does not roar or announce. It simply closes the road, final as a closed question.
+Whatever you are about to be, be it now.
+  [combat r3] Slash (you 655/705 vs the Sentinel of the Call 228/330)
+
+===== step 97 | ch8_fight | L10 HP 705/705 =====
+The Sentinel of the Call does not roar or announce. It simply closes the road, final as a closed question.
+Whatever you are about to be, be it now.
+  [combat r4] Slash (you 625/705 vs the Sentinel of the Call 177/330)
+
+===== step 98 | ch8_fight | L10 HP 705/705 =====
+The Sentinel of the Call does not roar or announce. It simply closes the road, final as a closed question.
+Whatever you are about to be, be it now.
+  [combat r5] Slash (you 600/705 vs the Sentinel of the Call 126/330)
+
+===== step 99 | ch8_fight | L10 HP 705/705 =====
+The Sentinel of the Call does not roar or announce. It simply closes the road, final as a closed question.
+Whatever you are about to be, be it now.
+  [combat r6] Slash (you 573/705 vs the Sentinel of the Call 42/330)
+  [combat] WON in 6 rounds (573/705 HP banked = 81%)
+
+===== step 100 | ch8_after_fight | L10 HP 573/705 =====
+The Sentinel steps aside, satisfied or indifferent, and the road goes on to the watchtower door. Behind it, something with a heartbeat three centuries old is waiting to talk.
+The last hundred yards are the whole of Act One. Everyone with you stops at the threshold and looks at your hands.
+  choice: Decide at the threshold -> ch8_dilemma
+
+===== step 101 | ch8_dilemma | L10 HP 573/705 =====
+Three days of road, and every one of them has asked the same question. What do you carry into the dark to meet the thing that broke the world - your answer, or your steel?
+He asked for dialogue. The Sentinel tested intent. If this is a trap, none has ever been more patient; if not, the first thing he sees will be the truth about you.
+  choice: Enter sheathed, hands open -> ch8_sheathed
+  choice: Keep your blades bare -> ch8_armed
+
+===== step 102 | ch8_sheathed | L10 HP 573/705 =====
+You unbuckle every blade you own and set them on the road with a hand on top, and the team follows one by one - the only order you ever give that is not a word.
+The tower door opens before you reach it. Nobody in three hundred years has walked in to find Kaelen with their hands empty, and he wants that remembered.
+  choice: Meet the Sable Shepherd -> ch8_watchtower_meet
+
+===== step 103 | ch8_watchtower_meet | L10 HP 705/705 =====
+Kaelen is smaller than the stories, and the stories were built by terrified people. He waits by a dead hearth, hands open, the mist holding the room.
+He looks at Veyra a long time. Maren's eyes, he says. Battle is not what he came for - not yet. The telling of three hundred years begins here, and the night is long enough.
+  choice: Sit and listen -> ch9_open
+
+===== step 104 | ch9_open | L11 HP 770/770 =====
+He tells it in order, and the order is the confession. Emberfall was not his word. Harrow's Reach was not his word. The Choir stopped being his two centuries ago, and he has been chasing its shadow since.
+Veyra listens completely, and asks the only question that matters: who took your movement from you?
+  choice: Press him on the usurper -> ch9_reveal
+  choice: Ask about Maren instead -> ch9_reveal
+
+===== step 105 | ch9_reveal | L11 HP 770/770 =====
+The sealing must be redone at Ashenmere under the Blood Moon, he says, and the redoing is a death - unless the records you pulled from Silverleaf hold the gentler road he never had.
+Then he stops talking, because he is looking at the door. The mist outside has voices in it, and the voices have orders.
+  choice: Stand with him -> ch9_fight
+
+===== step 106 | ch9_fight | L11 HP 770/770 =====
+They come through the walls the way smoke comes under a door - masked, silent, grey and silver. They do not announce. They were told not to.
+Kaelen takes up a sword he has not carried in three centuries and stands where you can see him, which is its own kind of trust.
+  [combat r1] Slash (you 770/770 vs the Choir's hunters 640/640)
+
+===== step 107 | ch9_fight | L11 HP 770/770 =====
+They come through the walls the way smoke comes under a door - masked, silent, grey and silver. They do not announce. They were told not to.
+Kaelen takes up a sword he has not carried in three centuries and stands where you can see him, which is its own kind of trust.
+  [combat r2] Slash (you 732/770 vs the Choir's hunters 589/640)
+
+===== step 108 | ch9_fight | L11 HP 770/770 =====
+They come through the walls the way smoke comes under a door - masked, silent, grey and silver. They do not announce. They were told not to.
+Kaelen takes up a sword he has not carried in three centuries and stands where you can see him, which is its own kind of trust.
+  [combat r3] Slash (you 701/770 vs the Choir's hunters 542/640)
+
+===== step 109 | ch9_fight | L11 HP 770/770 =====
+They come through the walls the way smoke comes under a door - masked, silent, grey and silver. They do not announce. They were told not to.
+Kaelen takes up a sword he has not carried in three centuries and stands where you can see him, which is its own kind of trust.
+  [combat r4] Slash (you 665/770 vs the Choir's hunters 488/640)
+
+===== step 110 | ch9_fight | L11 HP 770/770 =====
+They come through the walls the way smoke comes under a door - masked, silent, grey and silver. They do not announce. They were told not to.
+Kaelen takes up a sword he has not carried in three centuries and stands where you can see him, which is its own kind of trust.
+  [combat r5] Slash (you 610/770 vs the Choir's hunters 404/640)
+
+===== step 111 | ch9_fight | L11 HP 770/770 =====
+They come through the walls the way smoke comes under a door - masked, silent, grey and silver. They do not announce. They were told not to.
+Kaelen takes up a sword he has not carried in three centuries and stands where you can see him, which is its own kind of trust.
+  [combat r6] Slash (you 573/770 vs the Choir's hunters 350/640)
+
+===== step 112 | ch9_fight | L11 HP 770/770 =====
+They come through the walls the way smoke comes under a door - masked, silent, grey and silver. They do not announce. They were told not to.
+Kaelen takes up a sword he has not carried in three centuries and stands where you can see him, which is its own kind of trust.
+  [combat r7] Slash (you 539/770 vs the Choir's hunters 302/640)
+
+===== step 113 | ch9_fight | L11 HP 770/770 =====
+They come through the walls the way smoke comes under a door - masked, silent, grey and silver. They do not announce. They were told not to.
+Kaelen takes up a sword he has not carried in three centuries and stands where you can see him, which is its own kind of trust.
+  [combat r8] Slash (you 503/770 vs the Choir's hunters 253/640)
+
+===== step 114 | ch9_fight | L11 HP 770/770 =====
+They come through the walls the way smoke comes under a door - masked, silent, grey and silver. They do not announce. They were told not to.
+Kaelen takes up a sword he has not carried in three centuries and stands where you can see him, which is its own kind of trust.
+  [combat r9] Slash (you 467/770 vs the Choir's hunters 253/640)
+
+===== step 115 | ch9_fight | L11 HP 770/770 =====
+They come through the walls the way smoke comes under a door - masked, silent, grey and silver. They do not announce. They were told not to.
+Kaelen takes up a sword he has not carried in three centuries and stands where you can see him, which is its own kind of trust.
+  [combat r10] Slash (you 433/770 vs the Choir's hunters 204/640)
+
+===== step 116 | ch9_fight | L11 HP 770/770 =====
+They come through the walls the way smoke comes under a door - masked, silent, grey and silver. They do not announce. They were told not to.
+Kaelen takes up a sword he has not carried in three centuries and stands where you can see him, which is its own kind of trust.
+  [combat r11] Slash (you 400/770 vs the Choir's hunters 148/640)
+
+===== step 117 | ch9_fight | L11 HP 770/770 =====
+They come through the walls the way smoke comes under a door - masked, silent, grey and silver. They do not announce. They were told not to.
+Kaelen takes up a sword he has not carried in three centuries and stands where you can see him, which is its own kind of trust.
+  [combat r12] Slash (you 366/770 vs the Choir's hunters 94/640)
+
+===== step 118 | ch9_fight | L11 HP 770/770 =====
+They come through the walls the way smoke comes under a door - masked, silent, grey and silver. They do not announce. They were told not to.
+Kaelen takes up a sword he has not carried in three centuries and stands where you can see him, which is its own kind of trust.
+  [combat r13] Slash (you 330/770 vs the Choir's hunters 6/640)
+  [combat] WON in 13 rounds (330/770 HP banked = 43%)
+
+===== step 119 | ch9_after | L12 HP 395/835 =====
+The watchtower has a cellar that is not a cellar. Kaelen takes you down into it, past three centuries of notes pinned floor to ceiling, and closes the world behind you.
+The hunters knew where the meeting was. They still lost you in the mist. That is worth more than a victory, and Veyra says so out loud.
+  choice: See what he has built -> ch10_open
+
+===== step 120 | ch10_open | L13 HP 460/900 =====
+The map is the Sundering drawn as an inventory: seven fragments, scattered when it tore. He holds two. The Choir holds three - Duskhollow in the fens, Saltmere under its lighthouse, one under the Concordat's mountains.
+The last two are unwritten even here. And the sealing, he says, need not kill him - if the gentle road is real.
+  choice: Question the map's gaps -> ch10_scout
+  choice: Promise him the road back -> ch10_scout
+
+===== step 121 | ch10_scout | L13 HP 460/900 =====
+Dagen finds the scout before the scout finds anything - wedged behind the note-wall, listening, with a charcoal copy of the fragment map half-finished in his hand.
+He is young, terrified, and marked like the kitchen boy at Greyhold: conscripted by something bigger than his fear.
+  choice: Decide what he is for -> ch10_dilemma
+
+===== step 122 | ch10_dilemma | L13 HP 460/900 =====
+Alive, he is a leak in the Choir's wall - if he talks, and if what he knows is current. Dead, he is a warning delivered and nothing gained.
+The charcoal map in his hand already tells you the Choir believes the fragments are findable. Whether he believes he is going home decides the rest.
+  choice: Take him for questioning -> ch10_captured
+  choice: Turn him loose with a lie -> ch10_released
+
+===== step 123 | ch10_captured | L13 HP 460/900 =====
+He talks before the tea is cold. Duskhollow is garrisoned by the dying and the desperate; Saltmere by the faithful; the mountain by nobody at all - nobody living walks those tunnels by choice.
+Least guarded is not least dangerous, Kaelen says. But it is the place to start, and starting is the whole of what you have.
+  choice: Ride for Duskhollow -> ch10_targets
+
+===== step 124 | ch10_targets | L13 HP 900/900 =====
+The plan fits on half a page. Take the three Choir-held fragments, find the last two by star chart, finish the working at Ashenmere under the next Blood Moon - with a road home for the man doing the finishing.
+Tonight, for the first time since the Sundering, the map points forward instead of back.
+  choice: South, to the fens -> ch11_open
+
+===== step 125 | ch11_open | L13 HP 900/900 =====
+The fens breathe. Whole causeways rise and settle like lungs, and the trees lean together overhead to keep the sky out.
+Old Maddox finds you before you find him - a hermit with a coracle and three hundred years of the Choir's traffic memorized by the sound of its boots.
+  choice: Hear the hermit out -> ch11_approach
+
+===== step 126 | ch11_approach | L13 HP 900/900 =====
+The temple's crown is a rooftop breaking the fen like a drowning man's knuckles. Inside, somewhere below the waterline, the fragment sits on its altar and waits.
+Maddox gives it a season, maybe two, before the marsh takes the altar room entirely. The Choir has never minded. Faith does not mind water.
+  choice: Go in under the waterline -> ch11_descent
+
+===== step 127 | ch11_descent | L13 HP 900/900 =====
+The flooded nave is waist-deep and lit by fen-light through the cracks. The altar glows under a hand's width of black water, and something enormous breathes somewhere in the dark around it.
+Lever it free in one brutal minute and the temple comes down on you at once. Or sing it loose as it was set - slowly, while the water rises.
+  choice: Sing it loose -> ch11_fight
+  choice: Lever it out fast -> ch11_fight
+
+===== step 128 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r1] Slash (you 900/900 vs the Mire Sentinel 900/900)
+
+===== step 129 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r2] Slash (you 841/900 vs the Mire Sentinel 845/900)
+
+===== step 130 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r3] Slash (you 806/900 vs the Mire Sentinel 789/900)
+
+===== step 131 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r4] Slash (you 769/900 vs the Mire Sentinel 736/900)
+
+===== step 132 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r5] Slash (you 732/900 vs the Mire Sentinel 685/900)
+
+===== step 133 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r6] Slash (you 697/900 vs the Mire Sentinel 633/900)
+
+===== step 134 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r7] Slash (you 697/900 vs the Mire Sentinel 573/900)
+
+===== step 135 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r8] Slash (you 661/900 vs the Mire Sentinel 519/900)
+
+===== step 136 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r9] Slash (you 627/900 vs the Mire Sentinel 464/900)
+
+===== step 137 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r10] Slash (you 590/900 vs the Mire Sentinel 413/900)
+
+===== step 138 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r11] Slash (you 553/900 vs the Mire Sentinel 351/900)
+
+===== step 139 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r12] Slash (you 515/900 vs the Mire Sentinel 297/900)
+
+===== step 140 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r13] Slash (you 478/900 vs the Mire Sentinel 243/900)
+
+===== step 141 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r14] Slash (you 441/900 vs the Mire Sentinel 190/900)
+
+===== step 142 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r15] Slash (you 409/900 vs the Mire Sentinel 83/900)
+
+===== step 143 | ch11_fight | L13 HP 900/900 =====
+The Mire Sentinel unfolds out of the flooded colonnade - peat and stone and older wood, grown over and grown together, patient as the water that built it.
+It does not defend the temple. It is the temple's slow dying given fists.
+  [combat r16] Slash (you 372/900 vs the Mire Sentinel 26/900)
+  [combat] WON in 16 rounds (372/900 HP banked = 41%)
+
+===== step 144 | ch11_recovered | L14 HP 437/965 =====
+The fragment is a hand of black glass that hums against the runestone you carry it in, and the hum is a word you almost know.
+One. Two remain. The fens close over the temple behind you without ceremony, and Maddox waves once from his causeway and is gone.
+  choice: Ride for Saltmere -> ch12_open
+
+===== step 145 | ch12_open | L14 HP 437/965 =====
+Saltmere smells of tar and herring, and the Old Lighthouse stands at the end of the spit with its lamp long dark and its foundations in the sea cave the village pretends not to know.
+Yessa mends his nets with his back to you until you say the word lighthouse. Then he mends nothing, and tells you what the water took from him there.
+  choice: Hear Yessa's warning -> ch12_cave
+
+===== step 146 | ch12_cave | L14 HP 437/965 =====
+The cave mouth is underwater at high tide and a crawl at low; inside, the sea has spent ten thousand years carving a cathedral.
+In the deepest chamber the fragment glows on its stone shelf. Around it something vast and slow sings wrong - a whale, old and grey, wearing the Hollowing. Its eyes are not cruel. They are lost.
+  choice: Approach the great whale -> ch12_dilemma
+
+===== step 147 | ch12_dilemma | L14 HP 437/965 =====
+Kill it and the fragment is retrievable in minutes; the cave stays quiet; and the first proof that any of this can be undone dies with the whale.
+Purify it and you are doing surgery in the dark on something the size of a chapel, with the sea for blood. The Ashwarden records say it can be done. Records also sink.
+  choice: Purify the whale -> ch12_fight
+  choice: Put it down and take it -> ch12_fight
+
+===== step 148 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r1] Slash (you 965/965 vs the Brine Sentinel 950/950)
+
+===== step 149 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r2] Slash (you 928/965 vs the Brine Sentinel 842/950)
+
+===== step 150 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r3] Slash (you 878/965 vs the Brine Sentinel 777/950)
+
+===== step 151 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r4] Slash (you 844/965 vs the Brine Sentinel 717/950)
+
+===== step 152 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r5] Slash (you 844/965 vs the Brine Sentinel 616/950)
+
+===== step 153 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r6] Slash (you 809/965 vs the Brine Sentinel 554/950)
+
+===== step 154 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r7] Slash (you 773/965 vs the Brine Sentinel 496/950)
+
+===== step 155 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r8] Slash (you 734/965 vs the Brine Sentinel 440/950)
+
+===== step 156 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r9] Slash (you 696/965 vs the Brine Sentinel 338/950)
+
+===== step 157 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r10] Slash (you 653/965 vs the Brine Sentinel 274/950)
+
+===== step 158 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r11] Slash (you 587/965 vs the Brine Sentinel 174/950)
+
+===== step 159 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r12] Slash (you 553/965 vs the Brine Sentinel 78/950)
+
+===== step 160 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r13] Slash (you 520/965 vs the Brine Sentinel 16/950)
+
+===== step 161 | ch12_fight | L14 HP 437/965 =====
+The Brine Sentinel fills the chamber end to end. The Hollowing speaks through its song, and the song shakes silt from the ceiling in ropes.
+Whatever you came to do, you do it here, in its dark, on its terms.
+  [combat r14] Slash (you 468/965 vs the Brine Sentinel 16/950)
+  [combat] WON in 14 rounds (468/965 HP banked = 48%)
+
+===== step 162 | ch12_purified | L16 HP 598/1095 =====
+It comes out of the Hollowing the way a sleeper surfaces from a nightmare - flinch, breath, and then enormous quiet. The grey sheds off it in sheets and drifts down like snow.
+Its eyes clear. It looks at you - at Kaelen longest - and the cave sings a chord nobody taught it. Proof, in a hundred tons of whale: the Hollowing comes out.
+  choice: Take the fragment ashore -> ch12_after
+
+===== step 163 | ch12_after | L16 HP 598/1095 =====
+Two fragments ride in the runestone now, humming their almost-word to each other. The village meets you at the tide line with every boat lit like a festival.
+Yessa touches the lighthouse stones on his way past, once, as you touch a grave - or the start of letting one be.
+  choice: Back to Greyhold -> ch13_open
+
+===== step 164 | ch13_open | L16 HP 598/1095 =====
+The leak is undeniable by its shape: the Choir knew the watchtower meeting, and now somebody knows the fragment count. The circle of who could is small.
+It is one soldier wide. Bryn, of the Concordat detachment - present at the council, at the muster, and nowhere near the watchtower, which is exactly how a careful spy stands still.
+  choice: Take him in the armoury -> ch13_truth
+  choice: Watch him first -> ch13_truth
+
+===== step 165 | ch13_truth | L16 HP 598/1095 =====
+He does not deny a word of it. He unbuttons his cuff instead, and shows you the burn of the Choir's mark, and hands over the letters that bought him.
+A wife in Hollow's Reach. Two children. The letters are in his wife's hand, and every sentence in them is hers, and none of them were written free.
+  choice: Decide how to spend him -> ch13_dilemma
+
+===== step 166 | ch13_dilemma | L16 HP 598/1095 =====
+The Choir expects its leverage used. The letters include a drop schedule; the family can be taken quietly in a night that risks the overseer bolting with what he knows - or the handoff can be played to trap him, spending the family's safety as the stake.
+Bryn asks for the first with his eyes on the floor. He does not ask twice.
+  choice: Family first, risk the rest -> ch13_family
+  choice: Play the handoff, trap him -> ch13_trap
+
+===== step 167 | ch13_family | L16 HP 598/1095 =====
+The rescue is four hours of borrowed carts and a fish-wagon nobody searches twice. The family comes out unharmed; the overseer escapes with nothing to report but noise.
+Bryn does not thank you. He reports for duty an hour later with his letter-burn turned toward the fire, and from that day the Concordat detachment follows you on sight.
+  choice: Plan the mountain node -> ch13_after
+
+===== step 168 | ch13_after | L16 HP 1095/1095 =====
+The mountain fragment cannot wait on a perfect plan: the scout knew, so the Choir knows, and a head start is only worth having before the opposition arrives.
+Harwick sends word from the Concordat: his sappers will meet you at the old Dwarf mine. He is bringing more than shovels, the letter says, and he does not apologize for it.
+  choice: March on the mountain -> ch14_open
+
+===== step 169 | ch14_open | L16 HP 1095/1095 =====
+Ilyndra receives the whole story - fragments, whale, Kaelen alive and cooperating - standing very still, hands folded, as one does among fragile things.
+Then she opens the star chart kept against this exact need. Two lights remain: Sky Sanctum, in Silverleaf's highest canopy, and the Cinder Wastes, at the heart of the Mist Zone.
+  choice: Study the star chart -> ch14_trial
+  choice: Ask the gentle road's cost -> ch14_trial
+
+===== step 170 | ch14_trial | L16 HP 1095/1095 =====
+The trial is one candle, one bowl of water, one grain of the Hollowing siphoned from a warding jar. It lights. It grows. Within a minute it is a lash of grey fire looking for something to be.
+Abort, and months of road end in a scorched bench. Hold it, and the thing in the bowl has to be carried by every hand in the room at once.
+  choice: Hold it together -> ch14_fight
+
+===== step 171 | ch14_fight | L16 HP 1095/1095 =====
+The lash takes shape out of the bowl - grey fire with a memory of intention, testing each grip on it the way floodwater tests a wall.
+Ilyndra marks the working's rhythm with a bell. Your part is to give the fire exactly what it wants, at exactly the wrong moment, forever.
+  [combat r1] Slash (you 1095/1095 vs the Wild Working 620/620)
+
+===== step 172 | ch14_fight | L16 HP 1095/1095 =====
+The lash takes shape out of the bowl - grey fire with a memory of intention, testing each grip on it the way floodwater tests a wall.
+Ilyndra marks the working's rhythm with a bell. Your part is to give the fire exactly what it wants, at exactly the wrong moment, forever.
+  [combat r2] Slash (you 1060/1095 vs the Wild Working 620/620)
+
+===== step 173 | ch14_fight | L16 HP 1095/1095 =====
+The lash takes shape out of the bowl - grey fire with a memory of intention, testing each grip on it the way floodwater tests a wall.
+Ilyndra marks the working's rhythm with a bell. Your part is to give the fire exactly what it wants, at exactly the wrong moment, forever.
+  [combat r3] Slash (you 1024/1095 vs the Wild Working 549/620)
+
+===== step 174 | ch14_fight | L16 HP 1095/1095 =====
+The lash takes shape out of the bowl - grey fire with a memory of intention, testing each grip on it the way floodwater tests a wall.
+Ilyndra marks the working's rhythm with a bell. Your part is to give the fire exactly what it wants, at exactly the wrong moment, forever.
+  [combat r4] Slash (you 979/1095 vs the Wild Working 479/620)
+
+===== step 175 | ch14_fight | L16 HP 1095/1095 =====
+The lash takes shape out of the bowl - grey fire with a memory of intention, testing each grip on it the way floodwater tests a wall.
+Ilyndra marks the working's rhythm with a bell. Your part is to give the fire exactly what it wants, at exactly the wrong moment, forever.
+  [combat r5] Slash (you 935/1095 vs the Wild Working 405/620)
+
+===== step 176 | ch14_fight | L16 HP 1095/1095 =====
+The lash takes shape out of the bowl - grey fire with a memory of intention, testing each grip on it the way floodwater tests a wall.
+Ilyndra marks the working's rhythm with a bell. Your part is to give the fire exactly what it wants, at exactly the wrong moment, forever.
+  [combat r6] Slash (you 877/1095 vs the Wild Working 405/620)
+
+===== step 177 | ch14_fight | L16 HP 1095/1095 =====
+The lash takes shape out of the bowl - grey fire with a memory of intention, testing each grip on it the way floodwater tests a wall.
+Ilyndra marks the working's rhythm with a bell. Your part is to give the fire exactly what it wants, at exactly the wrong moment, forever.
+  [combat r7] Slash (you 841/1095 vs the Wild Working 334/620)
+
+===== step 178 | ch14_fight | L16 HP 1095/1095 =====
+The lash takes shape out of the bowl - grey fire with a memory of intention, testing each grip on it the way floodwater tests a wall.
+Ilyndra marks the working's rhythm with a bell. Your part is to give the fire exactly what it wants, at exactly the wrong moment, forever.
+  [combat r8] Slash (you 806/1095 vs the Wild Working 257/620)
+
+===== step 179 | ch14_fight | L16 HP 1095/1095 =====
+The lash takes shape out of the bowl - grey fire with a memory of intention, testing each grip on it the way floodwater tests a wall.
+Ilyndra marks the working's rhythm with a bell. Your part is to give the fire exactly what it wants, at exactly the wrong moment, forever.
+  [combat r9] Slash (you 806/1095 vs the Wild Working 191/620)
+
+===== step 180 | ch14_fight | L16 HP 1095/1095 =====
+The lash takes shape out of the bowl - grey fire with a memory of intention, testing each grip on it the way floodwater tests a wall.
+Ilyndra marks the working's rhythm with a bell. Your part is to give the fire exactly what it wants, at exactly the wrong moment, forever.
+  [combat r10] Slash (you 770/1095 vs the Wild Working 114/620)
+
+===== step 181 | ch14_fight | L16 HP 1095/1095 =====
+The lash takes shape out of the bowl - grey fire with a memory of intention, testing each grip on it the way floodwater tests a wall.
+Ilyndra marks the working's rhythm with a bell. Your part is to give the fire exactly what it wants, at exactly the wrong moment, forever.
+  [combat r11] Slash (you 738/1095 vs the Wild Working 114/620)
+
+===== step 182 | ch14_fight | L16 HP 1095/1095 =====
+The lash takes shape out of the bowl - grey fire with a memory of intention, testing each grip on it the way floodwater tests a wall.
+Ilyndra marks the working's rhythm with a bell. Your part is to give the fire exactly what it wants, at exactly the wrong moment, forever.
+  [combat r12] Slash (you 708/1095 vs the Wild Working 43/620)
+  [combat] WON in 12 rounds (708/1095 HP banked = 65%)
+
+===== step 183 | ch14_proven | L17 HP 773/1160 =====
+Seven lights on one map now: two in Kaelen's keeping, three taken back, two named by stars. And one working, proven small, that takes the Hollowing out of a living thing without killing it.
+Kaelen looks at the bowl for a long time - at a thing that worked - and lets himself, for exactly one breath, look like a man who might live.
+  choice: March on the mountain node -> ch15_open
+
+===== step 184 | ch15_open | L17 HP 773/1160 =====
+The mine is three levels down and garrisoned like a keep. The leak bought the Choir weeks to fortify, and they spent every one of them.
+Harwick stands at the mouth of it with his whole command and says, in front of witnesses, that he was wrong about you - which from Harwick is a speech, a coronation, and an apology at once.
+  choice: Take the gate with Harwick -> ch15_breach
+
+===== step 185 | ch15_breach | L17 HP 773/1160 =====
+The gate falls, and the Choir's answer is the mine itself: fire-pots laid in the supports, and a voice from below counting down a promise to bring three levels of mountain down.
+The tunnels below still hold Dwarf miners - the old workings never emptied, they just stopped being spoken to. The fragment altar is two levels down, past them.
+  choice: Weigh miners against minutes -> ch15_dilemma
+
+===== step 186 | ch15_dilemma | L17 HP 773/1160 =====
+Save the miners and you fight the elite on ground they chose, in the dark they prepared, at strength they did not expect you to grant them.
+Go for the fragment first and the miners become the argument the Choir makes to everyone who ever considers standing with the Vigil. Harwick will follow either order. He will only respect one.
+  choice: Miners first -> ch15_fight
+  choice: The fragment cannot wait -> ch15_fight
+
+===== step 187 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r1] Slash (you 1160/1160 vs the Choir Warden 1050/1050)
+
+===== step 188 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r2] Slash (you 1125/1160 vs the Choir Warden 978/1050)
+
+===== step 189 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r3] Slash (you 1090/1160 vs the Choir Warden 909/1050)
+
+===== step 190 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r4] Slash (you 1052/1160 vs the Choir Warden 839/1050)
+
+===== step 191 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r5] Slash (you 1014/1160 vs the Choir Warden 766/1050)
+
+===== step 192 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r6] Slash (you 978/1160 vs the Choir Warden 703/1050)
+
+===== step 193 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r7] Slash (you 978/1160 vs the Choir Warden 703/1050)
+
+===== step 194 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r8] Slash (you 978/1160 vs the Choir Warden 638/1050)
+
+===== step 195 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r9] Slash (you 939/1160 vs the Choir Warden 563/1050)
+
+===== step 196 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r10] Slash (you 878/1160 vs the Choir Warden 494/1050)
+
+===== step 197 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r11] Slash (you 842/1160 vs the Choir Warden 427/1050)
+
+===== step 198 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r12] Slash (you 809/1160 vs the Choir Warden 357/1050)
+
+===== step 199 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r13] Slash (you 770/1160 vs the Choir Warden 283/1050)
+
+===== step 200 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r14] Slash (you 731/1160 vs the Choir Warden 220/1050)
+
+===== step 201 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r15] Slash (you 695/1160 vs the Choir Warden 154/1050)
+
+===== step 202 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r16] Slash (you 695/1160 vs the Choir Warden 89/1050)
+
+===== step 203 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r17] Slash (you 660/1160 vs the Choir Warden 16/1050)
+
+===== step 204 | ch15_fight | L17 HP 773/1160 =====
+The warden holds the altar gallery like a bishop holds a cathedral: armoured, fanatical, and freshly certain of paradise.
+Harwick's shield-line anchors the tunnel mouth. The middle of the room belongs to you.
+  [combat r18] Slash (you 617/1160 vs the Choir Warden 16/1050)
+  [combat] WON in 18 rounds (617/1160 HP banked = 53%)
+
+===== step 205 | ch15_recovered | L19 HP 747/1290 =====
+Three fragments hum in the runestone now, and the mine rings with Dwarf voices that have not been loud in a generation.
+Harwick signs the alliance as a man signs his own name, and the Concordat's war-host is yours to call from this hour forward.
+  choice: Return to Greyhold -> ch16_open
+
+===== step 206 | ch16_open | L19 HP 747/1290 =====
+She comes for the whole camp at once, in the space behind your eyes: black and silver, ageless, amused. The seventh sorceress - the one the histories were edited to forget.
+Ilsevet Cray, she says, into every mind at Greyhold. Kaelen was always weak - too blinded by love to understand that the Hollowing is not a curse. It is evolution.
+  choice: Cut through the vision -> ch16_enforcer
+
+===== step 207 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r1] Slash (you 1290/1290 vs Ilsevet's Enforcer 1150/1150)
+
+===== step 208 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r2] Slash (you 1253/1290 vs Ilsevet's Enforcer 1068/1150)
+
+===== step 209 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r3] Slash (you 1218/1290 vs Ilsevet's Enforcer 998/1150)
+
+===== step 210 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r4] Slash (you 1218/1290 vs Ilsevet's Enforcer 922/1150)
+
+===== step 211 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r5] Slash (you 1178/1290 vs Ilsevet's Enforcer 854/1150)
+
+===== step 212 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r6] Slash (you 1141/1290 vs Ilsevet's Enforcer 778/1150)
+
+===== step 213 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r7] Slash (you 1105/1290 vs Ilsevet's Enforcer 698/1150)
+
+===== step 214 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r8] Slash (you 1036/1290 vs Ilsevet's Enforcer 562/1150)
+
+===== step 215 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r9] Slash (you 1000/1290 vs Ilsevet's Enforcer 480/1150)
+
+===== step 216 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r10] Slash (you 964/1290 vs Ilsevet's Enforcer 401/1150)
+
+===== step 217 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r11] Slash (you 964/1290 vs Ilsevet's Enforcer 334/1150)
+
+===== step 218 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r12] Slash (you 902/1290 vs Ilsevet's Enforcer 260/1150)
+
+===== step 219 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r13] Slash (you 853/1290 vs Ilsevet's Enforcer 179/1150)
+
+===== step 220 | ch16_enforcer | L19 HP 747/1290 =====
+The vision is the diversions; the attack is the point. Her enforcer walks out of the Mist Gate through Greyhold's prepared defences as though they had been described to him in advance.
+He is the finest thing she has ever built, and he has come to measure the fortress that keeps interfering.
+  [combat r14] Slash (you 816/1290 vs Ilsevet's Enforcer 99/1150)
+  [combat] WON in 14 rounds (816/1290 HP banked = 63%)
+
+===== step 221 | ch16_after_fight | L20 HP 881/1355 =====
+Smoke stands over the lower town in columns, and the enforcer's shape is somewhere inside it - walking out slowly, or holding a street, or both.
+Greyhold's civilians are in the streets because night bells are not a language they have learned yet. You cannot be in two places, and the smoke knows it.
+  choice: Choose where you are needed -> ch16_dilemma
+
+===== step 222 | ch16_dilemma | L20 HP 881/1355 =====
+Catch the enforcer and Greyhold learns what its bells cost. Shield the streets and the best construction of Ilsevet's long age walks out of your fortress with her questions answered.
+Veyra puts it in one line, her hand already on the bells: walls can be rebuilt from inside. People cannot.
+  choice: The streets, the people -> ch16_civilians
+  choice: After the enforcer -> ch16_pursued
+
+===== step 223 | ch16_civilians | L20 HP 881/1355 =====
+You spend the night being where the bells say, and Greyhold learns the bells. Not one civilian dies in her general's first audit of the fortress.
+The enforcer walks out before dawn, her name in every mouth by noon: Ilsevet Cray. The true enemy has a face, a name, and an appointment - with the Ritual Core, under the Blood Moon.
+  choice: End the act on the wall -> ch16_vision
+
+===== step 224 | ch16_vision | L20 HP 881/1355 =====
+From the wall, the fires, the grey edge of the Mist Zone and the road south read as one country - and the woman who means to own it has finally shown her face.
+Ilsevet Cray. Seventh sorceress, emptied record, architect. Greyhold does not mourn; Greyhold musters. The summons goes out to Dawnhold and Silverleaf before the fires are cold.
+  choice: Answer the summons -> ch17_open
+
+===== step 225 | ch17_open | L20 HP 881/1355 =====
+Greyhold's council chamber has never held three banners before. The Vigil keeps a neutral table out of habit; tonight it holds an alliance in the making.
+Magus Oren, interim head of Arcanum Tower, stands where Thessaly stood. He offers everything his order has, and asks only to be allowed to help.
+  choice: Open the council -> ch17_delegates
+  choice: Speak with Oren first -> ch17_oren
+
+===== step 226 | ch17_delegates | L20 HP 881/1355 =====
+Harwick argues like a wall being built - course by course, load tested. Silverleaf's Warden-Envoy argues like weather. Oren argues like a man reading a ledger he has already confessed in.
+The oath is drafted by midnight. Somewhere below, in corridors the Vigil has not swept since the Sundering, four of Ilsevet's killers count doors.
+  choice: Seal the alliance -> ch17_fight
+
+===== step 227 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r1] Slash (you 1355/1355 vs the Summit Shade 1400/1400)
+
+===== step 228 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r2] Slash (you 1355/1355 vs the Summit Shade 1317/1400)
+
+===== step 229 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r3] Slash (you 1355/1355 vs the Summit Shade 1240/1400)
+
+===== step 230 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r4] Slash (you 1316/1355 vs the Summit Shade 1240/1400)
+
+===== step 231 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r5] Slash (you 1268/1355 vs the Summit Shade 1168/1400)
+
+===== step 232 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r6] Slash (you 1217/1355 vs the Summit Shade 1096/1400)
+
+===== step 233 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r7] Slash (you 1176/1355 vs the Summit Shade 1017/1400)
+
+===== step 234 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r8] Slash (you 1176/1355 vs the Summit Shade 1017/1400)
+
+===== step 235 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r9] Slash (you 1127/1355 vs the Summit Shade 947/1400)
+
+===== step 236 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r10] Slash (you 1084/1355 vs the Summit Shade 876/1400)
+
+===== step 237 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r11] Slash (you 1084/1355 vs the Summit Shade 740/1400)
+
+===== step 238 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r12] Slash (you 1040/1355 vs the Summit Shade 667/1400)
+
+===== step 239 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r13] Slash (you 1001/1355 vs the Summit Shade 586/1400)
+
+===== step 240 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r14] Slash (you 925/1355 vs the Summit Shade 507/1400)
+
+===== step 241 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r15] Slash (you 925/1355 vs the Summit Shade 428/1400)
+
+===== step 242 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r16] Slash (you 925/1355 vs the Summit Shade 352/1400)
+
+===== step 243 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r17] Slash (you 870/1355 vs the Summit Shade 268/1400)
+
+===== step 244 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r18] Slash (you 833/1355 vs the Summit Shade 190/1400)
+
+===== step 245 | ch17_fight | L20 HP 881/1355 =====
+The oath dies mid-word. A shade unfolds from the chimney shadow above the table - grey and silver, dressed to match a mistress who signs nothing.
+It moves for the delegation. You move faster.
+  [combat r19] Slash (you 795/1355 vs the Summit Shade 57/1400)
+  [combat] WON in 19 rounds (795/1355 HP banked = 59%)
+
+===== step 246 | ch17_protect | L22 HP 925/1485 =====
+The shade was the needle. The threat is the seam: three leaders, three wings of the mountain, one strike team splitting to meet them.
+You cannot be three places. The Vigil's maps say you can be one place faster than anyone.
+  choice: Shield Harwick -> ch17_harwick
+  choice: Reach the Envoy -> ch17_envoy
+  choice: Cover Oren -> ch17_oren_wing
+
+===== step 247 | ch17_harwick | L22 HP 925/1485 =====
+You take the Deep Road two turns ahead of the killers and arrive with your back to Harwick's chair, which is where you wanted to be when they came.
+They came. It went badly for them. Harwick does not thank you; he signs faster, which among Dwarves is the higher compliment.
+  choice: Regroup at the table -> ch17_aftermath
+
+===== step 248 | ch17_aftermath | L22 HP 925/1485 =====
+The mountain settles. Three leaders stand unharmed at one table, which is exactly what Ilsevet sent four killers to prevent.
+The oath is finished before dawn, in full, with all names spoken. What is sworn on the neutral table of the Vigil binds all who hear it.
+  choice: Dispatch the strike teams -> ch17_sealed
+
+===== step 249 | ch17_sealed | L22 HP 925/1485 =====
+Two strike teams go out with the morning: one to the highest canopy of Silverleaf, one into the Cinder Wastes' grey heart. You will lead the first and meet the second at Ashenmere.
+Harwick salutes with his hammer. Oren salutes with his ledger. The Envoy simply nods, which from her is a parade.
+  choice: March for Sky Sanctum -> ch18_open
+
+===== step 250 | ch18_open | L22 HP 925/1485 =====
+The mist around Silverleaf's crown is not weather; it is breath. Something that large up there inhales, and a thousand leaves lean with it.
+The Canopy Guardian was planted to keep this place. The Hollowing has kept it instead, and worn the warden's shape as water wears a stair.
+  choice: Begin the climb -> ch18_ascent
+  choice: Survey the canopy -> ch18_survey
+
+===== step 251 | ch18_ascent | L22 HP 925/1485 =====
+The climb is three hours of wet rope and older wood. The mist rises with you, patient as tide, and where it touches your sleeves the thread goes grey.
+On the last span the guardian's roots bar the way like a portcullis that grew. Beyond them, the sanctum's crown glows a colour light should not make.
+  choice: Face the Guardian -> ch18_guardian
+
+===== step 252 | ch18_guardian | L22 HP 925/1485 =====
+It rises out of its own roots like a hillside deciding to stand: bark gone the grey of the Mist Zones, sap gone dark, a face it should not have and does.
+Beneath the rot the warden it was is still visible - the way Saltmere's whale was still a whale. The technique is the one that worked on the sea. It must work in the air.
+  choice: Begin the purification -> ch18_fight
+
+===== step 253 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r1] Slash (you 1485/1485 vs the Canopy Guardian 1900/1900)
+
+===== step 254 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r2] Slash (you 1385/1485 vs the Canopy Guardian 1814/1900)
+
+===== step 255 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r3] Slash (you 1343/1485 vs the Canopy Guardian 1674/1900)
+
+===== step 256 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r4] Slash (you 1286/1485 vs the Canopy Guardian 1537/1900)
+
+===== step 257 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r5] Slash (you 1243/1485 vs the Canopy Guardian 1449/1900)
+
+===== step 258 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r6] Slash (you 1189/1485 vs the Canopy Guardian 1365/1900)
+
+===== step 259 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r7] Slash (you 1150/1485 vs the Canopy Guardian 1283/1900)
+
+===== step 260 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r8] Slash (you 1051/1485 vs the Canopy Guardian 1208/1900)
+
+===== step 261 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r9] Slash (you 1011/1485 vs the Canopy Guardian 1062/1900)
+
+===== step 262 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r10] Slash (you 955/1485 vs the Canopy Guardian 911/1900)
+
+===== step 263 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r11] Slash (you 900/1485 vs the Canopy Guardian 832/1900)
+
+===== step 264 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r12] Slash (you 843/1485 vs the Canopy Guardian 755/1900)
+
+===== step 265 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r13] Slash (you 804/1485 vs the Canopy Guardian 681/1900)
+
+===== step 266 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r14] Slash (you 760/1485 vs the Canopy Guardian 593/1900)
+
+===== step 267 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r15] Slash (you 721/1485 vs the Canopy Guardian 513/1900)
+
+===== step 268 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r16] Slash (you 684/1485 vs the Canopy Guardian 367/1900)
+
+===== step 269 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r17] Slash (you 640/1485 vs the Canopy Guardian 289/1900)
+
+===== step 270 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r18] Slash (you 602/1485 vs the Canopy Guardian 207/1900)
+
+===== step 271 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r19] Slash (you 559/1485 vs the Canopy Guardian 127/1900)
+
+===== step 272 | ch18_fight | L22 HP 925/1485 =====
+The warden fights as a forest argues with a storm: slowly, then all at once, from every side at once.
+Your team works the canopy lanes while you hold its attention. Every clean cut is not damage - it is a line of the working, drawn in sap and salt.
+  [combat r20] Slash (you 518/1485 vs the Canopy Guardian 52/1900)
+  [combat] WON in 20 rounds (518/1485 HP banked = 35%)
+
+===== step 273 | ch18_purify | L23 HP 583/1550 =====
+The last line of the working closes over the guardian's heart like a hand closing over a coal. Saltmere's whale surfaced into clean water; the guardian roots into clean light.
+Grey drains out of the bark like a fever breaking. It kneels - a hillside, kneeling - and the mist stops being weather.
+  choice: Climb to the crown -> ch18_restored
+
+===== step 274 | ch18_restored | L23 HP 583/1550 =====
+The sanctum's crown opens like a hand. Inside, Light that predates the Sundering falls across a platform of living wood, and the Warden-Envoy finally, briefly, smiles.
+The guardian stands whole at the edge of the light, warden again, and inclines its crown to let you pass.
+  choice: Receive the fragment -> ch18_fragment
+
+===== step 275 | ch18_fragment | L23 HP 583/1550 =====
+The guardian gives the sixth fragment the way a warden returns a misdelivered letter: relieved of the weight, sorry it was ever carried here.
+Six hum in the runestone now. One remains, and it waits in the grey heart of the Cinder Wastes - in Ilsevet's own house.
+  choice: March for the Wastes -> ch19_open
+
+===== step 276 | ch19_open | L23 HP 583/1550 =====
+The Cinder Wastes do not end; they arrive. Ash hangs without wind, and the fortress ahead is built from the same grey, as if the land was asked for a keep and obliged.
+This is the seventh fragment's prison, and the front door of the woman who means to reverse everything you are about to fix.
+  choice: Enter the fortress -> ch19_prisoner
+  choice: Question the prisoner -> ch19_prisoner
+
+===== step 277 | ch19_prisoner | L24 HP 648/1615 =====
+The Choir lieutenant taken at the gate talks before the second question, as men do when the thing they served stopped pretending to be a faith.
+Her mistress's plan, whole: the Core sealed beneath Ashenmere in the spring, reopened at the Blood Moon - turned inside out to pour the Hollowing across the realm instead of closing it.
+  choice: Descend to the heart -> ch19_vision
+
+===== step 278 | ch19_vision | L24 HP 648/1615 =====
+She meets you in the ash as her assassins do: already there, courteous. The vision wears her exactly - grey, silver, patient.
+"Three centuries, brother-in-failure," she says, "and you still bargain with ghosts. I keep the real things." His answer is to take the vision apart line by line - its own contempt - and she leaves laughing.
+  choice: Force the fragment hall -> ch19_fight
+
+===== step 279 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r1] Slash (you 1615/1615 vs the Mist Warden 1700/1700)
+
+===== step 280 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r2] Slash (you 1573/1615 vs the Mist Warden 1621/1700)
+
+===== step 281 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r3] Slash (you 1505/1615 vs the Mist Warden 1525/1700)
+
+===== step 282 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r4] Slash (you 1461/1615 vs the Mist Warden 1436/1700)
+
+===== step 283 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r5] Slash (you 1422/1615 vs the Mist Warden 1354/1700)
+
+===== step 284 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r6] Slash (you 1422/1615 vs the Mist Warden 1272/1700)
+
+===== step 285 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r7] Slash (you 1378/1615 vs the Mist Warden 1193/1700)
+
+===== step 286 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r8] Slash (you 1337/1615 vs the Mist Warden 1108/1700)
+
+===== step 287 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r9] Slash (you 1293/1615 vs the Mist Warden 1015/1700)
+
+===== step 288 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r10] Slash (you 1247/1615 vs the Mist Warden 860/1700)
+
+===== step 289 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r11] Slash (you 1208/1615 vs the Mist Warden 769/1700)
+
+===== step 290 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r12] Slash (you 1166/1615 vs the Mist Warden 681/1700)
+
+===== step 291 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r13] Slash (you 1123/1615 vs the Mist Warden 597/1700)
+
+===== step 292 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r14] Slash (you 1084/1615 vs the Mist Warden 516/1700)
+
+===== step 293 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r15] Slash (you 1029/1615 vs the Mist Warden 516/1700)
+
+===== step 294 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r16] Slash (you 978/1615 vs the Mist Warden 516/1700)
+
+===== step 295 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r17] Slash (you 978/1615 vs the Mist Warden 516/1700)
+
+===== step 296 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r18] Slash (you 939/1615 vs the Mist Warden 427/1700)
+
+===== step 297 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r19] Slash (you 842/1615 vs the Mist Warden 337/1700)
+
+===== step 298 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r20] Slash (you 796/1615 vs the Mist Warden 254/1700)
+
+===== step 299 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r21] Slash (you 754/1615 vs the Mist Warden 169/1700)
+
+===== step 300 | ch19_fight | L24 HP 648/1615 =====
+The vault's warden has stood since before the fortress was finished, and the Hollowing has had three centuries to perfect it.
+It does not guard the fragment for Ilsevet. It guards it because that is the only order left inside it that still burns.
+  [combat r22] Slash (you 754/1615 vs the Mist Warden 75/1700)
+  [combat] WON in 22 rounds (754/1615 HP banked = 47%)
+
+===== step 301 | ch19_vault | L25 HP 819/1680 =====
+The seventh fragment hums in its cradle, and the road south - the one Ilsevet took - stands open and taunting. The runestone could hold all seven tonight. The pursuit could cost you everything tonight instead.
+Kaelen weighs it aloud, and for once the ghost sounds young. You give the order he cannot: the fragment first. The hunt keeps.
+  choice: March for Greyhold -> ch20_open
+
+===== step 302 | ch20_open | L25 HP 819/1680 =====
+Greyhold's ritual hall has not been used at full scale since the Sundering it was built to study. Tonight the seven fragments sit in their cradles like a sentence waiting for its verb.
+Oren's mages chalk the working in silver. Kaelen circles the circle, reading his own masterpiece three centuries older, and says nothing for a long time.
+  choice: Begin the trial -> ch20_bryn
+  choice: Stand with Kaelen -> ch20_kaelen
+
+===== step 303 | ch20_bryn | L25 HP 819/1680 =====
+Bryn volunteers before anyone can ask. The mine overseer's shadow still sits in the boy's eyes - traces the Hollowing left that no one has been able to scrub.
+"You pulled me out," Bryn says simply. "If the ritual keeps anyone else from needing pulling out, use me first."
+Kaelen looks at the boy like a man pricing his own conscience.
+  choice: Accept his offer -> ch20_trial
+
+===== step 304 | ch20_trial | L25 HP 819/1680 =====
+The working takes Bryn the way a river takes a swimmer: gently, then entirely. The corruption does not surrender. It litigates.
+You and Kaelen hold the lines of the ritual while it argues. This is what the fragments were carved for. Hold.
+  [combat r1] Slash (you 1680/1680 vs Bryn's lingering corruption 1300/1300)
+
+===== step 305 | ch20_trial | L25 HP 819/1680 =====
+The working takes Bryn the way a river takes a swimmer: gently, then entirely. The corruption does not surrender. It litigates.
+You and Kaelen hold the lines of the ritual while it argues. This is what the fragments were carved for. Hold.
+  [combat r2] Slash (you 1649/1680 vs Bryn's lingering corruption 1202/1300)
+
+===== step 306 | ch20_trial | L25 HP 819/1680 =====
+The working takes Bryn the way a river takes a swimmer: gently, then entirely. The corruption does not surrender. It litigates.
+You and Kaelen hold the lines of the ritual while it argues. This is what the fragments were carved for. Hold.
+  [combat r3] Slash (you 1618/1680 vs Bryn's lingering corruption 1106/1300)
+
+===== step 307 | ch20_trial | L25 HP 819/1680 =====
+The working takes Bryn the way a river takes a swimmer: gently, then entirely. The corruption does not surrender. It litigates.
+You and Kaelen hold the lines of the ritual while it argues. This is what the fragments were carved for. Hold.
+  [combat r4] Slash (you 1583/1680 vs Bryn's lingering corruption 1001/1300)
+
+===== step 308 | ch20_trial | L25 HP 819/1680 =====
+The working takes Bryn the way a river takes a swimmer: gently, then entirely. The corruption does not surrender. It litigates.
+You and Kaelen hold the lines of the ritual while it argues. This is what the fragments were carved for. Hold.
+  [combat r5] Slash (you 1552/1680 vs Bryn's lingering corruption 900/1300)
+
+===== step 309 | ch20_trial | L25 HP 819/1680 =====
+The working takes Bryn the way a river takes a swimmer: gently, then entirely. The corruption does not surrender. It litigates.
+You and Kaelen hold the lines of the ritual while it argues. This is what the fragments were carved for. Hold.
+  [combat r6] Slash (you 1518/1680 vs Bryn's lingering corruption 810/1300)
+
+===== step 310 | ch20_trial | L25 HP 819/1680 =====
+The working takes Bryn the way a river takes a swimmer: gently, then entirely. The corruption does not surrender. It litigates.
+You and Kaelen hold the lines of the ritual while it argues. This is what the fragments were carved for. Hold.
+  [combat r7] Slash (you 1476/1680 vs Bryn's lingering corruption 712/1300)
+
+===== step 311 | ch20_trial | L25 HP 819/1680 =====
+The working takes Bryn the way a river takes a swimmer: gently, then entirely. The corruption does not surrender. It litigates.
+You and Kaelen hold the lines of the ritual while it argues. This is what the fragments were carved for. Hold.
+  [combat r8] Slash (you 1444/1680 vs Bryn's lingering corruption 553/1300)
+
+===== step 312 | ch20_trial | L25 HP 819/1680 =====
+The working takes Bryn the way a river takes a swimmer: gently, then entirely. The corruption does not surrender. It litigates.
+You and Kaelen hold the lines of the ritual while it argues. This is what the fragments were carved for. Hold.
+  [combat r9] Slash (you 1410/1680 vs Bryn's lingering corruption 462/1300)
+
+===== step 313 | ch20_trial | L25 HP 819/1680 =====
+The working takes Bryn the way a river takes a swimmer: gently, then entirely. The corruption does not surrender. It litigates.
+You and Kaelen hold the lines of the ritual while it argues. This is what the fragments were carved for. Hold.
+  [combat r10] Slash (you 1376/1680 vs Bryn's lingering corruption 278/1300)
+
+===== step 314 | ch20_trial | L25 HP 819/1680 =====
+The working takes Bryn the way a river takes a swimmer: gently, then entirely. The corruption does not surrender. It litigates.
+You and Kaelen hold the lines of the ritual while it argues. This is what the fragments were carved for. Hold.
+  [combat r11] Slash (you 1345/1680 vs Bryn's lingering corruption 186/1300)
+
+===== step 315 | ch20_trial | L25 HP 819/1680 =====
+The working takes Bryn the way a river takes a swimmer: gently, then entirely. The corruption does not surrender. It litigates.
+You and Kaelen hold the lines of the ritual while it argues. This is what the fragments were carved for. Hold.
+  [combat r12] Slash (you 1303/1680 vs Bryn's lingering corruption 28/1300)
+  [combat] WON in 12 rounds (1303/1680 HP banked = 78%)
+
+===== step 316 | ch20_clean | L26 HP 1368/1745 =====
+The last grey thread leaves Bryn's eyes at moonset, and the boy sneezes, which is somehow the proof everyone needed.
+The ritual is safe for human subjects. The word human is doing the heaviest work in that sentence, and Kaelen hears it, and stands straighter for it.
+  choice: Set out for Ashenmere -> ch20_ready
+
+===== step 317 | ch20_ready | L26 HP 1368/1745 =====
+The army moves at dawn in three columns that were one enemy's worth of grudges a season ago. The runestone rides with Kaelen, and the fragments sing to each other quietly, like a choir tuning.
+Bryn marches with the Dwarf column, clean-eyed, carrying a standard. The boy you pulled out of a mine is now a flag the army follows.
+  choice: Take the mountain pass -> ch21_open
+
+===== step 318 | ch21_open | L26 HP 1368/1745 =====
+The mountain pass is the difference between arriving at Ashenmere before the Blood Moon or watching it rise over an unbreached wall.
+It is also full. The Hollowed come up the switchbacks in waves, drawn to the runestone like moths that have forgotten what they loved about light.
+  choice: Let Kaelen lead -> ch21_push
+  choice: Push the pass now -> ch21_push
+
+===== step 319 | ch21_push | L26 HP 1368/1745 =====
+Kaelen means to take the vanguard alone - three centuries of practising grief have made him efficient at carrying things by himself.
+Veyra does not argue. She simply steps into the line beside him and starts giving orders in the voice of a woman who has buried a family and declines to bury another. He yields to that.
+  choice: Fight the vanguard -> ch21_fight
+
+===== step 320 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r1] Slash (you 1745/1745 vs the Pass Landslide 1600/1600)
+
+===== step 321 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r2] Slash (you 1707/1745 vs the Pass Landslide 1497/1600)
+
+===== step 322 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r3] Slash (you 1662/1745 vs the Pass Landslide 1400/1600)
+
+===== step 323 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r4] Slash (you 1611/1745 vs the Pass Landslide 1400/1600)
+
+===== step 324 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r5] Slash (you 1561/1745 vs the Pass Landslide 1400/1600)
+
+===== step 325 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r6] Slash (you 1524/1745 vs the Pass Landslide 1314/1600)
+
+===== step 326 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r7] Slash (you 1487/1745 vs the Pass Landslide 1222/1600)
+
+===== step 327 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r8] Slash (you 1487/1745 vs the Pass Landslide 1136/1600)
+
+===== step 328 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r9] Slash (you 1454/1745 vs the Pass Landslide 1032/1600)
+
+===== step 329 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r10] Slash (you 1418/1745 vs the Pass Landslide 941/1600)
+
+===== step 330 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r11] Slash (you 1418/1745 vs the Pass Landslide 849/1600)
+
+===== step 331 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r12] Slash (you 1386/1745 vs the Pass Landslide 683/1600)
+
+===== step 332 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r13] Slash (you 1338/1745 vs the Pass Landslide 587/1600)
+
+===== step 333 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r14] Slash (you 1295/1745 vs the Pass Landslide 420/1600)
+
+===== step 334 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r15] Slash (you 1261/1745 vs the Pass Landslide 325/1600)
+
+===== step 335 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r16] Slash (you 1223/1745 vs the Pass Landslide 222/1600)
+
+===== step 336 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r17] Slash (you 1188/1745 vs the Pass Landslide 119/1600)
+
+===== step 337 | ch21_fight | L26 HP 1368/1745 =====
+The pass narrows to a throat, and the Hollowed come down it like a landslide with opinions.
+You and Veyra take the flanks so Kaelen only has to hold the line - shared weight, which is the whole argument of this act in one tactical decision.
+  [combat r18] Slash (you 1156/1745 vs the Pass Landslide 16/1600)
+  [combat] WON in 18 rounds (1156/1745 HP banked = 66%)
+
+===== step 338 | ch21_opened | L28 HP 1286/1875 =====
+The pass opens on schedule, and Kaelen leans on his staff in a way he would never lean on a person.
+He is weaker - visibly, undeniably - and every hour of the march south is now measured against what he has left to spend.
+  choice: Make camp below Ashenmere -> ch22_open
+
+===== step 339 | ch22_open | L28 HP 1286/1875 =====
+The camp outside Ashenmere holds more banners than some kingdoms own: Concordat iron, Silverleaf green, Arcanum's grey-silver, and the Vigil's plain grey above them all.
+Tomorrow night the moon rises red. Tonight the camp smells of woodsmoke, oiled steel, and forty kitchens arguing about seasoning.
+  choice: Walk the fires -> ch22_campfire
+  choice: Inspect the pickets -> ch22_campfire
+
+===== step 340 | ch22_campfire | L28 HP 1286/1875 =====
+At the largest fire, Kaelen apologises for Emberfall and Harrow's Reach - atrocities done by the thing that borrowed his name, in his voice, with his hands.
+Veyra forgives him fully, on behalf of a family that never got to argue with him properly. "Grieve with us," she says. "Not instead of us." The fire pops.
+  choice: The scouts are moving -> ch22_scouts
+
+===== step 341 | ch22_scouts | L28 HP 1286/1875 =====
+Ilsevet's advance scouts prowl the pickets - reading the camp, counting columns, ready to report a warning south that would cost the whole war its edge.
+The determined way is the quiet way: subdue them without one general alarm, and the Blood Moon rises over an enemy who thinks she is ahead.
+  choice: Take them silently -> ch22_end
+
+===== step 342 | ch22_end | L28 HP 1286/1875 =====
+The scouts wake bound and gagged in a supply tent, retired from espionage by people who were gentler about it than their mistress deserved.
+The final plan goes round the fires by word of mouth: the assault at dusk, the Core before moonrise. Morale is high. Surprise is intact. The moon does not know yet.
+  choice: Sound the assault -> ch23_open
+
+===== step 343 | ch23_open | L28 HP 1286/1875 =====
+Dusk, and the army goes in with the moon rising wrong - red gathering at its rim like a bruise.
+Harwick's shield-wall, Silverleaf's bows, Oren's wards: three war machines that have never moved together move together, and Ashenmere's outer defences learn what that costs.
+  choice: Push for the inner gate -> ch23_gate
+
+===== step 344 | ch23_gate | L28 HP 1286/1875 =====
+The inner gate has a keeper. It was a person once - you can tell by how it stands, how it holds its arms, everything except the eyes.
+Ilsevet's Vessels are her masterpiece: Hollowed bodies carrying trained minds, pain held at arm's length and used as fuel. This one salutes its mistress's door.
+  choice: Engage the Vessel -> ch23_fight
+
+===== step 345 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r1] Slash (you 1875/1875 vs the Inner Gate Vessel 1800/1800)
+
+===== step 346 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r2] Slash (you 1839/1875 vs the Inner Gate Vessel 1609/1800)
+
+===== step 347 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r3] Slash (you 1839/1875 vs the Inner Gate Vessel 1503/1800)
+
+===== step 348 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r4] Slash (you 1802/1875 vs the Inner Gate Vessel 1403/1800)
+
+===== step 349 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r5] Slash (you 1765/1875 vs the Inner Gate Vessel 1403/1800)
+
+===== step 350 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r6] Slash (you 1685/1875 vs the Inner Gate Vessel 1305/1800)
+
+===== step 351 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r7] Slash (you 1645/1875 vs the Inner Gate Vessel 1208/1800)
+
+===== step 352 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r8] Slash (you 1645/1875 vs the Inner Gate Vessel 1208/1800)
+
+===== step 353 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r9] Slash (you 1562/1875 vs the Inner Gate Vessel 1099/1800)
+
+===== step 354 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r10] Slash (you 1516/1875 vs the Inner Gate Vessel 1006/1800)
+
+===== step 355 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r11] Slash (you 1475/1875 vs the Inner Gate Vessel 904/1800)
+
+===== step 356 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r12] Slash (you 1439/1875 vs the Inner Gate Vessel 800/1800)
+
+===== step 357 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r13] Slash (you 1400/1875 vs the Inner Gate Vessel 709/1800)
+
+===== step 358 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r14] Slash (you 1362/1875 vs the Inner Gate Vessel 544/1800)
+
+===== step 359 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r15] Slash (you 1326/1875 vs the Inner Gate Vessel 451/1800)
+
+===== step 360 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r16] Slash (you 1286/1875 vs the Inner Gate Vessel 353/1800)
+
+===== step 361 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r17] Slash (you 1246/1875 vs the Inner Gate Vessel 253/1800)
+
+===== step 362 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r18] Slash (you 1209/1875 vs the Inner Gate Vessel 149/1800)
+
+===== step 363 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r19] Slash (you 1167/1875 vs the Inner Gate Vessel 149/1800)
+
+===== step 364 | ch23_fight | L28 HP 1286/1875 =====
+The Vessel fights like grief with a sword: fluent, practised, and aiming somewhere past you at everything it has lost.
+The working goes in with the blades now - the team no longer needs telling. This is what three acts of refusing the easy kill buys.
+  [combat r20] Slash (you 1114/1875 vs the Inner Gate Vessel 40/1800)
+  [combat] WON in 20 rounds (1114/1875 HP banked = 59%)
+
+===== step 365 | ch23_purify | L29 HP 1179/1940 =====
+The Vessel comes back to itself on its knees, weeping, human, alive - the third proof that this war can be won without a single necessary monster.
+Kaelen looks longest. Every purification is a door he thought was bricked shut, opening.
+  choice: Make for the Ritual Core -> ch23_gate_open
+
+===== step 366 | ch23_gate_open | L29 HP 1179/1940 =====
+Ashenmere's outer ring falls by moonrise, and the city that sealed your first great victory opens its dark streets downward, toward the Core.
+The Blood Moon is two hours from full. Ilsevet is somewhere below, with three centuries of patience and one borrowed night.
+  choice: Descend to the Core -> ch24_open
+
+===== step 367 | ch24_open | L29 HP 1179/1940 =====
+The Ritual Core chamber is a dome of sealed light with a crack in it where a woman is standing, and she does not look up when the doors give.
+Kaelen speaks her name for the first time in three hundred years. "Ilsevet." She replies without turning: "Brother-failure. You brought children to a hanging."
+  choice: Hear her wound -> ch24_throne
+  choice: Cut her off now -> ch24_pursue
+
+===== step 368 | ch24_throne | L29 HP 1179/1940 =====
+"You lost a sister," she says to Kaelen, still not turning. "I lost an audience. Five sorcerers looked at me and saw weather - something to be endured, never consulted."
+"The Hollowing looked." The crack in the seal widens as she speaks, patient as a door. "The Hollowing was the first thing in this world to find me interesting."
+  choice: Secure the Core -> ch24_final_core
+
+===== step 369 | ch24_final_core | L29 HP 1179/1940 =====
+She flees deeper as the seal closes - not beaten, scheduled. The Core steadies, the light goes from cracked gold to whole, and Kaelen exhales three centuries at once.
+The Blood Moon reaches full over Ashenmere. Below, the last sorceress of the Sundering waits, and for the first time in this war the next step is the last one.
+  choice: Descend after her -> ch25_open
+
+===== step 370 | ch25_open | L29 HP 1179/1940 =====
+Below the Core, the corridors are older than the city that built them - Sundering-era stone, drinking the red light and giving nothing back.
+Kaelen walks point. Half his body has gone black and veined like cracked glass; three centuries of holding the door shut from the inside, written on him at last.
+  choice: Descend to the heart -> ch25_soldiers
+
+===== step 371 | ch25_soldiers | L29 HP 1179/1940 =====
+The panic starts small - a young Concordat spear, then two, then a whole landing braced against the walls with their eyes on the cracking man leading you.
+Veyra steps into the spear-line without breaking stride. "He has held back this darkness for all of us," she says, "for three centuries. Lower them." They lower them.
+  choice: Steady the line -> ch25_guard
+
+===== step 372 | ch25_guard | L30 HP 1244/2005 =====
+You put yourself between Kaelen and the longest spear in the room and give the soldiers the one thing fear cannot argue with: something to do. A watch order, a count of doors, a job.
+By the second landing the spears are carried, not braced. Some of the young ones walk closer to Kaelen than to you. Trust, once it starts, is greedy.
+  choice: Follow Kaelen down -> ch25_breach
+
+===== step 373 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r1] Slash (you 2005/2005 vs the Corridor Tide 2400/2400)
+
+===== step 374 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r2] Slash (you 1961/2005 vs the Corridor Tide 2305/2400)
+
+===== step 375 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r3] Slash (you 1904/2005 vs the Corridor Tide 2204/2400)
+
+===== step 376 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r4] Slash (you 1852/2005 vs the Corridor Tide 2098/2400)
+
+===== step 377 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r5] Slash (you 1787/2005 vs the Corridor Tide 1916/2400)
+
+===== step 378 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r6] Slash (you 1750/2005 vs the Corridor Tide 1811/2400)
+
+===== step 379 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r7] Slash (you 1706/2005 vs the Corridor Tide 1703/2400)
+
+===== step 380 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r8] Slash (you 1661/2005 vs the Corridor Tide 1606/2400)
+
+===== step 381 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r9] Slash (you 1594/2005 vs the Corridor Tide 1493/2400)
+
+===== step 382 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r10] Slash (you 1594/2005 vs the Corridor Tide 1384/2400)
+
+===== step 383 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r11] Slash (you 1529/2005 vs the Corridor Tide 1272/2400)
+
+===== step 384 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r12] Slash (you 1480/2005 vs the Corridor Tide 1165/2400)
+
+===== step 385 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r13] Slash (you 1429/2005 vs the Corridor Tide 1058/2400)
+
+===== step 386 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r14] Slash (you 1375/2005 vs the Corridor Tide 1058/2400)
+
+===== step 387 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r15] Slash (you 1335/2005 vs the Corridor Tide 961/2400)
+
+===== step 388 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r16] Slash (you 1335/2005 vs the Corridor Tide 857/2400)
+
+===== step 389 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r17] Slash (you 1295/2005 vs the Corridor Tide 761/2400)
+
+===== step 390 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r18] Slash (you 1244/2005 vs the Corridor Tide 651/2400)
+
+===== step 391 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r19] Slash (you 1204/2005 vs the Corridor Tide 479/2400)
+
+===== step 392 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r20] Slash (you 1167/2005 vs the Corridor Tide 370/2400)
+
+===== step 393 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r21] Slash (you 1126/2005 vs the Corridor Tide 264/2400)
+
+===== step 394 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r22] Slash (you 1056/2005 vs the Corridor Tide 156/2400)
+
+===== step 395 | ch25_breach | L30 HP 1244/2005 =====
+The corridors are not empty. The Hollowed come out of the walls' old wounds in a disciplined tide - disciplined, which is the frightening part - and the young soldiers' spears shake.
+You take the tide's head in front of them so the shaking has somewhere else to go. Courage is contagious, and so is the other thing.
+  [combat r23] Slash (you 1015/2005 vs the Corridor Tide 53/2400)
+  [combat] WON in 23 rounds (1015/2005 HP banked = 51%)
+
+===== step 396 | ch25_descent | L31 HP 1080/2070 =====
+The last stair ends at a door grown out of the living rock - grey, veined silver, breathing faintly as the mist breathes.
+Kaelen puts his palm on it. "She has been waiting three hundred years to be found interesting," he says. "Be polite about it. Do not give her the ending she is expecting."
+  choice: Enter the throne room -> ch26_open
+
+===== step 397 | ch26_open | L31 HP 1080/2070 =====
+The throne room is a hollow sphere of stone with the Blood Moon's light rising through a crack in the ceiling, and Ilsevet sits at the bottom of it like a woman at the bottom of a well, looking up.
+Everything here is grey and silver, including her smile.
+  choice: Hear her confession -> ch26_truth
+
+===== step 398 | ch26_truth | L31 HP 1080/2070 =====
+She lays it bare like a butcher. The whisper at Saltmere: hers. The seven candles Kaelen prayed over: hers, rearranged. His desperation was her instrument, tuned for one use.
+"Tonight I become one with the Hollowing completely," she says. "Not a curse. Perfection." Kaelen closes his eyes: three centuries of guilt, re-priced.
+  choice: Brace behind Kaelen -> ch26_shockwave
+
+===== step 399 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r1] Slash (you 2070/2070 vs the Hollow Tide 2100/2100)
+
+===== step 400 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r2] Slash (you 2034/2070 vs the Hollow Tide 1903/2100)
+
+===== step 401 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r3] Slash (you 1981/2070 vs the Hollow Tide 1716/2100)
+
+===== step 402 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r4] Slash (you 1928/2070 vs the Hollow Tide 1605/2100)
+
+===== step 403 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r5] Slash (you 1892/2070 vs the Hollow Tide 1498/2100)
+
+===== step 404 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r6] Slash (you 1851/2070 vs the Hollow Tide 1398/2100)
+
+===== step 405 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r7] Slash (you 1814/2070 vs the Hollow Tide 1293/2100)
+
+===== step 406 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r8] Slash (you 1774/2070 vs the Hollow Tide 1182/2100)
+
+===== step 407 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r9] Slash (you 1735/2070 vs the Hollow Tide 1063/2100)
+
+===== step 408 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r10] Slash (you 1735/2070 vs the Hollow Tide 864/2100)
+
+===== step 409 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r11] Slash (you 1695/2070 vs the Hollow Tide 684/2100)
+
+===== step 410 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r12] Slash (you 1600/2070 vs the Hollow Tide 584/2100)
+
+===== step 411 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r13] Slash (you 1549/2070 vs the Hollow Tide 584/2100)
+
+===== step 412 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r14] Slash (you 1511/2070 vs the Hollow Tide 483/2100)
+
+===== step 413 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r15] Slash (you 1511/2070 vs the Hollow Tide 382/2100)
+
+===== step 414 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r16] Slash (you 1511/2070 vs the Hollow Tide 284/2100)
+
+===== step 415 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r17] Slash (you 1511/2070 vs the Hollow Tide 166/2100)
+
+===== step 416 | ch26_shockwave | L31 HP 1080/2070 =====
+Her preliminaries arrive like weather: a tide of grey that fills the sphere floor to ceiling with a sound like a mountain learning to scream.
+The team locks shields over Kaelen - Concordat iron, ranger bows, ward-light, you at the hinge of it. Hold, and the ritual begins. Hold.
+  [combat r18] Slash (you 1465/2070 vs the Hollow Tide 61/2100)
+  [combat] WON in 18 rounds (1465/2070 HP banked = 71%)
+
+===== step 417 | ch27_open | L33 HP 1595/2200 =====
+The sphere fills with the war it took three acts to build: shield-wall locking into ward-lattice, ranger lanes cutting the grey, the whole machine turning at once.
+Kaelen begins to cast. The ritual takes him out of the fight the moment it starts - the moment Ilsevet stops being weather and becomes an arrow.
+  choice: She is through - stop her -> ch27_fight
+
+===== step 418 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r1] Execute (you 2200/2200 vs Ilsevet's avatar 2300/2300)
+
+===== step 419 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r2] Execute (you 2157/2200 vs Ilsevet's avatar 2176/2300)
+
+===== step 420 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r3] Slash (you 2115/2200 vs Ilsevet's avatar 2176/2300)
+
+===== step 421 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r4] Slash (you 2076/2200 vs Ilsevet's avatar 2063/2300)
+
+===== step 422 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r5] Slash (you 2038/2200 vs Ilsevet's avatar 1957/2300)
+
+===== step 423 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r6] Execute (you 1992/2200 vs Ilsevet's avatar 1760/2300)
+
+===== step 424 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r7] Slash (you 1921/2200 vs Ilsevet's avatar 1760/2300)
+
+===== step 425 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r8] Slash (you 1874/2200 vs Ilsevet's avatar 1650/2300)
+
+===== step 426 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r9] Slash (you 1826/2200 vs Ilsevet's avatar 1650/2300)
+
+===== step 427 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r10] Slash (you 1787/2200 vs Ilsevet's avatar 1532/2300)
+
+===== step 428 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r11] Slash (you 1699/2200 vs Ilsevet's avatar 1532/2300)
+
+===== step 429 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r12] Slash (you 1660/2200 vs Ilsevet's avatar 1427/2300)
+
+===== step 430 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r13] Execute (you 1562/2200 vs Ilsevet's avatar 1317/2300)
+
+===== step 431 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r14] Slash (you 1512/2200 vs Ilsevet's avatar 1099/2300)
+
+===== step 432 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r15] Slash (you 1472/2200 vs Ilsevet's avatar 992/2300)
+
+===== step 433 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r16] Slash (you 1424/2200 vs Ilsevet's avatar 992/2300)
+
+===== step 434 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r17] Slash (you 1361/2200 vs Ilsevet's avatar 888/2300)
+
+===== step 435 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r18] Slash (you 1289/2200 vs Ilsevet's avatar 691/2300)
+
+===== step 436 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r19] Execute (you 1214/2200 vs Ilsevet's avatar 586/2300)
+
+===== step 437 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r20] Slash (you 1175/2200 vs Ilsevet's avatar 586/2300)
+
+===== step 438 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r21] Slash (you 1135/2200 vs Ilsevet's avatar 586/2300)
+
+===== step 439 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r22] Slash (you 1095/2200 vs Ilsevet's avatar 471/2300)
+
+===== step 440 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r23] Slash (you 1055/2200 vs Ilsevet's avatar 353/2300)
+
+===== step 441 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r24] Slash (you 1012/2200 vs Ilsevet's avatar 169/2300)
+
+===== step 442 | ch27_fight | L33 HP 1595/2200 =====
+She comes through her own army like a rumor through a small town, and every yard you give her is a yard she spends not reaching the circle.
+The DETERMINED order goes out: the outer line bends, deliberately, buying the centre everything it has. Yielding ground is not losing it - not tonight.
+  [combat r25] Slash (you 975/2200 vs Ilsevet's avatar 48/2300)
+  [combat] WON in 25 rounds (975/2200 HP banked = 44%)
+
+===== step 443 | ch27_begun | L35 HP 1105/2330 =====
+Ilsevet withdraws to the far side of the sphere, unhurried, cataloguing. The circle's light climbs - and stutters.
+Oren reads the fluctuation and goes grey. "Her corruption is deeper in the Core than the working assumed. It needs more than the fragments. It needs an anchor that is alive and willing."
+  choice: Ask what it needs -> ch28_open
+
+===== step 444 | ch28_open | L35 HP 1105/2330 =====
+"A living anchor, willing," Oren says, and the sphere goes quiet enough to hear the Blood Moon rise.
+Veyra steps forward before anyone can invent a reason she shouldn't. "I am here because I chose to be," she says. "Let me help finish this - together, not instead of you."
+  choice: Support her decision -> ch28_anchor
+  choice: Ask for another way -> ch28_object
+
+===== step 445 | ch28_anchor | L35 HP 1105/2330 =====
+The connection takes blood and gives back light. Veyra holds Kaelen's hand inside the circle, and the fluctuation steadies like a room steadies when someone says the true thing out loud.
+You hold the narrow ground between them and the dark. One blood bond, two names, one family three centuries in the assembling.
+  choice: Face her final form -> ch29_open
+
+===== step 446 | ch29_open | L35 HP 1105/2330 =====
+Ilsevet stops being a woman the way a river stops being rain. She pours herself into the crack in the Core, and the Core lets her - grey and gold, no ceremony, no retreat.
+Kaelen calls out - not in anger. "You didn't have to become this to be strong, Ilsevet." Behind the monstrous geometry, an old human expression surfaces. Then it goes.
+  choice: Form the final barrier -> ch29_barrier
+
+===== step 447 | ch29_barrier | L35 HP 1105/2330 =====
+The barrier is everyone: the shield-wall's last hour, the rangers' last arrows, the mages' last wards, Bryn's joint standard in the middle of it, and you at the seam.
+She spends herself against it wave after wave, and the barrier spends back, and behind you the ritual counts toward its apex. One strike will decide everything.
+  choice: Make the final strike -> ch29_guardfight
+
+===== step 448 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r1] Execute (you 2330/2330 vs the Seam Vessel 2500/2500)
+
+===== step 449 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r2] Execute (you 2290/2330 vs the Seam Vessel 2379/2500)
+
+===== step 450 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r3] Slash (you 2290/2330 vs the Seam Vessel 2255/2500)
+
+===== step 451 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r4] Slash (you 2242/2330 vs the Seam Vessel 2127/2500)
+
+===== step 452 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r5] Execute (you 2204/2330 vs the Seam Vessel 1997/2500)
+
+===== step 453 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r6] Slash (you 2204/2330 vs the Seam Vessel 1862/2500)
+
+===== step 454 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r7] Slash (you 2204/2330 vs the Seam Vessel 1745/2500)
+
+===== step 455 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r8] Slash (you 2141/2330 vs the Seam Vessel 1617/2500)
+
+===== step 456 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r9] Slash (you 2104/2330 vs the Seam Vessel 1617/2500)
+
+===== step 457 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r10] Slash (you 2061/2330 vs the Seam Vessel 1491/2500)
+
+===== step 458 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r11] Execute (you 2022/2330 vs the Seam Vessel 1382/2500)
+
+===== step 459 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r12] Slash (you 2022/2330 vs the Seam Vessel 1252/2500)
+
+===== step 460 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r13] Slash (you 1952/2330 vs the Seam Vessel 1130/2500)
+
+===== step 461 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r14] Slash (you 1952/2330 vs the Seam Vessel 1005/2500)
+
+===== step 462 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r15] Slash (you 1900/2330 vs the Seam Vessel 1005/2500)
+
+===== step 463 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r16] Slash (you 1900/2330 vs the Seam Vessel 794/2500)
+
+===== step 464 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r17] Execute (you 1858/2330 vs the Seam Vessel 675/2500)
+
+===== step 465 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r18] Slash (you 1819/2330 vs the Seam Vessel 449/2500)
+
+===== step 466 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r19] Slash (you 1819/2330 vs the Seam Vessel 449/2500)
+
+===== step 467 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r20] Slash (you 1751/2330 vs the Seam Vessel 449/2500)
+
+===== step 468 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r21] Slash (you 1751/2330 vs the Seam Vessel 338/2500)
+
+===== step 469 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r22] Slash (you 1710/2330 vs the Seam Vessel 338/2500)
+
+===== step 470 | ch29_guardfight | L35 HP 1105/2330 =====
+One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.
+You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on.
+  [combat r23] Slash (you 1670/2330 vs the Seam Vessel 118/2500)
+  [combat] WON in 23 rounds (1670/2330 HP banked = 72%)
+
+===== step 471 | ch30_open | L37 HP 1800/2460 =====
+The ritual's apex is a held breath. Kaelen turns the purifying light on Ilsevet the way it was turned on a whale, once, and a tree: an offer, not a weapon. Freedom from the hatred that has eaten her for three hundred years.
+The light waits. It has waited this long. She looks at it as the drowned look at the surface.
+  choice: She makes her choice -> ch30_refusal
+
+===== step 472 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r1] Execute (you 2460/2460 vs Ilsevet Refusing the Light 2600/2600)
+
+===== step 473 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r2] Execute (you 2460/2460 vs Ilsevet Refusing the Light 2455/2600)
+
+===== step 474 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r3] Slash (you 2403/2460 vs Ilsevet Refusing the Light 2235/2600)
+
+===== step 475 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r4] Slash (you 2403/2460 vs Ilsevet Refusing the Light 2118/2600)
+
+===== step 476 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r5] Slash (you 2362/2460 vs Ilsevet Refusing the Light 2118/2600)
+
+===== step 477 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r6] Slash (you 2324/2460 vs Ilsevet Refusing the Light 2118/2600)
+
+===== step 478 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r7] Execute (you 2287/2460 vs Ilsevet Refusing the Light 1997/2600)
+
+===== step 479 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r8] Slash (you 2231/2460 vs Ilsevet Refusing the Light 1763/2600)
+
+===== step 480 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r9] Slash (you 2192/2460 vs Ilsevet Refusing the Light 1638/2600)
+
+===== step 481 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r10] Slash (you 2152/2460 vs Ilsevet Refusing the Light 1638/2600)
+
+===== step 482 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r11] Slash (you 2103/2460 vs Ilsevet Refusing the Light 1638/2600)
+
+===== step 483 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r12] Slash (you 2052/2460 vs Ilsevet Refusing the Light 1506/2600)
+
+===== step 484 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r13] Slash (you 2002/2460 vs Ilsevet Refusing the Light 1506/2600)
+
+===== step 485 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r14] Slash (you 1958/2460 vs Ilsevet Refusing the Light 1376/2600)
+
+===== step 486 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r15] Execute (you 1917/2460 vs Ilsevet Refusing the Light 1250/2600)
+
+===== step 487 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r16] Slash (you 1878/2460 vs Ilsevet Refusing the Light 1105/2600)
+
+===== step 488 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r17] Slash (you 1837/2460 vs Ilsevet Refusing the Light 980/2600)
+
+===== step 489 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r18] Slash (you 1790/2460 vs Ilsevet Refusing the Light 773/2600)
+
+===== step 490 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r19] Slash (you 1790/2460 vs Ilsevet Refusing the Light 556/2600)
+
+===== step 491 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r20] Execute (you 1739/2460 vs Ilsevet Refusing the Light 434/2600)
+
+===== step 492 | ch30_refusal | L37 HP 1800/2460 =====
+"I have gone too far to go back," she says, and the refusal is the most human thing she has done all night. "At least let this mean something."
+Her avatar rises for one last tide, and the purification wave comes down the channel you are holding open. Not your violence. Her choice, honoured at last.
+  [combat r21] Slash (you 1700/2460 vs Ilsevet Refusing the Light 54/2600)
+  [combat] WON in 21 rounds (1700/2460 HP banked = 69%)
+
+===== step 493 | ch30_unmade | L39 HP 1830/2590 =====
+The wave takes her apart as morning takes apart a nightmare: thoroughly, without malice, piece by refusing piece. The Core closes gold. The Blood Moon sets.
+Kaelen - cracked glass going clear from the heart outward - stands and breathes like a man three centuries in arrears. The Hollowing is sealed. The mist is already thinning.
+  choice: Walk into the morning -> ch31_open
+
+===== step 494 | ch31_open | L39 HP 1830/2590 =====
+Morning after the Blood Moon. The ruins of Ashenmere are gold-grey and quiet, and the mist beyond the walls is - visibly, measurably - thinner.
+Kaelen smiles warmly for the first time in anyone's memory. Veyra holds his hand as family. Harwick, Ilyndra and Oren stand together, united by choice.
+  choice: Sit the council of three -> ch31_council
+  choice: Walk the healing land -> ch31_fields
+
+===== step 495 | ch31_council | L39 HP 1830/2590 =====
+The council of three sits in Greyhold's old hall - the same neutral table, a different world. Kaldareth is declared free of the expanding Hollowing, in the flat voice of real documents.
+Kaelen asks for one appointment: advisor to the Vigil. Close to the ward-records, he says. Close to family, says Veyra.
+  choice: Call the new dawn in -> ch31_close
+
+===== step 496 | ch31_close | L39 HP 1830/2590 =====
+The Vigil takes the surrender of nobody. There is no army left to surrender; there is weather, healing. The Vigil watches anyway - that is what a Vigil is.
+Kaelen remains at Greyhold, advisor and family. The war is over. The watching, gratefully, is not.
+  choice: Let the months pass -> ch32_months
+
+===== step 497 | ch32_months | L39 HP 1830/2590 =====
+Months pass, and the map redraws itself politely: the Mist Zones shrink season by season, replaced by fields that behave like fields.
+Emberfall holds its first clean harvest under Mother Senna and a grown-tall Elin. Harrow's Reach thrives under Reeve Callen, who dreams no more.
+  choice: See what the alliance built -> ch32_alliance
+
+===== step 498 | ch32_alliance | L39 HP 1830/2590 =====
+Greyhold loosens from fortress into a symbol of the alliance. Bryn commands a joint unit of all three peoples; Thessaly earns her redemption in careful research under Oren.
+Veyra leads the Vigil with Kaelen beside her - advisor, and family. The brooch is kept as a reminder: old wounds heal, if someone is brave enough to try.
+  choice: Turn to your own story -> ch32_epilogue_gate
+
+===== step 499 | ch32_epilogue_gate | L39 HP 1830/2590 =====
+And you - who first came to Greyhold as the sole survivor of a small village - are known across Kaldareth now, as part of something far greater.
+The histories argue about what to call you. It depends, as it always did, on what you were.
+  choice: Remember the shield -> ch32_epilogue_warrior
+  choice: Remember the eye [locked: archer only] -> ch32_epilogue_archer
+  choice: Remember the litany [locked: mage only] -> ch32_epilogue_mage
+
+===== step 500 | ch32_epilogue_warrior | L39 HP 1830/2590 =====
+They name you the Shield of the Alliance. You drill the joint unit beside Bryn, and the lesson you teach is the one you learned on a bridge: break what blocks the road, and carry what cannot.
+Harwick calls it the only doctrine worth a shield. He is not wrong.
+  choice: Stand in the peace you made -> ch32_kaldareth_healed
+
+===== ENDING: ch32_kaldareth_healed (kaldareth_healed) =====
+Kaldareth is finally at peace - not because it was never broken, but because it chose to heal together.
+From Emberfall's silence to a clean-rising moon: the survivor of a burned village stood at the centre of the healing of the world. The histories will argue about the rest.
+
+===== SUMMARY =====
+class: warrior
+ending: ch32_kaldareth_healed
+steps: 501
+level: 39
+nodes visited: 181
+combats won: 23  choices: 157  tokens: 6220
+final transcript tail:
+  You chose: Make the final strike
+  the Seam Vessel is put down.
+  You chose: She makes her choice
+  Ilsevet Refusing the Light is put down.
+  You chose: Walk into the morning
+  You chose: Sit the council of three
+  You chose: Call the new dawn in
+  You chose: Let the months pass
+  You chose: See what the alliance built
+  You chose: Turn to your own story
+  You chose: Remember the shield
+  You chose: Stand in the peace you made

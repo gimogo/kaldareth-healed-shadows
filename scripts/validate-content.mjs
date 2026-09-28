@@ -195,6 +195,71 @@ function main() {
   report.note(`  longest prose       ${longestProse.length} chars (${longestProse.id}) of ${PROSE_BUDGET}`)
   report.note(`  longest label       ${longestLabel.length} chars (${longestLabel.where}) of ${LABEL_BUDGET}`)
 
+  /* ── Prose style ──────────────────────────────────────────────────── */
+
+  /*
+   * Prose is written one node at a time, so nothing stops a signature
+   * construction from accreting across nodes until the whole campaign reads
+   * like one sentence recycled. This pass reads all of it at once and warns on
+   * the two failure modes that actually happened here:
+   *
+   *  - A tic density over budget. "..., the way X does Y" sat in 23% of nodes
+   *    (a player meets it every 4-5 nodes); the pass found it because a human
+   *    reader wouldn't. The 10% budget allows the construction where it earns
+   *    its place without letting it become furniture.
+   *  - An echo: the same run of four or more words in two different nodes.
+   *    With two sentences per node any exact 4-gram appearing twice is almost
+   *    certainly a copy-paste remnant rather than intent.
+   */
+  const TIC = / the way /gi
+  const TIC_BUDGET = 0.1
+  const ECHO_LENGTH = 6
+  let ticCount = 0
+  const ticNodes = new Set()
+  const gramIndex = new Map()
+  const warnedEchoes = new Set()
+
+  /* Proper names (enemies, items) recur by design and are not prose echoes. */
+  const protectedPhrases = []
+  for (const node of Object.values(nodes)) {
+    if (node.type === 'combat') protectedPhrases.push(node.enemy.name.toLowerCase())
+  }
+  for (const item of Object.values(data.items)) protectedPhrases.push(item.name.toLowerCase())
+
+  for (const [id, node] of Object.entries(nodes)) {
+    for (const paragraph of node.text) {
+      const lower = paragraph.toLowerCase()
+      const hits = lower.match(TIC)?.length ?? 0
+      if (hits > 0) {
+        ticCount += hits
+        ticNodes.add(id)
+      }
+      if (protectedPhrases.some((p) => lower.includes(p))) continue
+      const words = lower.replace(/[^a-z' ]/g, ' ').split(/\s+/).filter(Boolean)
+      const chapter = id.match(/^ch(\d+)/)?.[1] ?? '?'
+      for (let i = 0; i + ECHO_LENGTH <= words.length; i += 1) {
+        const gram = words.slice(i, i + ECHO_LENGTH).join(' ')
+        const seen = gramIndex.get(gram)
+        /* Motifs inside one chapter (the per-class epilogues, say) are design;
+           the same sentence drifting between chapters thirty nodes apart is not. */
+        if (seen && seen.id !== id && seen.chapter !== chapter && !warnedEchoes.has(gram)) {
+          warnedEchoes.add(gram)
+          report.warn(`${id}: 6-word echo of "${seen.id}" - "${gram}" appears verbatim in both nodes`)
+        } else gramIndex.set(gram, { id, chapter })
+      }
+    }
+  }
+
+  report.section('Prose style')
+  const ticPct = nodeIds.size === 0 ? 0 : ticCount / nodeIds.size
+  report.note(`  "the way" tic       ${ticCount} use(s) across ${ticNodes.size}/${nodeIds.size} nodes - budget ${(TIC_BUDGET * 100).toFixed(0)}% of nodes`)
+  if (ticPct > TIC_BUDGET) {
+    const offenders = [...ticNodes].slice(0, 8).join(', ')
+    report.warn(
+      `the "the way X" construction appears ${ticCount} times across ${nodeIds.size} nodes (${(ticPct * 100).toFixed(0)}%), over the 10% style budget - rewrite the weakest instances first: ${offenders}...`,
+    )
+  }
+
   /* ── References ───────────────────────────────────────────────────── */
 
   report.section('References')

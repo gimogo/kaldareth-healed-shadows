@@ -5,8 +5,7 @@ A browser text RPG gated behind real ownership of a
 *inside* the Rare Friends runtime, in a sandboxed iframe, with no wallet
 connection of its own and no transaction ever signed.
 
-Act 1, Chapter 1 is implemented. See `docs/kaldareth_gdd.md` for the full
-scenario script and `content/` for the machine-readable story data.
+All four acts (GDD Chapters 1–32) are implemented end to end: 235 nodes, twenty-three combat encounters, five three-way class gates (including a per-class epilogue), and act endings at the Old Watchtower (Act 1), on Greyhold's wall with Ilsevet Cray's name in every mouth (Act 2), in the Ritual Core chamber as the Blood Moon rises over Ashenmere (Act 3), and at Kaldareth Healed — the GDD's happy ending (Act 4). See `docs/kaldareth_gdd.md` for the full scenario script and `content/` for the machine-readable story data.
 
 ## Quick start
 
@@ -31,7 +30,7 @@ relax the ownership gate: the runtime still verifies the Friend.
 | `test` | Vitest unit tests |
 | `test:e2e` | Playwright, `desktop` and `mobile-360` |
 | `validate:content` | Story structure, reachability, class gates, economy |
-| `check:progression` | EXP curve against the Act 1 level target |
+| `check:progression` | EXP curve against the per-act level targets (all four acts) |
 | `check:balance` | Class tables, skills, combat win rates |
 | `check:econ` | Fee split, quota pressure, season prize maths |
 | `check:sdk` | SDK boundary and reference-term checks (see below) |
@@ -177,8 +176,9 @@ built frame.
 
 ## Testing
 
-**103 unit tests** cover the engine: RNG determinism, verb matching, the run
-state machine, class gates, skills, combat, effects, items, scoring and
+**104 unit tests** cover the engine: RNG determinism, verb matching, the run
+state machine, class gates, skills, combat (including a magnitude regression
+guard that pins damage to the attack stat), effects, items, scoring and
 progression.
 
 **36 end-to-end tests** (18 scenarios × `desktop` and `mobile-360`) drive the
@@ -203,25 +203,38 @@ Both are decisions rather than defects, and both are visible in the checks:
 
 ## Content status
 
-Chapter 1 is structurally complete: 22 nodes, all reachable, two three-way class
-gates, and both endings. The prose is written, and `npm run verify:content` is
-green.
+All four acts are structurally complete: 235 nodes, all reachable, five three-way
+class gates (bridge, gates, sigil, forest trials, and a per-class epilogue),
+twenty-three combat encounters whose win rates are simulated in
+`npm run check:balance`, and act endings at the Old Watchtower (Act 1, Kaelen
+asks to talk), Greyhold's wall (Act 2, where Ilsevet Cray finally has a face and
+a name), the Ritual Core of Ashenmere (Act 3, the seal held as the Blood Moon
+rose) and Kaldareth Healed (Act 4, the GDD's happy ending, with Veyra as blood
+anchor and Ilsevet destroyed by her own refusal of the light). Every chapter
+keeps the GDD's DETERMINED dilemma as the main branch, with the alternative
+branch written to reach the same facts by a different road. `npm run verify:content`
+is green, and the act level targets are no longer aspirational: the reachable
+EXP bands bracket level 10 (Act 1), level 20 (Act 2), level 30 (Act 3) and level
+40 (Act 4), which is what `npm run check:progression` now asserts per act.
 
 The writing is length-capped, because the frame cannot scroll. The prose pane is
 the only part of it with a scrollbar, and the phone frame is 358×638 against a
 desktop frame of 958×638. `validate:content` enforces 340 characters of prose and
-28 characters of choice label per node; the longest node is 327 and the longest
-label is exactly 28. Overrunning either is an error, because the failure is
+28 characters of choice label per node; the longest node sits exactly on 340 and
+the longest label is exactly 28. Overrunning either is an error, because the failure is
 invisible in review — the text is all still in the DOM, it has just stopped being
 on screen on the device with the least room.
 
-On the phone the prose pane still scrolls on the two class-gate nodes, where three
-choices sit under the story, and on the standings list. Both are allowed: the
-frame itself never scrolls, and the choice you need is always on screen. Desktop
-never scrolls at all, and that is asserted.
+On the phone the prose pane still scrolls on the two class-gate nodes, where
+three choices sit under the story, and on the standings list. The combat panel
+gained the same allowance during the Act 1 build: two health bars, a log of
+eight lines and a skill list overflowed a fixed box, and the last skill buttons
+landed beneath the status panel — clickable by nothing. All three regions scroll
+internally; the frame itself never scrolls, and that is still asserted.
 
-Still outstanding: Chapter 1 only reaches level 4 against an Act 1 target of level
-10, because Chapters 2–8 are not written yet.
+Still outstanding: none of the GDD's chapters. The full campaign runs from a
+burned village to a healed world and ends at level 39–40 of the level-40 cap —
+the cap is reachable, which is what the cap is for.
 
 ## Notes
 

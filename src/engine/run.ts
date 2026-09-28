@@ -252,7 +252,17 @@ export function resolveCombat(
     ctx.catalog,
   )
 
-  const expEffects = outcome.won ? ([{ op: 'exp', amount: node.enemy.exp }] as const) : []
+  /*
+   * The fight's EXP pays on BOTH branches, not just the win. These are
+   * mandatory, sequential story fights: paying only on victory let a single
+   * loss strand the player a level below every later encounter, and that gap
+   * compounds - a lost fight is followed by more fights the player is now
+   * weaker against, which is a death spiral with no recovery. The campaign is
+   * authored so either branch reaches the same next beat, so the milestone pays
+   * either way; the win/lose difference is which road you take and the HP you
+   * arrive with, never the level you arrive at.
+   */
+  const expEffects = [{ op: 'exp' as const, amount: node.enemy.exp }]
   const { run: afterExp, levelsGained: expLevels } = applyEffects(afterEffects, expEffects, ctx.catalog)
 
   const next: RunState = {

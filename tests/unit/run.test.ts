@@ -206,14 +206,14 @@ describe('narrative flow', () => {
 
   it('finishes the run on the ending node', () => {
     let run = createRun('warrior', ctx, 'END')
-    run = enterNode(run, 'ch1_ending', ctx).run
+    run = enterNode(run, 'ch32_kaldareth_healed', ctx).run
     expect(run.finished).toBe(true)
-    expect(run.endingId).toBe('ch1_ending')
+    expect(run.endingId).toBe('ch32_kaldareth_healed')
     expect(run.leaderboardTag).toBeTruthy()
   })
 
   it('refuses to move a finished run', () => {
-    const run = enterNode(createRun('warrior', ctx, 'DEAD'), 'ch1_ending', ctx).run
+    const run = enterNode(createRun('warrior', ctx, 'DEAD'), 'ch32_kaldareth_healed', ctx).run
     expect(() => enterNode(run, 'ch1_open', ctx)).toThrow()
   })
 })

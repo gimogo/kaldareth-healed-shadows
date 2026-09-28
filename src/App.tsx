@@ -74,7 +74,7 @@ export default function App({ session }: { session: AppSession }) {
          * 478px frame that the three class buttons then had to fit under.
          */}
         <p className="kald-note">
-          Act 1 — Emberfall. Every run is a new character, decided by a seed you can share. Playing as{' '}
+          Kaldareth — The Healed Shadows. Every run is a new character, decided by a seed you can share. Playing as{' '}
           {session.label} · {session.quota.remaining} of {session.quota.limit} runs left today.
         </p>
         <ClassSelect onBegin={begin} />
@@ -101,7 +101,7 @@ export default function App({ session }: { session: AppSession }) {
   ) : (
     <main className="kald-shell">
       <header className="kald-banner">
-        <span className="kald-chapter">Act 1</span>
+        <span className="kald-chapter">Chapters 1–32</span>
         <span className="kald-place">{run.currentNodeId.replace(/^ch\d+_/, '').replace(/_/g, ' ')}</span>
       </header>
       <hr className="kald-rule" />

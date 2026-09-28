@@ -101,38 +101,56 @@ function main() {
 
   /* ── Per-act landing band ─────────────────────────────────────────── */
 
-  const stages = [...new Set(Object.values(nodes).map((n) => n.stage))].sort((a, b) => a - b)
-  report.section('Act 1 progression')
-  report.note(`  stages present: ${stages.join(', ')}`)
-  report.note('  stage  exp band              level band     target')
+  /*
+   * Acts share the stage axis, so the last node of each act is found by name:
+   * every act ends on a node whose id is `ch<8n>_<...>` (ch8, ch16, ch24, ch32).
+   * The act's exp band is the min/max cumulative EXP across its ending nodes,
+   * which must bracket the act's GDD level target.
+   */
+  const actFinalists = [
+    'ch8_watchtower_meet',
+    'ch16_vision',
+    'ch24_final_core',
+    'ch32_kaldareth_healed',
+  ].filter((id) => nodes[id])
 
-  const [firstActTarget] = balance.exp.actLevels
-  let verified = false
+  report.section('Per-act progression')
+  report.note('  act   exp band              level band     target')
 
-  for (const stage of stages) {
-    // End of a stage = the deepest node at that stage.
-    const stageNodes = Object.values(nodes).filter((n) => n.stage === stage)
-    const endings = stageNodes.filter((n) => n.type === 'ending')
-    const exits = endings.length > 0 ? endings : stageNodes
-    const bandLow = Math.min(...exits.map((n) => low.get(n.id) ?? 0))
-    const bandHigh = Math.max(...exits.map((n) => high.get(n.id) ?? 0))
+  let actsFailed = 0
+  for (const [index, id] of actFinalists.entries()) {
+    const target = balance.exp.actLevels[index]
+    if (target === undefined) continue
+    const bandLow = low.get(id) ?? 0
+    const bandHigh = high.get(id) ?? 0
     const levelLow = levelFor(bandLow)
     const levelHigh = levelFor(bandHigh)
-    const target = firstActTarget
     const bracket = levelLow <= target && levelHigh >= target
-    if (stage === stages[stages.length - 1]) verified = bracket
+    if (!bracket) actsFailed += 1
 
     report.note(
-      `  ${String(stage).padStart(5)}  ${`${bandLow}–${bandHigh}`.padEnd(20)} ${`${levelLow}–${levelHigh}`.padEnd(14)} L${target} ${bracket ? 'ok' : 'OUT OF BRACKET'}`,
+      `  ${String(index + 1).padStart(5)}  ${`${bandLow}–${bandHigh}`.padEnd(20)} ${`${levelLow}–${levelHigh}`.padEnd(14)} L${target} ${bracket ? 'ok' : 'OUT OF BRACKET'}`,
     )
   }
 
-  if (!verified) {
-    report.warn(
-      `the last stage present (stage ${stages[stages.length - 1]}) does not bracket the Act 1 target of level ${firstActTarget}. This is expected while only Chapter 1 exists; Act 1 is not verifiable until Chapter 8 is in the tree.`,
-    )
+  if (actFinalists.length === 0) {
+    report.warn('no act-ending nodes found; nothing to verify')
+  } else if (actsFailed > 0) {
+    for (const [index, id] of actFinalists.entries()) {
+      const target = balance.exp.actLevels[index]
+      if (target === undefined) continue
+      const bandLow = low.get(id) ?? 0
+      const bandHigh = high.get(id) ?? 0
+      const levelLow = levelFor(bandLow)
+      const levelHigh = levelFor(bandHigh)
+      if (!(levelLow <= target && levelHigh >= target)) {
+        report.error(
+          `Act ${index + 1} (${id}) lands at level ${levelLow}-${levelHigh}; the GDD target is level ${target}`,
+        )
+      }
+    }
   } else {
-    report.note(`  Act 1 target L${firstActTarget} is bracketed by the reachable EXP band.`)
+    report.note(`  all ${actFinalists.length} written act targets are bracketed by the reachable EXP bands.`)
   }
 
   /* ── Level cap ────────────────────────────────────────────────────── */

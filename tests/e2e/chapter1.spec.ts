@@ -17,7 +17,9 @@
  */
 
 import { expect, test } from '@playwright/test'
-import type { FrameLocator } from '@playwright/test'
+import type { FrameLocator, Locator } from '@playwright/test'
+
+import { SKILLS } from '../../src/engine/skills.ts'
 
 import { openSession } from './session.ts'
 
@@ -35,20 +37,62 @@ async function startRun(game: FrameLocator, className: string) {
   await game.getByRole('button', { name: 'Enter Kaldareth' }).click()
 }
 
-/** Walk the spine of the chapter, always taking the first available choice. */
+/**
+ * Walk the whole act: first available choice on narrative nodes, strongest
+ * available skill in combat. The first-skill-only walker turned every fight into
+ * twenty rounds of basic attacks - an Archer never reached the ending inside any
+ * sane step budget - so combat is played the way a player plays.
+ */
+/**
+ * The strongest currently-available skill, by the same measure the balance
+ * simulation uses (highest `power`). Index order is unlock order, which is not
+ * strength order: a level-40 Warrior's list ends with Rallying Cry (power 0),
+ * and picking "the last button" burned rounds on buffs instead of strikes. That
+ * single mistake used to eat the whole step budget in the four-act walk.
+ */
+async function strongestSkill(skills: Locator): Promise<number> {
+  const count = await skills.count()
+  let bestIndex = 0
+  let bestPower = -1
+  for (let i = 0; i < count; i += 1) {
+    const text = (await skills.nth(i).textContent()) ?? ''
+    const name = text.replace(/\s*\(\d+\)\s*$/, '').trim()
+    const power = SKILLS.find((s) => s.name === name)?.power ?? 0
+    if (power > bestPower) {
+      bestPower = power
+      bestIndex = i
+    }
+  }
+  return bestIndex
+}
+
 async function playThrough(game: FrameLocator) {
-  for (let step = 0; step < 25; step += 1) {
+  // Four acts: roughly 155 decisions plus up to ~560 combat rounds on the
+  // worst class when a fight grinds to the enemy's slow kill (measured: the
+  // Wild Working vs a defensive build runs 40+ rounds on its own). 800 leaves
+  // room without letting a stalled run spin forever; the tests that walk it
+  // raise their own timeout to match.
+  for (let step = 0; step < 800; step += 1) {
     await revealProse(game)
     if (await game.getByRole('button', { name: 'Begin a new run' }).isVisible().catch(() => false)) return
+    const skills = game.locator('[aria-label="Combat"] button.kald-choice:not([disabled])')
+    if ((await skills.count()) > 0) {
+      // Skills are listed in unlock order, so the last affordable one is the
+      // most advanced - the strongest choice a real player would reach for.
+      await skills.nth(await strongestSkill(skills)).click()
+      continue
+    }
     const open = game.locator('button.kald-choice:not([disabled])')
     if ((await open.count()) === 0) throw new Error(`stalled on a node with no available choice (step ${step})`)
     await open.first().click()
   }
-  throw new Error('the chapter did not reach an ending within 25 choices')
+  throw new Error('the act did not reach an ending within 800 choices')
 }
 
 test.describe('Chapter 1', () => {
   test('reaches an ending from a cold start', async ({ page }) => {
+    // Four acts and twenty-three fights: the default 30s is a Chapter-1-era number.
+    test.setTimeout(660_000)
     const { game } = await openSession(page)
 
     await expect(game.getByRole('heading', { name: /Kaldareth/ })).toBeVisible()
@@ -148,6 +192,7 @@ test.describe('Chapter 1', () => {
   })
 
   test('ranks the finished run against simulated rivals', async ({ page }) => {
+    test.setTimeout(420_000)
     const { game } = await openSession(page)
     await startRun(game, 'Warrior')
     await playThrough(game)
@@ -187,6 +232,8 @@ test.describe('Chapter 1', () => {
   })
 
   test('charges the daily quota to the verified Friend, not to a wallet', async ({ page }) => {
+    // Plays the whole story to reach the restart path.
+    test.setTimeout(420_000)
     const { game } = await openSession(page)
 
     // The base tier is one run a day, and the session is the only record of it.
@@ -250,6 +297,8 @@ async function controlIsVisible(game: FrameLocator, selector: string, where: str
 
 test.describe('the frame never scrolls', () => {
   test('fits every screen from the class list to the ending', async ({ page }, testInfo) => {
+    // Four acts and twenty-three fights, measured screen by screen.
+    test.setTimeout(700_000)
     const { game } = await openSession(page)
 
     await frameFits(game, 'class select')
@@ -263,12 +312,23 @@ test.describe('the frame never scrolls', () => {
 
     await game.getByRole('button', { name: 'Enter Kaldareth' }).click()
 
-    for (let step = 0; step < 25; step += 1) {
+    // Same budget and combat policy as playThrough.
+    for (let step = 0; step < 800; step += 1) {
       await revealProse(game)
 
       // The ending swaps the banner for the standings, so this is checked before
       // asking for the place name, which only exists on a play screen.
       if (await game.getByRole('button', { name: 'Begin a new run' }).isVisible().catch(() => false)) break
+
+      // In combat, play like a player: strongest available skill.
+      const skills = game.locator('[aria-label="Combat"] button.kald-choice:not([disabled])')
+      if ((await skills.count()) > 0) {
+        const whereCombat = (await game.locator('.kald-place').textContent()) ?? `combat ${step}`
+        await frameFits(game, whereCombat)
+        await skills.nth(await strongestSkill(skills)).click()
+        continue
+      }
+
       const where = (await game.locator('.kald-place').textContent()) ?? `step ${step}`
 
       await frameFits(game, where)
