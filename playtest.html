@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="robots" content="noindex" />
+    <title>Kaldareth — local playtest</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Kaldareth requires JavaScript to render its narrative engine.</noscript>
+    <!--
+      LOCAL PLAYTEST ONLY. Not part of the shipped build: vite.frame.config.ts
+      builds only frame.html, and vite.config.ts builds only index.html, so this
+      document never reaches dist/. It mounts the real App with a preview-mode
+      session and no wallet — for reading the story, not for publishing runs.
+    -->
+    <script type="module" src="/src/frame/playtest.tsx"></script>
+  </body>
+</html>
