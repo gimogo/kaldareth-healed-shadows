@@ -18,11 +18,20 @@ import { createRoot } from 'react-dom/client'
 import { GameHost } from '@rarefriends/friendsdk/runtime'
 
 import { REFERENCE_GAME } from '../content/referenceGame.ts'
+import { createHostPublicClient } from './rpcClient.ts'
 
 import '@rarefriends/friendsdk/frame.css'
 import '@rarefriends/friendsdk/runtime.css'
 import './host.css'
 
+/*
+ * The public Robinhood RPC caps `eth_getLogs` at a 10M-block span, which the
+ * SDK's owner-filtered Transfer discovery exceeds when it asks from block 0.
+ * The override skips the contract's provably empty early history and chunks the
+ * rest; see rpcClient.ts for the measurements that make that safe.
+ */
+const publicClient = createHostPublicClient()
+
 createRoot(document.getElementById('root')!).render(
-  <GameHost definition={REFERENCE_GAME} frameUrl="./frame.html" />,
+  <GameHost definition={REFERENCE_GAME} frameUrl="./frame.html" publicClient={publicClient} />,
 )
