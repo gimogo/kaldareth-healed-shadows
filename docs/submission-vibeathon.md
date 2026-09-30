@@ -12,8 +12,8 @@
 >    `README.md`, fill in the repo URL.
 > 4. Open the PR base `spokesz:main` ← compare `you:submissions`.
 > 5. Title: `Submission: Kaldareth — The Healed Shadows`, link the repo, and
->    mention: 308 nodes · 4 endings (one hidden) · Litany Echo memory system ·
->    synthesized audio · ASCII art duels · 133 unit + 38 e2e green.
+>    mention: 308 nodes · Litany Echo memory system with Redemption · a hidden
+>    ninth verdict · synthesized audio · ASCII art duels · 133 unit + 38 e2e green.
 
 ## Project name
 
@@ -77,8 +77,10 @@ final choices, no fight. Reading the story is the only key.
    system for the story half.
 2. Miss nothing, then hold all eight echoes to the epilogue gate: the ninth
    door is the submission's showcase.
-3. `docs/campaign-transcript-*.txt` shows three full classes playing it
-   honestly; `npm run verify` re-proves every gate behind it.
+3. `docs/campaign-transcript-*.txt` shows three full classes playing the
+   current build honestly — every node's prose, every choice, every fight —
+   regenerated at submission time; `npm run verify` re-proves every gate
+   behind it.
 
 ## Stack
 
@@ -118,8 +120,9 @@ leaderboard are keyed to the Friend, so one Friend is one player identity.
    sentinels and Ilsevet's Vessels, to the Hollow Tide, the Seam Vessel and
    Ilsevet Refusing the Light at the apex of the Blood Moon — carry the story
    from Chapter 1 to Kaldareth Healed.
-6. Finish, and the run is scored against the simulated weekly leaderboard; a
-   run code (e.g. `K7T2-VX4M-QR8A`) replays the exact run from its seed.
+6. Finish, and the run is scored against the simulated weekly leaderboard.
+   Every run carries a seed code (e.g. `K7T2-VX4M-QR8A`): same code, same run —
+   the whole campaign is deterministic from it.
 
 Costs: each run charges one daily run against the Friend's quota (1 run/day at
 generation 1, up to 10 at generation 6, reset UTC midnight) and simulates a 500
