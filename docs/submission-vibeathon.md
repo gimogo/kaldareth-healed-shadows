@@ -13,7 +13,7 @@
 > 4. Open the PR base `spokesz:main` ← compare `you:submissions`.
 > 5. Title: `Submission: Kaldareth — The Healed Shadows`, link the repo, and
 >    mention: 308 nodes · Litany Echo memory system with Redemption · a hidden
->    ninth verdict · synthesized audio · ASCII art duels · 133 unit + 38 e2e green.
+>    ninth verdict · synthesized audio · ASCII art duels · 138 unit + 38 e2e green.
 
 ## Project name
 
@@ -149,7 +149,7 @@ this build.
 
 - `npm run verify` runs typecheck, oxlint, story validation (structure,
   reachability, class gates, layout budgets), progression/balance/economy
-  checks, 133 unit tests, the production build, the SDK-boundary audit and 38
+  checks, 138 unit tests, the production build, the SDK-boundary audit and 38
   Playwright e2e tests over desktop and 360px-mobile viewports — all green at
   submission time.
 - Known gaps (deliberate, documented in the README): the frame never learns the

@@ -271,7 +271,7 @@ built frame.
 
 ## Testing
 
-**133 unit tests** cover the engine and its senses: RNG determinism, verb
+**138 unit tests** cover the engine and its senses: RNG determinism, verb
 matching, the run state machine, class gates, skills, combat (including a
 magnitude regression guard that pins damage to the attack stat), effects,
 items, scoring, progression, the RR reward ladder, its Litany multiplier and

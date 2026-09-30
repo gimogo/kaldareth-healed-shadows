@@ -24,7 +24,13 @@ export default defineConfig({
     // The engine and content are the bulk of the repo; keep the client bundle honest.
     target: 'es2023',
     rollupOptions: {
-      input: { host: fileURLToPath(new URL('./index.html', import.meta.url)) },
+      input: {
+        host: fileURLToPath(new URL('./index.html', import.meta.url)),
+        // The reviewer path: the real story UI with a preview-mode session and
+        // no wallet. Built alongside the host (relative base) so it can be
+        // served anywhere — including GitHub Pages — without the runtime.
+        playtest: fileURLToPath(new URL('./playtest.html', import.meta.url)),
+      },
     },
   },
   test: {
