@@ -4,6 +4,16 @@
 > submission PR against <https://github.com/spokesz/rarefriends-vibeathon>.
 > Format follows the event's Fishing example: the fields below are exactly the
 > ones the submission checklist asks for.
+>
+> **PR checklist (see also the steps below):**
+> 1. Push this repository to your GitHub.
+> 2. Fork `spokesz/rarefriends-vibeathon`, branch `submissions`.
+> 3. `mkdir submissions/kaldareth-healed-shadows` — copy this file as its
+>    `README.md`, fill in the repo URL.
+> 4. Open the PR base `spokesz:main` ← compare `you:submissions`.
+> 5. Title: `Submission: Kaldareth — The Healed Shadows`, link the repo, and
+>    mention: 308 nodes · 4 endings (one hidden) · Litany Echo memory system ·
+>    synthesized audio · ASCII art duels · 133 unit + 38 e2e green.
 
 ## Project name
 
@@ -11,7 +21,11 @@ Kaldareth: The Healed Shadows
 
 ## Builder
 
-<your name / contact — fill in before submitting>
+gimogo — 235aryugi@gmail.com
+
+## Repository
+
+<your repo URL — fill in after pushing this repository to GitHub, step 1 of the PR checklist>
 
 ## Category
 
@@ -73,8 +87,8 @@ final choices, no fight. Reading the story is the only key.
   ownership gate.
 - React 19 + TypeScript + Vite (host document and sandboxed game frame are
   separate builds with a strict SDK boundary, enforced by `npm run check:sdk`).
-- Zod-validated story content (`content/kaldareth.act1.json`, 235 nodes across
-  all four acts), with a GDD regression test suite pinning class tables and the EXP
+- Zod-validated story content (`content/kaldareth.act1.json`, 308 nodes across
+  all four acts — authored chapters plus the Litany Echo system), with a GDD regression test suite pinning class tables and the EXP
   curve.
 - Simulated economy only: the game never calls `buy`/`play`/`settle`/`redeem`
   and signs nothing — asserted by the same SDK-boundary check.
@@ -94,14 +108,16 @@ leaderboard are keyed to the Friend, so one Friend is one player identity.
    simulates balances; the ownership gate is real either way).
 2. Pick a class — Warrior, Archer or Mage.
 3. Read the terms of entry, then enter Kaldareth.
-4. Choices are numbered buttons, or type a command in your own words
-   ("smash the beams", "shoot the rune-line") — a verb matcher maps free text
-   to choices and asks for clarification instead of guessing on ambiguity.
+4. Choices are numbered buttons. Twelve times on the road the Litany checks
+   your memory of the story — answer from memory; it is the combat system for
+   the story half, and it decides your pay (see The Litany Echoes above).
 5. Fights are turn-based: pick skills, manage your class resource, watch the
-   log. Twenty-three encounters across four acts — from a Whisper in a burned
-   village, through corrupted sentinels and Ilsevet's Vessels, to the Hollow
-   Tide, the Seam Vessel and Ilsevet Refusing the Light at the apex of the
-   Blood Moon — carry the story from Chapter 1 to Kaldareth Healed.
+   log — with an ASCII duel on screen, ambient music underneath, a battle pulse
+   in combat and a boss theme for the four big fights. Twenty-three encounters
+   across four acts — from a Whisper in a burned village, through corrupted
+   sentinels and Ilsevet's Vessels, to the Hollow Tide, the Seam Vessel and
+   Ilsevet Refusing the Light at the apex of the Blood Moon — carry the story
+   from Chapter 1 to Kaldareth Healed.
 6. Finish, and the run is scored against the simulated weekly leaderboard; a
    run code (e.g. `K7T2-VX4M-QR8A`) replays the exact run from its seed.
 
@@ -123,7 +139,7 @@ is charged on-chain in this build.
 
 - `npm run verify` runs typecheck, oxlint, story validation (structure,
   reachability, class gates, layout budgets), progression/balance/economy
-  checks, 104 unit tests, the production build, the SDK-boundary audit and 38
+  checks, 133 unit tests, the production build, the SDK-boundary audit and 38
   Playwright e2e tests over desktop and 360px-mobile viewports — all green at
   submission time.
 - Known gaps (deliberate, documented in the README): the frame never learns the
