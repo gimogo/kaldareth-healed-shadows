@@ -5,7 +5,7 @@ A browser text RPG gated behind real ownership of a
 *inside* the Rare Friends runtime, in a sandboxed iframe, with no wallet
 connection of its own and no transaction ever signed.
 
-All four acts (GDD Chapters 1–32) are implemented end to end: 308 nodes (235 authored, the rest the Litany Echo memory system and its verdicts), twenty-three combat encounters, five three-way class gates (including a per-class epilogue), and act endings at the Old Watchtower (Act 1), on Greyhold's wall with Ilsevet Cray's name in every mouth (Act 2), in the Ritual Core chamber as the Blood Moon rises over Ashenmere (Act 3), and at Kaldareth Healed — the GDD's happy ending (Act 4). The Hollowing eats memory, so the game checks yours: twelve Litany Echoes — half quoting the story's speech, half probing its prose — scale the run's RR payout by what you actually remember. What you miss comes back later, reworded, as a one-time Redemption Echo; take it back and the ledger heals. Keeping all eight spoken echoes opens a hidden ninth verdict at the epilogue. See `docs/kaldareth_gdd.md` for the full scenario script and `content/` for the machine-readable story data.
+All four acts (GDD Chapters 1–32) are implemented end to end: 308 nodes (235 authored; the rest are the Litany Echo memory system and its verdicts), twenty-three combat encounters — nineteen minibosses and four bosses — five three-way class gates (bridge, gates, sigil, forest trials, and a per-class epilogue), and exactly one ending node, `ch32_kaldareth_healed`, with every act closing on the GDD's stage: the Old Watchtower (Act 1), Greyhold's wall with Ilsevet Cray's name in every mouth (Act 2), the Ritual Core as the Blood Moon rises over Ashenmere (Act 3), and Kaldareth Healed — the GDD's happy ending (Act 4). The Hollowing eats memory, so the game checks yours: twelve Litany Echoes — half quoting the story's speech, half probing its prose — scale the run's RR payout by what you actually remember. What you miss comes back later, reworded, as a one-time Redemption Echo; take it back and the ledger heals. Keeping all eight spoken echoes opens a hidden ninth verdict at the epilogue. See `docs/kaldareth_gdd.md` for the full scenario script, `content/` for the machine-readable story data, and `docs/campaign-transcript-{warrior,archer,mage}.txt` for three complete runs.
 
 ## Quick start
 
@@ -14,6 +14,15 @@ npm install
 npm run dev            # build + serve at http://127.0.0.1:4173
 npm run verify         # everything below, in order
 ```
+
+Choices are numbered; there is no command line and nothing to type. A run charges
+its 500 RR entry fee up front and starts from a purse of 2,500 RR. Milestones pay
+as their chapter opens: 500 at Chapter 15 — where the fee comes back — then 600,
+700, 800, 900 and 1,000, and 500 more for the ending itself: 5,000 RR, the hard
+cap, for a perfect run. The Litany prices attention: each of the twelve checks
+missed scales the ladder down (0.7× after one miss, 0.45× after two, 0.25× at
+three or more), and every miss returns once, reworded, as an optional Redemption
+Echo whose answer restores the multiplier.
 
 No wallet of your own yet? The runtime runs in preview mode, so the balance,
 fee split and leaderboard are simulated in the browser. Preview does **not**
@@ -71,7 +80,11 @@ no navigation. The game reaches the chain only through the `client` it is given.
 
 The game never implements a wallet, a selector, a gate, or a bypass. There is no
 "continue without a wallet" path, and there is not meant to be one. If you are
-reading this looking for a way to play without owning a Friend: there isn't one.
+reading this looking for a way to play without owning a Friend: inside the
+runtime there isn't one. `playtest.html` at the repo root is the one sanctioned
+look for reviewers — the full story UI served as a plain page, no runtime
+around it, for reading the campaign without a Friend; it ships nothing the
+runtime loads and asserts no ownership of its own.
 
 ## Why the frame build is a classic bundle
 
@@ -176,19 +189,21 @@ built frame.
 
 ## Testing
 
-**104 unit tests** cover the engine: RNG determinism, verb matching, the run
-state machine, class gates, skills, combat (including a magnitude regression
-guard that pins damage to the attack stat), effects, items, scoring and
-progression.
+**133 unit tests** cover the engine and its senses: RNG determinism, verb
+matching, the run state machine, class gates, skills, combat (including a
+magnitude regression guard that pins damage to the attack stat), effects,
+items, scoring, progression, the RR reward ladder and its Litany multiplier,
+chapter staging, scene audio and ASCII art selection, and the typewriter.
 
-**36 end-to-end tests** (18 scenarios × `desktop` and `mobile-360`) drive the
+**38 end-to-end tests** (19 scenarios × `desktop` and `mobile-360`) drive the
 real host and a sandboxed child against a fixture that mocks EIP-1193 and the
 RPC. The fixture allows only `eth_accounts`, `eth_requestAccounts`,
 `eth_chainId` and `wallet_switchEthereumChain`; anything resembling signing is
 rejected and asserted against, so a test that passes has genuinely not touched
-a signing path. Scenarios cover the cold start, all three class gates, quota
+a signing path. Scenarios cover the cold start, the class gates, quota
 exhaustion, the live chapter banner, the home prize-pool board, the leaderboard,
-and the negative ownership paths —
+a fit check from the class list to the ending, and the negative ownership
+paths —
 no Friends, not hardwired, chain switch declined, ownership changed between
 discovery and check, RPC failure and recovery, and an account change mid-session.
 
@@ -199,19 +214,21 @@ Both are decisions rather than defects, and both are visible in the checks:
 - **Generation is floored at 1.** The frame never learns the real generation, so a
   generation 4 Friend is charged the generation 1 allowance. Erring toward fewer
   runs is the safe direction for an economy, but it is a gap.
-- **Quota is session-local.** The opaque origin has no storage, so a reload starts a
-  fresh allowance. It bounds honest play; it is not anti-cheat.
+- **Quota is session-local.** The opaque origin has no storage, so only the daily
+  allowance counter lives in memory and a reload starts a fresh allowance. It
+  bounds honest play; it is not anti-cheat.
 
 ## Content status
 
 All four acts are structurally complete: 308 nodes, all reachable, five three-way
 class gates (bridge, gates, sigil, forest trials, and a per-class epilogue),
-twenty-three combat encounters whose win rates are simulated in
-`npm run check:balance`, and act endings at the Old Watchtower (Act 1, Kaelen
-asks to talk), Greyhold's wall (Act 2, where Ilsevet Cray finally has a face and
-a name), the Ritual Core of Ashenmere (Act 3, the seal held as the Blood Moon
-rose) and Kaldareth Healed (Act 4, the GDD's happy ending, with Veyra as blood
-anchor and Ilsevet destroyed by her own refusal of the light). Every chapter
+twenty-three combat encounters — nineteen minibosses, four bosses — whose win
+rates are simulated in `npm run check:balance`, act climaxes at the Old
+Watchtower (Act 1, Kaelen asks to talk), Greyhold's wall (Act 2, where Ilsevet
+Cray finally has a face and a name) and the Ritual Core of Ashenmere (Act 3, the
+seal held as the Blood Moon rose), all converging on the single ending node,
+Kaldareth Healed (Act 4, the GDD's happy ending, with Veyra as blood anchor and
+Ilsevet destroyed by her own refusal of the light). Every chapter
 keeps the GDD's DETERMINED dilemma as the main branch, with the alternative
 branch written to reach the same facts by a different road. `npm run verify:content`
 is green, and the act level targets are no longer aspirational: the reachable
@@ -231,11 +248,16 @@ three choices sit under the story, and on the standings list. The combat panel
 gained the same allowance during the Act 1 build: two health bars, a log of
 eight lines and a skill list overflowed a fixed box, and the last skill buttons
 landed beneath the status panel — clickable by nothing. All three regions scroll
-internally; the frame itself never scrolls, and that is still asserted.
+internally; the frame itself never scrolls, and that is still asserted. The
+same constraint shaped the dressing: sound is synthesized live in the Web Audio
+API — a per-mood ambience, a stepped loop under bosses, win/lose stings — so no
+audio asset crosses the CSP, enemies and armor render as ten-line ASCII art,
+and story text arrives on a typewriter tick that collapses to instant under
+`prefers-reduced-motion`.
 
-Still outstanding: none of the GDD's chapters. The full campaign runs from a
-burned village to a healed world and ends at level 39–40 of the level-40 cap —
-the cap is reachable, which is what the cap is for.
+Nothing of the GDD is outstanding: all thirty-two chapters are built, and the
+full campaign runs from a burned village to a healed world, ending at level
+39–40 of the level-40 cap — the cap is reachable, which is what the cap is for.
 
 ## Notes
 
