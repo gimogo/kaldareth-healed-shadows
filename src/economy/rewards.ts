@@ -16,9 +16,8 @@
  *
  * Milestones are keyed to `chN_open` narrative nodes (verified to exist) so
  * they pay when the chapter begins; the final one rides the ending node, which
- * the run layer pays at the moment the run finishes. Anything else — the small
- * narrative `token` effects in the content — stays under the cap and is just
- * road money.
+ * the run layer pays at the moment the run finishes. The ladder is the only
+ * token source in the content, which is what makes the cap airtight.
  */
 
 import type { Balance } from '../content/schema.ts'
@@ -102,4 +101,42 @@ export function ladderMultiplier(run: Pick<RunState, 'flags'>): number {
   if (misses === 1) return 0.7
   if (misses === 2) return 0.45
   return 0.25
+}
+
+/*
+ * Where a finished run meets the season's economy.
+ *
+ * Two flows leave every finished run for the wider RR economy, and both are
+ * settled in the run's transcript the moment it ends:
+ *
+ *  1. The Unearned Split. The ladder's 5,000 promise is an escrow, not a
+ *     gift: it is paid only as it is earned, chapter by chapter. Whatever the
+ *     Hollowing kept from a run that finished short of the cap was never
+ *     earned, so it is never prize pool. Half of it returns to circulation —
+ *     the same place the fee split sends 150 of every entry — and the other
+ *     half reverts to the treasury. A season therefore pays out only what its
+ *     players actually read; what they didn't funds the runs after them.
+ *  2. The Readers' Dividend. Every finisher pays 250 RR back into the prize
+ *     pool — one pot-share, the number the fee split already sends there per
+ *     run. Finishing the story is what fertilises the field next week's
+ *     winners are paid from.
+ *
+ * Neither flow touches the player's purse: they settle between the run and
+ * the season, and the transcript is their ledger line.
+ */
+
+/** Share of a run's unearned ladder that returns to circulation (the treasury keeps the rest). */
+export const CIRCULATION_REFUND_FRACTION = 0.5
+
+/** What every finisher pays back into the weekly prize pool. */
+export const READERS_DIVIDEND = 250
+
+/** The ladder's promise (MAX_REWARD) minus what a run at this multiplier collected. */
+export function unearnedReward(multiplier: number): number {
+  return MAX_REWARD - Math.round(MAX_REWARD * multiplier)
+}
+
+/** The part of an unearned balance that goes back to circulation. */
+export function unearnedToCirculation(unearned: number): number {
+  return Math.round(unearned * CIRCULATION_REFUND_FRACTION)
 }

@@ -34,7 +34,11 @@ gimogo — 235aryugi@gmail.com
   Friend is never a side decoration.
 - **Economy Potential** (secondary) — the entry-fee split (50% prize pool /
   30% circulation / 20% burn) is fully modelled, with a weekly harmonic prize
-  ladder, a researchable pot cap, and the Friend as the quota subject.
+  ladder, a researchable pot cap, and the Friend as the quota subject. The run
+  ladder is an escrow: what a run leaves unearned returns half to circulation
+  (the treasury keeps the rest), and every finisher pays a 250 RR readers'
+  dividend into next week's pot — `npm run check:econ` prints the whole
+  settlement table, conservation-closed row by row.
 
 ## One sentence
 
@@ -56,8 +60,8 @@ You cannot answer those from dialogue; you answer them from having read the
 world. The true answer banks an echo; the plausible-but-wrong ones are eaten.
 What you remember scales what the run pays: perfect recall returns the full
 5,000 RR ladder, three or more misses and the road keeps three-quarters.
-Mashing choices still finishes the story (a loss never strands it), but it ends
-the run 1,250 net instead of 5,000 — attention is the strategy, and it is
+Mashing choices still finishes the story (a loss never strands it), but the
+ladder pays it 1,250 instead of 5,000 — attention is the strategy, and it is
 diegetic.
 
 And the Hollowing is fair: anything it eats comes back once, later on the road,
@@ -127,8 +131,11 @@ leaderboard are keyed to the Friend, so one Friend is one player identity.
 Costs: each run charges one daily run against the Friend's quota (1 run/day at
 generation 1, up to 10 at generation 6, reset UTC midnight) and simulates a 500
 RR (RAREFRIENDS) entry fee split 250/150/100 to pool/circulation/burn. Milestone
-rewards climb from break-even at Chapter 15 toward the 5,000 RR run cap. Nothing
-is charged on-chain in this build.
+rewards climb from break-even at Chapter 15 toward the 5,000 RR run cap, and the
+ending settles the run with the season: half of its unearned ladder returns to
+circulation, the treasury keeps the rest, and every finisher pays a 250 RR
+readers' dividend into next week's prize pool. Nothing is charged on-chain in
+this build.
 
 ## Requirements
 

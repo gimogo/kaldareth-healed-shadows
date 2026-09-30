@@ -13,7 +13,14 @@
 
 import { applyEffects } from './effects.ts'
 import type { ItemCatalog } from './items.ts'
-import { FINAL_PAYOUT, ladderMultiplier, payoutForChapter } from '../economy/rewards.ts'
+import {
+  FINAL_PAYOUT,
+  ladderMultiplier,
+  payoutForChapter,
+  READERS_DIVIDEND,
+  unearnedReward,
+  unearnedToCirculation,
+} from '../economy/rewards.ts'
 import { initialProgression } from './progression.ts'
 import { createRunIdentity } from './rng.ts'
 import { evaluateChoices } from './requirements.ts'
@@ -134,14 +141,26 @@ export function enterNode(run: RunState, nodeId: string, ctx: RunContext): Enter
         [{ op: 'token', amount: finalScaled }],
         ctx.catalog,
       )
+      // The run settles with the season the moment it ends: what the ladder
+      // never paid was never earned (half returns to circulation, the treasury
+      // keeps the rest), and every finisher pays one pot-share forward. These
+      // are ledger lines, not purse changes — nothing leaves the player.
+      const unearned = unearnedReward(ladderMultiplier(afterFinal))
+      const toCirculation = unearnedToCirculation(unearned)
+      const settlement: string[] = [
+        finalScaled < FINAL_PAYOUT
+          ? `The road ends — +${finalScaled} RR (the road kept ${FINAL_PAYOUT - finalScaled}, unearned).`
+          : `The road ends — +${FINAL_PAYOUT} RR.`,
+      ]
+      if (unearned > 0) {
+        settlement.push(
+          `Season ledger: ${toCirculation.toLocaleString('en-US')} RR of the unearned ladder returns to circulation; the treasury keeps ${(unearned - toCirculation).toLocaleString('en-US')}.`,
+        )
+      }
+      settlement.push(`Readers' dividend: ${READERS_DIVIDEND} RR to next week's prize pool.`)
       next = {
         ...afterFinal,
-        transcript: [
-          ...afterFinal.transcript,
-          finalScaled < FINAL_PAYOUT
-            ? `The road ends — +${finalScaled} RR (the Hollowing kept ${FINAL_PAYOUT - finalScaled}).`
-            : `The road ends — +${FINAL_PAYOUT} RR.`,
-        ],
+        transcript: [...afterFinal.transcript, ...settlement],
       }
     }
     if (itemsGained.length > 0) {
@@ -188,7 +207,7 @@ export function enterNode(run: RunState, nodeId: string, ctx: RunContext): Enter
         transcript: [
           ...afterPay.transcript,
           scaled < payout
-            ? `Milestone: Chapter ${next.stage} reached — +${scaled} RR (the Hollowing kept ${payout - scaled}).`
+            ? `Milestone: Chapter ${next.stage} reached — +${scaled} RR (the road kept ${payout - scaled}, unearned).`
             : `Milestone: Chapter ${next.stage} reached — +${payout} RR.`,
         ],
       }

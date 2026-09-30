@@ -15,14 +15,10 @@ npm run dev            # build + serve at http://127.0.0.1:4173
 npm run verify         # everything below, in order
 ```
 
-Choices are numbered; there is no command line and nothing to type. A run charges
-its 500 RR entry fee up front and starts from a purse of 2,500 RR. Milestones pay
-as their chapter opens: 500 at Chapter 15 — where the fee comes back — then 600,
-700, 800, 900 and 1,000, and 500 more for the ending itself: 5,000 RR, the hard
-cap, for a perfect run. The Litany prices attention: each of the twelve checks
-missed scales the ladder down (0.7× after one miss, 0.45× after two, 0.25× at
-three or more), and every miss returns once, reworded, as an optional Redemption
-Echo whose answer restores the multiplier.
+Choices are numbered; there is no command line and nothing to type. A run costs
+500 RR up front and can earn back up to 5,000 — attention pays: twelve hidden
+memory checks scale the whole ladder. The full loop, with the tables and the
+flow diagram, is under [The economy](#the-economy) below.
 
 No wallet of your own yet? The runtime runs in preview mode, so the balance,
 fee split and leaderboard are simulated in the browser. Preview does **not**
@@ -160,7 +156,7 @@ Two honest caveats:
   lives in memory and resets on reload. It bounds honest play; it is not
   anti-cheat. Real enforcement belongs in the runtime, not the guest.
 
-## Economy and the reference definition
+## The economy
 
 The game uses a simulated split, in `RR` (RAREFRIENDS), charged per run:
 
@@ -169,6 +165,90 @@ The game uses a simulated split, in `RR` (RAREFRIENDS), charged per run:
 | Prize pool | 250 | 50% |
 | Circulation | 150 | 30% |
 | Burn | 100 | 20% |
+
+### Where a run's fee goes — the season layer
+
+Every entry fee leaves the player and enters the season the same way, every run,
+forever — three destinations paid by the fee, one institution standing behind it:
+
+```
+                      player pays 500
+                            |
+          +-----------------+-----------------+
+          v                 v                 v
+     prize pool        circulation          burn
+       (250)              (150)             (100)
+          ^                 ^
+          |                 |
+   +250 from every     + half of every
+   finisher (the       run's unearned
+   Readers' Dividend)  ladder
+
+   run treasury: not paid by the fee — it backs the ladder,
+   pays out up to 5,000 per run, and keeps the other half of
+   every unearned balance
+```
+
+The fee has three destinations. The run treasury is the fourth *place* but not
+a fourth slice: nothing of the 500 goes to it. It stands behind the reward
+ladder below, pays what a run actually earns, and recoups by keeping half of
+everything a run leaves unearned.
+
+### The run's economy: a ladder, not a lottery
+
+The in-run economy is an escrow with a schedule. A run charges its 500 RR entry
+fee up front — out of the purse, the moment the run exists — and the ladder pays
+the run back as chapters open, on **both branches of every fight**, because the
+campaign is a story: the ladder rewards distance travelled, never the luck of
+one encounter.
+
+| Milestone | Pays | Running total |
+| --- | --- | --- |
+| Chapter 15 — break-even: the fee is back | +500 | 500 |
+| Chapter 18 — Act 2 closes | +600 | 1,100 |
+| Chapter 21 — the pass is forced | +700 | 1,800 |
+| Chapter 24 — the ritual holds | +800 | 2,600 |
+| Chapter 27 — the avatar falls | +900 | 3,500 |
+| Chapter 30 — Ilsevet refuses the light | +1,000 | 4,500 |
+| Chapter 32 — Kaldareth Healed (the ending) | +500 | **5,000 — the cap** |
+
+A perfect run walks 3,000 → 7,500 RR: fee 500 out, cap 5,000 back, on a starting
+purse of 3,000. The cap is hard — `MAX_REWARD = 5,000` is asserted by unit test
+and enforced by the effect pipeline, and a player cannot grind around it: the
+ladder is the only token source in the content.
+
+Attention is the only lever. Twelve Litany Echoes ask what the run actually
+read; each miss scales the whole ladder down — 0.7× after one, 0.45× after two,
+0.25× at three or more — and every missed check returns once, reworded, as an
+optional Redemption Echo whose right answer restores the multiplier. The same
+distance travelled pays four different purses:
+
+| Litany result | Ladder paid | Final purse (from 3,000) |
+| --- | --- | --- |
+| Perfect recall | 5,000 | 7,500 |
+| One miss | 3,500 | 6,000 |
+| Two misses | 2,250 | 4,750 |
+| Three or more | 1,250 | 3,750 |
+
+### Season settlement: the ladder is an escrow
+
+What the Hollowing kept was never earned, so it is never prize pool. When a run
+finishes, two ledger lines settle it with the season — written into the run's
+transcript at the moment of the ending, without touching the purse:
+
+- **Unearned split.** Half of the run's unearned ladder returns to circulation —
+  the same destination as the fee's 150 — and the treasury keeps the other half.
+  A season pays out only what its players actually read; what they didn't funds
+  the runs after them.
+- **Readers' dividend.** Every finisher pays 250 RR into next week's prize pool
+  — one pot-share, the same number the fee already sends there. The story repays
+  its readers' attention by fertilising the field the next week's winners are
+  paid from.
+
+`npm run check:econ` prints the whole settlement table per run profile, so the
+conservation is checkable row by row: paid + unearned = 5,000 always, the split
+of the unearned closes exactly, and the treasury's position improves with every
+inattentive run and falls only by what attentive runs actually collected.
 
 Ten winners are paid each Monday on a normalised harmonic ladder, so first place
 takes 34% of the pot. Uncapped, that first prize is 180× the entry fee at 100
@@ -179,6 +259,8 @@ from about 100 players upward, while still letting a small game pay its natural
 size. Anything above the cap returns to circulation rather than being burned.
 `npm run check:econ` prints the uncapped and capped columns side by side at five
 population sizes, so the cap can be re-chosen from numbers rather than taste.
+
+### The reference definition the runtime requires
 
 `content/kaldareth.game.json` is the `ChanceGameDefinition` the runtime requires
 (mirroring the reference 500 entry fee and 250 maximum prize). It is parsed and
@@ -192,8 +274,9 @@ built frame.
 **133 unit tests** cover the engine and its senses: RNG determinism, verb
 matching, the run state machine, class gates, skills, combat (including a
 magnitude regression guard that pins damage to the attack stat), effects,
-items, scoring, progression, the RR reward ladder and its Litany multiplier,
-chapter staging, scene audio and ASCII art selection, and the typewriter.
+items, scoring, progression, the RR reward ladder, its Litany multiplier and
+the season settlement of a finished run, chapter staging, scene audio and
+ASCII art selection, and the typewriter.
 
 **38 end-to-end tests** (19 scenarios × `desktop` and `mobile-360`) drive the
 real host and a sandboxed child against a fixture that mocks EIP-1193 and the

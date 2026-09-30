@@ -18,6 +18,13 @@
 
 import { loadAll, Report } from './lib/content.mjs'
 import { harmonicLadder, settleWeeklyPot } from '../src/economy/ledger.ts'
+import {
+  ladderMultiplier,
+  MAX_REWARD,
+  READERS_DIVIDEND,
+  unearnedReward,
+  unearnedToCirculation,
+} from '../src/economy/rewards.ts'
 
 const argValue = (name, fallback) => {
   const i = process.argv.indexOf(`--${name}`)
@@ -153,6 +160,40 @@ function main() {
   if (split.prizePool <= split.burn) {
     report.warn(`pool contribution (${split.prizePool}) is not above burn (${split.burn}); confirm the net direction is intended`)
   }
+
+  /* ── Run settlement ───────────────────────────────────────────────── */
+
+  /*
+   * A finished run settles with the season in three lines, all derived from
+   * one number: the Litany multiplier. The ladder is an escrow, so what a run
+   * did not collect was never earned — half of it returns to circulation and
+   * the treasury keeps the rest — and every finisher pays one pot-share
+   * forward. None of it touches the player's purse; these are season flows.
+   */
+  report.section('Run settlement (season flows per finished run)')
+  report.note('  profile      paid   unearned  ->circ   ->treasury  dividend  player purse')
+  const MISS_PROFILES = [0, 1, 2, 3]
+  for (const misses of MISS_PROFILES) {
+    const flags = { flags: new Set(Array.from({ length: misses }, (_, i) => `litany_miss_${i + 1}`)) }
+    const m = ladderMultiplier(flags)
+    const paid = Math.round(MAX_REWARD * m)
+    const unearned = unearnedReward(m)
+    const toCirc = unearnedToCirculation(unearned)
+    const purse = startingBalance - entryFee + paid
+    const label = misses === 0 ? 'perfect' : misses === 3 ? '3+ miss' : `${misses} miss`
+    report.note(
+      `  ${label.padEnd(11)} ${String(paid).padStart(5)}  ${String(unearned).padStart(8)}  ${String(toCirc).padStart(6)}  ${String(unearned - toCirc).padStart(10)}  ${String(READERS_DIVIDEND).padStart(8)}  ${purse.toLocaleString('en-US').padStart(12)}`,
+    )
+  }
+  report.note(
+    `  per finished run: the pool gains ${split.prizePool + READERS_DIVIDEND} (fee share ${split.prizePool} + dividend ${READERS_DIVIDEND});`,
+  )
+  report.note(
+    `  circulation gains ${split.circulation} plus half of whatever the run left unearned; ${split.burn} is burned;`,
+  )
+  report.note(
+    '  the treasury funds the ladder and keeps the other half of the unearned — conservation closes on every row above.',
+  )
 
   /* ── Quota pressure ───────────────────────────────────────────────── */
 

@@ -9,16 +9,20 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { STORY } from '../../src/content/content.ts'
+import { ITEMS, STORY } from '../../src/content/content.ts'
+import { createRun, enterNode } from '../../src/engine/run.ts'
 import type { NarrativeNode } from '../../src/engine/types.ts'
 import {
   FINAL_PAYOUT,
   ladderMultiplier,
   MAX_REWARD,
   payoutForChapter,
+  READERS_DIVIDEND,
   REWARD_LADDER,
   REFUND_CHAPTER,
   totalReward,
+  unearnedReward,
+  unearnedToCirculation,
 } from '../../src/economy/rewards.ts'
 
 describe('the RR reward ladder', () => {
@@ -99,5 +103,53 @@ describe('the RR reward ladder', () => {
         )
       expect(setter, key).toBeTruthy()
     }
+  })
+})
+
+describe('the settlement of a finished run', () => {
+  const ctx = { content: STORY, catalog: ITEMS }
+
+  it('counts the unearned ladder as the cap minus what was collected', () => {
+    expect(unearnedReward(1)).toBe(0)
+    expect(unearnedReward(0.7)).toBe(1_500)
+    expect(unearnedReward(0.45)).toBe(2_750)
+    expect(unearnedReward(0.25)).toBe(3_750)
+  })
+
+  it('splits the unearned balance: half to circulation, the treasury keeps half', () => {
+    expect(unearnedToCirculation(0)).toBe(0)
+    expect(unearnedToCirculation(1_500)).toBe(750)
+    expect(unearnedToCirculation(3_750)).toBe(1_875)
+  })
+
+  it('a perfect run settles nothing and pays only the dividend', () => {
+    const run = createRun('warrior', ctx)
+    const { run: finished } = enterNode(run, 'ch32_kaldareth_healed', ctx)
+    const log = finished.transcript.join('\n')
+    expect(log).toContain('The road ends — +500 RR.')
+    expect(log).not.toContain('Season ledger')
+    expect(log).toContain(`Readers' dividend: ${READERS_DIVIDEND} RR to next week's prize pool.`)
+  })
+
+  it('a mash run sends half its unearned ladder back to circulation', () => {
+    const run = createRun('mage', ctx)
+    const flags = run.flags as Set<string>
+    for (let i = 1; i <= 3; i += 1) flags.add(`litany_miss_${i}`)
+    const { run: finished } = enterNode(run, 'ch32_kaldareth_healed', ctx)
+    const log = finished.transcript.join('\n')
+    expect(log).toContain('Season ledger: 1,875 RR of the unearned ladder returns to circulation')
+    expect(log).toContain('the treasury keeps 1,875')
+    expect(log).toContain(`Readers' dividend: ${READERS_DIVIDEND} RR`)
+  })
+
+  it('never touches the purse: the settlement is ledger lines, not a charge', () => {
+    const run = createRun('archer', ctx)
+    ;(run.flags as Set<string>).add('litany_miss_9')
+    const before = run.tokens
+    const { run: finished } = enterNode(run, 'ch32_kaldareth_healed', ctx)
+    // Only the ending's own payout lands in the purse here (the run jumped to
+    // the ending directly), scaled by the Litany — and the settlement adds
+    // nothing and subtracts nothing.
+    expect(finished.tokens).toBe(before + Math.round(FINAL_PAYOUT * ladderMultiplier(finished)))
   })
 })
