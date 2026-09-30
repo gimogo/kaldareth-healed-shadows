@@ -26,10 +26,45 @@ Kaldareth: The Healed Shadows
 
 Kaldareth is a dark-fantasy text RPG in which your Rare Friend is the hero —
 the FriendSDK runtime verifies the NFT on Robinhood Chain, then mounts the game
-where free-form typed commands, seeded deterministic runs and twenty-three
+where numbered choices, seeded deterministic runs and twenty-three
 boss fights carry the story through all four acts, from Emberfall's silence to
 Kaldareth Healed — Veyra holding the blood anchor, Ilsevet undone by her own
 refusal of the light, the Mist Zones thinning into fields.
+
+## The Litany Echoes (what makes it a game, not a click-through)
+
+The Hollowing eats memory. So, twelve times on the road, it stops the player
+and checks theirs. Eight checks quote the story's speech; four are worse — they
+probe the prose: how many figures stood in the ring on the dais, how many
+fragments the map listed and who held three, what Yessa did with his nets when
+the word lighthouse was spoken, what became of the wheat on the fourth blow.
+You cannot answer those from dialogue; you answer them from having read the
+world. The true answer banks an echo; the plausible-but-wrong ones are eaten.
+What you remember scales what the run pays: perfect recall returns the full
+5,000 RR ladder, three or more misses and the road keeps three-quarters.
+Mashing choices still finishes the story (a loss never strands it), but it ends
+the run 1,250 net instead of 5,000 — attention is the strategy, and it is
+diegetic.
+
+And the Hollowing is fair: anything it eats comes back once, later on the road,
+reworded. A run that missed a check finds "The fog asks again" waiting at a
+later chapter opening — tell the memory back truly and the ledger heals (the
+miss is unmade, the payout restored); let it stay eaten and the road keeps its
+tithe. No other system in the submission says *it was paying attention* back.
+
+A run that keeps ALL eight echoes finds a hidden ninth verdict at the epilogue:
+the Hollowing, unarmored, asks what the remembering is for — and the Litany is
+revealed as the leash the first Sundering's survivors wound around it. Two
+final choices, no fight. Reading the story is the only key.
+
+## Reading order for jurors
+
+1. Play a run. When the road pauses, answer from memory — that IS the combat
+   system for the story half.
+2. Miss nothing, then hold all eight echoes to the epilogue gate: the ninth
+   door is the submission's showcase.
+3. `docs/campaign-transcript-*.txt` shows three full classes playing it
+   honestly; `npm run verify` re-proves every gate behind it.
 
 ## Stack
 
@@ -72,8 +107,9 @@ leaderboard are keyed to the Friend, so one Friend is one player identity.
 
 Costs: each run charges one daily run against the Friend's quota (1 run/day at
 generation 1, up to 10 at generation 6, reset UTC midnight) and simulates a 500
-TOKEN entry fee split 250/150/100 to pool/circulation/burn. Nothing is charged
-on-chain in this build.
+RR (RAREFRIENDS) entry fee split 250/150/100 to pool/circulation/burn. Milestone
+rewards climb from break-even at Chapter 15 toward the 5,000 RR run cap. Nothing
+is charged on-chain in this build.
 
 ## Requirements
 

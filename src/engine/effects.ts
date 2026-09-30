@@ -27,6 +27,7 @@ export interface EffectResult {
 export function applyEffects(run: RunState, effects: readonly Effect[], catalog: ItemCatalog): EffectResult {
   let traits: Traits = { ...run.traits }
   const flags = new Set(run.flags)
+  void flags
   let inventory = run.inventory
   let tokens = run.tokens
   let progression = run.progression
@@ -45,6 +46,11 @@ export function applyEffects(run: RunState, effects: readonly Effect[], catalog:
 
       case 'flag':
         flags.add(effect.key)
+        break
+
+      case 'unflag':
+        // The Litany's redemption: a memory the Hollowing took is handed back.
+        flags.delete(effect.key)
         break
 
       case 'give': {

@@ -821,10 +821,6 @@
         {
           "op": "exp",
           "amount": 60
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -875,7 +871,7 @@
     },
     "ch2_open": {
       "id": "ch2_open",
-      "stage": 1,
+      "stage": 2,
       "type": "narrative",
       "notes": "GDD Ch2: Greyhold, healing hall and council chamber. Three nights after Emberfall. Oswin talks in delirium; candles die at midnight. The seed inside him is a fragment of consciousness trying to speak.",
       "text": [
@@ -929,7 +925,7 @@
     },
     "ch2_delirium": {
       "id": "ch2_delirium",
-      "stage": 1,
+      "stage": 2,
       "type": "narrative",
       "notes": "GDD Ch2: Veyra questions the team's Emberfall decision but stands by them. This node must not resolve anything - it sets up the Whisper.",
       "text": [
@@ -964,7 +960,7 @@
     },
     "ch2_whisper": {
       "id": "ch2_whisper",
-      "stage": 1,
+      "stage": 2,
       "type": "combat",
       "notes": "GDD Ch2: Oswin's shadow detaches into a Whisper, a smoky entity trying to convey a message. A real fight: it has to be put down before the words in it can be trusted. Drop is act1_whisper_ash.",
       "text": [
@@ -998,7 +994,7 @@
     },
     "ch2_lose": {
       "id": "ch2_lose",
-      "stage": 1,
+      "stage": 2,
       "type": "narrative",
       "notes": "Combat loss recovery. The Vigil does not leave its soldiers where they fall. A little EXP so losing is never a dead stop, and the story keeps its shape.",
       "text": [
@@ -1028,7 +1024,7 @@
     },
     "ch2_message": {
       "id": "ch2_message",
-      "stage": 1,
+      "stage": 2,
       "type": "narrative",
       "notes": "GDD Ch2: with the Whisper put down, the words come loose - the fields... Harrow's Reach... the harvest comes.",
       "text": [
@@ -1058,7 +1054,7 @@
     },
     "ch2_dilemma": {
       "id": "ch2_dilemma",
-      "stage": 1,
+      "stage": 2,
       "type": "narrative",
       "notes": "THE CHAPTER 2 DILEMMA. GDD DETERMINED outcome is Option A: destroy the Whisper completely. Oswin is secured, the seed is destroyed, and the team keeps only the name Harrow's Reach - no details on timing, which is the point: urgency without a deadline. Both branches converge on ch2_council.",
       "text": [
@@ -1108,7 +1104,7 @@
     },
     "ch2_outcome_destroy": {
       "id": "ch2_outcome_destroy",
-      "stage": 1,
+      "stage": 2,
       "type": "narrative",
       "notes": "GDD DETERMINED branch: Option A. Oswin fully secured; the team keeps one location name and nothing else. Flag set so later chapters can reference the clean choice.",
       "text": [
@@ -1142,7 +1138,7 @@
     },
     "ch2_outcome_preserve": {
       "id": "ch2_outcome_preserve",
-      "stage": 1,
+      "stage": 2,
       "type": "narrative",
       "notes": "Non-determined branch, written to not contradict later acts: the fragment is warded but the GDD's outcome facts (name kept, no timing) still hold, because the warded jar keeps the words without yielding more. Flag set to the same key only if the seed is secured - here it is contained, not destroyed, so a separate flag.",
       "text": [
@@ -1176,7 +1172,7 @@
     },
     "ch2_council": {
       "id": "ch2_council",
-      "stage": 1,
+      "stage": 2,
       "type": "narrative",
       "notes": "Chapter close. Harrow's Reach becomes the next objective without a deadline. Hooks into Ch3's wheat-farming region on the Iron Concordat border.",
       "text": [
@@ -1187,10 +1183,6 @@
         {
           "op": "exp",
           "amount": 80
-        },
-        {
-          "op": "token",
-          "amount": 100
         }
       ],
       "choices": [
@@ -1210,7 +1202,7 @@
     },
     "ch3_open": {
       "id": "ch3_open",
-      "stage": 1,
+      "stage": 3,
       "type": "narrative",
       "notes": "GDD Ch3: Harrow's Reach, a wheat-farming region on the Iron Concordat border. The village carries a wrong calmness. Objective: learn what the Choir is planning before the harvest, with no idea how much time remains.",
       "text": [
@@ -1259,7 +1251,7 @@
     },
     "ch3_fields": {
       "id": "ch3_fields",
-      "stage": 1,
+      "stage": 3,
       "type": "narrative",
       "notes": "GDD Ch3: the wheat fields form a massive sigil only visible from high ground. From the lane it is just farming.",
       "text": [
@@ -1289,7 +1281,7 @@
     },
     "ch3_callen": {
       "id": "ch3_callen",
-      "stage": 1,
+      "stage": 3,
       "type": "narrative",
       "notes": "GDD Ch3: Reeve Callen enthusiastically invites the team to the evening's Harvest Festival - clearly under a mass pacification spell.",
       "text": [
@@ -1345,7 +1337,7 @@
     },
     "ch3_watch": {
       "id": "ch3_watch",
-      "stage": 1,
+      "stage": 3,
       "type": "narrative",
       "notes": "GDD Ch3: the militia stands guard without genuine alertness. The village watches back without watching.",
       "text": [
@@ -1375,7 +1367,7 @@
     },
     "ch3_midnight": {
       "id": "ch3_midnight",
-      "stage": 1,
+      "stage": 3,
       "type": "narrative",
       "notes": "GDD Ch3: at midnight the entire village gathers around the barn, chanting unconsciously. Callen's body begins sprouting the Shepherd's Emissary. Sets up the class gate on breaking the sigil.",
       "text": [
@@ -1405,7 +1397,7 @@
     },
     "ch3_gates": {
       "id": "ch3_gates",
-      "stage": 1,
+      "stage": 3,
       "type": "narrative",
       "notes": "CLASS GATE 3 of 3 in Act 1. Disrupting the sigil is class-specific: Warrior shatters the anchor stone, Archer severs the rune-line from the loft, Mage rewrites the pattern from inside. The GDD's DETERMINED outcome is Option B - break the spell before fighting.",
       "text": [
@@ -1471,7 +1463,7 @@
     },
     "ch3_gates_warrior": {
       "id": "ch3_gates_warrior",
-      "stage": 1,
+      "stage": 3,
       "type": "narrative",
       "notes": "Warrior route. Loud, direct, and it wakes the Emissary early.",
       "text": [
@@ -1506,7 +1498,7 @@
     },
     "ch3_gates_archer": {
       "id": "ch3_gates_archer",
-      "stage": 1,
+      "stage": 3,
       "type": "narrative",
       "notes": "Archer route. One shot, from the loft, while the village sleeps standing up.",
       "text": [
@@ -1541,7 +1533,7 @@
     },
     "ch3_gates_mage": {
       "id": "ch3_gates_mage",
-      "stage": 1,
+      "stage": 3,
       "type": "narrative",
       "notes": "Mage route. Not destruction - authorship. The pattern is written, so it can be re-written.",
       "text": [
@@ -1576,7 +1568,7 @@
     },
     "ch3_sigil": {
       "id": "ch3_sigil",
-      "stage": 1,
+      "stage": 3,
       "type": "narrative",
       "notes": "GDD Ch3 DETERMINED outcome in progress: the spell is broken first, so the villagers will survive whatever comes. The Emissary rises from Callen. Flag ch3_spell_broken records the safe-village branch.",
       "text": [
@@ -1622,7 +1614,7 @@
     },
     "ch3_evac": {
       "id": "ch3_evac",
-      "stage": 1,
+      "stage": 3,
       "type": "narrative",
       "notes": "Reinforces the GDD's outcome: villagers survive unharmed. Costs time - the Emissary gathers itself - which is paid for in the fight, not in blood.",
       "text": [
@@ -1657,7 +1649,7 @@
     },
     "ch3_fight": {
       "id": "ch3_fight",
-      "stage": 1,
+      "stage": 3,
       "type": "combat",
       "notes": "GDD Ch3: the Shepherd's Emissary - a partial form of the Sable Shepherd, manifested through a vessel. Because the spell was broken first (DETERMINED Option B), the fight is harder but the village lives. Drop is act1_emissary_seal.",
       "text": [
@@ -1691,7 +1683,7 @@
     },
     "ch3_lose": {
       "id": "ch3_lose",
-      "stage": 1,
+      "stage": 3,
       "type": "narrative",
       "notes": "Combat loss recovery. Because the spell was broken first (flag ch3_spell_broken), the village survives even when the player goes down - the DETERMINED outcome holds either way.",
       "text": [
@@ -1721,7 +1713,7 @@
     },
     "ch3_after": {
       "id": "ch3_after",
-      "stage": 1,
+      "stage": 3,
       "type": "narrative",
       "notes": "GDD Ch3 outcome: all villagers survive unharmed and Callen recovers fully. He begins recalling fragments - which become Ch4's testimony.",
       "text": [
@@ -1732,10 +1724,6 @@
         {
           "op": "exp",
           "amount": 60
-        },
-        {
-          "op": "token",
-          "amount": 100
         }
       ],
       "choices": [
@@ -1755,7 +1743,7 @@
     },
     "ch4_open": {
       "id": "ch4_open",
-      "stage": 1,
+      "stage": 4,
       "type": "narrative",
       "notes": "GDD Ch4: bring Callen to testify before the Council; convince them the threat is real and spreading.",
       "text": [
@@ -1779,13 +1767,13 @@
             "go",
             "testify"
           ],
-          "next": "ch4_council"
+          "next": "litany_1"
         }
       ]
     },
     "ch4_council": {
       "id": "ch4_council",
-      "stage": 1,
+      "stage": 4,
       "type": "narrative",
       "notes": "GDD Ch4: during the hearing, suspicion falls on Magus Thessaly, the Arcanum Tower representative, who grows fidgety whenever the Hollowing is raised.",
       "text": [
@@ -1815,7 +1803,7 @@
     },
     "ch4_testimony": {
       "id": "ch4_testimony",
-      "stage": 1,
+      "stage": 4,
       "type": "narrative",
       "notes": "GDD Ch4: uncovered through class-specific approaches, Callen remembers two concrete names - Ashenmere and Greywash. The node stays neutral on method; the fragment surfaces.",
       "text": [
@@ -1864,7 +1852,7 @@
     },
     "ch4_accuse": {
       "id": "ch4_accuse",
-      "stage": 1,
+      "stage": 4,
       "type": "narrative",
       "notes": "GDD Ch4: when openly accused, Thessaly confesses - she is a conscious collaborator, serving knowledge, not power. She unleashes forbidden Hollowing magic in the middle of the Council.",
       "text": [
@@ -1894,7 +1882,7 @@
     },
     "ch4_fight": {
       "id": "ch4_fight",
-      "stage": 1,
+      "stage": 4,
       "type": "combat",
       "notes": "GDD Ch4: Thessaly unleashed, in the middle of the council, on her own terms. Tuned as a hard miniboss (the GDD's boss of the chapter); drops act1_thessaly_cane.",
       "text": [
@@ -1928,7 +1916,7 @@
     },
     "ch4_down": {
       "id": "ch4_down",
-      "stage": 1,
+      "stage": 4,
       "type": "narrative",
       "notes": "Combat loss recovery for the Thessaly fight. The council guard finishes what you started; the choice about her fate is still yours. Converges on ch4_dilemma.",
       "text": [
@@ -1958,7 +1946,7 @@
     },
     "ch4_dilemma": {
       "id": "ch4_dilemma",
-      "stage": 1,
+      "stage": 4,
       "type": "narrative",
       "notes": "THE CHAPTER 4 DILEMMA. GDD DETERMINED outcome is Option A: capture alive - it yields the Choir's complete network inside Arcanum Tower. She is down either way (won the fight, or the council guards pinned her); what is decided is what happens to her next. Both branches converge on ch4_targets.",
       "text": [
@@ -2008,7 +1996,7 @@
     },
     "ch4_captured": {
       "id": "ch4_captured",
-      "stage": 1,
+      "stage": 4,
       "type": "narrative",
       "notes": "GDD DETERMINED branch: Option A. Success - Thessaly is subdued, granting the Choir's complete network within Arcanum Tower. Flag ch4_thessaly_captured.",
       "text": [
@@ -2023,10 +2011,6 @@
         {
           "op": "flag",
           "key": "ch4_thessaly_captured"
-        },
-        {
-          "op": "token",
-          "amount": 100
         }
       ],
       "choices": [
@@ -2046,7 +2030,7 @@
     },
     "ch4_slain": {
       "id": "ch4_slain",
-      "stage": 1,
+      "stage": 4,
       "type": "narrative",
       "notes": "Non-determined branch: she dies, and the network inside Arcanum Tower stays dark. Written to not contradict the GDD - the two concrete targets still come from Callen's fragments, not from her. Flag ch4_thessaly_slain routes the Chapter 5 approach through the ledger route instead of the interrogation.",
       "text": [
@@ -2080,7 +2064,7 @@
     },
     "ch4_targets": {
       "id": "ch4_targets",
-      "stage": 1,
+      "stage": 4,
       "type": "narrative",
       "notes": "GDD Ch4 outcome: Ashenmere and Greywash become the primary investigation targets before the next full moon; it is also revealed that allies can be collaborators.",
       "text": [
@@ -2110,7 +2094,7 @@
     },
     "ch4_close": {
       "id": "ch4_close",
-      "stage": 1,
+      "stage": 4,
       "type": "narrative",
       "notes": "Chapter close. The road to Ashenmere - the original site of the Sundering - and a rest beat before Chapter 5.",
       "rest": true,
@@ -2141,7 +2125,7 @@
     },
     "ch5_open": {
       "id": "ch5_open",
-      "stage": 1,
+      "stage": 5,
       "type": "narrative",
       "notes": "GDD Ch5: Ashenmere, ruins quarantined for 300 years, the original site of The Sundering. Primary node of the Choir network. Objective: investigate it.",
       "text": [
@@ -2190,12 +2174,34 @@
               "key": "ch4_thessaly_slain"
             }
           ]
+        },
+        {
+          "id": "red_1",
+          "label": "The fog asks again",
+          "verbs": [
+            "echo",
+            "fog",
+            "again"
+          ],
+          "next": "litany_red_1",
+          "requires": [
+            {
+              "kind": "flag",
+              "key": "litany_miss_1",
+              "absent": true
+            },
+            {
+              "kind": "flag",
+              "key": "litany_red_1",
+              "absent": true
+            }
+          ]
         }
       ]
     },
     "ch5_interrogation": {
       "id": "ch5_interrogation",
-      "stage": 1,
+      "stage": 5,
       "type": "narrative",
       "notes": "GDD Ch5: under interrogation, Thessaly reveals a staggering truth - the Shepherd was one of the seven sorcerers behind the Sundering, now trying to complete what failed. Only reachable via the captured branch; the slain branch re-joins with the guard patrol route below.",
       "text": [
@@ -2230,7 +2236,7 @@
     },
     "ch5_patrol": {
       "id": "ch5_patrol",
-      "stage": 1,
+      "stage": 5,
       "type": "narrative",
       "notes": "The slain-branch route into the same facts: a captured Choir quartermaster's ledger carries them instead of Thessaly. Keeps the two dilemma branches on a shared spine without pretending the choice was free.",
       "text": [
@@ -2260,7 +2266,7 @@
     },
     "ch5_echo": {
       "id": "ch5_echo",
-      "stage": 1,
+      "stage": 5,
       "type": "narrative",
       "notes": "GDD Ch5: in the central chamber, a residual echo replays the failed ritual - revealing the Shepherd's true name, Kaelen, and his motivation: to save a dying loved one.",
       "text": [
@@ -2290,7 +2296,7 @@
     },
     "ch5_core": {
       "id": "ch5_core",
-      "stage": 1,
+      "stage": 5,
       "type": "narrative",
       "notes": "GDD Ch5: the echo fades, awakening the Sundering Sentinel - a massive ritual-core guardian construct shaped like a pulsing crystal heart. Sets up the dilemma about sealing vs destroying.",
       "text": [
@@ -2320,7 +2326,7 @@
     },
     "ch5_fight": {
       "id": "ch5_fight",
-      "stage": 1,
+      "stage": 5,
       "type": "combat",
       "notes": "GDD Ch5: the Sundering Sentinel. Act 1's climax fight - the boss. Drop is act1_sentinel_core. onWin and onLose deliberately diverge: losing here means being carried out of the quarantine with the core still guarded.",
       "text": [
@@ -2354,7 +2360,7 @@
     },
     "ch5_lose": {
       "id": "ch5_lose",
-      "stage": 1,
+      "stage": 5,
       "type": "narrative",
       "notes": "Combat loss recovery: dragged out of the quarantine by the team. The core remains - which is the GDD's DETERMINED outcome (seal, not destroy) reached the hard way.",
       "text": [
@@ -2384,7 +2390,7 @@
     },
     "ch5_dilemma": {
       "id": "ch5_dilemma",
-      "stage": 1,
+      "stage": 5,
       "type": "narrative",
       "notes": "THE CHAPTER 5 DILEMMA. GDD DETERMINED outcome is Option B: seal, do not destroy. The Ritual Core is preserved as a major source of knowledge for the Vigil - and remains a target, which drives Acts 2-4 (Ilsevet wants it). Both branches converge on ch5_after.",
       "text": [
@@ -2434,7 +2440,7 @@
     },
     "ch5_sealed": {
       "id": "ch5_sealed",
-      "stage": 1,
+      "stage": 5,
       "type": "narrative",
       "notes": "GDD DETERMINED branch: Option B. The core is sealed, preserved as a major knowledge source, and remains a valuable target for the future (Act 4's premise). Flag ch5_core_sealed.",
       "text": [
@@ -2468,7 +2474,7 @@
     },
     "ch5_broken": {
       "id": "ch5_broken",
-      "stage": 1,
+      "stage": 5,
       "type": "narrative",
       "notes": "Non-determined branch: the core is destroyed. The knowledge is gone; the ritual with it. Later acts are written so the Choir's remaining fragments and Ilsevet's plan do not depend on the core surviving - but Ashenmere is a ruin instead of a library.",
       "text": [
@@ -2502,7 +2508,7 @@
     },
     "ch5_after": {
       "id": "ch5_after",
-      "stage": 1,
+      "stage": 5,
       "type": "narrative",
       "notes": "GDD Ch5 outcome: Kaelen now has a name and a human motive. New clue: an unrecognisable emblem of an extinct order among the original seven sorcerers. Hooks into Ch6.",
       "text": [
@@ -2513,10 +2519,6 @@
         {
           "op": "exp",
           "amount": 70
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -2530,13 +2532,13 @@
             "go",
             "emblem"
           ],
-          "next": "ch6_open"
+          "next": "litany_deep_1"
         }
       ]
     },
     "ch6_open": {
       "id": "ch6_open",
-      "stage": 1,
+      "stage": 6,
       "type": "narrative",
       "notes": "GDD Ch6: the hidden temple of the Ashwardens, deep in Silverleaf Woods. Objective: uncover the complete history of Kaelen and the Ashwardens.",
       "text": [
@@ -2566,7 +2568,7 @@
     },
     "ch6_trials": {
       "id": "ch6_trials",
-      "stage": 1,
+      "stage": 6,
       "type": "narrative",
       "notes": "CLASS GATE 1 of 2 in Ch6 (the GDD's three traditional forest trials). Each class passes the trials its own way; the gate node and the three route nodes follow Ch1's structure.",
       "text": [
@@ -2632,7 +2634,7 @@
     },
     "ch6_trial_warrior": {
       "id": "ch6_trial_warrior",
-      "stage": 1,
+      "stage": 6,
       "type": "narrative",
       "notes": "Warrior trial route. The river that remembers every weight that has crossed it. Honesty through effort.",
       "text": [
@@ -2667,7 +2669,7 @@
     },
     "ch6_trial_archer": {
       "id": "ch6_trial_archer",
-      "stage": 1,
+      "stage": 6,
       "type": "narrative",
       "notes": "Archer trial route. The dark that listens. You pass by moving like something that belongs to it.",
       "text": [
@@ -2702,7 +2704,7 @@
     },
     "ch6_trial_mage": {
       "id": "ch6_trial_mage",
-      "stage": 1,
+      "stage": 6,
       "type": "narrative",
       "notes": "Mage trial route. The grove that lies. You answer illusion with grammar until it runs out.",
       "text": [
@@ -2737,7 +2739,7 @@
     },
     "ch6_ilyndra": {
       "id": "ch6_ilyndra",
-      "stage": 1,
+      "stage": 6,
       "type": "narrative",
       "notes": "GDD Ch6: Ilyndra reveals Kaelen was the youngest apprentice of the Ashwardens, lost his younger sister Maren to an incurable illness, and the Ashwardens held records on siphoning life essence. Five of the six others were driven by ambition.",
       "text": [
@@ -2767,7 +2769,7 @@
     },
     "ch6_archive": {
       "id": "ch6_archive",
-      "stage": 1,
+      "stage": 6,
       "type": "narrative",
       "notes": "GDD Ch6: a guardian echo tests the team's intent before yielding; a brooch bearing a family crest is discovered - identical to Commander Veyra's. Sets up the dilemma.",
       "text": [
@@ -2797,7 +2799,7 @@
     },
     "ch6_dilemma": {
       "id": "ch6_dilemma",
-      "stage": 1,
+      "stage": 6,
       "type": "narrative",
       "notes": "THE CHAPTER 6 DILEMMA. GDD DETERMINED outcome is Option A: claim full ritual knowledge - it opens the possibility of curing rather than merely defeating Kaelen, which the whole endgame depends on. Both branches converge on ch6_brooch.",
       "text": [
@@ -2847,7 +2849,7 @@
     },
     "ch6_claimed": {
       "id": "ch6_claimed",
-      "stage": 1,
+      "stage": 6,
       "type": "narrative",
       "notes": "GDD DETERMINED branch: Option A. The team secures the original ritual records. Flag ch6_ritual_records - Act 2's proof that Kaelen can be saved depends on it.",
       "text": [
@@ -2881,7 +2883,7 @@
     },
     "ch6_summary": {
       "id": "ch6_summary",
-      "stage": 1,
+      "stage": 6,
       "type": "narrative",
       "notes": "Non-determined branch: the summary. History and motive come out the same; the unbinding method does not. Written so Act 2 can still proceed - Kaelen holds the binding half himself, and says so at the watchtower.",
       "text": [
@@ -2915,7 +2917,7 @@
     },
     "ch6_brooch": {
       "id": "ch6_brooch",
-      "stage": 1,
+      "stage": 6,
       "type": "narrative",
       "notes": "GDD Ch6 outcome: the brooch is identical to Veyra's. Ilyndra confirms the crest is Ashwarden. Chapter close, hooking into Ch7.",
       "text": [
@@ -2926,10 +2928,6 @@
         {
           "op": "exp",
           "amount": 60
-        },
-        {
-          "op": "token",
-          "amount": 120
         }
       ],
       "choices": [
@@ -2949,7 +2947,7 @@
     },
     "ch7_open": {
       "id": "ch7_open",
-      "stage": 1,
+      "stage": 7,
       "type": "narrative",
       "notes": "GDD Ch7: Greyhold, Veyra's private chambers and secret laboratory. Objective: uncover Veyra's connection to Kaelen and secure the ritual records.",
       "text": [
@@ -2986,12 +2984,34 @@
             "tell"
           ],
           "next": "ch7_heirloom"
+        },
+        {
+          "id": "red_9",
+          "label": "The fog asks again",
+          "verbs": [
+            "echo",
+            "fog",
+            "again"
+          ],
+          "next": "litany_red_9",
+          "requires": [
+            {
+              "kind": "flag",
+              "key": "litany_miss_9",
+              "absent": true
+            },
+            {
+              "kind": "flag",
+              "key": "litany_red_9",
+              "absent": true
+            }
+          ]
         }
       ]
     },
     "ch7_heirloom": {
       "id": "ch7_heirloom",
-      "stage": 1,
+      "stage": 7,
       "type": "narrative",
       "notes": "GDD Ch7: the brooch is a family heirloom from an ancestor named Maren who vanished after a great tragedy. Confirmed: Veyra is a direct descendant of Maren, Kaelen's sister who somehow survived.",
       "text": [
@@ -3026,7 +3046,7 @@
     },
     "ch7_night": {
       "id": "ch7_night",
-      "stage": 1,
+      "stage": 7,
       "type": "narrative",
       "notes": "GDD Ch7: that very night, an agent of the Hollow Choir disguised as kitchen staff attacks Veyra's private quarters the moment her bloodline identity is exposed. Sets up the fight and the dilemma.",
       "text": [
@@ -3056,7 +3076,7 @@
     },
     "ch7_fight": {
       "id": "ch7_fight",
-      "stage": 1,
+      "stage": 7,
       "type": "combat",
       "notes": "GDD Ch7: the Choir's agent, come for Veyra the moment her bloodline is exposed. A fast assassin construct. Drop is act1_choir_sigil, taken from its body. onWin and onLose converge on the dilemma, as the GDD's outcome (agent escapes) is decided by the dilemma, not the fight.",
       "text": [
@@ -3090,7 +3110,7 @@
     },
     "ch7_down": {
       "id": "ch7_down",
-      "stage": 1,
+      "stage": 7,
       "type": "narrative",
       "notes": "Bridge node: whatever happened in the corridor, the agent is down and the choice is live - hold it here, or let it run and stand by Veyra. Re-joins the GDD spine at the dilemma.",
       "text": [
@@ -3120,7 +3140,7 @@
     },
     "ch7_smoke": {
       "id": "ch7_smoke",
-      "stage": 1,
+      "stage": 7,
       "type": "narrative",
       "notes": "Combat loss recovery for the agent fight. The corridor is a draw: the agent is loose, the fire is lit, and the choice is still live. Converges on ch7_dilemma.",
       "text": [
@@ -3150,7 +3170,7 @@
     },
     "ch7_dilemma": {
       "id": "ch7_dilemma",
-      "stage": 1,
+      "stage": 7,
       "type": "narrative",
       "notes": "THE CHAPTER 7 DILEMMA. GDD DETERMINED outcome is Option A: prioritize Veyra, allow the agent to escape. Veyra is completely safe, but the agent escapes with word that Kaelen's bloodline has been found - the premise of Act 2's ambushes. Both branches converge on ch7_outcome.",
       "text": [
@@ -3200,7 +3220,7 @@
     },
     "ch7_veyra": {
       "id": "ch7_veyra",
-      "stage": 1,
+      "stage": 7,
       "type": "narrative",
       "notes": "GDD DETERMINED branch: Option A. Veyra is completely safe; the agent escapes with word that Kaelen's bloodline has been found. Flag ch7_agent_escaped.",
       "text": [
@@ -3234,7 +3254,7 @@
     },
     "ch7_agent_held": {
       "id": "ch7_agent_held",
-      "stage": 1,
+      "stage": 7,
       "type": "narrative",
       "notes": "Non-determined branch: the agent is held. Veyra saves herself, worse burned, and the laboratory's losses are heavier. Written to not contradict the GDD: the Choir already knows the bloodline - its agent wearing the kitchen mark came ready to report either way.",
       "text": [
@@ -3268,7 +3288,7 @@
     },
     "ch7_outcome": {
       "id": "ch7_outcome",
-      "stage": 1,
+      "stage": 7,
       "type": "narrative",
       "notes": "GDD Ch7 outcome: Veyra is Maren's descendant; Kaelen may never have known his sister lived and had descendants - and now one of them leads the order hunting him. Chapter close with a rest beat.",
       "rest": true,
@@ -3293,7 +3313,7 @@
     },
     "ch8_open": {
       "id": "ch8_open",
-      "stage": 1,
+      "stage": 8,
       "type": "narrative",
       "notes": "GDD Ch8: Veyra receives a midnight vision - Kaelen asks to meet in person at a neutral location in three days, seeking dialogue rather than attack. Respond to the summons via the ancient blood bond.",
       "text": [
@@ -3317,7 +3337,7 @@
             "meet",
             "accept"
           ],
-          "next": "ch8_road"
+          "next": "litany_2"
         },
         {
           "id": "council",
@@ -3329,7 +3349,7 @@
             "warn",
             "veyra"
           ],
-          "next": "ch8_road",
+          "next": "litany_2",
           "effects": [
             {
               "op": "add",
@@ -3342,7 +3362,7 @@
     },
     "ch8_road": {
       "id": "ch8_road",
-      "stage": 1,
+      "stage": 8,
       "type": "narrative",
       "notes": "The road to the Old Watchtower, at the edge of the Mist Zone. A rest beat before the Sentinel of the Call.",
       "rest": true,
@@ -3367,7 +3387,7 @@
     },
     "ch8_test": {
       "id": "ch8_test",
-      "stage": 1,
+      "stage": 8,
       "type": "narrative",
       "notes": "GDD Ch8: en route to the meeting point, the team is intercepted by the Sentinel of the Call, a construct testing peaceful intent versus aggression. Sets up the dilemma.",
       "text": [
@@ -3397,7 +3417,7 @@
     },
     "ch8_fight": {
       "id": "ch8_fight",
-      "stage": 1,
+      "stage": 8,
       "type": "combat",
       "notes": "GDD Ch8: the Sentinel of the Call. It is a test as much as a fight. Drop is act1_watchtower_charm. Either outcome leads to the sheathed-arms decision; the GDD's DETERMINED outcome (small team, weapons sheathed) is the dilemma, not this fight.",
       "text": [
@@ -3431,7 +3451,7 @@
     },
     "ch8_lose": {
       "id": "ch8_lose",
-      "stage": 1,
+      "stage": 8,
       "type": "narrative",
       "notes": "Combat loss recovery with a twist that matches the GDD: the Sentinel is a test, not an executioner. Having bloodied you, it relents - the test was never pass/fail by violence.",
       "text": [
@@ -3461,7 +3481,7 @@
     },
     "ch8_after_fight": {
       "id": "ch8_after_fight",
-      "stage": 1,
+      "stage": 8,
       "type": "narrative",
       "notes": "Bridge node: the test is done, the tower is ahead, and the dilemma of how to walk in is live. Re-joins the GDD spine at the dilemma.",
       "text": [
@@ -3491,7 +3511,7 @@
     },
     "ch8_dilemma": {
       "id": "ch8_dilemma",
-      "stage": 1,
+      "stage": 8,
       "type": "narrative",
       "notes": "THE CHAPTER 8 DILEMMA. GDD DETERMINED outcome is Option B: enter with a small team, sheathed weapons - complete good faith ahead of the first face-to-face meeting with Kaelen. Both branches converge on the Act 1 ending node.",
       "text": [
@@ -3541,7 +3561,7 @@
     },
     "ch8_sheathed": {
       "id": "ch8_sheathed",
-      "stage": 1,
+      "stage": 8,
       "type": "narrative",
       "notes": "GDD DETERMINED branch: Option B. The team demonstrates complete good faith. Flag ch8_arms_sheathed - Act 2's meeting at the watchtower opens on this footing.",
       "text": [
@@ -3575,7 +3595,7 @@
     },
     "ch8_armed": {
       "id": "ch8_armed",
-      "stage": 1,
+      "stage": 8,
       "type": "narrative",
       "notes": "Non-determined branch: you keep your steel. The door still opens - the meeting happens - but the footing is different, and the GDD's good-faith statement is not made. Written to not contradict Act 2.",
       "text": [
@@ -3609,7 +3629,7 @@
     },
     "ch8_watchtower_meet": {
       "id": "ch8_watchtower_meet",
-      "stage": 1,
+      "stage": 8,
       "type": "narrative",
       "rest": true,
       "notes": "Formerly the Act 1 ending; with Act 2 written this is the rest beat where the telling begins. The GDD's Ch8 outcome holds: battle is not what he seeks. Act 2's real ending is ch16_vision.",
@@ -3640,7 +3660,7 @@
     },
     "ch9_open": {
       "id": "ch9_open",
-      "stage": 1,
+      "stage": 9,
       "type": "narrative",
       "notes": "GDD Ch9: Kaelen waits alone, without bodyguards - vulnerability as a statement of good faith. He recognizes Maren's eyes in Veyra. The team fights beside him when the mastermind's troops arrive, forging an unspoken alliance. Outcome: Kaelen is no longer the leader of the Choir; the true enemy is an unknown figure pulling strings.",
       "text": [
@@ -3684,12 +3704,34 @@
             "her"
           ],
           "next": "ch9_reveal"
+        },
+        {
+          "id": "red_2",
+          "label": "The fog asks again",
+          "verbs": [
+            "echo",
+            "fog",
+            "again"
+          ],
+          "next": "litany_red_2",
+          "requires": [
+            {
+              "kind": "flag",
+              "key": "litany_miss_2",
+              "absent": true
+            },
+            {
+              "kind": "flag",
+              "key": "litany_red_2",
+              "absent": true
+            }
+          ]
         }
       ]
     },
     "ch9_reveal": {
       "id": "ch9_reveal",
-      "stage": 1,
+      "stage": 9,
       "type": "narrative",
       "notes": "GDD Ch9: the sealing ritual must be completed at Ashenmere during the Blood Moon - which will kill Kaelen - unless the Ashwarden records hold another way. Mid-conversation, masked troops loyal to the mastermind attack.",
       "text": [
@@ -3719,7 +3761,7 @@
     },
     "ch9_fight": {
       "id": "ch9_fight",
-      "stage": 1,
+      "stage": 9,
       "type": "combat",
       "notes": "GDD Ch9: masked troops loyal to the mastermind attack mid-conversation; the team fights side by side with Kaelen. A hunter squad, not a duel. Drop is act2_sanctum_tally.",
       "text": [
@@ -3753,7 +3795,7 @@
     },
     "ch9_lose": {
       "id": "ch9_lose",
-      "stage": 1,
+      "stage": 9,
       "type": "narrative",
       "notes": "Combat loss recovery: Kaelen carries the team out through mist he has lived in for three centuries. Converges on ch9_after.",
       "text": [
@@ -3783,7 +3825,7 @@
     },
     "ch9_after": {
       "id": "ch9_after",
-      "stage": 1,
+      "stage": 9,
       "type": "narrative",
       "notes": "Chapter 9 outcome: alliance forged. Kaelen leads the team to his hidden sanctuary beneath the Old Watchtower.",
       "text": [
@@ -3794,10 +3836,6 @@
         {
           "op": "exp",
           "amount": 50
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -3811,13 +3849,13 @@
             "research",
             "look"
           ],
-          "next": "ch10_open"
+          "next": "litany_deep_2"
         }
       ]
     },
     "ch10_open": {
       "id": "ch10_open",
-      "stage": 1,
+      "stage": 10,
       "type": "narrative",
       "notes": "GDD Ch10: Kaelen reveals the map of the seven original ritual fragments. Two he secured himself; three are held by the Choir (Duskhollow, Saltmere, the mountain node); the Ashwarden star chart will name the last two. He confirms there may be a way to complete the ritual without dying.",
       "text": [
@@ -3873,7 +3911,7 @@
     },
     "ch10_scout": {
       "id": "ch10_scout",
-      "stage": 1,
+      "stage": 10,
       "type": "narrative",
       "notes": "GDD Ch10: a Choir scout is caught infiltrating the sanctuary. Sets up the interrogation choice.",
       "text": [
@@ -3903,7 +3941,7 @@
     },
     "ch10_dilemma": {
       "id": "ch10_dilemma",
-      "stage": 1,
+      "stage": 10,
       "type": "narrative",
       "notes": "THE CHAPTER 10 DILEMMA. GDD DETERMINED: capture alive for interrogation. Leaked info: Duskhollow is the least guarded - the logical starting point. Both branches converge on ch10_targets.",
       "text": [
@@ -3953,7 +3991,7 @@
     },
     "ch10_captured": {
       "id": "ch10_captured",
-      "stage": 1,
+      "stage": 10,
       "type": "narrative",
       "notes": "GDD DETERMINED branch: capture alive. Leaked info: Duskhollow is the least guarded node. Flag ch10_scout_talked.",
       "text": [
@@ -3987,7 +4025,7 @@
     },
     "ch10_released": {
       "id": "ch10_released",
-      "stage": 1,
+      "stage": 10,
       "type": "narrative",
       "notes": "Non-determined branch: he is released carrying a false target order. Written to not contradict the GDD - the Duskhollow-first facts still arrive, via the copied map his handlers already have.",
       "text": [
@@ -4021,7 +4059,7 @@
     },
     "ch10_targets": {
       "id": "ch10_targets",
-      "stage": 1,
+      "stage": 10,
       "type": "narrative",
       "notes": "GDD Ch10 outcome: three remaining fragments mapped; a real possibility exists to save Kaelen without his death. Chapter close with a rest beat.",
       "rest": true,
@@ -4046,7 +4084,7 @@
     },
     "ch11_open": {
       "id": "ch11_open",
-      "stage": 1,
+      "stage": 11,
       "type": "narrative",
       "notes": "GDD Ch11: Duskhollow Swamps, south of the Mist Zone. Guided by the hermit Old Maddox. Objective: claim the first ritual fragment.",
       "text": [
@@ -4071,12 +4109,34 @@
             "ask"
           ],
           "next": "ch11_approach"
+        },
+        {
+          "id": "red_10",
+          "label": "The fog asks again",
+          "verbs": [
+            "echo",
+            "fog",
+            "again"
+          ],
+          "next": "litany_red_10",
+          "requires": [
+            {
+              "kind": "flag",
+              "key": "litany_miss_10",
+              "absent": true
+            },
+            {
+              "kind": "flag",
+              "key": "litany_red_10",
+              "absent": true
+            }
+          ]
         }
       ]
     },
     "ch11_approach": {
       "id": "ch11_approach",
-      "stage": 1,
+      "stage": 11,
       "type": "narrative",
       "notes": "GDD Ch11: the temple is slowly sinking into the marsh, guarded by the Mire Sentinel. The fragment altar is going under - time pressure without a clock.",
       "text": [
@@ -4106,7 +4166,7 @@
     },
     "ch11_descent": {
       "id": "ch11_descent",
-      "stage": 1,
+      "stage": 11,
       "type": "narrative",
       "notes": "Sets up the extraction dilemma: forced extraction wakes the Sentinel and floods the chamber; careful extraction is slower and risks the altar going under. GDD DETERMINED is careful extraction - the battle drags but the fragment survives.",
       "text": [
@@ -4162,7 +4222,7 @@
     },
     "ch11_fight": {
       "id": "ch11_fight",
-      "stage": 1,
+      "stage": 11,
       "type": "combat",
       "notes": "GDD Ch11: the Mire Sentinel, a colossal swamp construct. GDD DETERMINED is careful extraction: the battle drags on longer, but the fragment is retrieved intact before the altar submerges. Drop is act2_mire_pearl.",
       "text": [
@@ -4196,7 +4256,7 @@
     },
     "ch11_lose": {
       "id": "ch11_lose",
-      "stage": 1,
+      "stage": 11,
       "type": "narrative",
       "notes": "Combat loss recovery: the team is pulled out by Maddox; Kaelen's knowledge finishes the unbinding from the surface. Converges on ch11_recovered.",
       "text": [
@@ -4226,7 +4286,7 @@
     },
     "ch11_recovered": {
       "id": "ch11_recovered",
-      "stage": 1,
+      "stage": 11,
       "type": "narrative",
       "notes": "GDD Ch11 outcome: the first fragment is secured; two remain (Saltmere and the mountain node). Flag ch11_fragment_one.",
       "text": [
@@ -4241,10 +4301,6 @@
         {
           "op": "flag",
           "key": "ch11_fragment_one"
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -4264,7 +4320,7 @@
     },
     "ch12_open": {
       "id": "ch12_open",
-      "stage": 1,
+      "stage": 12,
       "type": "narrative",
       "notes": "GDD Ch12: Saltmere Fishing Village and the underwater sea cave beneath the Old Lighthouse. Yessa, an old fisherman who lost his child to the lighthouse, warns the team. Objective: retrieve the second fragment.",
       "text": [
@@ -4288,13 +4344,13 @@
             "warning",
             "ask"
           ],
-          "next": "ch12_cave"
+          "next": "litany_3"
         }
       ]
     },
     "ch12_cave": {
       "id": "ch12_cave",
-      "stage": 1,
+      "stage": 12,
       "type": "narrative",
       "notes": "GDD Ch12: in the deepest chamber the fragment is guarded by the Brine Sentinel - an ancient whale slowly corrupted by the Hollowing, its eyes reflecting confusion rather than malice. Sets up the purification dilemma.",
       "text": [
@@ -4324,7 +4380,7 @@
     },
     "ch12_dilemma": {
       "id": "ch12_dilemma",
-      "stage": 1,
+      "stage": 12,
       "type": "narrative",
       "notes": "THE CHAPTER 12 DILEMMA. GDD DETERMINED: purify the creature using ritual knowledge rather than kill it - the first empirical proof the Hollowing can be reversed, and strong evidence Kaelen can be saved. Both branches converge on ch12_after.",
       "text": [
@@ -4374,7 +4430,7 @@
     },
     "ch12_fight": {
       "id": "ch12_fight",
-      "stage": 1,
+      "stage": 12,
       "type": "combat",
       "notes": "GDD Ch12: the Brine Sentinel. Under the purify branch (DETERMINED) the fight is the purification - the team holds it in the working while the Hollowing is drawn out, and it ends confused, clean, and free. Drop is act2_brine_scale.",
       "text": [
@@ -4408,7 +4464,7 @@
     },
     "ch12_lose": {
       "id": "ch12_lose",
-      "stage": 1,
+      "stage": 12,
       "type": "narrative",
       "notes": "Combat loss recovery: the sea gives the team back at low tide; Kaelen completes the working from the shallows. Converges on ch12_after.",
       "text": [
@@ -4438,7 +4494,7 @@
     },
     "ch12_purified": {
       "id": "ch12_purified",
-      "stage": 1,
+      "stage": 12,
       "type": "narrative",
       "notes": "GDD Ch12 outcome: the whale purified - the first empirical proof that the Hollowing can be reversed, not just destroyed. Flag ch12_whale_purified (checked at Act 4's Ilsevet refusal echo).",
       "text": [
@@ -4472,7 +4528,7 @@
     },
     "ch12_after": {
       "id": "ch12_after",
-      "stage": 1,
+      "stage": 12,
       "type": "narrative",
       "notes": "GDD Ch12 outcome: second fragment secured. Flag ch12_fragment_two.",
       "text": [
@@ -4487,10 +4543,6 @@
         {
           "op": "flag",
           "key": "ch12_fragment_two"
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -4504,13 +4556,13 @@
             "go",
             "report"
           ],
-          "next": "ch13_open"
+          "next": "litany_deep_3"
         }
       ]
     },
     "ch13_open": {
       "id": "ch13_open",
-      "stage": 1,
+      "stage": 13,
       "type": "narrative",
       "notes": "GDD Ch13: the team's secret plans leak to the Choir - there is a spy inside Greyhold. The suspect is an Iron Concordat soldier, Bryn.",
       "text": [
@@ -4554,12 +4606,34 @@
             "track"
           ],
           "next": "ch13_truth"
+        },
+        {
+          "id": "red_3",
+          "label": "The fog asks again",
+          "verbs": [
+            "echo",
+            "fog",
+            "again"
+          ],
+          "next": "litany_red_3",
+          "requires": [
+            {
+              "kind": "flag",
+              "key": "litany_miss_3",
+              "absent": true
+            },
+            {
+              "kind": "flag",
+              "key": "litany_red_3",
+              "absent": true
+            }
+          ]
         }
       ]
     },
     "ch13_truth": {
       "id": "ch13_truth",
-      "stage": 1,
+      "stage": 13,
       "type": "narrative",
       "notes": "GDD Ch13: Bryn is a victim, not a willing traitor - his family is held hostage by the Choir as leverage.",
       "text": [
@@ -4589,7 +4663,7 @@
     },
     "ch13_dilemma": {
       "id": "ch13_dilemma",
-      "stage": 1,
+      "stage": 13,
       "type": "narrative",
       "notes": "THE CHAPTER 13 DILEMMA. GDD DETERMINED: rescue Bryn's family unharmed, even though the hostage overseer escapes with minor intel. Both branches converge on ch13_after.",
       "text": [
@@ -4639,7 +4713,7 @@
     },
     "ch13_family": {
       "id": "ch13_family",
-      "stage": 1,
+      "stage": 13,
       "type": "narrative",
       "notes": "GDD DETERMINED branch: family rescued unharmed; the hostage overseer escapes with minor additional intel. Flag ch13_family_safe. Outcome: Bryn rehabilitated, fiercely loyal - he volunteers as purification test subject in Ch20.",
       "text": [
@@ -4673,7 +4747,7 @@
     },
     "ch13_trap": {
       "id": "ch13_trap",
-      "stage": 1,
+      "stage": 13,
       "type": "narrative",
       "notes": "Non-determined branch: the overseer is taken, but the family escapes in the confusion and the Choir moves them beyond reach. Written to not contradict the GDD - Bryn still turns loyal, from a colder place.",
       "text": [
@@ -4707,7 +4781,7 @@
     },
     "ch13_after": {
       "id": "ch13_after",
-      "stage": 1,
+      "stage": 13,
       "type": "narrative",
       "notes": "GDD Ch13 outcome: the Choir now knows the team heads for the mountain node. Rest beat before Ch14.",
       "rest": true,
@@ -4732,7 +4806,7 @@
     },
     "ch14_open": {
       "id": "ch14_open",
-      "stage": 1,
+      "stage": 14,
       "type": "narrative",
       "notes": "GDD Ch14: Kaelen's sanctuary, then the Ashwarden temple. Ilyndra confirms a gentler version of the ritual, never tested. An Elven star chart locates the last two fragments: Sky Sanctum and the Cinder Wastes. Objective: ensure the purification ritual can truly save Kaelen.",
       "text": [
@@ -4776,12 +4850,34 @@
             "price"
           ],
           "next": "ch14_trial"
+        },
+        {
+          "id": "red_11",
+          "label": "The fog asks again",
+          "verbs": [
+            "echo",
+            "fog",
+            "again"
+          ],
+          "next": "litany_red_11",
+          "requires": [
+            {
+              "kind": "flag",
+              "key": "litany_miss_11",
+              "absent": true
+            },
+            {
+              "kind": "flag",
+              "key": "litany_red_11",
+              "absent": true
+            }
+          ]
         }
       ]
     },
     "ch14_trial": {
       "id": "ch14_trial",
-      "stage": 1,
+      "stage": 14,
       "type": "narrative",
       "notes": "GDD Ch14: a small-scale trial of the purification ritual spins out of control; DETERMINED is stabilizing it together rather than aborting. Sets up the trial fight: the working itself manifests a lash of wild aether.",
       "text": [
@@ -4811,7 +4907,7 @@
     },
     "ch14_fight": {
       "id": "ch14_fight",
-      "stage": 1,
+      "stage": 14,
       "type": "combat",
       "notes": "GDD Ch14: the trial's wild aether - not an enemy so much as the ritual testing everyone holding it. GDD DETERMINED: the team stabilizes it together; complete success. No drop (it dissolves); the EXP is the lesson.",
       "text": [
@@ -4844,7 +4940,7 @@
     },
     "ch14_lose": {
       "id": "ch14_lose",
-      "stage": 1,
+      "stage": 14,
       "type": "narrative",
       "notes": "Combat loss recovery: the trial is doused, the team is burned but wiser; Ilyndra re-cuts the working and the second attempt holds. Converges on ch14_proven.",
       "text": [
@@ -4874,7 +4970,7 @@
     },
     "ch14_proven": {
       "id": "ch14_proven",
-      "stage": 1,
+      "stage": 14,
       "type": "narrative",
       "notes": "GDD Ch14 outcome: the Purification Ritual is proven viable in theory and small-scale practice; all seven fragments are fully mapped. Flag ch14_ritual_proven. Flag ch14_fragments_mapped.",
       "text": [
@@ -4893,10 +4989,6 @@
         {
           "op": "flag",
           "key": "ch14_fragments_mapped"
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -4916,7 +5008,7 @@
     },
     "ch15_open": {
       "id": "ch15_open",
-      "stage": 1,
+      "stage": 15,
       "type": "narrative",
       "notes": "GDD Ch15: an old Dwarf mine fortified as a Choir stronghold. General Harwick leads the assault, admitting his past doubts were mistaken. The fragment is now far more heavily guarded - the leak in Ch13 told the Choir the team was coming.",
       "text": [
@@ -4946,7 +5038,7 @@
     },
     "ch15_breach": {
       "id": "ch15_breach",
-      "stage": 1,
+      "stage": 15,
       "type": "narrative",
       "notes": "GDD Ch15: Choir elite troops threaten to collapse the tunnels where local Dwarf miners are trapped. Sets up the dilemma: miners first vs fragment first.",
       "text": [
@@ -4976,7 +5068,7 @@
     },
     "ch15_dilemma": {
       "id": "ch15_dilemma",
-      "stage": 1,
+      "stage": 15,
       "type": "narrative",
       "notes": "THE CHAPTER 15 DILEMMA. GDD DETERMINED: prioritize saving the miners despite making the battle tougher. Both branches converge on ch15_fight.",
       "text": [
@@ -5026,7 +5118,7 @@
     },
     "ch15_fight": {
       "id": "ch15_fight",
-      "stage": 1,
+      "stage": 15,
       "type": "combat",
       "notes": "GDD Ch15: the Choir's elite warden holding the altar level. Harwick fights alongside the team - the Concordat is now a full ally. Drop is act2_mine_tally.",
       "text": [
@@ -5060,7 +5152,7 @@
     },
     "ch15_lose": {
       "id": "ch15_lose",
-      "stage": 1,
+      "stage": 15,
       "type": "narrative",
       "notes": "Combat loss recovery: Harwick's line holds and the warden is brought down by weight of arms after you fall. Converges on ch15_recovered.",
       "text": [
@@ -5090,7 +5182,7 @@
     },
     "ch15_recovered": {
       "id": "ch15_recovered",
-      "stage": 1,
+      "stage": 15,
       "type": "narrative",
       "notes": "GDD Ch15 outcome: the third Choir-held fragment is secured; the Iron Concordat is now a fully unconditional ally. Flag ch15_fragment_three. Flag ch15_concordat_ally.",
       "text": [
@@ -5109,10 +5201,6 @@
         {
           "op": "flag",
           "key": "ch15_concordat_ally"
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -5132,7 +5220,7 @@
     },
     "ch16_open": {
       "id": "ch16_open",
-      "stage": 1,
+      "stage": 16,
       "type": "narrative",
       "notes": "GDD Ch16: the puppet master finally reveals herself. A collective vision intrusion - a figure in black and silver: Ilsevet Cray, the unmentioned seventh sorceress, the true architect. Objective: survive the vision and the attack that rides it.",
       "text": [
@@ -5156,13 +5244,13 @@
             "resist",
             "strike"
           ],
-          "next": "ch16_enforcer"
+          "next": "litany_4"
         }
       ]
     },
     "ch16_enforcer": {
       "id": "ch16_enforcer",
-      "stage": 1,
+      "stage": 16,
       "type": "combat",
       "notes": "GDD Ch16: a trusted enforcer of Ilsevet attacks Greyhold while the vision takes place. Drop is act2_enforcer_gauntlet. onLose diverges: the enforcer escapes into the Mist Zone with Greyhold's measure.",
       "text": [
@@ -5196,7 +5284,7 @@
     },
     "ch16_lose": {
       "id": "ch16_lose",
-      "stage": 1,
+      "stage": 16,
       "type": "narrative",
       "notes": "Combat loss recovery: the enforcer disengages on a schedule, satisfied. Converges on ch16_after_fight.",
       "text": [
@@ -5226,7 +5314,7 @@
     },
     "ch16_after_fight": {
       "id": "ch16_after_fight",
-      "stage": 1,
+      "stage": 16,
       "type": "narrative",
       "notes": "Bridge node: the enforcer is beaten or gone; the dilemma of protecting civilians versus the enforcer's escape is live. Re-joins the GDD spine at the dilemma.",
       "text": [
@@ -5256,7 +5344,7 @@
     },
     "ch16_dilemma": {
       "id": "ch16_dilemma",
-      "stage": 1,
+      "stage": 16,
       "type": "narrative",
       "notes": "THE CHAPTER 16 DILEMMA. GDD DETERMINED: prioritize protecting Greyhold's civilians completely, allowing the enforcer to escape. Both branches converge on ch16_vision, the Act 2 ending.",
       "text": [
@@ -5306,7 +5394,7 @@
     },
     "ch16_civilians": {
       "id": "ch16_civilians",
-      "stage": 1,
+      "stage": 16,
       "type": "narrative",
       "notes": "GDD DETERMINED branch: civilians protected completely; the enforcer escapes. Flag ch16_enforcer_escaped. Outcome: the true enemy has a face and a name; Act 2 concludes.",
       "text": [
@@ -5340,7 +5428,7 @@
     },
     "ch16_pursued": {
       "id": "ch16_pursued",
-      "stage": 1,
+      "stage": 16,
       "type": "narrative",
       "notes": "Non-determined branch: the enforcer is driven into the mist but not taken; Greyhold's civilians pay in dead. Written to not contradict the GDD - he still escapes with the same measure, and the name still spreads.",
       "text": [
@@ -5374,7 +5462,7 @@
     },
     "ch16_vision": {
       "id": "ch16_vision",
-      "stage": 1,
+      "stage": 16,
       "type": "narrative",
       "notes": "Act 2 close / bridge to Act 3, per the GDD's Ch16 outcome: the enemy has a face and a name. reward_modifier scales the simulated payout; leaderboard_tag buckets the run.",
       "text": [
@@ -5404,7 +5492,7 @@
     },
     "ch17_open": {
       "id": "ch17_open",
-      "stage": 1,
+      "stage": 17,
       "type": "narrative",
       "notes": "GDD Ch17 open: Greyhold's Council Chamber, three banners, Magus Oren offering Arcanum Tower's unconditional cooperation after Thessaly.",
       "text": [
@@ -5441,12 +5529,34 @@
             "first"
           ],
           "next": "ch17_oren"
+        },
+        {
+          "id": "red_4",
+          "label": "The fog asks again",
+          "verbs": [
+            "echo",
+            "fog",
+            "again"
+          ],
+          "next": "litany_red_4",
+          "requires": [
+            {
+              "kind": "flag",
+              "key": "litany_miss_4",
+              "absent": true
+            },
+            {
+              "kind": "flag",
+              "key": "litany_red_4",
+              "absent": true
+            }
+          ]
         }
       ]
     },
     "ch17_oren": {
       "id": "ch17_oren",
-      "stage": 1,
+      "stage": 17,
       "type": "narrative",
       "notes": "GDD Ch17: Oren offers Arcanum's registry - rites, wards, seven centuries of Sundering notes - as his order's penance.",
       "text": [
@@ -5476,7 +5586,7 @@
     },
     "ch17_delegates": {
       "id": "ch17_delegates",
-      "stage": 1,
+      "stage": 17,
       "type": "narrative",
       "notes": "GDD Ch17: the three delegations take the neutral table; Ilsevet's assassins are already inside the mountain.",
       "text": [
@@ -5506,7 +5616,7 @@
     },
     "ch17_fight": {
       "id": "ch17_fight",
-      "stage": 1,
+      "stage": 17,
       "type": "combat",
       "notes": "GDD Ch17: Ilsevet's assassins strike during the summit. One shade reaches the chamber; the rest are the dilemma. Drop is act3_ashen_scout.",
       "text": [
@@ -5540,7 +5650,7 @@
     },
     "ch17_lose": {
       "id": "ch17_lose",
-      "stage": 1,
+      "stage": 17,
       "type": "narrative",
       "notes": "Combat loss recovery: the Vigil's guards bring the shade down after you fall. Converges on ch17_protect.",
       "text": [
@@ -5570,7 +5680,7 @@
     },
     "ch17_protect": {
       "id": "ch17_protect",
-      "stage": 1,
+      "stage": 17,
       "type": "narrative",
       "notes": "GDD Ch17 Dilemma - DETERMINED: protect all three faction leaders equally; none may be sacrificed. Three parallel routes converge on ch17_aftermath.",
       "text": [
@@ -5624,7 +5734,7 @@
     },
     "ch17_harwick": {
       "id": "ch17_harwick",
-      "stage": 1,
+      "stage": 17,
       "type": "narrative",
       "notes": "GDD Ch17 determined route: the Concordat wing is held. No leader is sacrificed.",
       "text": [
@@ -5654,7 +5764,7 @@
     },
     "ch17_envoy": {
       "id": "ch17_envoy",
-      "stage": 1,
+      "stage": 17,
       "type": "narrative",
       "notes": "GDD Ch17 determined route: the Silverleaf wing is held. No leader is sacrificed.",
       "text": [
@@ -5684,7 +5794,7 @@
     },
     "ch17_oren_wing": {
       "id": "ch17_oren_wing",
-      "stage": 1,
+      "stage": 17,
       "type": "narrative",
       "notes": "GDD Ch17 determined route: the Arcanum wing is held. No leader is sacrificed.",
       "text": [
@@ -5714,7 +5824,7 @@
     },
     "ch17_aftermath": {
       "id": "ch17_aftermath",
-      "stage": 1,
+      "stage": 17,
       "type": "narrative",
       "notes": "GDD Ch17 outcome: no leader harmed, the oath completes. Flag ch17_alliance.",
       "text": [
@@ -5748,7 +5858,7 @@
     },
     "ch17_sealed": {
       "id": "ch17_sealed",
-      "stage": 1,
+      "stage": 17,
       "type": "narrative",
       "notes": "GDD Ch17 close: the Three-Faction Alliance is formed; joint strike teams depart for Sky Sanctum and the Cinder Wastes. Bridge to Ch18.",
       "text": [
@@ -5759,10 +5869,6 @@
         {
           "op": "exp",
           "amount": 60
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -5782,7 +5888,7 @@
     },
     "ch18_open": {
       "id": "ch18_open",
-      "stage": 1,
+      "stage": 18,
       "type": "narrative",
       "notes": "GDD Ch18 open: the ascent to Sky Sanctum, highest canopy of Silverleaf; the sixth fragment's keeper walks above.",
       "text": [
@@ -5824,7 +5930,7 @@
     },
     "ch18_survey": {
       "id": "ch18_survey",
-      "stage": 1,
+      "stage": 18,
       "type": "narrative",
       "notes": "GDD Ch18 optional beat: reading the guardian's patterns from below before the climb.",
       "text": [
@@ -5854,7 +5960,7 @@
     },
     "ch18_ascent": {
       "id": "ch18_ascent",
-      "stage": 1,
+      "stage": 18,
       "type": "narrative",
       "notes": "GDD Ch18: the climb through silver mist; roots bar the last span.",
       "text": [
@@ -5884,7 +5990,7 @@
     },
     "ch18_guardian": {
       "id": "ch18_guardian",
-      "stage": 1,
+      "stage": 18,
       "type": "narrative",
       "notes": "GDD Ch18: the Canopy Guardian revealed; Saltmere's technique is the plan, per the GDD's call-back to Ch12.",
       "text": [
@@ -5914,7 +6020,7 @@
     },
     "ch18_fight": {
       "id": "ch18_fight",
-      "stage": 1,
+      "stage": 18,
       "type": "combat",
       "notes": "GDD Ch18: the Canopy Guardian fight - the DETERMINED outcome is purification, not destruction; winning is the purifying. Drop is act3_canopy_seed.",
       "text": [
@@ -5925,7 +6031,7 @@
         "id": "ch18_guardian_enemy",
         "name": "the Canopy Guardian",
         "stats": {
-          "hp": 1900,
+          "hp": 1680,
           "resourceMax": 0,
           "str": 56,
           "agi": 12,
@@ -5948,7 +6054,7 @@
     },
     "ch18_lose": {
       "id": "ch18_lose",
-      "stage": 1,
+      "stage": 18,
       "type": "narrative",
       "notes": "Combat loss recovery: the team finishes the working after you fall. Converges on ch18_purify.",
       "text": [
@@ -5978,7 +6084,7 @@
     },
     "ch18_purify": {
       "id": "ch18_purify",
-      "stage": 1,
+      "stage": 18,
       "type": "narrative",
       "notes": "GDD Ch18 Dilemma - DETERMINED: purify, never destroy; flawless execution. Flag ch18_canopy_purified.",
       "text": [
@@ -6012,7 +6118,7 @@
     },
     "ch18_restored": {
       "id": "ch18_restored",
-      "stage": 1,
+      "stage": 18,
       "type": "narrative",
       "notes": "GDD Ch18 outcome: the ancient tree restored; Sky Sanctum opens to the team.",
       "text": [
@@ -6042,7 +6148,7 @@
     },
     "ch18_fragment": {
       "id": "ch18_fragment",
-      "stage": 1,
+      "stage": 18,
       "type": "narrative",
       "notes": "GDD Ch18 outcome: the sixth fragment is secured; only Cinder Wastes remains. Flag ch18_fragment_six. Bridge to Ch19.",
       "text": [
@@ -6057,10 +6163,6 @@
         {
           "op": "flag",
           "key": "ch18_fragment_six"
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -6080,7 +6182,7 @@
     },
     "ch19_open": {
       "id": "ch19_open",
-      "stage": 1,
+      "stage": 19,
       "type": "narrative",
       "notes": "GDD Ch19 open: the deepest heart of the Mist Zone, Ilsevet's main fortress. Two approaches read differently.",
       "text": [
@@ -6122,7 +6224,7 @@
     },
     "ch19_prisoner": {
       "id": "ch19_prisoner",
-      "stage": 1,
+      "stage": 19,
       "type": "narrative",
       "notes": "GDD Ch19: a captured Choir lieutenant leaks Ilsevet's master plan - seize the Ritual Core at Ashenmere during the Blood Moon and reverse it to spread the Hollowing realm-wide.",
       "text": [
@@ -6156,7 +6258,7 @@
     },
     "ch19_vision": {
       "id": "ch19_vision",
-      "stage": 1,
+      "stage": 19,
       "type": "narrative",
       "notes": "GDD Ch19: Ilsevet appears, mocking Kaelen through a vision, then departs for Ashenmere ahead of the team. Flag ch19_vision_seen.",
       "text": [
@@ -6190,7 +6292,7 @@
     },
     "ch19_fight": {
       "id": "ch19_fight",
-      "stage": 1,
+      "stage": 19,
       "type": "combat",
       "notes": "GDD Ch19: the fortress's last warden guards the fragment vault. Drop is act3_warden_plate.",
       "text": [
@@ -6224,7 +6326,7 @@
     },
     "ch19_lose": {
       "id": "ch19_lose",
-      "stage": 1,
+      "stage": 19,
       "type": "narrative",
       "notes": "Combat loss recovery: the strike team's weight of arms brings the warden down after you fall. Converges on ch19_vault.",
       "text": [
@@ -6254,7 +6356,7 @@
     },
     "ch19_vault": {
       "id": "ch19_vault",
-      "stage": 1,
+      "stage": 19,
       "type": "narrative",
       "notes": "GDD Ch19 Dilemma - DETERMINED: secure the fragment safely over recklessly pursuing Ilsevet. Restraint now is what arrives at Ashenmere with an army later. Flag ch19_fragment_seven.",
       "text": [
@@ -6269,10 +6371,6 @@
         {
           "op": "flag",
           "key": "ch19_fragment_seven"
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -6292,7 +6390,7 @@
     },
     "ch20_open": {
       "id": "ch20_open",
-      "stage": 1,
+      "stage": 20,
       "type": "narrative",
       "notes": "GDD Ch20 open: Greyhold's emergency ritual hall, all seven fragments, a full-scale trial before the march to Ashenmere.",
       "text": [
@@ -6316,7 +6414,7 @@
             "start",
             "go"
           ],
-          "next": "ch20_bryn"
+          "next": "litany_5"
         },
         {
           "id": "kaelen",
@@ -6328,13 +6426,13 @@
             "shepherd",
             "talk"
           ],
-          "next": "ch20_kaelen"
+          "next": "litany_5"
         }
       ]
     },
     "ch20_kaelen": {
       "id": "ch20_kaelen",
-      "stage": 1,
+      "stage": 20,
       "type": "narrative",
       "notes": "GDD Ch20: Kaelen feels true hope for the first time in three centuries.",
       "text": [
@@ -6364,7 +6462,7 @@
     },
     "ch20_bryn": {
       "id": "ch20_bryn",
-      "stage": 1,
+      "stage": 20,
       "type": "narrative",
       "notes": "GDD Ch20: Bryn - saved in Ch13, still carrying traces of corruption - volunteers as the trial's subject. Flag referenced by Act 1's ch13_family_safe.",
       "text": [
@@ -6395,7 +6493,7 @@
     },
     "ch20_trial": {
       "id": "ch20_trial",
-      "stage": 1,
+      "stage": 20,
       "type": "combat",
       "notes": "GDD Ch20: the trial - the ritual itself is the encounter; the corruption resists purification like an enemy. Winning is Bryn made whole. Drop is none.",
       "text": [
@@ -6428,7 +6526,7 @@
     },
     "ch20_lose": {
       "id": "ch20_lose",
-      "stage": 1,
+      "stage": 20,
       "type": "narrative",
       "notes": "Combat loss recovery: Kaelen and Oren's mages hold the working after you fall. Converges on ch20_clean.",
       "text": [
@@ -6458,7 +6556,7 @@
     },
     "ch20_clean": {
       "id": "ch20_clean",
-      "stage": 1,
+      "stage": 20,
       "type": "narrative",
       "notes": "GDD Ch20 Dilemma - DETERMINED: accept Bryn's offer with extreme care; he recovers completely, proving the ritual safe for human subjects. Flag ch20_bryn_healed.",
       "text": [
@@ -6492,7 +6590,7 @@
     },
     "ch20_ready": {
       "id": "ch20_ready",
-      "stage": 1,
+      "stage": 20,
       "type": "narrative",
       "notes": "GDD Ch20 close: the Purification Ritual is ready; the team sets out for Ashenmere. Bridge to Ch21.",
       "text": [
@@ -6503,10 +6601,6 @@
         {
           "op": "exp",
           "amount": 60
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -6520,13 +6614,13 @@
             "go",
             "march"
           ],
-          "next": "ch21_open"
+          "next": "litany_deep_4"
         }
       ]
     },
     "ch21_open": {
       "id": "ch21_open",
-      "stage": 1,
+      "stage": 21,
       "type": "narrative",
       "notes": "GDD Ch21 open: the mountain pass to Ashenmere is blocked by waves of Hollowed; the shortcut must be broken open in time.",
       "text": [
@@ -6563,12 +6657,34 @@
             "go"
           ],
           "next": "ch21_push"
+        },
+        {
+          "id": "red_5",
+          "label": "The fog asks again",
+          "verbs": [
+            "echo",
+            "fog",
+            "again"
+          ],
+          "next": "litany_red_5",
+          "requires": [
+            {
+              "kind": "flag",
+              "key": "litany_miss_5",
+              "absent": true
+            },
+            {
+              "kind": "flag",
+              "key": "litany_red_5",
+              "absent": true
+            }
+          ]
         }
       ]
     },
     "ch21_push": {
       "id": "ch21_push",
-      "stage": 1,
+      "stage": 21,
       "type": "narrative",
       "notes": "GDD Ch21: Kaelen insists on clearing the shortcut alone; Veyra refuses to let him shoulder it by himself.",
       "text": [
@@ -6598,7 +6714,7 @@
     },
     "ch21_fight": {
       "id": "ch21_fight",
-      "stage": 1,
+      "stage": 21,
       "type": "combat",
       "notes": "GDD Ch21: breakthrough fight - the team fights alongside Kaelen, minimising his strain (the DETERMINED outcome). Drop is none.",
       "text": [
@@ -6631,7 +6747,7 @@
     },
     "ch21_lose": {
       "id": "ch21_lose",
-      "stage": 1,
+      "stage": 21,
       "type": "narrative",
       "notes": "Combat loss recovery: the army's weight clears the pass after you fall. Converges on ch21_opened.",
       "text": [
@@ -6661,7 +6777,7 @@
     },
     "ch21_opened": {
       "id": "ch21_opened",
-      "stage": 1,
+      "stage": 21,
       "type": "narrative",
       "notes": "GDD Ch21 outcome: the path opens on time; Kaelen grows visibly weaker - urgency rises. Flag ch21_pass_open. Bridge to Ch22.",
       "text": [
@@ -6676,10 +6792,6 @@
         {
           "op": "flag",
           "key": "ch21_pass_open"
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -6699,7 +6811,7 @@
     },
     "ch22_open": {
       "id": "ch22_open",
-      "stage": 1,
+      "stage": 22,
       "type": "narrative",
       "notes": "GDD Ch22 open: the combined encampment outside Ashenmere, the night before the Blood Moon.",
       "text": [
@@ -6736,12 +6848,34 @@
             "look"
           ],
           "next": "ch22_campfire"
+        },
+        {
+          "id": "red_12",
+          "label": "The fog asks again",
+          "verbs": [
+            "echo",
+            "fog",
+            "again"
+          ],
+          "next": "litany_red_12",
+          "requires": [
+            {
+              "kind": "flag",
+              "key": "litany_miss_12",
+              "absent": true
+            },
+            {
+              "kind": "flag",
+              "key": "litany_red_12",
+              "absent": true
+            }
+          ]
         }
       ]
     },
     "ch22_campfire": {
       "id": "ch22_campfire",
-      "stage": 1,
+      "stage": 22,
       "type": "narrative",
       "notes": "GDD Ch22: the campfire moment - Kaelen apologises for Emberfall and Harrow's Reach, though they were not his orders; Veyra forgives him fully on behalf of the family.",
       "text": [
@@ -6771,7 +6905,7 @@
     },
     "ch22_scouts": {
       "id": "ch22_scouts",
-      "stage": 1,
+      "stage": 22,
       "type": "narrative",
       "notes": "GDD Ch22 Dilemma - DETERMINED: subdue Ilsevet's advance scouts silently, without raising a general alarm; the element of surprise is preserved. Flag ch22_silent.",
       "text": [
@@ -6801,7 +6935,7 @@
     },
     "ch22_end": {
       "id": "ch22_end",
-      "stage": 1,
+      "stage": 22,
       "type": "narrative",
       "notes": "GDD Ch22 close: final plan set, morale high, surprise preserved. Flag ch22_plan_set. Bridge to Ch23.",
       "text": [
@@ -6816,10 +6950,6 @@
         {
           "op": "flag",
           "key": "ch22_plan_set"
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -6839,7 +6969,7 @@
     },
     "ch23_open": {
       "id": "ch23_open",
-      "stage": 1,
+      "stage": 23,
       "type": "narrative",
       "notes": "GDD Ch23 open: breaching Ashenmere's outer defenses with the combined army at dusk.",
       "text": [
@@ -6869,7 +6999,7 @@
     },
     "ch23_gate": {
       "id": "ch23_gate",
-      "stage": 1,
+      "stage": 23,
       "type": "narrative",
       "notes": "GDD Ch23: another of Ilsevet's Vessels guards the inner gate.",
       "text": [
@@ -6899,7 +7029,7 @@
     },
     "ch23_fight": {
       "id": "ch23_fight",
-      "stage": 1,
+      "stage": 23,
       "type": "combat",
       "notes": "GDD Ch23: the Vessel at the inner gate - the DETERMINED outcome is purification, executed with now-matured technique. Drop is act3_vessel_tear.",
       "text": [
@@ -6933,7 +7063,7 @@
     },
     "ch23_lose": {
       "id": "ch23_lose",
-      "stage": 1,
+      "stage": 23,
       "type": "narrative",
       "notes": "Combat loss recovery: the army's mages complete the purification after you fall. Converges on ch23_purify.",
       "text": [
@@ -6963,7 +7093,7 @@
     },
     "ch23_purify": {
       "id": "ch23_purify",
-      "stage": 1,
+      "stage": 23,
       "type": "narrative",
       "notes": "GDD Ch23 Dilemma - DETERMINED: purify the Vessel instead of killing it - smooth, mature technique. Flag ch23_vessel_purified.",
       "text": [
@@ -6997,7 +7127,7 @@
     },
     "ch23_gate_open": {
       "id": "ch23_gate_open",
-      "stage": 1,
+      "stage": 23,
       "type": "narrative",
       "notes": "GDD Ch23 outcome: outer defenses crumble; the road to the Ritual Core lies open. Bridge to Ch24.",
       "text": [
@@ -7008,10 +7138,6 @@
         {
           "op": "exp",
           "amount": 60
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -7031,7 +7157,7 @@
     },
     "ch24_open": {
       "id": "ch24_open",
-      "stage": 1,
+      "stage": 24,
       "type": "narrative",
       "notes": "GDD Ch24 open: the Ritual Core chamber; the first verbal confrontation between Kaelen and Ilsevet in three centuries.",
       "text": [
@@ -7055,7 +7181,7 @@
             "talk",
             "wait"
           ],
-          "next": "ch24_throne"
+          "next": "litany_6"
         },
         {
           "id": "pursue",
@@ -7067,13 +7193,13 @@
             "cut",
             "attack"
           ],
-          "next": "ch24_pursue"
+          "next": "litany_6"
         }
       ]
     },
     "ch24_pursue": {
       "id": "ch24_pursue",
-      "stage": 1,
+      "stage": 24,
       "type": "narrative",
       "notes": "GDD Ch24 dilemma alternate route: the reckless pursuit is checked - the seal cannot be left half-stabilised, so the outcome converges on the DETERMINED one (secure the Core first).",
       "text": [
@@ -7103,7 +7229,7 @@
     },
     "ch24_throne": {
       "id": "ch24_throne",
-      "stage": 1,
+      "stage": 24,
       "type": "narrative",
       "notes": "GDD Ch24: Ilsevet reveals her own wound - not a loss born of love like Kaelen's, but being ignored and deemed weak by the other five sorcerers.",
       "text": [
@@ -7133,7 +7259,7 @@
     },
     "ch24_final_core": {
       "id": "ch24_final_core",
-      "stage": 1,
+      "stage": 24,
       "type": "narrative",
       "notes": "Act 3 close / bridge to Act 4, per the GDD's Ch24 outcome: the Core is fully secured and Ilsevet flees deeper into Ashenmere; the Blood Moon rises tonight. Act 4 (duel, blood anchor, healing) opens from here.",
       "text": [
@@ -7167,7 +7293,7 @@
     },
     "ch25_open": {
       "id": "ch25_open",
-      "stage": 1,
+      "stage": 25,
       "type": "narrative",
       "notes": "GDD Ch25 open: the inner corridors of Ashenmere under the rising Blood Moon; the descent to Ilsevet's throne.",
       "text": [
@@ -7192,12 +7318,34 @@
             "deep"
           ],
           "next": "ch25_soldiers"
+        },
+        {
+          "id": "red_6",
+          "label": "The fog asks again",
+          "verbs": [
+            "echo",
+            "fog",
+            "again"
+          ],
+          "next": "litany_red_6",
+          "requires": [
+            {
+              "kind": "flag",
+              "key": "litany_miss_6",
+              "absent": true
+            },
+            {
+              "kind": "flag",
+              "key": "litany_red_6",
+              "absent": true
+            }
+          ]
         }
       ]
     },
     "ch25_soldiers": {
       "id": "ch25_soldiers",
-      "stage": 1,
+      "stage": 25,
       "type": "narrative",
       "notes": "GDD Ch25: young coalition soldiers nearly attack Kaelen out of panic; Veyra defends him.",
       "text": [
@@ -7227,7 +7375,7 @@
     },
     "ch25_guard": {
       "id": "ch25_guard",
-      "stage": 1,
+      "stage": 25,
       "type": "narrative",
       "notes": "GDD Ch25 Dilemma - DETERMINED: protect Kaelen while calming the allied troops; trust grows. Flag ch25_trust.",
       "text": [
@@ -7261,7 +7409,7 @@
     },
     "ch25_breach": {
       "id": "ch25_breach",
-      "stage": 1,
+      "stage": 25,
       "type": "combat",
       "notes": "GDD Ch25: the inner corridors are not empty - a Hollowed attack-wave panics the coalition soldiers. Held, and Kaelen is brought safely past. Drop is act4_crown_cinder.",
       "text": [
@@ -7295,7 +7443,7 @@
     },
     "ch25_lose": {
       "id": "ch25_lose",
-      "stage": 1,
+      "stage": 25,
       "type": "narrative",
       "notes": "Combat loss recovery: the coalition's rearguard breaks the tide after you fall. Converges on ch25_descent.",
       "text": [
@@ -7325,7 +7473,7 @@
     },
     "ch25_descent": {
       "id": "ch25_descent",
-      "stage": 1,
+      "stage": 25,
       "type": "narrative",
       "notes": "GDD Ch25 close: the descent continues; the door to the throne room. Bridge to Ch26.",
       "text": [
@@ -7355,7 +7503,7 @@
     },
     "ch26_open": {
       "id": "ch26_open",
-      "stage": 1,
+      "stage": 26,
       "type": "narrative",
       "notes": "GDD Ch26 open: Ilsevet's shadow throne room in the deepest heart of Ashenmere.",
       "text": [
@@ -7385,7 +7533,7 @@
     },
     "ch26_truth": {
       "id": "ch26_truth",
-      "stage": 1,
+      "stage": 26,
       "type": "narrative",
       "notes": "GDD Ch26: Ilsevet lays everything bare - she secretly accelerated the original Sundering, exploiting Kaelen's desperation as a tool.",
       "text": [
@@ -7419,7 +7567,7 @@
     },
     "ch26_shockwave": {
       "id": "ch26_shockwave",
-      "stage": 1,
+      "stage": 26,
       "type": "combat",
       "notes": "GDD Ch26: Ilsevet's preliminary corruption shockwave - the whole team shields Kaelen through it, exhausted but standing. Winning is the line holding. Drop is act4_tide_ash.",
       "text": [
@@ -7453,7 +7601,7 @@
     },
     "ch26_lose": {
       "id": "ch26_lose",
-      "stage": 1,
+      "stage": 26,
       "type": "narrative",
       "notes": "Combat loss recovery: Kaelen's own wards take the remainder of the shockwave after the line falls. Converges on ch27_open.",
       "text": [
@@ -7483,7 +7631,7 @@
     },
     "ch27_open": {
       "id": "ch27_open",
-      "stage": 1,
+      "stage": 27,
       "type": "narrative",
       "notes": "GDD Ch27 open: full-scale battle in the ruins at peak Blood Moon while Kaelen begins casting the Purification Ritual.",
       "text": [
@@ -7513,7 +7661,7 @@
     },
     "ch27_fight": {
       "id": "ch27_fight",
-      "stage": 1,
+      "stage": 27,
       "type": "combat",
       "notes": "GDD Ch27: Ilsevet breaks through toward the vulnerable, channeling Kaelen. The DETERMINED outcome: the outer line yields ground to concentrate protection on him - she is held off long enough. Drop is none.",
       "text": [
@@ -7546,7 +7694,7 @@
     },
     "ch27_lose": {
       "id": "ch27_lose",
-      "stage": 1,
+      "stage": 27,
       "type": "narrative",
       "notes": "Combat loss recovery: the coalition's three war-machines hold her off after you fall. Converges on ch27_begun.",
       "text": [
@@ -7576,7 +7724,7 @@
     },
     "ch27_begun": {
       "id": "ch27_begun",
-      "stage": 1,
+      "stage": 27,
       "type": "narrative",
       "notes": "GDD Ch27 outcome: the ritual begins - but its energy starts to fluctuate. Flag ch27_ritual_begun. Bridge to Ch28.",
       "text": [
@@ -7591,10 +7739,6 @@
         {
           "op": "flag",
           "key": "ch27_ritual_begun"
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -7614,7 +7758,7 @@
     },
     "ch28_open": {
       "id": "ch28_open",
-      "stage": 1,
+      "stage": 28,
       "type": "narrative",
       "notes": "GDD Ch28 open: the ritual's crisis - it needs a living anchor; Veyra steps forward without hesitation.",
       "text": [
@@ -7638,7 +7782,7 @@
             "help",
             "go"
           ],
-          "next": "ch28_anchor"
+          "next": "litany_7"
         },
         {
           "id": "object",
@@ -7650,13 +7794,13 @@
             "ask",
             "wait"
           ],
-          "next": "ch28_object"
+          "next": "litany_7"
         }
       ]
     },
     "ch28_object": {
       "id": "ch28_object",
-      "stage": 1,
+      "stage": 28,
       "type": "narrative",
       "notes": "GDD Ch28 alternate route: there is no other anchor; the outcome converges on the DETERMINED one.",
       "text": [
@@ -7686,7 +7830,7 @@
     },
     "ch28_anchor": {
       "id": "ch28_anchor",
-      "stage": 1,
+      "stage": 28,
       "type": "narrative",
       "notes": "GDD Ch28 Dilemma - DETERMINED: fully support Veyra's decision, protecting both her and Kaelen through the blood-anchor connection; the ritual stabilises. Flag ch28_anchor_set.",
       "text": [
@@ -7720,7 +7864,7 @@
     },
     "ch29_open": {
       "id": "ch29_open",
-      "stage": 1,
+      "stage": 29,
       "type": "narrative",
       "notes": "GDD Ch29 open: Ilsevet merges herself with the Ritual Core so it can never be sealed; Kaelen calls out in genuine sorrow.",
       "text": [
@@ -7745,12 +7889,34 @@
             "line"
           ],
           "next": "ch29_barrier"
+        },
+        {
+          "id": "red_7",
+          "label": "The fog asks again",
+          "verbs": [
+            "echo",
+            "fog",
+            "again"
+          ],
+          "next": "litany_red_7",
+          "requires": [
+            {
+              "kind": "flag",
+              "key": "litany_miss_7",
+              "absent": true
+            },
+            {
+              "kind": "flag",
+              "key": "litany_red_7",
+              "absent": true
+            }
+          ]
         }
       ]
     },
     "ch29_barrier": {
       "id": "ch29_barrier",
-      "stage": 1,
+      "stage": 29,
       "type": "narrative",
       "notes": "GDD Ch29 Dilemma - DETERMINED: the whole coalition forms a final barrier around Kaelen and Veyra, holding Ilsevet back with everything left. Flag ch29_final_barrier.",
       "text": [
@@ -7765,10 +7931,6 @@
         {
           "op": "flag",
           "key": "ch29_final_barrier"
-        },
-        {
-          "op": "token",
-          "amount": 150
         }
       ],
       "choices": [
@@ -7789,11 +7951,11 @@
     "ch29_guardfight": {
       "id": "ch29_guardfight",
       "type": "combat",
-      "stage": 1,
+      "stage": 29,
       "notes": "GDD Ch29: one of Ilsevet's elite Vessels carves at the barrier's seam. Held, the barrier closes around Kaelen and Veyra. Drop is none - the reward here is the ritual surviving.",
       "text": [
         "One of her elite Vessels carves at the barrier's seam - fluent, practised, aiming its grief at exactly the joint you are holding.",
-        "You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on." 
+        "You meet it in the seam and close the joint behind you. The barrier mends. The ritual counts on."
       ],
       "enemy": {
         "id": "ch29_seam_vessel",
@@ -7822,11 +7984,11 @@
     "ch29_lose": {
       "id": "ch29_lose",
       "type": "narrative",
-      "stage": 1,
+      "stage": 29,
       "notes": "Combat loss recovery: Bryn's joint unit closes the seam after you fall. Converges on ch30_open.",
       "text": [
         "You wake at the seam's edge with Bryn's standard planted over you and his joint unit closing the gap in disciplined silence.",
-        "The barrier mends without you, exactly as you taught them to mend it. That is the whole reward, and it is enough." 
+        "The barrier mends without you, exactly as you taught them to mend it. That is the whole reward, and it is enough."
       ],
       "onEnter": [
         {
@@ -7851,7 +8013,7 @@
     },
     "ch30_open": {
       "id": "ch30_open",
-      "stage": 1,
+      "stage": 30,
       "type": "narrative",
       "notes": "GDD Ch30: the purifying energy touches Ilsevet and offers her freedom - the same offer given the whale at Saltmere and the tree at Sky Sanctum.",
       "text": [
@@ -7875,13 +8037,13 @@
             "ilsevet",
             "see"
           ],
-          "next": "ch30_refusal"
+          "next": "litany_8"
         }
       ]
     },
     "ch30_refusal": {
       "id": "ch30_refusal",
-      "stage": 1,
+      "stage": 30,
       "type": "combat",
       "notes": "GDD Ch30 Dilemma - DETERMINED: Ilsevet refuses the light; her avatar is undone by the purification wave - destroyed not by the team's violence but by her own choice. Winning is holding the channel open while the light does its work. Drop is act4_anchor_pearl.",
       "text": [
@@ -7915,7 +8077,7 @@
     },
     "ch30_lose": {
       "id": "ch30_lose",
-      "stage": 1,
+      "stage": 30,
       "type": "narrative",
       "notes": "Combat loss recovery: Kaelen and Veyra hold the channel from inside the circle after you fall. Converges on ch30_unmade.",
       "text": [
@@ -7945,7 +8107,7 @@
     },
     "ch30_unmade": {
       "id": "ch30_unmade",
-      "stage": 1,
+      "stage": 30,
       "type": "narrative",
       "notes": "GDD Ch30 outcome: the Hollowing is permanently sealed, the Mist Zones begin to fade, Kaelen survives - fully cleansed for the first time in three centuries. Flag ch30_hollowing_sealed. Bridge to Ch31.",
       "text": [
@@ -7960,10 +8122,6 @@
         {
           "op": "flag",
           "key": "ch30_hollowing_sealed"
-        },
-        {
-          "op": "token",
-          "amount": 200
         }
       ],
       "choices": [
@@ -7983,7 +8141,7 @@
     },
     "ch31_open": {
       "id": "ch31_open",
-      "stage": 1,
+      "stage": 31,
       "type": "narrative",
       "notes": "GDD Ch31 open: a new dawn over Ashenmere's ruins; a world beginning to heal, three factions genuinely united.",
       "text": [
@@ -8020,12 +8178,34 @@
             "walls"
           ],
           "next": "ch31_fields"
+        },
+        {
+          "id": "red_8",
+          "label": "The fog asks again",
+          "verbs": [
+            "echo",
+            "fog",
+            "again"
+          ],
+          "next": "litany_red_8",
+          "requires": [
+            {
+              "kind": "flag",
+              "key": "litany_miss_8",
+              "absent": true
+            },
+            {
+              "kind": "flag",
+              "key": "litany_red_8",
+              "absent": true
+            }
+          ]
         }
       ]
     },
     "ch31_council": {
       "id": "ch31_council",
-      "stage": 1,
+      "stage": 31,
       "type": "narrative",
       "notes": "GDD Ch31: Kaldareth is officially freed from the expanding Hollowing; Kaelen chooses to remain at Greyhold as advisor to the Vigil.",
       "text": [
@@ -8055,7 +8235,7 @@
     },
     "ch31_fields": {
       "id": "ch31_fields",
-      "stage": 1,
+      "stage": 31,
       "type": "narrative",
       "notes": "GDD Ch31 alternate route: the same outcome read from the ground - the land itself is the document.",
       "text": [
@@ -8085,7 +8265,7 @@
     },
     "ch31_close": {
       "id": "ch31_close",
-      "stage": 1,
+      "stage": 31,
       "type": "narrative",
       "notes": "GDD Ch31 outcome: Kaldareth freed, Kaelen remains at Greyhold as advisor. Flag ch31_new_dawn. Bridge to the Ch32 epilogue.",
       "text": [
@@ -8100,10 +8280,6 @@
         {
           "op": "flag",
           "key": "ch31_new_dawn"
-        },
-        {
-          "op": "token",
-          "amount": 200
         }
       ],
       "choices": [
@@ -8123,7 +8299,7 @@
     },
     "ch32_months": {
       "id": "ch32_months",
-      "stage": 1,
+      "stage": 32,
       "type": "narrative",
       "notes": "GDD Ch32 epilogue part 1: the world heals - Emberfall, Harrow's Reach, Saltmere, all saved in Acts 1-2, pay off.",
       "text": [
@@ -8153,7 +8329,7 @@
     },
     "ch32_alliance": {
       "id": "ch32_alliance",
-      "stage": 1,
+      "stage": 32,
       "type": "narrative",
       "notes": "GDD Ch32 epilogue part 2: Greyhold, Bryn's joint unit, Thessaly's redemption, Veyra and Kaelen, the brooch.",
       "text": [
@@ -8183,7 +8359,7 @@
     },
     "ch32_epilogue_gate": {
       "id": "ch32_epilogue_gate",
-      "stage": 1,
+      "stage": 32,
       "type": "narrative",
       "notes": "CLASS GATE, epilogue. How the histories name the player depends on the class; three ways to be remembered.",
       "text": [
@@ -8244,12 +8420,36 @@
               "classId": "mage"
             }
           ]
+        },
+        {
+          "id": "ninth",
+          "label": "Answer the Hollowing",
+          "verbs": [
+            "answer",
+            "ninth"
+          ],
+          "next": "litany_ninth",
+          "requires": [
+            {
+              "kind": "flags_all",
+              "keys": [
+                "litany_true_4",
+                "litany_true_8",
+                "litany_true_12",
+                "litany_true_16",
+                "litany_true_20",
+                "litany_true_24",
+                "litany_true_28",
+                "litany_true_30"
+              ]
+            }
+          ]
         }
       ]
     },
     "ch32_epilogue_warrior": {
       "id": "ch32_epilogue_warrior",
-      "stage": 1,
+      "stage": 32,
       "type": "narrative",
       "notes": "Warrior epilogue: the bridge lesson, paid forward through Bryn's joint unit.",
       "text": [
@@ -8279,7 +8479,7 @@
     },
     "ch32_epilogue_archer": {
       "id": "ch32_epilogue_archer",
-      "stage": 1,
+      "stage": 32,
       "type": "narrative",
       "notes": "Archer epilogue: the ford lesson, paid forward mapping the mist for Ilyndra's wardens.",
       "text": [
@@ -8309,7 +8509,7 @@
     },
     "ch32_epilogue_mage": {
       "id": "ch32_epilogue_mage",
-      "stage": 1,
+      "stage": 32,
       "type": "narrative",
       "notes": "Mage epilogue: the rune-line lesson, paid forward rebuilding Arcanum around purification.",
       "text": [
@@ -8339,7 +8539,7 @@
     },
     "ch32_kaldareth_healed": {
       "id": "ch32_kaldareth_healed",
-      "stage": 1,
+      "stage": 32,
       "type": "ending",
       "notes": "THE ending of the game, per the GDD's Ch32 epilogue: Kaldareth at peace because it chose to heal together. reward_modifier scales the simulated payout; leaderboard_tag buckets the run.",
       "text": [
@@ -8354,7 +8554,2326 @@
       ],
       "reward_modifier": 2,
       "leaderboard_tag": "kaldareth_healed"
+    },
+    "litany_1": {
+      "id": "litany_1",
+      "stage": 4,
+      "type": "narrative",
+      "notes": "Litany Echo memory check. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The road pauses. Somewhere in the fog, something is checking what you carry.",
+        "The Hollowing leans close, checking. “What did the Litany say of the Shepherd’s arrival?”"
+      ],
+      "choices": [
+        {
+          "id": "true",
+          "label": "“Ready for harvest”",
+          "verbs": [
+            "true"
+          ],
+          "next": "litany_1_pass",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_true_4"
+            }
+          ]
+        },
+        {
+          "id": "echo",
+          "label": "“The moon stands still”",
+          "verbs": [
+            "echo"
+          ],
+          "next": "litany_1_miss"
+        },
+        {
+          "id": "void",
+          "label": "“Emberfall’s last bell”",
+          "verbs": [
+            "void"
+          ],
+          "next": "litany_1_miss"
+        },
+        {
+          "id": "admit",
+          "label": "Admit you were not listening",
+          "verbs": [
+            "admit"
+          ],
+          "next": "litany_1_miss"
+        }
+      ]
+    },
+    "litany_1_pass": {
+      "id": "litany_1_pass",
+      "stage": 4,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: remembered. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "“When the fields are ready for harvest.” The words hold. The Hollowing recedes like a tide that found a wall it respects.",
+        "Somewhere behind your ribs, something that was taken is handed back. You are still you. Hold on to that."
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch4_council"
+        }
+      ]
+    },
+    "litany_1_miss": {
+      "id": "litany_1_miss",
+      "stage": 4,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: forgotten. Records the miss for the ladder multiplier. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The answer slips. It was said plainly, once, and the Hollowing was listening even when you were not.",
+        "It takes its tithe from what you carried — not cruelly, just exactly. The road goes on, and the purse is lighter for it."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_miss_1"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch4_council"
+        }
+      ]
+    },
+    "litany_2": {
+      "id": "litany_2",
+      "stage": 8,
+      "type": "narrative",
+      "notes": "Litany Echo memory check. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The road pauses. Somewhere in the fog, something is checking what you carry.",
+        "The pause comes again, and with it the question. “Who fell with the bridge at Emberfall?”"
+      ],
+      "choices": [
+        {
+          "id": "true",
+          "label": "“My family”",
+          "verbs": [
+            "true"
+          ],
+          "next": "litany_2_pass",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_true_8"
+            }
+          ]
+        },
+        {
+          "id": "echo",
+          "label": "“A stranger”",
+          "verbs": [
+            "echo"
+          ],
+          "next": "litany_2_miss"
+        },
+        {
+          "id": "void",
+          "label": "“No one at all”",
+          "verbs": [
+            "void"
+          ],
+          "next": "litany_2_miss"
+        },
+        {
+          "id": "admit",
+          "label": "Admit you were not listening",
+          "verbs": [
+            "admit"
+          ],
+          "next": "litany_2_miss"
+        }
+      ]
+    },
+    "litany_2_pass": {
+      "id": "litany_2_pass",
+      "stage": 8,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: remembered. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "“My family.” The word has weight again. The Hollowing cannot eat what you refuse to hand over.",
+        "The road ahead is the same road. It feels lighter to carry."
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch8_road"
+        }
+      ]
+    },
+    "litany_2_miss": {
+      "id": "litany_2_miss",
+      "stage": 8,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: forgotten. Records the miss for the ladder multiplier. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The answer slips. It was said plainly, once, and the Hollowing was listening even when you were not.",
+        "It takes its tithe from what you carried — not cruelly, just exactly. The road goes on, and the purse is lighter for it."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_miss_2"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch8_road"
+        }
+      ]
+    },
+    "litany_3": {
+      "id": "litany_3",
+      "stage": 12,
+      "type": "narrative",
+      "notes": "Litany Echo memory check. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The road pauses. Somewhere in the fog, something is checking what you carry.",
+        "The road pauses between Kaelen’s words. “What did Senna keep, and never show anyone?”"
+      ],
+      "choices": [
+        {
+          "id": "true",
+          "label": "“A harbor drawing”",
+          "verbs": [
+            "true"
+          ],
+          "next": "litany_3_pass",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_true_12"
+            }
+          ]
+        },
+        {
+          "id": "echo",
+          "label": "“The council key”",
+          "verbs": [
+            "echo"
+          ],
+          "next": "litany_3_miss"
+        },
+        {
+          "id": "void",
+          "label": "“Her own Litany”",
+          "verbs": [
+            "void"
+          ],
+          "next": "litany_3_miss"
+        },
+        {
+          "id": "admit",
+          "label": "Admit you were not listening",
+          "verbs": [
+            "admit"
+          ],
+          "next": "litany_3_miss"
+        }
+      ]
+    },
+    "litany_3_pass": {
+      "id": "litany_3_pass",
+      "stage": 12,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: remembered. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "“A drawing of the harbor.” Senna’s harbor. The Hollowing hisses — it wanted that one.",
+        "Kaelen watches you a long moment. “You listen,” he says, like it costs him something to approve."
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch12_cave"
+        }
+      ]
+    },
+    "litany_3_miss": {
+      "id": "litany_3_miss",
+      "stage": 12,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: forgotten. Records the miss for the ladder multiplier. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The answer slips. It was said plainly, once, and the Hollowing was listening even when you were not.",
+        "It takes its tithe from what you carried — not cruelly, just exactly. The road goes on, and the purse is lighter for it."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_miss_3"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch12_cave"
+        }
+      ]
+    },
+    "litany_4": {
+      "id": "litany_4",
+      "stage": 16,
+      "type": "narrative",
+      "notes": "Litany Echo memory check. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The road pauses. Somewhere in the fog, something is checking what you carry.",
+        "Before Greyhold’s wall, the pause. “What did Bryn ask of you before the Enforcer came?”"
+      ],
+      "choices": [
+        {
+          "id": "true",
+          "label": "“Finish it”",
+          "verbs": [
+            "true"
+          ],
+          "next": "litany_4_pass",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_true_16"
+            }
+          ]
+        },
+        {
+          "id": "echo",
+          "label": "“Carry him home”",
+          "verbs": [
+            "echo"
+          ],
+          "next": "litany_4_miss"
+        },
+        {
+          "id": "void",
+          "label": "“Tell Kaelen: no doubt”",
+          "verbs": [
+            "void"
+          ],
+          "next": "litany_4_miss"
+        },
+        {
+          "id": "admit",
+          "label": "Admit you were not listening",
+          "verbs": [
+            "admit"
+          ],
+          "next": "litany_4_miss"
+        }
+      ]
+    },
+    "litany_4_pass": {
+      "id": "litany_4_pass",
+      "stage": 16,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: remembered. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "“Finish it, no matter what it costs him.” Bryn’s vow, kept in your keeping.",
+        "The road to Greyhold straightens. So does something in your chest."
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch16_enforcer"
+        }
+      ]
+    },
+    "litany_4_miss": {
+      "id": "litany_4_miss",
+      "stage": 16,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: forgotten. Records the miss for the ladder multiplier. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The answer slips. It was said plainly, once, and the Hollowing was listening even when you were not.",
+        "It takes its tithe from what you carried — not cruelly, just exactly. The road goes on, and the purse is lighter for it."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_miss_4"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch16_enforcer"
+        }
+      ]
+    },
+    "litany_5": {
+      "id": "litany_5",
+      "stage": 20,
+      "type": "narrative",
+      "notes": "Litany Echo memory check. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The road pauses. Somewhere in the fog, something is checking what you carry.",
+        "High on the pass, the Hollowing checks. “What did Kaelen feel for the first time in three centuries?”"
+      ],
+      "choices": [
+        {
+          "id": "true",
+          "label": "“Hope”",
+          "verbs": [
+            "true",
+            "hope",
+            "memory",
+            "blood"
+          ],
+          "next": "litany_5_pass",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_true_20"
+            }
+          ]
+        },
+        {
+          "id": "echo",
+          "label": "“Fear”",
+          "verbs": [
+            "echo"
+          ],
+          "next": "litany_5_miss"
+        },
+        {
+          "id": "admit",
+          "label": "Admit you forgot",
+          "verbs": [
+            "admit"
+          ],
+          "next": "litany_5_miss"
+        }
+      ]
+    },
+    "litany_5_pass": {
+      "id": "litany_5_pass",
+      "stage": 20,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: remembered. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "“Hope.” Three hundred years of duty, and hope came back the week you walked beside him.",
+        "Kaelen does not thank you. He stands straighter. It is the same thing."
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "Toward Bryn",
+          "verbs": [
+            "bryn",
+            "throne",
+            "anchor"
+          ],
+          "next": "ch20_bryn"
+        },
+        {
+          "id": "b",
+          "label": "With Kaelen",
+          "verbs": [
+            "kaelen",
+            "pursue",
+            "object"
+          ],
+          "next": "ch20_kaelen"
+        },
+        {
+          "id": "true_again",
+          "label": "“Hope”",
+          "verbs": [
+            "true"
+          ],
+          "next": "litany_5_pass"
+        }
+      ]
+    },
+    "litany_5_miss": {
+      "id": "litany_5_miss",
+      "stage": 20,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: forgotten. Records the miss for the ladder multiplier. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The answer slips. It was said plainly, once, and the Hollowing was listening even when you were not.",
+        "It takes its tithe from what you carried — not cruelly, just exactly. The road goes on, and the purse is lighter for it."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_miss_5"
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "Toward Bryn",
+          "verbs": [
+            "bryn",
+            "throne",
+            "anchor"
+          ],
+          "next": "ch20_bryn"
+        },
+        {
+          "id": "b",
+          "label": "With Kaelen",
+          "verbs": [
+            "kaelen",
+            "pursue",
+            "object"
+          ],
+          "next": "ch20_kaelen"
+        }
+      ]
+    },
+    "litany_6": {
+      "id": "litany_6",
+      "stage": 24,
+      "type": "narrative",
+      "notes": "Litany Echo memory check. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The road pauses. Somewhere in the fog, something is checking what you carry.",
+        "At Ashenmere’s drowned gate, the question. “What does the Hollowing eat?”"
+      ],
+      "choices": [
+        {
+          "id": "true",
+          "label": "“Memory”",
+          "verbs": [
+            "true",
+            "hope",
+            "memory",
+            "blood"
+          ],
+          "next": "litany_6_pass",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_true_24"
+            }
+          ]
+        },
+        {
+          "id": "echo",
+          "label": "“Flesh”",
+          "verbs": [
+            "echo"
+          ],
+          "next": "litany_6_miss"
+        },
+        {
+          "id": "admit",
+          "label": "Admit you forgot",
+          "verbs": [
+            "admit"
+          ],
+          "next": "litany_6_miss"
+        }
+      ]
+    },
+    "litany_6_pass": {
+      "id": "litany_6_pass",
+      "stage": 24,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: remembered. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "“Memory.” The Hollowing eats the world’s remembering. That is why your pay thins when you fail to recall.",
+        "Understanding is not victory. It is at least a map."
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "To the drowned throne",
+          "verbs": [
+            "bryn",
+            "throne",
+            "anchor"
+          ],
+          "next": "ch24_throne"
+        },
+        {
+          "id": "b",
+          "label": "Pursue the shadow",
+          "verbs": [
+            "kaelen",
+            "pursue",
+            "object"
+          ],
+          "next": "ch24_pursue"
+        },
+        {
+          "id": "true_again",
+          "label": "“Memory”",
+          "verbs": [
+            "true"
+          ],
+          "next": "litany_6_pass"
+        }
+      ]
+    },
+    "litany_6_miss": {
+      "id": "litany_6_miss",
+      "stage": 24,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: forgotten. Records the miss for the ladder multiplier. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The answer slips. It was said plainly, once, and the Hollowing was listening even when you were not.",
+        "It takes its tithe from what you carried — not cruelly, just exactly. The road goes on, and the purse is lighter for it."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_miss_6"
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "To the drowned throne",
+          "verbs": [
+            "bryn",
+            "throne",
+            "anchor"
+          ],
+          "next": "ch24_throne"
+        },
+        {
+          "id": "b",
+          "label": "Pursue the shadow",
+          "verbs": [
+            "kaelen",
+            "pursue",
+            "object"
+          ],
+          "next": "ch24_pursue"
+        }
+      ]
+    },
+    "litany_7": {
+      "id": "litany_7",
+      "stage": 28,
+      "type": "narrative",
+      "notes": "Litany Echo memory check. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The road pauses. Somewhere in the fog, something is checking what you carry.",
+        "The core hums; the pause comes with it. “What anchors Veyra’s blood ritual?”"
+      ],
+      "choices": [
+        {
+          "id": "true",
+          "label": "“Her own blood”",
+          "verbs": [
+            "true",
+            "hope",
+            "memory",
+            "blood"
+          ],
+          "next": "litany_7_pass",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_true_28"
+            }
+          ]
+        },
+        {
+          "id": "echo",
+          "label": "“A relic of war”",
+          "verbs": [
+            "echo"
+          ],
+          "next": "litany_7_miss"
+        },
+        {
+          "id": "admit",
+          "label": "Admit you forgot",
+          "verbs": [
+            "admit"
+          ],
+          "next": "litany_7_miss"
+        }
+      ]
+    },
+    "litany_7_pass": {
+      "id": "litany_7_pass",
+      "stage": 28,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: remembered. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "“Her own blood.” Veyra never asked the world to pay for her. That is the whole of her, and you know it.",
+        "The ritual’s shape steadies in your mind."
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "To the anchor",
+          "verbs": [
+            "bryn",
+            "throne",
+            "anchor"
+          ],
+          "next": "ch28_anchor"
+        },
+        {
+          "id": "b",
+          "label": "Examine the object",
+          "verbs": [
+            "kaelen",
+            "pursue",
+            "object"
+          ],
+          "next": "ch28_object"
+        },
+        {
+          "id": "true_again",
+          "label": "“Her own blood”",
+          "verbs": [
+            "true"
+          ],
+          "next": "litany_7_pass"
+        }
+      ]
+    },
+    "litany_7_miss": {
+      "id": "litany_7_miss",
+      "stage": 28,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: forgotten. Records the miss for the ladder multiplier. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The answer slips. It was said plainly, once, and the Hollowing was listening even when you were not.",
+        "It takes its tithe from what you carried — not cruelly, just exactly. The road goes on, and the purse is lighter for it."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_miss_7"
+        }
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "To the anchor",
+          "verbs": [
+            "bryn",
+            "throne",
+            "anchor"
+          ],
+          "next": "ch28_anchor"
+        },
+        {
+          "id": "b",
+          "label": "Examine the object",
+          "verbs": [
+            "kaelen",
+            "pursue",
+            "object"
+          ],
+          "next": "ch28_object"
+        }
+      ]
+    },
+    "litany_8": {
+      "id": "litany_8",
+      "stage": 30,
+      "type": "narrative",
+      "notes": "Litany Echo memory check. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The road pauses. Somewhere in the fog, something is checking what you carry.",
+        "The last pause, before the last road. “Why does Ilsevet refuse the light?”"
+      ],
+      "choices": [
+        {
+          "id": "true",
+          "label": "“Not seen to change”",
+          "verbs": [
+            "true"
+          ],
+          "next": "litany_8_pass",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_true_30"
+            }
+          ]
+        },
+        {
+          "id": "echo",
+          "label": "“Light burns her kind”",
+          "verbs": [
+            "echo"
+          ],
+          "next": "litany_8_miss"
+        },
+        {
+          "id": "void",
+          "label": "“She forgot why”",
+          "verbs": [
+            "void"
+          ],
+          "next": "litany_8_miss"
+        },
+        {
+          "id": "admit",
+          "label": "Admit you were not listening",
+          "verbs": [
+            "admit"
+          ],
+          "next": "litany_8_miss"
+        }
+      ]
+    },
+    "litany_8_pass": {
+      "id": "litany_8_pass",
+      "stage": 30,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: remembered. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "“She must not be seen to change.” Pride, the oldest engine. You understand her now, and understanding is the last weapon.",
+        "The final road opens."
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch30_refusal"
+        }
+      ]
+    },
+    "litany_8_miss": {
+      "id": "litany_8_miss",
+      "stage": 30,
+      "type": "narrative",
+      "notes": "Litany Echo verdict: forgotten. Records the miss for the ladder multiplier. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The answer slips. It was said plainly, once, and the Hollowing was listening even when you were not.",
+        "It takes its tithe from what you carried — not cruelly, just exactly. The road goes on, and the purse is lighter for it."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_miss_8"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch30_refusal"
+        }
+      ]
+    },
+    "litany_ninth": {
+      "id": "litany_ninth",
+      "stage": 32,
+      "type": "narrative",
+      "notes": "Secret epilogue: opens only with all eight echoes kept. Generated by scripts/insert-litany.mjs.",
+      "text": [
+        "The fog thins, and the Hollowing stands unarmored. “Eight times you held the road’s words against my hunger. Do you know what you carry, keeper?”",
+        "The Litany was never a prayer. It is a leash: the first Sundering’s survivors bound the eater of worlds and sang the binding into every child. “Choose what remembering is for.”"
+      ],
+      "choices": [
+        {
+          "id": "loosen",
+          "label": "Sing the leash loose",
+          "verbs": [
+            "loosen",
+            "sing"
+          ],
+          "next": "ch32_kaldareth_healed",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_loosened"
+            }
+          ]
+        },
+        {
+          "id": "hold",
+          "label": "Hold the leash",
+          "verbs": [
+            "hold"
+          ],
+          "next": "ch32_kaldareth_healed",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_held"
+            }
+          ]
+        }
+      ]
+    },
+    "litany_deep_1": {
+      "id": "litany_deep_1",
+      "stage": 6,
+      "type": "narrative",
+      "notes": "Litany Echo deep check (prose detail). Generated.",
+      "text": [
+        "The road pauses. Somewhere in the fog, something is checking what you carry.",
+        "The Hollowing checks the small things now. “In the drowned temple of Ashenmere, how many figures stood in the ring on the dais?”"
+      ],
+      "choices": [
+        {
+          "id": "true",
+          "label": "Seven — six old, one shaking",
+          "verbs": [
+            "true"
+          ],
+          "next": "litany_deep_1_pass",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_true_6"
+            }
+          ]
+        },
+        {
+          "id": "echo",
+          "label": "Nine — the full choir, robed",
+          "verbs": [
+            "echo"
+          ],
+          "next": "litany_deep_1_miss"
+        },
+        {
+          "id": "void",
+          "label": "Twelve — one for each month ",
+          "verbs": [
+            "void"
+          ],
+          "next": "litany_deep_1_miss"
+        },
+        {
+          "id": "admit",
+          "label": "Admit you forgot",
+          "verbs": [
+            "admit"
+          ],
+          "next": "litany_deep_1_miss"
+        }
+      ]
+    },
+    "litany_deep_1_pass": {
+      "id": "litany_deep_1_pass",
+      "stage": 6,
+      "type": "narrative",
+      "notes": "Deep echo verdict: remembered.",
+      "text": [
+        "“Seven. Six old, one shaking.” You saw it by lamplight and you kept it.",
+        "The Hollowing recoils from a mind that keeps exact books."
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch6_open"
+        }
+      ]
+    },
+    "litany_deep_1_miss": {
+      "id": "litany_deep_1_miss",
+      "stage": 6,
+      "type": "narrative",
+      "notes": "Deep echo verdict: forgotten. Counts against the ladder.",
+      "text": [
+        "The answer slips; the tithe is taken. The road goes on, lighter of purse."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_miss_9"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch6_open"
+        }
+      ]
+    },
+    "litany_deep_2": {
+      "id": "litany_deep_2",
+      "stage": 10,
+      "type": "narrative",
+      "notes": "Litany Echo deep check (prose detail). Generated.",
+      "text": [
+        "The road pauses. Somewhere in the fog, something is checking what you carry.",
+        "Callen’s map drew the Sundering as an inventory. “How many fragments — and who held three?”"
+      ],
+      "choices": [
+        {
+          "id": "true",
+          "label": "Seven; the Choir held three",
+          "verbs": [
+            "true"
+          ],
+          "next": "litany_deep_2_pass",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_true_10"
+            }
+          ]
+        },
+        {
+          "id": "echo",
+          "label": "Five; the Vigil held three",
+          "verbs": [
+            "echo"
+          ],
+          "next": "litany_deep_2_miss"
+        },
+        {
+          "id": "void",
+          "label": "Seven; Kaelen held three",
+          "verbs": [
+            "void"
+          ],
+          "next": "litany_deep_2_miss"
+        },
+        {
+          "id": "admit",
+          "label": "Admit you forgot",
+          "verbs": [
+            "admit"
+          ],
+          "next": "litany_deep_2_miss"
+        }
+      ]
+    },
+    "litany_deep_2_pass": {
+      "id": "litany_deep_2_pass",
+      "stage": 10,
+      "type": "narrative",
+      "notes": "Deep echo verdict: remembered.",
+      "text": [
+        "“Seven, and the Choir held three.” The arithmetic of a broken world, kept whole in your head.",
+        "Exactness is defiance. The Hollowing thins."
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch10_open"
+        }
+      ]
+    },
+    "litany_deep_2_miss": {
+      "id": "litany_deep_2_miss",
+      "stage": 10,
+      "type": "narrative",
+      "notes": "Deep echo verdict: forgotten. Counts against the ladder.",
+      "text": [
+        "The answer slips; the tithe is taken. The road goes on, lighter of purse."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_miss_10"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch10_open"
+        }
+      ]
+    },
+    "litany_deep_3": {
+      "id": "litany_deep_3",
+      "stage": 13,
+      "type": "narrative",
+      "notes": "Litany Echo deep check (prose detail). Generated.",
+      "text": [
+        "The road pauses. Somewhere in the fog, something is checking what you carry.",
+        "At Saltmere, “what did Yessa do when you spoke the word lighthouse?”"
+      ],
+      "choices": [
+        {
+          "id": "true",
+          "label": "Stopped mending; told what t",
+          "verbs": [
+            "true"
+          ],
+          "next": "litany_deep_3_pass",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_true_13"
+            }
+          ]
+        },
+        {
+          "id": "echo",
+          "label": "Laughed, and went back to ne",
+          "verbs": [
+            "echo"
+          ],
+          "next": "litany_deep_3_miss"
+        },
+        {
+          "id": "void",
+          "label": "Wept without sound; would no",
+          "verbs": [
+            "void"
+          ],
+          "next": "litany_deep_3_miss"
+        },
+        {
+          "id": "admit",
+          "label": "Admit you forgot",
+          "verbs": [
+            "admit"
+          ],
+          "next": "litany_deep_3_miss"
+        }
+      ]
+    },
+    "litany_deep_3_pass": {
+      "id": "litany_deep_3_pass",
+      "stage": 13,
+      "type": "narrative",
+      "notes": "Deep echo verdict: remembered.",
+      "text": [
+        "“He stopped mending, and told what the water took.” Grief given its true shape, kept.",
+        "The Hollowing cannot counterfeit what you were actually told."
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch13_open"
+        }
+      ]
+    },
+    "litany_deep_3_miss": {
+      "id": "litany_deep_3_miss",
+      "stage": 13,
+      "type": "narrative",
+      "notes": "Deep echo verdict: forgotten. Counts against the ladder.",
+      "text": [
+        "The answer slips; the tithe is taken. The road goes on, lighter of purse."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_miss_11"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch13_open"
+        }
+      ]
+    },
+    "litany_deep_4": {
+      "id": "litany_deep_4",
+      "stage": 21,
+      "type": "narrative",
+      "notes": "Litany Echo deep check (prose detail). Generated.",
+      "text": [
+        "The road pauses. Somewhere in the fog, something is checking what you carry.",
+        "Emberfall’s anchor stone took four blows. “On the fourth, what became of the wheat?”"
+      ],
+      "choices": [
+        {
+          "id": "true",
+          "label": "Flat, in a ring a mile wide",
+          "verbs": [
+            "true"
+          ],
+          "next": "litany_deep_4_pass",
+          "effects": [
+            {
+              "op": "flag",
+              "key": "litany_true_21"
+            }
+          ]
+        },
+        {
+          "id": "echo",
+          "label": "Black ash, in seconds",
+          "verbs": [
+            "echo"
+          ],
+          "next": "litany_deep_4_miss"
+        },
+        {
+          "id": "void",
+          "label": "Taller — and bowed",
+          "verbs": [
+            "void"
+          ],
+          "next": "litany_deep_4_miss"
+        },
+        {
+          "id": "admit",
+          "label": "Admit you forgot",
+          "verbs": [
+            "admit"
+          ],
+          "next": "litany_deep_4_miss"
+        }
+      ]
+    },
+    "litany_deep_4_pass": {
+      "id": "litany_deep_4_pass",
+      "stage": 21,
+      "type": "narrative",
+      "notes": "Deep echo verdict: remembered.",
+      "text": [
+        "“Flat, in a ring a mile wide.” You were there; the field remembers for you.",
+        "A mind that keeps exact books is a wall the appetite cannot dig through."
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch21_open"
+        }
+      ]
+    },
+    "litany_deep_4_miss": {
+      "id": "litany_deep_4_miss",
+      "stage": 21,
+      "type": "narrative",
+      "notes": "Deep echo verdict: forgotten. Counts against the ladder.",
+      "text": [
+        "The answer slips; the tithe is taken. The road goes on, lighter of purse."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_miss_12"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch21_open"
+        }
+      ]
+    },
+    "litany_red_1": {
+      "id": "litany_red_1",
+      "stage": 5,
+      "type": "narrative",
+      "notes": "Adaptive redemption echo: the eaten question returns, reworded. Offered once.",
+      "text": [
+        "Later — a different road, the same fog — the question comes back. Not the same words. The Hollowing has many ways of asking.",
+        "“The fields — what were they waiting for, keeper? Say it the way the Litany meant it.”"
+      ],
+      "choices": [
+        {
+          "id": "retell",
+          "label": "Tell it back, truly",
+          "verbs": [
+            "retell",
+            "tell"
+          ],
+          "next": "litany_red_1_pass"
+        },
+        {
+          "id": "let_go",
+          "label": "Let it stay eaten",
+          "verbs": [
+            "let"
+          ],
+          "next": "litany_red_1_skip"
+        }
+      ]
+    },
+    "litany_red_1_pass": {
+      "id": "litany_red_1_pass",
+      "stage": 5,
+      "type": "narrative",
+      "notes": "Redemption verdict: memory restored (miss flag handed back).",
+      "text": [
+        "You give it back word for word — not because it was precious, but because it was true, and it was yours.",
+        "Something that was eaten is returned. The Hollowing keeps its ledger, and so do you."
+      ],
+      "onEnter": [
+        {
+          "op": "unflag",
+          "key": "litany_miss_1"
+        },
+        {
+          "op": "flag",
+          "key": "litany_red_1"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch5_open"
+        }
+      ]
+    },
+    "litany_red_1_skip": {
+      "id": "litany_red_1_skip",
+      "stage": 5,
+      "type": "narrative",
+      "notes": "Redemption declined.",
+      "text": [
+        "You let it go. The road does not judge; it only keeps the accounts it keeps."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_red_1"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch5_open"
+        }
+      ]
+    },
+    "litany_red_2": {
+      "id": "litany_red_2",
+      "stage": 9,
+      "type": "narrative",
+      "notes": "Adaptive redemption echo: the eaten question returns, reworded. Offered once.",
+      "text": [
+        "Later — a different road, the same fog — the question comes back. Not the same words. The Hollowing has many ways of asking.",
+        "“The bridge at Emberfall. Who went into the water with it?”"
+      ],
+      "choices": [
+        {
+          "id": "retell",
+          "label": "Tell it back, truly",
+          "verbs": [
+            "retell",
+            "tell"
+          ],
+          "next": "litany_red_2_pass"
+        },
+        {
+          "id": "let_go",
+          "label": "Let it stay eaten",
+          "verbs": [
+            "let"
+          ],
+          "next": "litany_red_2_skip"
+        }
+      ]
+    },
+    "litany_red_2_pass": {
+      "id": "litany_red_2_pass",
+      "stage": 9,
+      "type": "narrative",
+      "notes": "Redemption verdict: memory restored (miss flag handed back).",
+      "text": [
+        "You give it back word for word — not because it was precious, but because it was true, and it was yours.",
+        "Something that was eaten is returned. The Hollowing keeps its ledger, and so do you."
+      ],
+      "onEnter": [
+        {
+          "op": "unflag",
+          "key": "litany_miss_2"
+        },
+        {
+          "op": "flag",
+          "key": "litany_red_2"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch9_open"
+        }
+      ]
+    },
+    "litany_red_2_skip": {
+      "id": "litany_red_2_skip",
+      "stage": 9,
+      "type": "narrative",
+      "notes": "Redemption declined.",
+      "text": [
+        "You let it go. The road does not judge; it only keeps the accounts it keeps."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_red_2"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch9_open"
+        }
+      ]
+    },
+    "litany_red_3": {
+      "id": "litany_red_3",
+      "stage": 13,
+      "type": "narrative",
+      "notes": "Adaptive redemption echo: the eaten question returns, reworded. Offered once.",
+      "text": [
+        "Later — a different road, the same fog — the question comes back. Not the same words. The Hollowing has many ways of asking.",
+        "“The girl from the harbor — what did she keep folded away, that no one else saw?”"
+      ],
+      "choices": [
+        {
+          "id": "retell",
+          "label": "Tell it back, truly",
+          "verbs": [
+            "retell",
+            "tell"
+          ],
+          "next": "litany_red_3_pass"
+        },
+        {
+          "id": "let_go",
+          "label": "Let it stay eaten",
+          "verbs": [
+            "let"
+          ],
+          "next": "litany_red_3_skip"
+        }
+      ]
+    },
+    "litany_red_3_pass": {
+      "id": "litany_red_3_pass",
+      "stage": 13,
+      "type": "narrative",
+      "notes": "Redemption verdict: memory restored (miss flag handed back).",
+      "text": [
+        "You give it back word for word — not because it was precious, but because it was true, and it was yours.",
+        "Something that was eaten is returned. The Hollowing keeps its ledger, and so do you."
+      ],
+      "onEnter": [
+        {
+          "op": "unflag",
+          "key": "litany_miss_3"
+        },
+        {
+          "op": "flag",
+          "key": "litany_red_3"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch13_open"
+        }
+      ]
+    },
+    "litany_red_3_skip": {
+      "id": "litany_red_3_skip",
+      "stage": 13,
+      "type": "narrative",
+      "notes": "Redemption declined.",
+      "text": [
+        "You let it go. The road does not judge; it only keeps the accounts it keeps."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_red_3"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch13_open"
+        }
+      ]
+    },
+    "litany_red_4": {
+      "id": "litany_red_4",
+      "stage": 17,
+      "type": "narrative",
+      "notes": "Adaptive redemption echo: the eaten question returns, reworded. Offered once.",
+      "text": [
+        "Later — a different road, the same fog — the question comes back. Not the same words. The Hollowing has many ways of asking.",
+        "“Before the Enforcer came: what did the big one ask of you?”"
+      ],
+      "choices": [
+        {
+          "id": "retell",
+          "label": "Tell it back, truly",
+          "verbs": [
+            "retell",
+            "tell"
+          ],
+          "next": "litany_red_4_pass"
+        },
+        {
+          "id": "let_go",
+          "label": "Let it stay eaten",
+          "verbs": [
+            "let"
+          ],
+          "next": "litany_red_4_skip"
+        }
+      ]
+    },
+    "litany_red_4_pass": {
+      "id": "litany_red_4_pass",
+      "stage": 17,
+      "type": "narrative",
+      "notes": "Redemption verdict: memory restored (miss flag handed back).",
+      "text": [
+        "You give it back word for word — not because it was precious, but because it was true, and it was yours.",
+        "Something that was eaten is returned. The Hollowing keeps its ledger, and so do you."
+      ],
+      "onEnter": [
+        {
+          "op": "unflag",
+          "key": "litany_miss_4"
+        },
+        {
+          "op": "flag",
+          "key": "litany_red_4"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch17_open"
+        }
+      ]
+    },
+    "litany_red_4_skip": {
+      "id": "litany_red_4_skip",
+      "stage": 17,
+      "type": "narrative",
+      "notes": "Redemption declined.",
+      "text": [
+        "You let it go. The road does not judge; it only keeps the accounts it keeps."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_red_4"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch17_open"
+        }
+      ]
+    },
+    "litany_red_5": {
+      "id": "litany_red_5",
+      "stage": 21,
+      "type": "narrative",
+      "notes": "Adaptive redemption echo: the eaten question returns, reworded. Offered once.",
+      "text": [
+        "Later — a different road, the same fog — the question comes back. Not the same words. The Hollowing has many ways of asking.",
+        "“Three centuries without it, and then one week with you. Name it.”"
+      ],
+      "choices": [
+        {
+          "id": "retell",
+          "label": "Tell it back, truly",
+          "verbs": [
+            "retell",
+            "tell"
+          ],
+          "next": "litany_red_5_pass"
+        },
+        {
+          "id": "let_go",
+          "label": "Let it stay eaten",
+          "verbs": [
+            "let"
+          ],
+          "next": "litany_red_5_skip"
+        }
+      ]
+    },
+    "litany_red_5_pass": {
+      "id": "litany_red_5_pass",
+      "stage": 21,
+      "type": "narrative",
+      "notes": "Redemption verdict: memory restored (miss flag handed back).",
+      "text": [
+        "You give it back word for word — not because it was precious, but because it was true, and it was yours.",
+        "Something that was eaten is returned. The Hollowing keeps its ledger, and so do you."
+      ],
+      "onEnter": [
+        {
+          "op": "unflag",
+          "key": "litany_miss_5"
+        },
+        {
+          "op": "flag",
+          "key": "litany_red_5"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch21_open"
+        }
+      ]
+    },
+    "litany_red_5_skip": {
+      "id": "litany_red_5_skip",
+      "stage": 21,
+      "type": "narrative",
+      "notes": "Redemption declined.",
+      "text": [
+        "You let it go. The road does not judge; it only keeps the accounts it keeps."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_red_5"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch21_open"
+        }
+      ]
+    },
+    "litany_red_6": {
+      "id": "litany_red_6",
+      "stage": 25,
+      "type": "narrative",
+      "notes": "Adaptive redemption echo: the eaten question returns, reworded. Offered once.",
+      "text": [
+        "Later — a different road, the same fog — the question comes back. Not the same words. The Hollowing has many ways of asking.",
+        "“When I eat, what is it I am actually eating? You have said it once.”"
+      ],
+      "choices": [
+        {
+          "id": "retell",
+          "label": "Tell it back, truly",
+          "verbs": [
+            "retell",
+            "tell"
+          ],
+          "next": "litany_red_6_pass"
+        },
+        {
+          "id": "let_go",
+          "label": "Let it stay eaten",
+          "verbs": [
+            "let"
+          ],
+          "next": "litany_red_6_skip"
+        }
+      ]
+    },
+    "litany_red_6_pass": {
+      "id": "litany_red_6_pass",
+      "stage": 25,
+      "type": "narrative",
+      "notes": "Redemption verdict: memory restored (miss flag handed back).",
+      "text": [
+        "You give it back word for word — not because it was precious, but because it was true, and it was yours.",
+        "Something that was eaten is returned. The Hollowing keeps its ledger, and so do you."
+      ],
+      "onEnter": [
+        {
+          "op": "unflag",
+          "key": "litany_miss_6"
+        },
+        {
+          "op": "flag",
+          "key": "litany_red_6"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch25_open"
+        }
+      ]
+    },
+    "litany_red_6_skip": {
+      "id": "litany_red_6_skip",
+      "stage": 25,
+      "type": "narrative",
+      "notes": "Redemption declined.",
+      "text": [
+        "You let it go. The road does not judge; it only keeps the accounts it keeps."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_red_6"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch25_open"
+        }
+      ]
+    },
+    "litany_red_7": {
+      "id": "litany_red_7",
+      "stage": 29,
+      "type": "narrative",
+      "notes": "Adaptive redemption echo: the eaten question returns, reworded. Offered once.",
+      "text": [
+        "Later — a different road, the same fog — the question comes back. Not the same words. The Hollowing has many ways of asking.",
+        "“The ritual at the core — what holds it together? One word was enough before.”"
+      ],
+      "choices": [
+        {
+          "id": "retell",
+          "label": "Tell it back, truly",
+          "verbs": [
+            "retell",
+            "tell"
+          ],
+          "next": "litany_red_7_pass"
+        },
+        {
+          "id": "let_go",
+          "label": "Let it stay eaten",
+          "verbs": [
+            "let"
+          ],
+          "next": "litany_red_7_skip"
+        }
+      ]
+    },
+    "litany_red_7_pass": {
+      "id": "litany_red_7_pass",
+      "stage": 29,
+      "type": "narrative",
+      "notes": "Redemption verdict: memory restored (miss flag handed back).",
+      "text": [
+        "You give it back word for word — not because it was precious, but because it was true, and it was yours.",
+        "Something that was eaten is returned. The Hollowing keeps its ledger, and so do you."
+      ],
+      "onEnter": [
+        {
+          "op": "unflag",
+          "key": "litany_miss_7"
+        },
+        {
+          "op": "flag",
+          "key": "litany_red_7"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch29_open"
+        }
+      ]
+    },
+    "litany_red_7_skip": {
+      "id": "litany_red_7_skip",
+      "stage": 29,
+      "type": "narrative",
+      "notes": "Redemption declined.",
+      "text": [
+        "You let it go. The road does not judge; it only keeps the accounts it keeps."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_red_7"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch29_open"
+        }
+      ]
+    },
+    "litany_red_8": {
+      "id": "litany_red_8",
+      "stage": 31,
+      "type": "narrative",
+      "notes": "Adaptive redemption echo: the eaten question returns, reworded. Offered once.",
+      "text": [
+        "Later — a different road, the same fog — the question comes back. Not the same words. The Hollowing has many ways of asking.",
+        "“The one who refuses the light. Why does she refuse it?”"
+      ],
+      "choices": [
+        {
+          "id": "retell",
+          "label": "Tell it back, truly",
+          "verbs": [
+            "retell",
+            "tell"
+          ],
+          "next": "litany_red_8_pass"
+        },
+        {
+          "id": "let_go",
+          "label": "Let it stay eaten",
+          "verbs": [
+            "let"
+          ],
+          "next": "litany_red_8_skip"
+        }
+      ]
+    },
+    "litany_red_8_pass": {
+      "id": "litany_red_8_pass",
+      "stage": 31,
+      "type": "narrative",
+      "notes": "Redemption verdict: memory restored (miss flag handed back).",
+      "text": [
+        "You give it back word for word — not because it was precious, but because it was true, and it was yours.",
+        "Something that was eaten is returned. The Hollowing keeps its ledger, and so do you."
+      ],
+      "onEnter": [
+        {
+          "op": "unflag",
+          "key": "litany_miss_8"
+        },
+        {
+          "op": "flag",
+          "key": "litany_red_8"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch31_open"
+        }
+      ]
+    },
+    "litany_red_8_skip": {
+      "id": "litany_red_8_skip",
+      "stage": 31,
+      "type": "narrative",
+      "notes": "Redemption declined.",
+      "text": [
+        "You let it go. The road does not judge; it only keeps the accounts it keeps."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_red_8"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch31_open"
+        }
+      ]
+    },
+    "litany_red_9": {
+      "id": "litany_red_9",
+      "stage": 7,
+      "type": "narrative",
+      "notes": "Adaptive redemption echo: the eaten question returns, reworded. Offered once.",
+      "text": [
+        "Later — a different road, the same fog — the question comes back. Not the same words. The Hollowing has many ways of asking.",
+        "“The dais, the lamp, the ring. Count them for me.”"
+      ],
+      "choices": [
+        {
+          "id": "retell",
+          "label": "Tell it back, truly",
+          "verbs": [
+            "retell",
+            "tell"
+          ],
+          "next": "litany_red_9_pass"
+        },
+        {
+          "id": "let_go",
+          "label": "Let it stay eaten",
+          "verbs": [
+            "let"
+          ],
+          "next": "litany_red_9_skip"
+        }
+      ]
+    },
+    "litany_red_9_pass": {
+      "id": "litany_red_9_pass",
+      "stage": 7,
+      "type": "narrative",
+      "notes": "Redemption verdict: memory restored (miss flag handed back).",
+      "text": [
+        "You give it back word for word — not because it was precious, but because it was true, and it was yours.",
+        "Something that was eaten is returned. The Hollowing keeps its ledger, and so do you."
+      ],
+      "onEnter": [
+        {
+          "op": "unflag",
+          "key": "litany_miss_9"
+        },
+        {
+          "op": "flag",
+          "key": "litany_red_9"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch7_open"
+        }
+      ]
+    },
+    "litany_red_9_skip": {
+      "id": "litany_red_9_skip",
+      "stage": 7,
+      "type": "narrative",
+      "notes": "Redemption declined.",
+      "text": [
+        "You let it go. The road does not judge; it only keeps the accounts it keeps."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_red_9"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch7_open"
+        }
+      ]
+    },
+    "litany_red_10": {
+      "id": "litany_red_10",
+      "stage": 11,
+      "type": "narrative",
+      "notes": "Adaptive redemption echo: the eaten question returns, reworded. Offered once.",
+      "text": [
+        "Later — a different road, the same fog — the question comes back. Not the same words. The Hollowing has many ways of asking.",
+        "“The Sundering as an inventory. Read me the numbers.”"
+      ],
+      "choices": [
+        {
+          "id": "retell",
+          "label": "Tell it back, truly",
+          "verbs": [
+            "retell",
+            "tell"
+          ],
+          "next": "litany_red_10_pass"
+        },
+        {
+          "id": "let_go",
+          "label": "Let it stay eaten",
+          "verbs": [
+            "let"
+          ],
+          "next": "litany_red_10_skip"
+        }
+      ]
+    },
+    "litany_red_10_pass": {
+      "id": "litany_red_10_pass",
+      "stage": 11,
+      "type": "narrative",
+      "notes": "Redemption verdict: memory restored (miss flag handed back).",
+      "text": [
+        "You give it back word for word — not because it was precious, but because it was true, and it was yours.",
+        "Something that was eaten is returned. The Hollowing keeps its ledger, and so do you."
+      ],
+      "onEnter": [
+        {
+          "op": "unflag",
+          "key": "litany_miss_10"
+        },
+        {
+          "op": "flag",
+          "key": "litany_red_10"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch11_open"
+        }
+      ]
+    },
+    "litany_red_10_skip": {
+      "id": "litany_red_10_skip",
+      "stage": 11,
+      "type": "narrative",
+      "notes": "Redemption declined.",
+      "text": [
+        "You let it go. The road does not judge; it only keeps the accounts it keeps."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_red_10"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch11_open"
+        }
+      ]
+    },
+    "litany_red_11": {
+      "id": "litany_red_11",
+      "stage": 14,
+      "type": "narrative",
+      "notes": "Adaptive redemption echo: the eaten question returns, reworded. Offered once.",
+      "text": [
+        "Later — a different road, the same fog — the question comes back. Not the same words. The Hollowing has many ways of asking.",
+        "“The fisherman, the nets, the word you were told not to say. What happened?”"
+      ],
+      "choices": [
+        {
+          "id": "retell",
+          "label": "Tell it back, truly",
+          "verbs": [
+            "retell",
+            "tell"
+          ],
+          "next": "litany_red_11_pass"
+        },
+        {
+          "id": "let_go",
+          "label": "Let it stay eaten",
+          "verbs": [
+            "let"
+          ],
+          "next": "litany_red_11_skip"
+        }
+      ]
+    },
+    "litany_red_11_pass": {
+      "id": "litany_red_11_pass",
+      "stage": 14,
+      "type": "narrative",
+      "notes": "Redemption verdict: memory restored (miss flag handed back).",
+      "text": [
+        "You give it back word for word — not because it was precious, but because it was true, and it was yours.",
+        "Something that was eaten is returned. The Hollowing keeps its ledger, and so do you."
+      ],
+      "onEnter": [
+        {
+          "op": "unflag",
+          "key": "litany_miss_11"
+        },
+        {
+          "op": "flag",
+          "key": "litany_red_11"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch14_open"
+        }
+      ]
+    },
+    "litany_red_11_skip": {
+      "id": "litany_red_11_skip",
+      "stage": 14,
+      "type": "narrative",
+      "notes": "Redemption declined.",
+      "text": [
+        "You let it go. The road does not judge; it only keeps the accounts it keeps."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_red_11"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch14_open"
+        }
+      ]
+    },
+    "litany_red_12": {
+      "id": "litany_red_12",
+      "stage": 22,
+      "type": "narrative",
+      "notes": "Adaptive redemption echo: the eaten question returns, reworded. Offered once.",
+      "text": [
+        "Later — a different road, the same fog — the question comes back. Not the same words. The Hollowing has many ways of asking.",
+        "“Four blows, and then the field. Finish the sentence.”"
+      ],
+      "choices": [
+        {
+          "id": "retell",
+          "label": "Tell it back, truly",
+          "verbs": [
+            "retell",
+            "tell"
+          ],
+          "next": "litany_red_12_pass"
+        },
+        {
+          "id": "let_go",
+          "label": "Let it stay eaten",
+          "verbs": [
+            "let"
+          ],
+          "next": "litany_red_12_skip"
+        }
+      ]
+    },
+    "litany_red_12_pass": {
+      "id": "litany_red_12_pass",
+      "stage": 22,
+      "type": "narrative",
+      "notes": "Redemption verdict: memory restored (miss flag handed back).",
+      "text": [
+        "You give it back word for word — not because it was precious, but because it was true, and it was yours.",
+        "Something that was eaten is returned. The Hollowing keeps its ledger, and so do you."
+      ],
+      "onEnter": [
+        {
+          "op": "unflag",
+          "key": "litany_miss_12"
+        },
+        {
+          "op": "flag",
+          "key": "litany_red_12"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch22_open"
+        }
+      ]
+    },
+    "litany_red_12_skip": {
+      "id": "litany_red_12_skip",
+      "stage": 22,
+      "type": "narrative",
+      "notes": "Redemption declined.",
+      "text": [
+        "You let it go. The road does not judge; it only keeps the accounts it keeps."
+      ],
+      "onEnter": [
+        {
+          "op": "flag",
+          "key": "litany_red_12"
+        }
+      ],
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Walk on",
+          "verbs": [
+            "continue",
+            "walk"
+          ],
+          "next": "ch22_open"
+        }
+      ]
     }
   }
 }
-

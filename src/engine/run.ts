@@ -13,6 +13,7 @@
 
 import { applyEffects } from './effects.ts'
 import type { ItemCatalog } from './items.ts'
+import { FINAL_PAYOUT, ladderMultiplier, payoutForChapter } from '../economy/rewards.ts'
 import { initialProgression } from './progression.ts'
 import { createRunIdentity } from './rng.ts'
 import { evaluateChoices } from './requirements.ts'
@@ -35,6 +36,8 @@ export interface RunContext {
   catalog: ItemCatalog
   /** Starting balance. Purely simulated; see economy/ledger.ts. */
   startingTokens?: number
+  /** Entry fee charged when the run begins (the RR ladder earns it back). */
+  entryFee?: number
   /** EXP granted by a rest beat, on top of the resource top-up. */
   restExp?: number
 }
@@ -70,6 +73,9 @@ export function createRun(classId: ClassId, ctx: RunContext, runCode?: string): 
   const identity = createRunIdentity(runCode)
   const start = nodeOf(ctx.content, ctx.content.meta.start)
   const stats = totalStats(classId, 1, { items: [], equippedId: null })
+  // The entry fee is charged the moment the run exists: the purse shown at the
+  // first node is post-fee, and the reward ladder earns it back from Ch. 15.
+  const fee = ctx.entryFee ?? 0
   return {
     seed: identity.seed,
     runCode: identity.runCode,
@@ -80,11 +86,11 @@ export function createRun(classId: ClassId, ctx: RunContext, runCode?: string): 
     traits: { courage: 0, reputation: 0, royal_loyalty: 0 },
     flags: new Set<string>(),
     inventory: { items: [], equippedId: null },
-    tokens: ctx.startingTokens ?? DEFAULT_STARTING_TOKENS,
+    tokens: Math.max(0, (ctx.startingTokens ?? DEFAULT_STARTING_TOKENS) - fee),
     visited: [start.id],
     stage: start.stage,
     currentNodeId: start.id,
-    transcript: [],
+    transcript: fee > 0 ? [`Entry fee paid: ${fee}.`] : [],
     finished: false,
     combatsWon: 0,
     choicesMade: 0,
@@ -122,12 +128,20 @@ export function enterNode(run: RunState, nodeId: string, ctx: RunContext): Enter
       next = { ...next, transcript: [...next.transcript, `You reach level ${result.levelsGained.join(', ')}.`] }
     }
     if (isEnding(node)) {
+      const finalScaled = Math.round(FINAL_PAYOUT * ladderMultiplier(next))
+      const { run: afterFinal } = applyEffects(
+        { ...next, finished: true, endingId: node.id, rewardModifier: node.reward_modifier, leaderboardTag: node.leaderboard_tag },
+        [{ op: 'token', amount: finalScaled }],
+        ctx.catalog,
+      )
       next = {
-        ...next,
-        finished: true,
-        endingId: node.id,
-        rewardModifier: node.reward_modifier,
-        leaderboardTag: node.leaderboard_tag,
+        ...afterFinal,
+        transcript: [
+          ...afterFinal.transcript,
+          finalScaled < FINAL_PAYOUT
+            ? `The road ends — +${finalScaled} RR (the Hollowing kept ${FINAL_PAYOUT - finalScaled}).`
+            : `The road ends — +${FINAL_PAYOUT} RR.`,
+        ],
       }
     }
     if (itemsGained.length > 0) {
@@ -150,6 +164,34 @@ export function enterNode(run: RunState, nodeId: string, ctx: RunContext): Enter
     }
     if (levelsGained.length > 0) {
       next = { ...next, transcript: [...next.transcript, `You reach level ${levelsGained.join(', ')}.`] }
+    }
+  }
+
+  /*
+   * The RR reward ladder pays at the chapter openings it is keyed to, on BOTH
+   * branches of every fight — rewards track distance travelled, never the luck
+   * of one encounter. The ending's own payout rides the finish below. Paid via
+   * the same effect pipeline as content token effects, so the cap and the
+   * transcript entry behave identically.
+   */
+  if (isNarrative(node) && firstVisit) {
+    // Keyed to the chapter's `_open` node specifically: every node in a paying
+    // chapter carries that chapter's stage, so a stage check alone would pay
+    // the milestone once per node instead of once per chapter.
+    const payout = /^ch(\d+)_open$/.test(node.id) ? payoutForChapter(next.stage) : 0
+    if (payout > 0) {
+      // The Litany's price: what you remembered scales what the road pays.
+      const scaled = Math.round(payout * ladderMultiplier(next))
+      const { run: afterPay } = applyEffects(next, [{ op: 'token', amount: scaled }], ctx.catalog)
+      next = {
+        ...afterPay,
+        transcript: [
+          ...afterPay.transcript,
+          scaled < payout
+            ? `Milestone: Chapter ${next.stage} reached — +${scaled} RR (the Hollowing kept ${payout - scaled}).`
+            : `Milestone: Chapter ${next.stage} reached — +${payout} RR.`,
+        ],
+      }
     }
   }
 

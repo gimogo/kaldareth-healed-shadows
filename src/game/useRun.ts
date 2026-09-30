@@ -18,6 +18,7 @@ import type { RunContext, RunState } from '../engine/run.ts'
 import { playerAct, startCombat } from '../engine/combat.ts'
 import type { CombatState } from '../engine/types.ts'
 import { createRng } from '../engine/rng.ts'
+import { gameAudio } from '../ui/audioBus.ts'
 import type { Rng } from '../engine/rng.ts'
 import type { ClassId, ItemDefinition, SkillId, TraitId } from '../engine/types.ts'
 
@@ -25,6 +26,7 @@ export const RUN_CONTEXT: RunContext = {
   content: STORY,
   catalog: ITEMS,
   startingTokens: BALANCE.economy.startingBalance,
+  entryFee: BALANCE.economy.entryFee,
   restExp: BALANCE.exp.restExp,
 }
 
@@ -32,6 +34,8 @@ export interface CombatSession {
   state: CombatState
   rng: Rng
   nodeId: string
+  /** True when this encounter is a boss (theme + fanfare both key off it). */
+  isBoss: boolean
 }
 
 export type Phase = 'class' | 'gate' | 'play'
@@ -47,6 +51,8 @@ export interface RunController {
   combat: CombatSession | null
   notice: Notice | null
   nodeChoices: ReturnType<typeof choicesOf>
+  /** The most recently finished or abandoned run, kept for the home board. */
+  lastRun: RunState | null
   begin: (classId: ClassId, runCode?: string) => void
   enterGate: () => void
   choose: (choiceId: string) => void
@@ -62,6 +68,9 @@ export function useRun(): RunController {
   const [combat, setCombat] = useState<CombatSession | null>(null)
   const [notice, setNotice] = useState<Notice | null>(null)
   const [phase, setPhase] = useState<Phase>('class')
+  // The ending screen and "Abandon run" both land here, so the home board can
+  // show where the last attempt ranked without persisting anything to disk.
+  const [lastRun, setLastRun] = useState<RunState | null>(null)
 
   const begin = useCallback((classId: ClassId, runCode?: string) => {
     const fresh = createRun(classId, RUN_CONTEXT, runCode)
@@ -101,7 +110,12 @@ export function useRun(): RunController {
     const node = result.node
     if (node.type === 'combat') {
       const seed = hashOf(next.runCode, node.id)
-      setCombat({ state: startCombat(next, node.enemy, COMBAT_BALANCE), rng: createRng(seed), nodeId: node.id })
+      setCombat({
+        state: startCombat(next, node.enemy, COMBAT_BALANCE),
+        rng: createRng(seed),
+        nodeId: node.id,
+        isBoss: node.enemy.tier === 'boss',
+      })
     } else {
       setCombat(null)
     }
@@ -143,6 +157,10 @@ export function useRun(): RunController {
         return
       }
 
+      // The fight just ended: resolution sting (a fanfare for bosses), then
+      // hand back to the run layer.
+      gameAudio().playSting(state.won, combat.isBoss)
+
       // The encounter is over, so hand the result back to the run layer.
       const node = STORY.nodes[combat.nodeId]
       if (!node || node.type !== 'combat') {
@@ -177,6 +195,7 @@ export function useRun(): RunController {
     combat,
     notice,
     nodeChoices,
+    lastRun,
     begin,
     enterGate,
     choose,
@@ -184,6 +203,7 @@ export function useRun(): RunController {
     setNotice: (text: string | null) => setNotice(text === null ? null : { tone: 'info', text }),
     dismissNotice: () => setNotice(null),
     abandon: () => {
+      setLastRun(run)
       setRun(null)
       setCombat(null)
       setNotice(null)

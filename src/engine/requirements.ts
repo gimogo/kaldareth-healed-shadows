@@ -33,7 +33,16 @@ export function requirementBlocker(req: Requirement, ctx: RequirementContext): s
       return null
     }
     case 'flag':
+      if (req.absent) {
+        // Used by the adaptive redemption: only offered while the memory is
+        // still eaten, so the second chance cannot be farmed.
+        return ctx.flags.has(req.key) ? 'already remembered' : null
+      }
       return ctx.flags.has(req.key) ? null : `requires "${req.key}"`
+    case 'flags_all': {
+      const missing = req.keys.filter((key) => !ctx.flags.has(key))
+      return missing.length === 0 ? null : `the Litany holds ${missing.length} echo${missing.length === 1 ? '' : 's'} back`
+    }
     case 'class':
       return ctx.classId === req.classId ? null : `${req.classId} only`
     case 'item':

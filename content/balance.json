@@ -20,7 +20,8 @@
     "restExp": 40
   },
   "economy": {
-    "currency": "TOKEN",
+    "currency": "RR",
+    "maxReward": 5000,
     "startingBalance": 3000,
     "entryFee": 500,
     "split": { "prizePool": 250, "circulation": 150, "burn": 100 },

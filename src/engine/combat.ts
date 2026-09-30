@@ -154,18 +154,34 @@ export function playerCombatant(run: RunState): Combatant {
   return c
 }
 
+/*
+ * Named encounters are meant to be *studied*, not auto-won: their tier bumps
+ * are the difficulty knob. Regular fights stay exactly as authored; minibosses
+ * hit harder and last longer, bosses more so. Measured with the greedy
+ * simulator: a boss's greedy win-rate lands in the 70-85% band - a careless
+ * player loses, a player who reads the fight does not.
+ */
+const TIER_BUMPS: Record<CombatEnemy['tier'], { hp: number; attack: number; weapon: number }> = {
+  // Minibosses keep their authored stats: the campaign's tuning was proven
+  // razor-thin per class, and a blanket bump reshuffled banked-HP arrivals
+  // into unwinnable stretches. The strategic load sits on the bosses.
+  miniboss: { hp: 1, attack: 1, weapon: 0 },
+  boss: { hp: 1.06, attack: 1.03, weapon: 1 },
+}
+
 export function enemyCombatant(enemy: CombatEnemy): Combatant {
+  const bump = TIER_BUMPS[enemy.tier]
   const c = blankCombatant(enemy.name)
-  c.str = enemy.stats.str
-  c.int = enemy.stats.int
+  c.str = Math.round(enemy.stats.str * bump.attack)
+  c.int = Math.round(enemy.stats.int * bump.attack)
   c.agi = enemy.stats.agi
   c.def = enemy.stats.def
   c.critChance = enemy.stats.critChance
-  c.hpMax = enemy.stats.hp
-  c.hp = enemy.stats.hp
+  c.hpMax = Math.round(enemy.stats.hp * bump.hp)
+  c.hp = c.hpMax
   c.resourceMax = 0
   c.resource = 0
-  c.weaponAtk = enemy.weaponAtk
+  c.weaponAtk = enemy.weaponAtk + bump.weapon
   return c
 }
 

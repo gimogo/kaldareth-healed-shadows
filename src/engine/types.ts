@@ -178,13 +178,16 @@ export type Effect =
   | { op: 'add'; trait: TraitId; amount: number }
   | { op: 'set'; trait: TraitId; amount: number }
   | { op: 'flag'; key: string }
+  | { op: 'unflag'; key: string }
   | { op: 'give'; itemId: string }
   | { op: 'token'; amount: number }
   | { op: 'exp'; amount: number }
 
 export type Requirement =
   | { kind: 'trait'; trait: TraitId; min?: number; max?: number }
-  | { kind: 'flag'; key: string }
+  | { kind: 'flag'; key: string; absent?: boolean }
+  /** All of the named flags must hold — the Litany's eight-echo gate. */
+  | { kind: 'flags_all'; keys: readonly string[] }
   | { kind: 'class'; classId: ClassId }
   | { kind: 'item'; itemId: string }
   | { kind: 'level'; min: number }

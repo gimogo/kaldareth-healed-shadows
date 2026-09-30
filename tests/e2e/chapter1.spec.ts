@@ -1,10 +1,8 @@
 /**
  * Chapter 1, played in a real browser behind the real ownership gate.
  *
- * The point of these specs is not to re-test the engine — the unit suite owns
- * that. It is to prove the wiring survives contact with React: that a click on a
- * numbered choice moves the run, that a locked option stays locked in the DOM,
- * that free-form input reaches the same node as clicking, and that the whole
+ * It is to prove the wiring survives contact with React: that a click on a
+ * numbered choice moves the run, that a locked option stays locked in the DOM, and that the whole
  * chapter resolves to an ending without a page reload.
  *
  * Every test here earns its session first, through a mocked wallet and a mocked
@@ -109,9 +107,10 @@ test.describe('Chapter 1', () => {
     await startRun(game, 'Mage')
 
     // Level, class and balance are in the always-visible strip; the run code is
-    // detail, so the panel is opened to read it.
+    // detail, so the panel is opened to read it. The purse is post-fee: 3,000
+    // starting balance minus the 500 RR entry, charged when the run began.
     await expect(game.locator('.kald-status')).toContainText('mage')
-    await expect(game.locator('.kald-status')).toContainText('3,000')
+    await expect(game.locator('.kald-status')).toContainText('2,500')
 
     await game.getByRole('button', { name: 'Status' }).click()
     await expect(game.locator('.kald-code')).toHaveText(/^[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}$/)
@@ -155,40 +154,29 @@ test.describe('Chapter 1', () => {
     await expect(game.locator('.kald-choice-lock').first()).not.toBeEmpty()
   })
 
-  test('accepts free-form input and lands on the same node as clicking', async ({ page }) => {
+  test('shows the current chapter live in the banner', async ({ page }) => {
     /*
-     * The command line and the numbered list are two ways of making the same
-     * decision, so this compares where they each end up from the same starting
-     * node. It needs two sessions: the quota rightly allows one run per Friend per
-     * day, and replaying a path inside one session would mean defeating that rule
-     * to test a feature that has nothing to do with it.
-     *
-     * Note the number is resolved against the whole list, not the enabled subset,
-     * so the test speaks the game's language and types the position of the first
-     * *available* choice. Typing "1" blindly would be testing a locked choice.
+     * The banner reads the run's stage, and stage now tracks the chapter. This
+     * walks the first gate and asserts the label follows: "Ch. 1" before the
+     * crossing, "Ch. 2" after it. A static "Chapters 1–32" string would fail
+     * this test, which is the point.
      */
-    const typed = await openSession(page)
-    await startRun(typed.game, 'Warrior')
+    const { game } = await openSession(page)
+    await startRun(game, 'Warrior')
 
-    const position =
-      (await typed.game
-        .locator('button.kald-choice')
-        .evaluateAll((buttons) => buttons.findIndex((b) => !(b as HTMLButtonElement).disabled))) + 1
-    expect(position).toBeGreaterThan(0)
+    const banner = game.locator('.kald-chapter')
+    await revealProse(game)
+    await expect(banner).toHaveText(/Ch\. 1/)
 
-    await revealProse(typed.game)
-    await typed.game.locator('#cmd').fill(String(position))
-    await typed.game.locator('#cmd').press('Enter')
-    await revealProse(typed.game)
-    const byTyping = await typed.game.locator('.kald-place').textContent()
-
-    const clicked = await openSession(await page.context().newPage())
-    await startRun(clicked.game, 'Warrior')
-    await revealProse(clicked.game)
-    await clicked.game.locator('button.kald-choice').nth(position - 1).click()
-    await revealProse(clicked.game)
-
-    expect(await clicked.game.locator('.kald-place').textContent()).toBe(byTyping)
+    // Chapter 1 runs nine narrative beats past the bridge crossing before the
+    // report at the watchtower opens Chapter 2; click through them and the
+    // banner must follow, not stay static.
+    for (let step = 0; step < 24; step += 1) {
+      await revealProse(game)
+      if (/Ch\. 2/.test((await banner.textContent()) ?? '')) break
+      await game.locator('button.kald-choice:not([disabled])').first().click()
+    }
+    await expect(banner).toHaveText(/Ch\. 2/)
   })
 
   test('ranks the finished run against simulated rivals', async ({ page }) => {
@@ -197,38 +185,32 @@ test.describe('Chapter 1', () => {
     await startRun(game, 'Warrior')
     await playThrough(game)
 
-    const board = game.getByRole('region', { name: 'Leaderboard' })
+    // The ending board is the same ASCII style as the home board, at full
+    // depth: nine rows, the player's marked with '>', rivals marked simulated
+    // through the legend.
+    const board = game.getByRole('region', { name: 'Final standings' })
     await expect(board).toBeVisible()
-    await expect(board.getByText(/You finished \w+ of \d+/)).toBeVisible()
-
-    const rows = board.getByRole('listitem')
-    // Eight ghosts plus the player's own run.
-    await expect(rows).toHaveCount(9)
-
-    // Every row except the player's own must be marked simulated.
-    await expect(board.getByText('simulated')).toHaveCount(8)
-
-    // The player's row is highlighted and is not labelled simulated.
-    await expect(board.locator('.kald-ghost')).toHaveCount(1)
+    await expect(board).toContainText('~ FINAL STANDINGS ~')
+    await expect(board).toContainText(/you placed \w+ of 9/)
+    await expect(board).toContainText('(s = simulated rival)')
+    await expect(board.locator('pre')).toContainText('>')
   })
 
-  test('says so plainly when typed input matches nothing', async ({ page }) => {
+  test('shows the prize-pool board on the home screen', async ({ page }) => {
+    /*
+     * The home board is the first thing a returning player reads: the pot, how
+     * the fee feeds it, and who is ahead. It must be visible without a run and
+     * it must never promise real payouts — every rival row is simulated.
+     */
     const { game } = await openSession(page)
-    await startRun(game, 'Mage')
-    await revealProse(game)
 
-    const before = await game.locator('.kald-place').textContent()
-    await game.locator('#cmd').fill('dance on the roof')
-    await game.locator('#cmd').press('Enter')
-
-    // Silence would be the worst outcome: a player who typed a sentence and got
-    // no reaction cannot tell an ignored game from a broken one.
-    await expect(game.getByText(/Nothing here answers to that/)).toBeVisible()
-
-    // And the run must not have moved on nonsense.
-    expect(await game.locator('.kald-place').textContent()).toBe(before)
-    // The field clears itself, so the next command starts from a clean slate.
-    await expect(game.locator('#cmd')).toHaveValue('')
+    const board = game.getByRole('region', { name: 'Prize pool and top runners' })
+    await expect(board).toBeVisible()
+    await expect(board).toContainText('WEEKLY PRIZE POOL')
+    await expect(board).toContainText('Fee')
+    await expect(board).toContainText('To the pot')
+    await expect(board).toContainText('TOP RUNNERS')
+    await expect(board).toContainText('simulated rivals')
   })
 
   test('charges the daily quota to the verified Friend, not to a wallet', async ({ page }) => {
@@ -333,7 +315,6 @@ test.describe('the frame never scrolls', () => {
 
       await frameFits(game, where)
       await controlIsVisible(game, 'button.kald-choice:not([disabled])', where)
-      await controlIsVisible(game, '#cmd', where)
       await controlIsVisible(game, '.kald-abandon', where)
 
       await game.locator('button.kald-choice:not([disabled])').first().click()

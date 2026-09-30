@@ -46,6 +46,8 @@ export const effectSchema = z.discriminatedUnion('op', [
   z.object({ op: z.literal('add'), trait: traitIdSchema, amount: z.number().int() }),
   z.object({ op: z.literal('set'), trait: traitIdSchema, amount: z.number().int() }),
   z.object({ op: z.literal('flag'), key: z.string().min(1) }),
+  /** Removes a flag — the Litany's redemption: what was eaten is given back. */
+  z.object({ op: z.literal('unflag'), key: z.string().min(1) }),
   z.object({ op: z.literal('give'), itemId: z.string().min(1) }),
   z.object({ op: z.literal('token'), amount: z.number().int() }),
   z.object({ op: z.literal('exp'), amount: z.number().int().nonnegative() }),
@@ -62,7 +64,9 @@ export const requirementSchema = z.discriminatedUnion('kind', [
     .refine((r) => r.min !== undefined || r.max !== undefined, {
       message: 'trait requirement needs min or max',
     }),
-  z.object({ kind: z.literal('flag'), key: z.string().min(1) }),
+  z.object({ kind: z.literal('flag'), key: z.string().min(1), absent: z.boolean().optional() }),
+  /** All of the named flags must be set — the Litany's eight-echo gate. */
+  z.object({ kind: z.literal('flags_all'), keys: z.array(z.string().min(1)).min(1) }),
   z.object({ kind: z.literal('class'), classId: classIdSchema }),
   z.object({ kind: z.literal('item'), itemId: z.string().min(1) }),
   z.object({ kind: z.literal('level'), min: z.number().int().positive() }),

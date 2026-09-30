@@ -15,16 +15,16 @@
  * the pacing of the reveal, not the length of the text.
  */
 
-import { useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { BALANCE, STORY } from './content/content.ts'
 import { unlockedSkills } from './engine/skills.ts'
-import { matchVerb } from './engine/verbMatch.ts'
 import { RUN_CONTEXT, runIsCombat, runIsEnding, useRun } from './game/useRun.ts'
 import { choicesOf, currentNode } from './engine/run.ts'
 import type { RunState } from './engine/run.ts'
 import type { ClassId } from './engine/types.ts'
 import type { QuotaDecision } from './economy/quota.ts'
+import { earnedRefund, REFUND_CHAPTER } from './economy/rewards.ts'
 import {
   ChoiceList,
   ClassSelect,
@@ -33,6 +33,10 @@ import {
   InventoryPanel,
   StatusPanel,
 } from './ui/components.tsx'
+import { HomeBoard } from './ui/HomeBoard.tsx'
+import { attachAudio, gameAudio } from './ui/audioBus.ts'
+import { isMuted, setMuted } from './ui/audioMute.ts'
+import { useSceneMusic } from './ui/useSceneMusic.ts'
 
 /** What the runtime tells the game about the session it mounted. */
 export interface AppSession {
@@ -53,7 +57,31 @@ export default function App({ session }: { session: AppSession }) {
   const controller = useRun()
   const { phase, run, combat, notice } = controller
   const [refusal, setRefusal] = useState<string | null>(null)
+  const [muted, setMutedState] = useState(() => isMuted())
   const paused = session.paused
+
+  // One gesture unlock for every sound the game makes.
+  useEffect(() => attachAudio(typeof document === 'undefined' ? undefined : document), [])
+
+  // Scene music: ambient under narrative, a pulse in combat, a faster denser
+  // one against bosses; silence at the class screen, the gate, and the ending.
+  // Re-issued per scene change, which is also what resumes it after the
+  // autoplay unlock. The sting fires from the run hook, which knows the tier.
+  const musicMode =
+    phase === 'play' && run && !runIsEnding(run)
+      ? combat
+        ? combat.isBoss
+          ? 'boss'
+          : 'battle'
+        : 'ambient'
+      : 'off'
+  useSceneMusic(musicMode)
+
+  /** A chosen answer acknowledges itself with a blip. */
+  const chooseWithBlip = (choiceId: string) => {
+    gameAudio().playBlip()
+    controller.choose(choiceId)
+  }
 
   const begin = (classId: ClassId) => {
     if (!session.startRun(classId)) {
@@ -66,7 +94,10 @@ export default function App({ session }: { session: AppSession }) {
 
   if (phase === 'class' || !run) {
     return (
-      <main className="kald-shell">
+      // `kald-shell-home`: the entry screen keeps the shell's 40vh bottom pad so
+      // its pinned button clears the fold, but this screen has nothing pinned —
+      // and on a 638px phone that pad alone pushes the board out of the frame.
+      <main className="kald-shell kald-shell-home">
         <h1 className="kald-title">{STORY.meta.title}</h1>
         {/*
          * One note rather than two. They were a paragraph about the run and a
@@ -74,9 +105,10 @@ export default function App({ session }: { session: AppSession }) {
          * 478px frame that the three class buttons then had to fit under.
          */}
         <p className="kald-note">
-          Kaldareth — The Healed Shadows. Every run is a new character, decided by a seed you can share. Playing as{' '}
-          {session.label} · {session.quota.remaining} of {session.quota.limit} runs left today.
+          Every run is a new character, decided by a seed you can share. Playing as {session.label} ·{' '}
+          {session.quota.remaining} of {session.quota.limit} runs left today.
         </p>
+        <HomeBoard lastRun={controller.lastRun} />
         <ClassSelect onBegin={begin} />
         {refusal ? (
           <p className="kald-error" role="alert">
@@ -88,7 +120,19 @@ export default function App({ session }: { session: AppSession }) {
   }
 
   if (phase === 'gate') {
-    return <Entry session={session} onEnter={controller.enterGate} />
+    return (
+      <Entry
+        session={session}
+        onEnter={controller.enterGate}
+        refundEarned={earnedRefund(run)}
+        muted={muted}
+        onToggleMute={() => {
+          const next = !muted
+          setMuted(next)
+          setMutedState(next)
+        }}
+      />
+    )
   }
 
   // The runtime pauses the game while its own menus are open, and an overlay
@@ -101,8 +145,8 @@ export default function App({ session }: { session: AppSession }) {
   ) : (
     <main className="kald-shell">
       <header className="kald-banner">
-        <span className="kald-chapter">Chapters 1–32</span>
-        <span className="kald-place">{run.currentNodeId.replace(/^ch\d+_/, '').replace(/_/g, ' ')}</span>
+        <span className="kald-chapter">{chapterLabel(run)}</span>
+        <span className="kald-place">{placeLabel(run)}</span>
       </header>
       <hr className="kald-rule" />
 
@@ -115,9 +159,10 @@ export default function App({ session }: { session: AppSession }) {
               state={combat.state}
               skills={unlockedSkills(run.classId, run.progression.level)}
               onAct={controller.act}
+              classId={run.classId}
             />
           ) : runIsCombat(run) ? null : (
-            <CommandLine run={run} onSubmit={controller.choose} setNoticeOverride={controller.setNotice} />
+            <ChoiceList choices={choiceViews(run)} onChoose={chooseWithBlip} />
           )}
         </article>
 
@@ -160,6 +205,36 @@ export default function App({ session }: { session: AppSession }) {
       </div>
     </>
   )
+}
+
+/* ── Banner labels ─────────────────────────────────────────────────────── */
+
+const ACT_NAMES: Readonly<Record<number, string>> = {
+  1: 'The Sundering Fields',
+  2: 'The Hollowing Road',
+  3: 'The Purifying War',
+  4: 'The Blood Moon',
+}
+
+/** Real-time chapter label: content is authored with per-chapter stages. */
+function chapterLabel(run: RunState): string {
+  const chapter = run.stage
+  const act = chapter <= 8 ? 1 : chapter <= 16 ? 2 : chapter <= 24 ? 3 : 4
+  return `Ch. ${chapter} · ${ACT_NAMES[act] ?? 'Act 4'}`
+}
+
+/** The node's own name, minus the mechanical prefixes. */
+function placeLabel(run: RunState): string {
+  return run.currentNodeId.replace(/^ch\d+_/, '').replace(/_/g, ' ')
+}
+
+/** Current node's choices, in the shape ChoiceList renders. */
+function choiceViews(run: RunState) {
+  return choicesOf(run, RUN_CONTEXT).map((entry) => ({
+    choice: { id: entry.choice.id, label: entry.choice.label },
+    enabled: entry.enabled,
+    reason: entry.reason,
+  }))
 }
 
 /* ── Prose reveal ──────────────────────────────────────────────────────── */
@@ -206,107 +281,6 @@ function Prose({ run }: { run: RunState }) {
   )
 }
 
-/* ── Command line ──────────────────────────────────────────────────────── */
-
-function CommandLine({
-  run,
-  onSubmit,
-  setNoticeOverride,
-}: {
-  run: RunState
-  onSubmit: (choiceId: string) => void
-  setNoticeOverride: (text: string | null) => void
-}) {
-  const [text, setText] = useState('')
-  const choices = useMemo(() => choicesOf(run, RUN_CONTEXT), [run])
-
-  const views = choices.map((entry) => ({
-    choice: { id: entry.choice.id, label: entry.choice.label },
-    enabled: entry.enabled,
-    reason: entry.reason,
-  }))
-
-  const submit = () => {
-    if (text.trim() === '') return
-    const match = matchVerb(
-      text,
-      choices.map((entry, index) => ({
-        index,
-        label: entry.choice.label,
-        verbs: entry.choice.verbs,
-      })),
-    )
-    setText('')
-    if (match.kind === 'choice') {
-      const entry = choices[match.index]
-      if (entry) onSubmit(entry.choice.id)
-      return
-    }
-    if (match.kind === 'ambiguous') {
-      // A near-tie is not resolved by guessing; the numbered list above is the
-      // answer, and the first candidate is pre-focused by the caller.
-      setNoticeOverride('That could mean more than one thing — pick a number.')
-      return
-    }
-    // Silence here is the worst of the three outcomes: the player typed a full
-    // sentence, pressed Enter, and got no reaction at all, with no way to tell a
-    // game that ignored them from a game that is broken.
-    setNoticeOverride('Nothing here answers to that — try a number, or one of the verbs listed above.')
-  }
-
-  return (
-    <div className="kald-command">
-      <ChoiceList choices={views} onChoose={onSubmit} />
-      {/*
-       * No <form> here, on purpose.
-       *
-       * The SDK mounts this game in an iframe sandboxed `allow-scripts` and
-       * nothing else — no forms, no navigation, no same-origin. A sandbox without
-       * `allow-forms` makes the browser refuse to submit any form, so a form-wrapped
-       * command line looks perfect and silently does nothing: the click and the
-       * Enter key both go nowhere, with no error to explain why. That is not a
-       * hypothetical. It is exactly what this component did until the browser
-       * suite typed into it.
-       *
-       * So the field handles Enter itself, and the button is an ordinary button.
-       */}
-      <div className="kald-command-row">
-        {/*
-         * Visually hidden, still the field's accessible name.
-         *
-         * The visible text this replaced was instruction — "Or act in your own
-         * words" — which the placeholder already demonstrates and a `label`
-         * element is the wrong home for anyway. On a phone it was a 26px row of
-         * duplicated meaning between the choices and the box they point at. The
-         * choices carry numbers and the field carries an example, so nothing the
-         * player needs was in it.
-         */}
-        <label className="kald-label" htmlFor="cmd">
-          Act in your own words
-        </label>
-        <div className="kald-command-field">
-          <input
-            id="cmd"
-            className="kald-input"
-            value={text}
-            placeholder="burn the bridge"
-            onChange={(event) => setText(event.target.value)}
-            onKeyDown={(event) => {
-              if (event.key !== 'Enter') return
-              event.preventDefault()
-              submit()
-            }}
-            autoComplete="off"
-          />
-          <button type="button" className="kald-btn" onClick={submit}>
-            Act
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 /* ── Entry ─────────────────────────────────────────────────────────────── */
 
 /**
@@ -316,11 +290,23 @@ function CommandLine({
  * wallet" button. Both are gone: the real check happens in the host, and a
  * bypass here would have been a way to reach the game without an NFT. What
  * remains is a disclosure — who is playing, what a run costs, what the fee is
- * split into, and how many runs are left — because a game that charges a fee
- * should say so before the player walks in.
+ * split into, how many runs are left, and how the fee comes back.
  */
-function Entry({ session, onEnter }: { session: AppSession; onEnter: () => void }) {
+function Entry({
+  session,
+  onEnter,
+  refundEarned,
+  muted,
+  onToggleMute,
+}: {
+  session: AppSession
+  onEnter: () => void
+  refundEarned: boolean
+  muted: boolean
+  onToggleMute: () => void
+}) {
   const { entryFee, currency, split, startingBalance } = BALANCE.economy
+  const maxReward = 5_000
   const simulated = session.mode === 'preview'
 
   return (
@@ -355,6 +341,13 @@ function Entry({ session, onEnter }: { session: AppSession; onEnter: () => void 
             </dd>
           </div>
           <div>
+            <dt>Fee back at</dt>
+            <dd>
+              Chapter {REFUND_CHAPTER} reached · {entryFee} {currency} returned, then the ladder climbs to{' '}
+              {maxReward.toLocaleString('en-US')} {currency}
+            </dd>
+          </div>
+          <div>
             <dt>Runs today</dt>
             <dd>
               {session.quota.remaining} of {session.quota.limit} left
@@ -367,6 +360,11 @@ function Entry({ session, onEnter }: { session: AppSession; onEnter: () => void 
             </dd>
           </div>
         </dl>
+        <p className="kald-note">
+          {refundEarned
+            ? `Last run reached Chapter ${REFUND_CHAPTER} — its ${entryFee} ${currency} fee has been paid back, with more on the ladder ahead.`
+            : `Reach Chapter ${REFUND_CHAPTER} and this run's ${entryFee} ${currency} fee is back — milestone payouts then climb toward ${maxReward.toLocaleString('en-US')} ${currency}.`}
+        </p>
         {simulated ? (
           <p className="kald-note">
             Preview build: balances, the fee split and the leaderboard are simulated in your browser.
@@ -377,6 +375,14 @@ function Entry({ session, onEnter }: { session: AppSession; onEnter: () => void 
       <div className="kald-actions">
         <button type="button" className="kald-btn" onClick={onEnter}>
           Enter Kaldareth
+        </button>
+        <button
+          type="button"
+          className="kald-btn kald-btn-ghost kald-mute"
+          aria-pressed={muted}
+          onClick={onToggleMute}
+        >
+          {muted ? 'Sound: off' : 'Sound: on'}
         </button>
       </div>
     </main>

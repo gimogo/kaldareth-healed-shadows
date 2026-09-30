@@ -24,13 +24,12 @@ import type {
   SkillDefinition,
   TraitId,
 } from '../engine/types.ts'
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 
-import { BALANCE } from '../content/content.ts'
-import { buildGhostBoard } from '../economy/ghostBoard.ts'
-import { placement, rank, scoreGhost, scoreRun } from '../economy/leaderboard.ts'
 import { levelProgress } from '../engine/progression.ts'
 import { describeItem } from '../engine/items.ts'
+import { artArmor, artForClass, artForEnemy } from './asciiArt.ts'
+import { EndingBoard } from './HomeBoard.tsx'
 import { traitLabel } from '../game/useRun.ts'
 import type { RunState } from '../engine/run.ts'
 
@@ -60,7 +59,7 @@ export function StatusPanel({ run }: { run: RunState }) {
         <span className="kald-status-key">
           HP {Math.max(0, Math.round(run.currentHp))}/{maxHp}
         </span>
-        <span className="kald-status-key">{run.tokens.toLocaleString('en-US')} TOKEN</span>
+        <span className="kald-status-key">{run.tokens.toLocaleString('en-US')} RR</span>
         <button
           type="button"
           className="kald-disclosure"
@@ -123,6 +122,7 @@ export function InventoryPanel({ run }: { run: RunState }) {
   if (run.inventory.items.length === 0) {
     return <p className="kald-note">You carry nothing worth naming.</p>
   }
+  const armor = artArmor()
   return (
     <ul className="kald-table" aria-label="Inventory">
       {run.inventory.items.map((item: ItemDefinition) => {
@@ -132,6 +132,11 @@ export function InventoryPanel({ run }: { run: RunState }) {
           <li key={item.id} className={rarity}>
             {describeItem(item)}
             {equipped ? ' (worn)' : ''}
+            {equipped ? (
+              <pre className="kald-art kald-art-item" aria-hidden="true">
+                {armor.lines.join('\n')}
+              </pre>
+            ) : null}
           </li>
         )
       })}
@@ -240,13 +245,22 @@ export function CombatPanel({
   state,
   skills,
   onAct,
+  classId,
 }: {
   state: CombatState
   skills: SkillDefinition[]
   onAct: (skillId: string) => void
+  classId: ClassId
 }) {
+  // The duel, as art: the class's weapon left, the enemy's archetype right.
+  const hero = artForClass(classId)
+  const foe = artForEnemy(state.enemy.name)
   return (
     <section className="kald-combat" aria-label="Combat">
+      <div className="kald-duel" aria-hidden="true">
+        <pre className="kald-art">{hero.lines.join('\n')}</pre>
+        <pre className="kald-art">{foe.lines.join('\n')}</pre>
+      </div>
       <HealthBar combatant={state.player} name="You" />
       <HealthBar combatant={state.enemy} name={state.enemy.name} />
 
@@ -325,46 +339,6 @@ export function ClassSelect({ onBegin }: { onBegin: (classId: ClassId) => void }
  * data. A player who mistook a deterministic ghost for a real rival would be
  * reading the board wrong in a way that is never visible from a screenshot.
  */
-export function LeaderboardPanel({ run }: { run: RunState }) {
-  const ghosts = useMemo(
-    () => buildGhostBoard(BALANCE.economy.ghostBoard.seed, BALANCE.economy.ghostBoard.size),
-    [],
-  )
-  const board = useMemo(() => {
-    const scores = [...ghosts.map(scoreGhost), scoreRun(run)]
-    return { ranked: rank(scores), where: placement(scores, run.runCode) }
-  }, [ghosts, run])
-
-  return (
-    <section className="kald-panel" aria-label="Leaderboard">
-      <p className="kald-chapter">
-        You finished {ordinal(board.where.rank)} of {board.where.of}
-      </p>
-      <ol className="kald-table" aria-label="Standings">
-        {board.ranked.map((entry) => (
-          <li
-            key={entry.runCode}
-            className={entry.runCode === run.runCode ? 'kald-ghost' : undefined}
-          >
-            <span className="kald-rank">{entry.rank}</span>
-            <span>{entry.name}</span>
-            <span> {entry.classId} </span>
-            <span>stage {entry.stage}</span>
-            <span> hidden {entry.hiddenTotal}</span>
-            <span> {entry.tokens.toLocaleString('en-US')} </span>
-            {entry.simulated ? <span className="kald-label">simulated</span> : null}
-          </li>
-        ))}
-      </ol>
-    </section>
-  )
-}
-
-function ordinal(n: number): string {
-  const suffix = n % 10 === 1 && n % 100 !== 11 ? 'st' : n % 10 === 2 && n % 100 !== 12 ? 'nd' : n % 10 === 3 && n % 100 !== 13 ? 'rd' : 'th'
-  return `${n}${suffix}`
-}
-
 export function EndingPanel({
   run,
   onRestart,
@@ -411,7 +385,7 @@ export function EndingPanel({
             </div>
           </dl>
         </section>
-        <LeaderboardPanel run={run} />
+        <EndingBoard run={run} />
       </div>
       <div className="kald-actions">
         <button type="button" className="kald-btn" onClick={onRestart}>

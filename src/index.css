@@ -82,6 +82,46 @@ body {
   padding: var(--pad) var(--pad) 40vh;
 }
 
+/* The class-select screen has no pinned control, so it drops the bottom pad.
+   Two classes so the override also wins over the small-screen shell rule. */
+.kald-shell.kald-shell-home {
+  padding-bottom: 1rem;
+}
+
+/* And hugs the board: 6px of spare room on a 360x638 frame is not spare. */
+.kald-shell-home .kald-board-wrap {
+  margin: 0.2rem 0 0;
+}
+
+/* ── Fight art & mute ─────────────────────────────────────────────────── */
+/* The duel: hero weapon left, enemy right, gap between, wraps on phones. */
+.kald-duel {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.kald-art {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 10px;
+  line-height: 1.15;
+  color: var(--ink-dim);
+  white-space: pre;
+}
+
+.kald-art-item {
+  font-size: 9px;
+  margin-top: 0.15rem;
+}
+
+.kald-mute {
+  margin-top: 0.4rem;
+  width: 100%;
+}
+
 /*
  * A section that already sits inside a `.kald-shell`.
  *
@@ -816,6 +856,27 @@ body {
   overflow-y: auto;
   overscroll-behavior: contain;
   padding: 0 0 0 0.8rem;
+}
+
+/* ── Home board ───────────────────────────────────────────────────────── */
+/*
+ * A single `<pre>` of terminal text. 12px keeps a 44-column board inside the
+ * 358px phone frame (a monospace glyph is ~0.6em wide, so 44 × 7.2px ≈ 317px).
+ */
+.kald-board-wrap {
+  margin: 0.6rem 0 0.2rem;
+}
+
+.kald-board {
+  margin: 0;
+  overflow-x: auto;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--rule);
+  background: var(--bg-sunken);
+  color: var(--aether);
+  font-family: var(--font);
+  font-size: 12px;
+  line-height: 1.35;
 }
 
 /* Visible focus for keyboard players on the whole column */

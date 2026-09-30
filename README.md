@@ -5,7 +5,7 @@ A browser text RPG gated behind real ownership of a
 *inside* the Rare Friends runtime, in a sandboxed iframe, with no wallet
 connection of its own and no transaction ever signed.
 
-All four acts (GDD Chapters 1–32) are implemented end to end: 235 nodes, twenty-three combat encounters, five three-way class gates (including a per-class epilogue), and act endings at the Old Watchtower (Act 1), on Greyhold's wall with Ilsevet Cray's name in every mouth (Act 2), in the Ritual Core chamber as the Blood Moon rises over Ashenmere (Act 3), and at Kaldareth Healed — the GDD's happy ending (Act 4). See `docs/kaldareth_gdd.md` for the full scenario script and `content/` for the machine-readable story data.
+All four acts (GDD Chapters 1–32) are implemented end to end: 308 nodes (235 authored, the rest the Litany Echo memory system and its verdicts), twenty-three combat encounters, five three-way class gates (including a per-class epilogue), and act endings at the Old Watchtower (Act 1), on Greyhold's wall with Ilsevet Cray's name in every mouth (Act 2), in the Ritual Core chamber as the Blood Moon rises over Ashenmere (Act 3), and at Kaldareth Healed — the GDD's happy ending (Act 4). The Hollowing eats memory, so the game checks yours: twelve Litany Echoes — half quoting the story's speech, half probing its prose — scale the run's RR payout by what you actually remember. What you miss comes back later, reworded, as a one-time Redemption Echo; take it back and the ledger heals. Keeping all eight spoken echoes opens a hidden ninth verdict at the epilogue. See `docs/kaldareth_gdd.md` for the full scenario script and `content/` for the machine-readable story data.
 
 ## Quick start
 
@@ -124,10 +124,10 @@ Because the child is only ever served built, this policy is always in force.
 ## No forms
 
 The sandbox omits `allow-forms`, so the browser refuses to submit **any** form
-in the frame — silently, with no error. The command line in `src/App.tsx` is
-therefore not a `<form>`: the field handles Enter itself and `Act` is a plain
-button. Wrapping it in a form produced a command line that looked correct and
-did nothing, which is the sort of bug only an end-to-end test can find.
+in the frame — silently, with no error. Any control that must submit is
+therefore not a `<form>`: fields handle Enter themselves and buttons are plain
+buttons. Wrapping one in a form produces a control that looks correct and does
+nothing, which is the sort of bug only an end-to-end test can find.
 
 ## Quota
 
@@ -149,7 +149,7 @@ Two honest caveats:
 
 ## Economy and the reference definition
 
-The game uses a simulated split, in `TOKEN`, charged per run:
+The game uses a simulated split, in `RR` (RAREFRIENDS), charged per run:
 
 | | Amount | Share |
 | --- | --- | --- |
@@ -187,7 +187,8 @@ RPC. The fixture allows only `eth_accounts`, `eth_requestAccounts`,
 `eth_chainId` and `wallet_switchEthereumChain`; anything resembling signing is
 rejected and asserted against, so a test that passes has genuinely not touched
 a signing path. Scenarios cover the cold start, all three class gates, quota
-exhaustion, free-form input, the leaderboard, and the negative ownership paths —
+exhaustion, the live chapter banner, the home prize-pool board, the leaderboard,
+and the negative ownership paths —
 no Friends, not hardwired, chain switch declined, ownership changed between
 discovery and check, RPC failure and recovery, and an account change mid-session.
 
@@ -203,7 +204,7 @@ Both are decisions rather than defects, and both are visible in the checks:
 
 ## Content status
 
-All four acts are structurally complete: 235 nodes, all reachable, five three-way
+All four acts are structurally complete: 308 nodes, all reachable, five three-way
 class gates (bridge, gates, sigil, forest trials, and a per-class epilogue),
 twenty-three combat encounters whose win rates are simulated in
 `npm run check:balance`, and act endings at the Old Watchtower (Act 1, Kaelen
