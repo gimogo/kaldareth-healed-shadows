@@ -80,7 +80,8 @@ reading this looking for a way to play without owning a Friend: inside the
 runtime there isn't one. `playtest.html` at the repo root is the one sanctioned
 look for reviewers — the full story UI served as a plain page, no runtime
 around it, for reading the campaign without a Friend; it ships nothing the
-runtime loads and asserts no ownership of its own.
+runtime loads and asserts no ownership of its own. It is live, no install
+needed, at https://kaldareth.netlify.app/playtest.html.
 
 ## Why the frame build is a classic bundle
 
