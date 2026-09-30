@@ -25,7 +25,7 @@ gimogo — 235aryugi@gmail.com
 
 ## Repository
 
-<your repo URL — fill in after pushing this repository to GitHub, step 1 of the PR checklist>
+https://github.com/gimogo/kaldareth-healed-shadows
 
 ## Category
 
